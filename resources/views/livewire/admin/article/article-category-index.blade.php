@@ -4,6 +4,17 @@
         <x-href href="{{ route('article.category.create') }}">Create</x-href>
     </div>
     <div class="mt-10">
+        <div class="mb-5">
+            <div>
+                <x-search wire:model="search" type="text" class="!w-1/2"></x-search>
+            </div> 
+            {{-- <div>
+                <select name="" id="">
+                    <option value="">A-Z</option>
+                    <option value="">Z-A</option>
+                </select>
+            </div> --}}
+        </div>
         <div class="relative overflow-x-auto">
             <table class="w-full text-left rtl:text-right text-slate-500">
                 <thead class="text-xs text-slate-700 uppercase bg-slate-50">
