@@ -8,6 +8,7 @@ class ArticleTagCreate extends Component
 {
     public function render()
     {
-        return view('livewire.admin.article.article-tag-create');
+        return view('livewire.admin.article.article-tag-create')
+        ->extends('layouts.admin.app')->section('contents');;
     }
 }

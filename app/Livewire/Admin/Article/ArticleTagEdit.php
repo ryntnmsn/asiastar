@@ -8,6 +8,7 @@ class ArticleTagEdit extends Component
 {
     public function render()
     {
-        return view('livewire.admin.article.article-tag-edit');
+        return view('livewire.admin.article.article-tag-edit')
+        ->extends('layouts.admin.app')->section('contents');;
     }
 }

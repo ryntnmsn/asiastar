@@ -8,6 +8,7 @@ class ArticleTagIndex extends Component
 {
     public function render()
     {
-        return view('livewire.admin.article.article-tag-index');
+        return view('livewire.admin.article.article-tag-index')
+        ->extends('layouts.admin.app')->section('contents');;
     }
 }
