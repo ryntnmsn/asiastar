@@ -13,6 +13,8 @@ class ArticleCategoryIndex extends Component
     protected $paginationTheme = 'tailwind';
 
     public $id;
+    public $search = '';
+    public $sort = 'asc';
 
     public function delete($id) {
         $articleCategory = ArticleCategory::where('id', $id)->first();
@@ -28,7 +30,12 @@ class ArticleCategoryIndex extends Component
 
     public function render()
     {
-        $articleCategories = ArticleCategory::orderBy('id', 'desc');
+        $articleCategories = ArticleCategory::when($this->search, function ($query) {
+            return $query->where('name', 'LIKE', '%' . $this->search . '%');
+        })
+        ->when($this->sort, function ($query) {
+            return $query->orderBy('name', $this->sort);
+        });
 
         return view('livewire.admin.article.article-category-index', [
             'articleCategories' => $articleCategories->paginate(20)

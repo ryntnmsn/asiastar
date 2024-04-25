@@ -3,17 +3,19 @@
         <x-title>Article Category</x-title>
         <x-href href="{{ route('article.category.create') }}">Create</x-href>
     </div>
-    <div class="mt-10">
-        <div class="mb-5">
-            <div>
-                <x-search wire:model="search" type="text" class="!w-1/2"></x-search>
-            </div> 
-            {{-- <div>
-                <select name="" id="">
-                    <option value="">A-Z</option>
-                    <option value="">Z-A</option>
-                </select>
-            </div> --}}
+    <div class="mt-5">
+        <div class="mb-5 flex justify-between">
+            <div class="flex-1">
+                <x-search wire:model.live="search" type="text"></x-search>
+            </div>
+            <div class="flex-1">
+                <div class="flex justify-end">
+                    <x-select wire:model.live="sort" class="!w-[80px]">
+                        <option value="asc">A-Z</option>
+                        <option value="desc">Z-A</option>
+                    </x-select>
+                </div>
+            </div>
         </div>
         <div class="relative overflow-x-auto">
             <table class="w-full text-left rtl:text-right text-slate-500">
@@ -69,7 +71,7 @@
         </div>
     </div>
 
-    
+
     <div wire:ignore.self id="popup-delete" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow">
@@ -84,7 +86,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                     </svg>
                     <h3 class="mb-5 text-lg font-normal text-slate-500">Are you sure you want to delete this record?</h3>
-                    
+
                     <form wire:submit="destroy">
                         <button wire:target="destroy" data-modal-hide="popup-delete" type="submit" class="text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
                             Yes, I'm sure
@@ -95,5 +97,5 @@
             </div>
         </div>
     </div>
-    
+
 </div>

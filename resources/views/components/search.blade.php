@@ -1,1 +1,1 @@
-<input {!! $attributes->merge(['class' => 'bg-slate-50 border border-slate-300 text-slate-900 rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5']) !!}>
+<input {!! $attributes->merge(['class' => 'border-b-2 border-t-0 border-r-0 border-l-0 border-slate-200 text-slate-900 rounded-sm focus:ring-0 block focus:border-amber-500 w-full max-w-[300px] p-2.5 placeholder:text-slate-400']) !!} placeholder="Search here">
