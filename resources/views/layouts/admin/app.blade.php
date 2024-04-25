@@ -14,7 +14,9 @@
     <div>
         @include('layouts.admin.sidebar')
         <div class="p-4 sm:ml-64">
-            @yield('contents')
+            <div class="w-full max-w-[1280px] mx-auto p-4 md:p-10 rounded-xl bg-white">
+                @yield('contents')
+            </div>
         </div>
     </div>
 

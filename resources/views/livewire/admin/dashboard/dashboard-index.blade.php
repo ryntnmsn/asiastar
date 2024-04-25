@@ -1,3 +1,3 @@
 <div>
-    This is Dashboard Page
+    <x-title>Dashboard</x-title>
 </div>
