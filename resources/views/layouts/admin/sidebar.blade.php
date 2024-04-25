@@ -55,7 +55,7 @@
                         <a href="{{ route('article.category.index') }}" class="flex items-center w-full p-2 text-slate-900 transition duration-75 rounded-lg pl-11 group hover:bg-amber-50">Categories</a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center w-full p-2 text-slate-900 transition duration-75 rounded-lg pl-11 group hover:bg-amber-50">Tags</a>
+                        <a href="{{ route('article.tag.index') }}" class="flex items-center w-full p-2 text-slate-900 transition duration-75 rounded-lg pl-11 group hover:bg-amber-50">Tags</a>
                     </li>
                     <li>
                         <a href="#" class="flex items-center w-full p-2 text-slate-900 transition duration-75 rounded-lg pl-11 group hover:bg-amber-50">Create +</a>

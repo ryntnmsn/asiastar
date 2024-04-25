@@ -24,7 +24,7 @@
     window.addEventListener('updated',function(e){ 
         Swal.fire({
             title: 'Updated',
-            text: 'Article category created',
+            text: 'Article category updated',
             icon: 'success',
             iconColor: 'lightgreen',
             confirmButtonColor: '#f59e0b',
