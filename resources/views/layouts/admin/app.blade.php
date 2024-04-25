@@ -8,7 +8,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js']);
     @livewireStyles
 </head>
-<body>
-    @section('content')
+<body class="bg-slate-100">
+    @include('layouts.admin.header')
+    
+    <div>
+        @include('layouts.admin.sidebar')
+        <div class="p-4 sm:ml-64">
+            @yield('contents')
+        </div>
+    </div>
+
+    @include('layouts.admin.footer')
 </body>
 </html>
