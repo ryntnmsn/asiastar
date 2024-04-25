@@ -4,10 +4,14 @@ namespace App\Livewire\Admin\Article;
 
 use App\Models\ArticleTag;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ArticleTagIndex extends Component
 {
+    use WithPagination;
 
+    protected $paginationTheme = 'tailwind';
+    
     public $id;
 
     public function delete($id) {
@@ -25,10 +29,10 @@ class ArticleTagIndex extends Component
     public function render()
     {
 
-        $articleTags = ArticleTag::all();
+        $articleTags = ArticleTag::orderBy('id', 'desc');
 
         return view('livewire.admin.article.article-tag-index', [
-            'articleTags' => $articleTags
+            'articleTags' => $articleTags->paginate(20)
         ])->extends('layouts.admin.app')->section('contents');;
     }
 }

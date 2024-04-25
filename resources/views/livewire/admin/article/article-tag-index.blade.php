@@ -9,6 +9,9 @@
                 <thead class="text-xs text-slate-700 uppercase bg-slate-50">
                     <tr>
                         <th scope="col" class="px-6 py-3">
+                            No.
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Name
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -22,6 +25,9 @@
                 <tbody>
                     @foreach ($articleTags as $articleTag)
                         <tr class="bg-white border-b">
+                            <td class="px-6 py-4 w-1">
+                                {{ $loop->iteration }}
+                            </td>
                             <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
                                 {{ $articleTag->name }}
                             </th>
@@ -46,6 +52,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="mt-5">
+                {{ $articleTags->links() }}
+            </div>
         </div>
     </div>
 

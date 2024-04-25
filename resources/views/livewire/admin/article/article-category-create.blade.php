@@ -7,7 +7,8 @@
             <div class="flex flex-col gap-4">
                 <div>
                     <label class="block mb-2 font-medium text-slate-700">Name</label>
-                    <x-input wire:model="name" type="text"></x-input>
+                   
+                    <x-input wire:model="name" name="name" type="text"></x-input>
                     @error($name)
                         <span class="text-sm text-rose-500">{{ $message }}</span>
                     @enderror

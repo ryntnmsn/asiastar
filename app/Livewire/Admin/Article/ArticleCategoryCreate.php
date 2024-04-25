@@ -5,24 +5,16 @@ namespace App\Livewire\Admin\Article;
 use App\Models\ArticleCategory;
 use Livewire\Component;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
 
 class ArticleCategoryCreate extends Component
 {
     public $name;
 
-    // protected $rules = [
-    //     'name' => 'required|max:255|unique:'
-    // ];
-
-    protected function rules(): array {
-        return [
-            'name' => 'required|min:2|max:255'
-        ];
-    }
-
     public function store() {
-        $this->validate();
+        $this->validate([
+            'name' => 'required|min:2|max:255'
+        ]);
+
         ArticleCategory::create([
             'name' => $this->name,
             'slug' => Str::slug($this->name)
