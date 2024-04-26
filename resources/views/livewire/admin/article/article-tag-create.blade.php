@@ -21,7 +21,7 @@
 </div>
 
 <script>
-    window.addEventListener('created',function(e){ 
+    window.addEventListener('created',function(e){
         Swal.fire({
             title: 'Created',
             text: 'New article tag created',

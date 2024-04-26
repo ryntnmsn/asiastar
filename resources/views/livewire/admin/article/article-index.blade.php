@@ -28,7 +28,7 @@
                             Title
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Language
+                            Category
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Status
@@ -48,7 +48,14 @@
                                 {{ $article->name }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ $article->slug }}
+                                {{ $article->article_category->name }}
+                            </td>
+                            <td class="px-6 py-4">
+                                @if($article->status == 1)
+                                    <x-active></x-active>
+                                @else
+                                    <x-inactive></x-inactive>
+                                @endif
                             </td>
                             <td class="px-6 py-4">
                                 <div class="flex gap-4">

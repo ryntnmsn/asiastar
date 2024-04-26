@@ -3,53 +3,55 @@
         <x-title>Create Article</x-title>
     </div>
     <div class="mt-10">
-        
-        <form wire:submit="store">
+
+        <form wire:submit.prevent="store">
             <div class="flex flex-col gap-4">
                 <div>
                     <label class="block mb-2 font-medium text-slate-700">Title</label>
-                    <x-input wire:model="name" type="text"></x-input>
+                    <x-input wire:model="name" name="name" type="text"></x-input>
                     @if($errors->has('name'))
                         <span class="text-sm text-rose-500">{{ $errors->first('name') }}</span>
                     @endif
                 </div>
                 <div>
                     <label class="block mb-2 font-medium text-slate-700">Short description</label>
-                    <x-input wire:model="short_description" type="text"></x-input>
-                    @error($short_description)
-                        <span class="text-sm text-rose-500">{{ $message }}</span>
-                    @enderror
+                    <x-input wire:model="short_description" name="short_description" type="text"></x-input>
+                    @if($errors->has('short_description'))
+                        <span class="text-sm text-rose-500">{{ $errors->first('short_description') }}</span>
+                    @endif
                 </div>
                 <div wire:ignore>
                     <label class="block mb-2 font-medium text-slate-700">Description</label>
-                    <x-textarea wire:model="description" type="text" id="description"></x-textarea>
-                    @error($description)
-                        <span class="text-sm text-rose-500">{{ $message }}</span>
-                    @enderror
+                    <x-textarea wire:model="description" name="description" type="text" id="description"></x-textarea>
+                    @if($errors->has('description'))
+                        <span class="text-sm text-rose-500">{{ $errors->first('description') }}</span>
+                    @endif
                 </div>
                 <div>
                     <div class="flex gap-5">
                         <div class="flex-1">
                             <label class="block mb-2 font-medium text-slate-700">Language</label>
-                            <x-select wire:model="language_id" type="text" class="!w-full">
+                            <x-select wire:model="language_id" name="language_id" class="!w-full">
                                 @foreach ($languages as $language)
+                                    <option value="" class="hidden">--Select language--</option>
                                     <option value="{{ $language->id }}">{{ $language->name }}</option>
                                 @endforeach
                             </x-select>
-                            @error($language_id)
-                                <span class="text-sm text-rose-500">{{ $message }}</span>
-                            @enderror
+                            @if($errors->has('language_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('language_id') }}</span>
+                            @endif
                         </div>
                         <div class="flex-1">
                             <label class="block mb-2 font-medium text-slate-700">Category</label>
-                            <x-select wire:model="article_category_id" type="text" class="!w-full">
+                            <x-select wire:model="article_category_id" name="article_category_id" class="!w-full">
                                 @foreach ($articleCategories as $articleCategory)
+                                    <option value="" class="hidden">--Select category--</option>
                                     <option value="{{ $articleCategory->id }}">{{ $articleCategory->name }}</option>
                                 @endforeach
                             </x-select>
-                            @error($language_id)
-                                <span class="text-sm text-rose-500">{{ $message }}</span>
-                            @enderror
+                            @if($errors->has('article_category_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('article_category_id') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -61,11 +63,19 @@
                     </label>
                 </div>
                 <div>
-                    <label class="block mb-2 font-medium text-slate-700" for="default_size">Image</label>
-                    <input wire:model="image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" id="default_size" type="file">
-                    @error($image)
-                        <span class="text-sm text-rose-500">{{ $message }}</span>
-                    @enderror
+                    <label class="block mb-2 font-medium text-slate-700">Image</label>
+                    <input wire:model="image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
+
+                    @if($image)
+                        <div class="mt-5">
+                            <label for="" class="text-sm">Image Preview</label>
+                            <img src="{{ $image->temporaryUrl() }}" alt="" class="w-60 border border-slate-300 rounded-lg">
+                        </div>
+                    @endif
+
+                    @if($errors->has('image'))
+                        <span class="text-sm text-rose-500">{{ $errors->first('image') }}</span>
+                    @endif
                 </div>
                 <div>
                     <x-button type="submit" wire:target="store" class="mt-5">Create</x-button>
@@ -75,11 +85,12 @@
     </div>
 </div>
 
+
 <script>
     window.addEventListener('created',function(e){
         Swal.fire({
             title: 'Created',
-            text: 'New article category created',
+            text: 'New article created',
             icon: 'success',
             iconColor: 'lightgreen',
             confirmButtonColor: '#f59e0b',

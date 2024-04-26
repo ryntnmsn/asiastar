@@ -12,4 +12,9 @@ class Article extends Model
     protected $fillable = [
         'name', 'slug', 'short_description', 'description', 'language_id', 'article_category_id', 'status', 'image'
     ];
+
+    public function article_category() {
+        return $this->belongsTo(ArticleCategory::class);
+    }
+
 }

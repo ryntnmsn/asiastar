@@ -17,19 +17,18 @@ class ArticleCreate extends Component
     public $name;
     public $short_description;
     public $description;
-    public $language_id;
-    public $article_category_id;
+    public $language_id = '';
+    public $article_category_id = '';
     public $status = false;
     public $image;
 
     protected $rules = [
-        'name' => 'required|max:255|unique:articles.name',
+        'name' => 'required|unique:articles',
         'short_description' => 'required',
         'description' => 'required',
         'language_id' => 'required',
         'article_category_id' => 'required',
-        'status' => 'required',
-        'image' => 'required',
+        'image' => 'required|image|mimes:jpg,jpeg,png',
     ];
 
     public function store() {
@@ -42,14 +41,19 @@ class ArticleCreate extends Component
             'language_id' => $this->language_id,
             'article_category_id' => $this->article_category_id,
             'status' => $this->status,
-            'image' => $this->image
+            'image' => $this->image->store('articles', 'public')
         ]);
+
+        $this->dispatch('created');
+
+        // $this->js('window.location.reload()');
+
     }
 
     public function render()
     {
         $languages = Language::all();
-        $articleCategories = ArticleCategory::all();
+        $articleCategories = ArticleCategory::with('article_category')->get();
 
         return view('livewire.admin.article.article-create', [
             'languages' => $languages,
