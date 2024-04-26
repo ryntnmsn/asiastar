@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     @foreach ($articleCategories as $articleCategory)
-                        <tr class="bg-white border-b">
+                        <tr class="bg-white border-b hover:bg-slate-50">
                             <td class="px-6 py-4 w-1">
                                 {{ $loop->iteration }}
                             </td>

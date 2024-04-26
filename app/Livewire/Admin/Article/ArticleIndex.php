@@ -31,7 +31,8 @@ class ArticleIndex extends Component
     public function render()
     {
 
-        $articles = Article::when($this->search, function ($query) {
+        $articles = Article::with('article_category')
+        ->when($this->search, function ($query) {
             return $query->where('name', 'LIKE', '%' . $this->search . '%');
         })
         ->when($this->sort, function ($query) {

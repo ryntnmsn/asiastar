@@ -69,7 +69,7 @@
                     @if($image)
                         <div class="mt-5">
                             <label for="" class="text-sm">Image Preview</label>
-                            <img src="{{ $image->temporaryUrl() }}" alt="" class="w-60 border border-slate-300 rounded-lg">
+                            <img src="{{ $image->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
                         </div>
                     @endif
 

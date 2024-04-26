@@ -21,6 +21,7 @@ class ArticleCreate extends Component
     public $article_category_id = '';
     public $status = false;
     public $image;
+    public $search = '';
 
     protected $rules = [
         'name' => 'required|unique:articles',
@@ -53,7 +54,7 @@ class ArticleCreate extends Component
     public function render()
     {
         $languages = Language::all();
-        $articleCategories = ArticleCategory::with('article_category')->get();
+        $articleCategories = ArticleCategory::all();
 
         return view('livewire.admin.article.article-create', [
             'languages' => $languages,
