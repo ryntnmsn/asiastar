@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="{{ url('assets/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
     <title>AsiaStar Admin</title>
+    <script>
+        tinymce.init({
+            plugins: 'code table lists',
+            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+        });
+    </script>
     @vite(['resources/css/app.css', 'resources/js/app.js']);
     @livewireStyles
 </head>

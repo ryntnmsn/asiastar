@@ -17,6 +17,14 @@ return new class extends Migration
             $table->string('slug');
             $table->longText('short_description');
             $table->longText('description');
+            $table->foreignId('language_id')
+                ->constrained('languages')
+                ->cascadeOnDelete();
+            $table->foreignId('article_category_id')
+                ->constrained('article_categories')
+                ->cascadeOnDelete();
+            $table->boolean('status')
+                ->default(false);
             $table->string('image');
             $table->timestamps();
         });
