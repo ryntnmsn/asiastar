@@ -10,6 +10,9 @@ use App\Livewire\Admin\Article\ArticleTagCreate;
 use App\Livewire\Admin\Article\ArticleTagEdit;
 use App\Livewire\Admin\Article\ArticleTagIndex;
 use App\Livewire\Admin\Dashboard\DashboardIndex;
+use App\Livewire\Admin\Game\GameCreate;
+use App\Livewire\Admin\Game\GameEdit;
+use App\Livewire\Admin\Game\GameIndex;
 use App\Livewire\Admin\Language\LanguageCreate;
 use App\Livewire\Admin\Language\LanguageEdit;
 use App\Livewire\Admin\Language\LanguageIndex;
@@ -51,6 +54,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/language', LanguageIndex::class)->name('language.index');
         Route::get('/language/create', LanguageCreate::class)->name('language.create');
         Route::get('/language/edit/{id}', LanguageEdit::class)->name('language.edit');
+
+        //Games
+        Route::get('/game', GameIndex::class)->name('game.index');
+        Route::get('/game/create', GameCreate::class)->name('game.create');
+        Route::get('/game/edit/{id}', GameEdit::class)->name('game.edit');
 
     });
 });

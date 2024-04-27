@@ -5,7 +5,7 @@
     <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
     </svg>
  </button>
- 
+
  <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-slate-50">
         <span class="text-sm text-slate-500 font-semibold block pb-4 border-b border-slate-300">MENU</span>
@@ -30,7 +30,7 @@
                 </button>
                 <ul id="dropdown-library" class="hidden py-2">
                     <li>
-                        <a href="#" class="flex items-center w-full p-2 text-slate-700 transition duration-75 rounded-lg pl-11 group">Games</a>
+                        <a href="{{ route('game.index') }}" class="flex items-center w-full p-2 text-slate-700 transition duration-75 rounded-lg pl-11 group">Games</a>
                     </li>
                     <li>
                         <a href="#" class="flex items-center w-full p-2 text-slate-700 transition duration-75 rounded-lg pl-11 group">Create +</a>
@@ -38,7 +38,7 @@
                 </ul>
             </li>
             <li>
-                <button type="button" class="flex items-center w-full p-2 transition duration-75 rounded-lg group" aria-controls="dropdown-articles" data-collapse-toggle="dropdown-articles">
+                <button type="button" class="text-slate-700 flex items-center w-full p-2 transition duration-75 rounded-lg group" aria-controls="dropdown-articles" data-collapse-toggle="dropdown-articles">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                     </svg>
@@ -81,6 +81,5 @@
         </ul>
     </div>
  </aside>
- 
 
- 
+
