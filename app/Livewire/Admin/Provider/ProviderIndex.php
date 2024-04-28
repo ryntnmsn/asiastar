@@ -35,6 +35,6 @@ class ProviderIndex extends Component
 
         return view('livewire.admin.provider.provider-index', [
             'providers' => $providers->paginate(20)
-        ])->extends('layouts.admin.app')->section('contents');;
+        ])->extends('layouts.admin.app')->section('contents');
     }
 }

@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Livewire\Admin\Provider;
+namespace App\Livewire\Admin\Partner;
 
-use App\Models\Provider;
+use App\Models\Partner;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
-class ProviderCreate extends Component
+class PartnerCreate extends Component
 {
 
     use WithFileUploads;
 
     public $title;
     public $image;
+    public $status = false;
 
     public function store() {
         $this->validate([
@@ -21,10 +22,11 @@ class ProviderCreate extends Component
             'image' => 'required|image|mimes:png,jpg,jpeg'
         ]);
 
-        Provider::create([
+        Partner::create([
             'title' => $this->title,
             'slug' => Str::slug($this->title),
-            'image' => $this->image->store('providers', 'public')
+            'status' => $this->status,
+            'image' => $this->image->store('partners', 'public')
         ]);
 
         $this->dispatch('created');
@@ -32,7 +34,7 @@ class ProviderCreate extends Component
 
     public function render()
     {
-        return view('livewire.admin.provider.provider-create')
+        return view('livewire.admin.partner.partner-create')
         ->extends('layouts.admin.app')->section('contents');
     }
 }
