@@ -16,6 +16,9 @@ use App\Livewire\Admin\Game\GameIndex;
 use App\Livewire\Admin\Language\LanguageCreate;
 use App\Livewire\Admin\Language\LanguageEdit;
 use App\Livewire\Admin\Language\LanguageIndex;
+use App\Livewire\Admin\Provider\ProviderCreate;
+use App\Livewire\Admin\Provider\ProviderEdit;
+use App\Livewire\Admin\Provider\ProviderIndex;
 use App\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +62,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/game', GameIndex::class)->name('game.index');
         Route::get('/game/create', GameCreate::class)->name('game.create');
         Route::get('/game/edit/{id}', GameEdit::class)->name('game.edit');
+
+        //Providers
+        Route::get('/game/provider', ProviderIndex::class)->name('game.provider.index');
+        Route::get('/game/provider/create', ProviderCreate::class)->name('game.provider.create');
+        Route::get('/game/provider/edit/{id}', ProviderEdit::class)->name('game.provider.edit');
 
     });
 });

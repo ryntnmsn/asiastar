@@ -44,8 +44,7 @@ class GameIndex extends Component
 
     public function render()
     {
-        $games = Game::orderBy('created_at', 'desc')
-        ->when($this->search, function ($query) {
+        $games = Game::when($this->search, function ($query) {
             return $query->where('title', 'LIKE', '%' . $this->search . '%');
         })
         ->when($this->sort, function ($query) {
@@ -59,7 +58,7 @@ class GameIndex extends Component
         })
         ->when($this->sort_by_status, function ($query) {
             return $query->where('status', $this->sort_by_status);
-        });
+        })->orderBy('created_at', 'desc');
 
         return view('livewire.admin.game.game-index', [
             'games' => $games->paginate($this->paginate)
