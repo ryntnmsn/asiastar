@@ -14,6 +14,7 @@ class Game extends Model
         'slug',
         'description',
         'language_id',
+        'provider_id',
         'status',
         'game_category',
         'game_type',

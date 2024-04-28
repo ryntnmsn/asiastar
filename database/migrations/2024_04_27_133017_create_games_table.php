@@ -18,7 +18,11 @@ return new class extends Migration
             $table->longText('description')
                 ->nullable();
             $table->foreignId('language_id')
-                ->constrained('languages');
+                ->constrained('languages')
+                ->cascadeOnDelete();
+            $table->foreignId('provider_id')
+                ->constrained('providers')
+                ->cascadeOnDelete();
             $table->boolean('status')->default(false);
             $table->string('game_category');
             $table->string('game_type');

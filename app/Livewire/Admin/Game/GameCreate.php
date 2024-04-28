@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Game;
 
 use App\Models\Game;
 use App\Models\Language;
+use App\Models\Provider;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
@@ -17,6 +18,7 @@ class GameCreate extends Component
     public $slug;
     public $description;
     public $language_id = '';
+    public $provider_id = '';
     public $status;
     public $game_category = '';
     public $game_type = '';
@@ -32,6 +34,7 @@ class GameCreate extends Component
     protected $rules = [
         'title' => 'required|max:255',
         'language_id' => 'required',
+        'provider_id' => 'required',
         'game_type' => 'required',
         'theme' => 'required',
         'region' => 'required',
@@ -46,6 +49,7 @@ class GameCreate extends Component
             'slug' => Str::slug($this->title),
             'description' => $this->description,
             'language_id' => $this->language_id,
+            'provider_id' => $this->provider_id,
             'status' => $this->status,
             'game_category' => $this->game_category,
             'game_type' => $this->game_type,
@@ -66,9 +70,11 @@ class GameCreate extends Component
     {
 
         $languages = Language::all();
+        $providers = Provider::all();
 
         return view('livewire.admin.game.game-create', [
-            'languages' => $languages
+            'languages' => $languages,
+            'providers' => $providers
         ])->extends('layouts.admin.app')->section('contents');
     }
 }

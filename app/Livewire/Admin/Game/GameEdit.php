@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Game;
 
 use App\Models\Game;
 use App\Models\Language;
+use App\Models\Provider;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
@@ -17,6 +18,7 @@ class GameEdit extends Component
     public $slug;
     public $description;
     public $language_id = '';
+    public $provider_id = '';
     public $status = false;
     public $game_category = '';
     public $game_type = '';
@@ -36,6 +38,7 @@ class GameEdit extends Component
         $this->title = $game->title;
         $this->description = $game->description;
         $this->language_id = $game->language_id;
+        $this->provider_id = $game->provider_id;
         $this->status = $game->status;
         $this->game_category = $game->game_category;
         $this->game_type = $game->game_type;
@@ -64,6 +67,7 @@ class GameEdit extends Component
             'slug' => Str::slug($this->title),
             'description' => $this->description,
             'language_id' => $this->language_id,
+            'provider_id' => $this->provider_id,
             'status' => $this->status,
             'game_category' => $this->game_category,
             'game_type' => $this->game_type,
@@ -84,9 +88,11 @@ class GameEdit extends Component
     public function render()
     {
         $languages = Language::all();
+        $providers = Provider::all();
 
         return view('livewire.admin.game.game-edit', [
-            'languages' => $languages
+            'languages' => $languages,
+            'providers' => $providers
         ])->extends('layouts.admin.app')->section('contents');
     }
 }
