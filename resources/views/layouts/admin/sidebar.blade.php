@@ -7,7 +7,7 @@
  </button>
 
  <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-    <div class="h-full px-3 py-4 overflow-y-auto bg-slate-50">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-white">
         <span class="text-sm text-slate-500 font-semibold block pb-4 border-b border-slate-300">MENU</span>
         <ul class="space-y-2 font-medium pt-2">
             <li>
@@ -33,7 +33,7 @@
                         <a href="{{ route('game.index') }}" class="{{ request()->is('admin/game') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Games</a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center w-full p-2 text-slate-700 transition duration-75 rounded-lg pl-11 group">Create +</a>
+                        <a href="{{ route('game.create') }}" class="{{ request()->is('admin/game/create') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Create +</a>
                     </li>
                 </ul>
             </li>

@@ -158,6 +158,21 @@
 </div>
 
 <script>
+    tinymce.init({
+        selector: '#description',
+        forced_root_block: false,
+        setup: function (editor) {
+            editor.on('init change', function () {
+                editor.save();
+            });
+            editor.on('change', function (e) {
+                @this.set('description', editor.getContent());
+            });
+        }
+    });
+</script>
+
+<script>
     window.addEventListener('created',function(e){
         Swal.fire({
             title: 'Created',

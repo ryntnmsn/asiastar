@@ -13,7 +13,7 @@ class GameIndex extends Component
     protected $paginationTheme = 'tailwind';
 
     public $search = '';
-    public $sort = 'asc';
+    public $sort = '';
     public $paginate = 20;
     public $sort_by_game_category = '';
     public $sort_by_game_type = '';
@@ -22,7 +22,7 @@ class GameIndex extends Component
 
     public function clearFilter() {
         $this->search = '';
-        $this->sort = 'asc';
+        $this->sort = '';
         $this->sort_by_game_category = '';
         $this->sort_by_game_type = '';
         $this->sort_by_status = '';
@@ -31,7 +31,8 @@ class GameIndex extends Component
 
     public function render()
     {
-        $games = Game::when($this->search, function ($query) {
+        $games = Game::orderBy('created_at', 'desc')
+        ->when($this->search, function ($query) {
             return $query->where('title', 'LIKE', '%' . $this->search . '%');
         })
         ->when($this->sort, function ($query) {
