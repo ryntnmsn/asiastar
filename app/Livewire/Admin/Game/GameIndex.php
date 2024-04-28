@@ -12,6 +12,7 @@ class GameIndex extends Component
 
     protected $paginationTheme = 'tailwind';
 
+    public $id;
     public $search = '';
     public $sort = '';
     public $paginate = 20;
@@ -26,6 +27,18 @@ class GameIndex extends Component
         $this->sort_by_game_category = '';
         $this->sort_by_game_type = '';
         $this->sort_by_status = '';
+    }
+
+    public function delete($id) {
+        $game = Game::where('id', $id)->first();
+        $this->id = $game->id;
+    }
+
+    public function destroy() {
+        $game = Game::where('id', $this->id)->first();
+        $game->delete();
+
+        $this->js('window.location.reload');
     }
 
 

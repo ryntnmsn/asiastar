@@ -50,7 +50,7 @@ class GameCreate extends Component
             'game_category' => $this->game_category,
             'game_type' => $this->game_type,
             'is_featured' => $this->is_featured,
-            'release_date' => $this->released_date,
+            'released_date' => $this->released_date,
             'volatility' => $this->volatility,
             'rtp' => $this->rtp,
             'maximum_win' => $this->maximum_win,

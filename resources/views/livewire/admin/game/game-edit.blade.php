@@ -3,7 +3,7 @@
         <x-title>Edit Game</x-title>
     </div>
     <div class="mt-10">
-        <form wire:submit="store">
+        <form wire:submit="update">
             <div class="flex flex-col gap-5">
 
                 <div>
@@ -156,18 +156,35 @@
                     </div>
                 </div>
                 <div>
-                    <x-button type="submit" wire:target="store">Create</x-button>
+                    <x-button type="submit" wire:target="update">Create</x-button>
                 </div>
             </div>
         </form>
     </div>
 </div>
 
+
 <script>
-    window.addEventListener('created',function(e){
+    tinymce.init({
+        selector: '#description',
+        forced_root_block: false,
+        setup: function (editor) {
+            editor.on('init change', function () {
+                editor.save();
+            });
+            editor.on('change', function (e) {
+                @this.set('description', editor.getContent());
+            });
+        }
+    });
+</script>
+
+
+<script>
+    window.addEventListener('updated',function(e){
         Swal.fire({
-            title: 'Created',
-            text: 'New game created',
+            title: 'Updated',
+            text: 'Game updated successfully',
             icon: 'success',
             iconColor: 'lightgreen',
             confirmButtonColor: '#f59e0b',

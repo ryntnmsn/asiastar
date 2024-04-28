@@ -30,7 +30,7 @@
                 </button>
                 <ul id="dropdown-library" class="{{ request()->is('admin/game*') ? 'block' : 'hidden' }} py-2">
                     <li>
-                        <a href="{{ route('game.index') }}" class="{{ request()->is('admin/game') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Games</a>
+                        <a href="{{ route('game.index') }}" class="{{ request()->is('admin/game') || request()->is('admin/game/edit*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Games</a>
                     </li>
                     <li>
                         <a href="{{ route('game.create') }}" class="{{ request()->is('admin/game/create') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Create +</a>
