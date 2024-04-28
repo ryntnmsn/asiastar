@@ -25,14 +25,16 @@ class GameCreate extends Component
     public $volatility;
     public $rtp;
     public $maximum_win;
-    public $region;
-    public $theme;
+    public $region = '';
+    public $theme = '';
     public $image;
 
     protected $rules = [
-        'name' => 'required|max:255',
+        'title' => 'required|max:255',
         'language_id' => 'required',
         'game_type' => 'required',
+        'theme' => 'required',
+        'region' => 'required',
         'game_category' => 'required',
         'image' => 'required|image|mimes:jpg,jpeg,png',
     ];
@@ -54,7 +56,7 @@ class GameCreate extends Component
             'maximum_win' => $this->maximum_win,
             'region' => $this->region,
             'theme' => $this->theme,
-            'image' => $this->image,
+            'image' => $this->image->store('games', 'public'),
         ]);
 
         $this->dispatch('created');

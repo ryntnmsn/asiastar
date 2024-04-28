@@ -28,9 +28,9 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                     </svg>
                 </button>
-                <ul id="dropdown-library" class="hidden py-2">
+                <ul id="dropdown-library" class="{{ request()->is('admin/game*') ? 'block' : 'hidden' }} py-2">
                     <li>
-                        <a href="{{ route('game.index') }}" class="flex items-center w-full p-2 text-slate-700 transition duration-75 rounded-lg pl-11 group">Games</a>
+                        <a href="{{ route('game.index') }}" class="{{ request()->is('admin/game') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Games</a>
                     </li>
                     <li>
                         <a href="#" class="flex items-center w-full p-2 text-slate-700 transition duration-75 rounded-lg pl-11 group">Create +</a>

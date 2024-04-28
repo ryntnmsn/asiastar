@@ -15,17 +15,22 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->longText('description');
+            $table->longText('description')
+                ->nullable();
             $table->foreignId('language_id')
                 ->constrained('languages');
             $table->boolean('status')->default(false);
             $table->string('game_category');
             $table->string('game_type');
             $table->boolean('is_featured')->default(false);
-            $table->date('released_date');
-            $table->string('volatility');
-            $table->string('rtp');
-            $table->string('maximum_win');
+            $table->date('released_date')
+                ->nullable();
+            $table->string('volatility')
+                ->nullable();
+            $table->string('rtp')
+                ->nullable();
+            $table->string('maximum_win')
+                ->nullable();
             $table->string('region');
             $table->string('theme');
             $table->string('image');

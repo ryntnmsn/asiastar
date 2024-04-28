@@ -4,16 +4,49 @@
         <x-href href="{{ route('game.create') }}">Create</x-href>
     </div>
     <div class="mt-5">
-        <div class="mb-5 flex justify-between">
+        <div class="mb-5 flex md:flex-row flex-col justify-between">
             <div class="flex-1">
                 <x-search wire:model.live="search" type="text"></x-search>
             </div>
             <div class="flex-1">
-                <div class="flex justify-end">
-                    <x-select wire:model.live="sort" class="!w-[80px]">
-                        <option value="asc">A-Z</option>
-                        <option value="desc">Z-A</option>
-                    </x-select>
+                <div class="flex gap-2 justify-end items-center">
+                    <div>
+                        <x-label>Filters:</x-label>
+                    </div>
+                    <div class="flex justify-end">
+                        <x-select wire:model.live="sort_by_game_category" class="">
+                            <option value="" class="hidden">Sort by category</option>
+                            <option value="live_pachinko">Live Pachinko</option>
+                            <option value="live_casino">Live Casino</option>
+                            <option value="live_cockfighting">Live Cockfighting</option>
+                        </x-select>
+                    </div>
+                    <div class="flex justify-end">
+                        <x-select wire:model.live="sort_by_game_type" class="">
+                            <option value="" class="hidden">Sort by game type</option>
+                            <option value="new_game">New Game</option>
+                            <option value="hot_game">Hot Game</option>
+                            <option value="coming_soon_game">Coming Soon Game</option>
+                        </x-select>
+                    </div>
+                    <div>
+                        <div class="flex justify-end">
+                            <x-select wire:model.live="sort_by_status">
+                                <option value="" class="hidden">Sort by status</option>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </x-select>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <x-select wire:model.live="sort">
+                            <option value="asc">A-Z</option>
+                            <option value="desc">Z-A</option>
+                        </x-select>
+                    </div>
+                    <div class="flex justify-end">
+                        <x-button wire:click="clearFilter">Clear</x-button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,18 +65,20 @@
                             Language
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Game Type
+                            Category
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Type
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Region
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Release date
-                        </th>
-                        <th scope="col" class="px-6 py-3">
                             Status
                         </th>
-
+                        <th scope="col" class="px-6 py-3">
+                            Action
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,19 +91,23 @@
                                 {{ $game->title }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ $game->language_id }}
+                                {{ $game->language->name }}
                             </td>
-                            <td class="px-6 py-4">
-                                {{ $game->game_type }}
+                            <td class="px-6 py-4 capitalize">
+                                {{ str_replace('_', ' ', $game->game_category) }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 capitalize">
+                                {{ str_replace('_', ' ', $game->game_type) }}
+                            </td>
+                            <td class="px-6 py-4 capitalize">
                                 {{ $game->region }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $game->released_date }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $game->status }}
+                                @if($game->status == 1)
+                                    <x-active></x-active>
+                                @else
+                                    <x-inactive></x-inactive>
+                                @endif
                             </td>
                             <td class="px-6 py-4">
                                 <div class="flex gap-4">
@@ -89,7 +128,7 @@
                 </tbody>
             </table>
             <div class="mt-5">
-                {{-- {{ $games->links() }} --}}
+                {{ $games->links() }}
             </div>
         </div>
     </div>

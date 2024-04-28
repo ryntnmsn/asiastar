@@ -9,9 +9,9 @@
                 <div>
                     <x-label for="title">Title</x-label>
                     <x-input wire:model="title" type="text" id="title"></x-input>
-                    @error($title)
-                        <span class="text-sm text-rose-500">{{ $message }}</span>
-                    @enderror
+                    @if($errors->has('title'))
+                        <span class="text-sm text-rose-500">{{ $errors->first('title') }}</span>
+                    @endif
                 </div>
 
                 <div wire:ignore>
@@ -25,17 +25,25 @@
                             <x-label for="language_id">Language</x-label>
                             <x-select wire:model="language_id" class="!w-full">
                                 @foreach ($languages as $language)
+                                    <option value="" class="hidden">--Select language--</option>
                                     <option value="{{$language->id}}">{{$language->name}}</option>
                                 @endforeach
                             </x-select>
+                            @if($errors->has('language_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('language_id') }}</span>
+                            @endif
                         </div>
                         <div class="flex-1">
                             <x-label for="game_category">Game Category</x-label>
                             <x-select wire:model="game_category" class="!w-full">
+                                <option value="" class="hidden">--Select game category--</option>
                                 <option value="live_pachinko">Live Pachinko</option>
                                 <option value="live_casino">Live Casino</option>
                                 <option value="live_cockfighting">Live Cockfighting</option>
                             </x-select>
+                            @if($errors->has('game_category'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('game_category') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -45,16 +53,24 @@
                         <div class="flex-1">
                             <x-label for="game_type">Game Type</x-label>
                             <x-select wire:model="game_type" class="!w-full">
+                                <option value="" class="hidden">--Select game type--</option>
                                 <option value="hot_game">Hot Game</option>
                                 <option value="new_game">New Game</option>
-                                <option value="Coming Soon Game">Coming Soon Game</option>
+                                <option value="coming_soon_game">Coming Soon Game</option>
                             </x-select>
+                            @if($errors->has('game_type'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('game_type') }}</span>
+                            @endif
                         </div>
                         <div class="flex-1">
                             <x-label for="asia">Region</x-label>
                             <x-select wire:model="region" class="!w-full">
+                                <option value="" class="hidden">--Select region--</option>
                                 <option value="asia">Asia</option>
                             </x-select>
+                            @if($errors->has('region'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('region') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -90,8 +106,12 @@
                         <div class="flex-1">
                             <x-label for="theme">Theme</x-label>
                             <x-select wire:model="theme" class="!w-full">
+                                <option value="" class="hidden">--Select theme--</option>
                                 <option value="asia">Asia</option>
                             </x-select>
+                            @if($errors->has('theme'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('theme') }}</span>
+                            @endif
                         </div>
                         <div class="flex-1">
                             <x-label for="featured">Featured</x-label>
@@ -129,9 +149,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div>
                     <x-button type="submit" wire:target="store">Create</x-button>
                 </div>
