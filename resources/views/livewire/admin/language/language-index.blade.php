@@ -1,7 +1,7 @@
 <div>
     <div class="flex justify-between items-center">
         <x-title>Language</x-title>
-        <x-button>Create</x-button>
+        <x-button class="!bg-amber-600" disabled>Create</x-button>
     </div>
     <div class="mt-10">
         <div class="relative overflow-x-auto">

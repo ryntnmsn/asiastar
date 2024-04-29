@@ -26,6 +26,8 @@ class Login extends Component
                 return redirect()->route('dashboard.index');
             }
         }
+
+        return redirect()->back()->with('errorMsg','Invalid credentials');
     }
 
     public function render()

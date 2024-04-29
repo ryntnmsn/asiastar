@@ -22,7 +22,8 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->foreignId('provider_id')
                 ->constrained('providers')
-                ->cascadeOnDelete();
+                ->cascadeOnDelete()
+                ->nullable();
             $table->boolean('status')->default(false);
             $table->string('game_category');
             $table->string('game_type');
