@@ -15,7 +15,6 @@ class HomeIndex extends Component
             $query->where('code', $lang);
         });
 
-
         return view('livewire.home.home-index', [
             'games' => $games->paginate(20)
         ])->extends('layouts.home.app')->section('contents');
