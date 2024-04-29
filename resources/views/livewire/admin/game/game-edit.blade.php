@@ -148,33 +148,110 @@
                     </div>
                 </div>
 
+
+
+
+
+
+
+
                 <div>
                     <div class="flex gap-5">
+                        {{-- Image Square --}}
                         <div class="flex-1">
-                            <label class="block mb-2 font-medium text-slate-700">Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x950 pixels)</span></label>
-                            <input wire:model="new_image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
-                            <input wire:model="old_image" type="text" class="hidden">
+                            <label class="block mb-2 font-medium text-slate-700">Image Square <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x560 pixels)</span></label>
+                            <input wire:model="new_image_square" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
+                            <input wire:model="old_image_square" type="text" class="hidden">
 
-                            @if($new_image == null)
+                            @if($new_image_square == null)
                                 <div class="mt-5">
                                     <label for="" class="text-sm">Image Preview</label>
-                                    <img src="{{ url('storage/'. $old_image) }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                    <img src="{{ url('storage/'. $old_image_square) }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
                                 </div>
                             @else
                                 <div class="mt-5">
                                     <label for="" class="text-sm">Image Preview</label>
-                                    <img src="{{ $new_image->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                    <img src="{{ $new_image_square->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
                                 </div>
                             @endif
 
-                            @if($errors->has('new_image'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('new_image') }}</span>
+                            @if($errors->has('new_image_square'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('new_image_square') }}</span>
                             @endif
                         </div>
+
+                        {{-- Image horizontal --}}
                         <div class="flex-1">
+                            <div class="flex-1">
+                                <label class="block mb-2 font-medium text-slate-700">Image Horizontal <span class="text-slate-500 text-xs font-normal">(Dimensions: 950x560 pixels)</span></label>
+                                <input wire:model="new_image_horizontal" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
+                                <input wire:model="old_image_horizontal" type="text" class="hidden">
+
+                                @if($new_image_horizontal == null)
+                                    <div class="mt-5">
+                                        <label for="" class="text-sm">Image Preview</label>
+                                        <img src="{{ url('storage/'. $old_image_horizontal) }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                    </div>
+                                @else
+                                    <div class="mt-5">
+                                        <label for="" class="text-sm">Image Preview</label>
+                                        <img src="{{ $new_image_horizontal->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                    </div>
+                                @endif
+
+                                @if($errors->has('new_image_horizontal'))
+                                    <span class="text-sm text-rose-500">{{ $errors->first('new_image_horizontal') }}</span>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div>
+                    <div class="flex gap-5">
+                        {{-- Image Vertical --}}
+                        <div class="flex-1">
+                            <label class="block mb-2 font-medium text-slate-700">Image Vertical <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x950 pixels)</span></label>
+                            <input wire:model="new_image_vertical" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
+                            <input wire:model="old_image_vertical" type="text" class="hidden">
+
+                            @if($new_image_vertical == null)
+                                <div class="mt-5">
+                                    <label for="" class="text-sm">Image Preview</label>
+                                    <img src="{{ url('storage/'. $old_image_vertical) }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                </div>
+                            @else
+                                <div class="mt-5">
+                                    <label for="" class="text-sm">Image Preview</label>
+                                    <img src="{{ $new_image_vertical->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                </div>
+                            @endif
+
+                            @if($errors->has('new_image_vertical'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('new_image_vertical') }}</span>
+                            @endif
+                        </div>
+
+
+                        <div class="flex-1">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div>
                     <x-button type="submit" wire:target="update">Create</x-button>
                 </div>

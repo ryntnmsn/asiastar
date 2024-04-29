@@ -33,6 +33,9 @@
                         <a href="{{ route('game.index') }}" class="{{ request()->is('admin/game') || request()->is('admin/game/edit*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Games</a>
                     </li>
                     <li>
+                        <a href="{{ route('game.banner.index') }}" class="{{ request()->is('admin/game/banner*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Game Banners</a>
+                    </li>
+                    <li>
                         <a href="{{ route('game.provider.index') }}" class="{{ request()->is('admin/game/provider*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Providers</a>
                     </li>
                     <li>

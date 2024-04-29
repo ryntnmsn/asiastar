@@ -25,7 +25,9 @@ class Game extends Model
         'maximum_win',
         'region',
         'theme',
-        'image'
+        'image_square',
+        'image_horizontal',
+        'image_vertical',
     ];
 
 

@@ -1,5 +1,5 @@
-<div class="w-full absolute top-0 roboto-slab z-10">
-    <div class="flex justify-between px-8 bg-black/[.10] text-slate-50">
+<div class="w-full roboto-slab">
+    <div class="flex justify-between px-8 shadow-xl bg-white/[.20] text-slate-700">
         <div class="py-8">
             <span class="ext-[18px] font-semibold">
                 LOGO HERE

@@ -29,8 +29,12 @@ class GameEdit extends Component
     public $maximum_win;
     public $region = '';
     public $theme = '';
-    public $old_image;
-    public $new_image;
+    public $old_image_square;
+    public $old_image_horizontal;
+    public $old_image_vertical;
+    public $new_image_square;
+    public $new_image_horizontal;
+    public $new_image_vertical;
 
     public function mount($id) {
         $game = Game::where('id', $id)->first();
@@ -49,44 +53,66 @@ class GameEdit extends Component
         $this->maximum_win = $game->maximum_win;
         $this->region = $game->region;
         $this->theme = $game->theme;
-        $this->old_image = $game->image;
+        $this->old_image_square = $game->image_square;
+        $this->old_image_horizontal = $game->image_horizontal;
+        $this->old_image_vertical = $game->image_vertical;
     }
 
     public function update() {
-        
-        if(isset($this->new_image)) {
+
+        $validate_array = [
+            'title' => 'required|max:255',
+            'language_id' => 'required',
+            'provider_id' => 'required',
+            'game_type' => 'required',
+            'theme' => 'required',
+            'region' => 'required',
+            'game_category' => 'required',
+        ];
+
+        if(isset($this->new_image_square)) {
             $validate_array = [
-                'title' => 'required|max:255',
-                'language_id' => 'required',
-                'provider_id' => 'required',
-                'game_type' => 'required',
-                'theme' => 'required',
-                'region' => 'required',
-                'game_category' => 'required',
-                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=950,max_width=560,max_height=950'
-            ];
-        }else {
-            $validate_array = [
-                'title' => 'required|max:255',
-                'language_id' => 'required',
-                'provider_id' => 'required',
-                'game_type' => 'required',
-                'theme' => 'required',
-                'region' => 'required',
-                'game_category' => 'required',
+                'new_image_square' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=560,max_width=560,max_height=560'
             ];
         }
-        
+
+        if(isset($this->new_image_horizontal)) {
+            $validate_array = [
+                'new_image_horizontal' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=950,min_height=560,max_width=950,max_height=560'
+            ];
+        }
+
+        if(isset($this->new_image_vertical)) {
+            $validate_array = [
+                'new_image_vertical' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=950,max_width=560,max_height=950'
+            ];
+        }
+
 
         $this->validate($validate_array);
 
         $game = Game::where('id', $this->id)->first();
 
-        $image = '';
-        if($this->new_image != null) {
-            $image = $this->new_image->store('games', 'public');
+        $image_square = '';
+        $image_horizontal = '';
+        $image_vertical = '';
+
+        if($this->new_image_square != null) {
+            $image_square = $this->new_image_square->store('games', 'public');
         } else {
-            $image = $this->old_image;
+            $image_square = $this->old_image_square;
+        }
+
+        if($this->new_image_horizontal != null) {
+            $image_horizontal = $this->new_image_horizontal->store('games', 'public');
+        } else {
+            $image_horizontal = $this->old_image_horizontal;
+        }
+
+        if($this->new_image_vertical != null) {
+            $image_vertical = $this->new_image_vertical->store('games', 'public');
+        } else {
+            $image_vertical = $this->old_image_vertical;
         }
 
         $game->update([
@@ -105,7 +131,9 @@ class GameEdit extends Component
             'maximum_win' => $this->maximum_win,
             'region' => $this->region,
             'theme' => $this->theme,
-            'image' => $image
+            'image_square' => $image_square,
+            'image_horizontal' => $image_horizontal,
+            'image_vertical' => $image_vertical,
         ]);
 
         $this->dispatch('updated');

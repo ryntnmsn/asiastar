@@ -83,7 +83,15 @@
                         </div>
                         <div class="flex-1">
                             <x-label for="volatility">Volatility</x-label>
-                            <x-input wire:model="volatility" type="text" class="!w-full"></x-input>
+                            <x-select wire:model="volatility" class="!w-full">
+                                <option value="" class="hidden">--Select volatility--</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </x-select>
+                            @if($errors->has('volatility'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('volatility') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -148,23 +156,67 @@
                     </div>
                 </div>
                 <div>
-                    <div class="flex">
+                    <div class="flex gap-5">
+                        {{-- Image Square --}}
                         <div class="flex-1">
-                            <label class="block mb-2 font-medium text-slate-700">Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x950 pixels)</span></label>
-                            <input wire:model="image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
+                            <label class="block mb-2 font-medium text-slate-700">Image Square <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x560 pixels)</span></label>
+                            <input wire:model="image_square" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
 
-                            @if($image)
+                            @if($image_square)
                                 <div class="mt-4">
                                     <label for="" class="text-sm">Image Preview</label>
-                                    <img src="{{ $image->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                    <img src="{{ $image_square->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
                                 </div>
                             @endif
 
-                            @if($errors->has('image'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('image') }}</span>
+                            @if($errors->has('image_square'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('image_square') }}</span>
                             @endif
                         </div>
-                        <div class="flex-1"></div>
+
+                        {{-- Image horizontal --}}
+                        <div class="flex-1">
+                            <div class="flex-1">
+                                <label class="block mb-2 font-medium text-slate-700">Image Horizontal <span class="text-slate-500 text-xs font-normal">(Dimensions: 950x560 pixels)</span></label>
+                                <input wire:model="image_horizontal" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
+
+                                @if($image_horizontal)
+                                    <div class="mt-4">
+                                        <label for="" class="text-sm">Image Preview</label>
+                                        <img src="{{ $image_horizontal->temporaryUrl() }}" alt="" class="w-96 border border-slate-200 rounded-lg p-1">
+                                    </div>
+                                @endif
+
+                                @if($errors->has('image_horizontal'))
+                                    <span class="text-sm text-rose-500">{{ $errors->first('image_horizontal') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex gap-5">
+                        {{-- Image Vertical --}}
+                        <div class="flex-1">
+                            <label class="block mb-2 font-medium text-slate-700">Image Vertical <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x950 pixels)</span></label>
+                            <input wire:model="image_vertical" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
+
+                            @if($image_vertical)
+                                <div class="mt-4">
+                                    <label for="" class="text-sm">Image Preview</label>
+                                    <img src="{{ $image_vertical->temporaryUrl() }}" alt="" class="w-60 border border-slate-200 rounded-lg p-1">
+                                </div>
+                            @endif
+
+                            @if($errors->has('image_vertical'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('image_vertical') }}</span>
+                            @endif
+                        </div>
+
+
+                        <div class="flex-1">
+
+                        </div>
                     </div>
                 </div>
                 <div>

@@ -24,22 +24,27 @@ class GameCreate extends Component
     public $game_type = '';
     public $is_featured;
     public $released_date;
-    public $volatility;
+    public $volatility = '';
     public $rtp;
     public $maximum_win;
     public $region = '';
     public $theme = '';
-    public $image;
+    public $image_square;
+    public $image_horizontal;
+    public $image_vertical;
 
     protected $rules = [
         'title' => 'required|max:255',
         'language_id' => 'required',
         'provider_id' => 'required',
+        'volatility' => 'required',
         'game_type' => 'required',
         'theme' => 'required',
         'region' => 'required',
         'game_category' => 'required',
-        'image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=950,max_width=560,max_height=950',
+        'image_square' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=560',
+        'image_vertical' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=950',
+        'image_horizontal' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=950,min_height=560,max_width=950,max_height=560',
     ];
 
     public function store() {
@@ -60,7 +65,9 @@ class GameCreate extends Component
             'maximum_win' => $this->maximum_win,
             'region' => $this->region,
             'theme' => $this->theme,
-            'image' => $this->image->store('games', 'public'),
+            'image_square' => $this->image_square->store('games', 'public'),
+            'image_vertical' => $this->image_vertical->store('games', 'public'),
+            'image_horizontal' => $this->image_horizontal->store('games', 'public'),
         ]);
 
         $this->dispatch('created');

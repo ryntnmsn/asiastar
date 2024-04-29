@@ -44,7 +44,7 @@
                                 <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
                                     <div class="flex items-center gap-4">
                                         <div>
-                                            <img src="{{ url('storage/', $provider->image) }}" class="w-12 border-slate-200 border rounded-md px-1">
+                                            <img src="{{ url('storage/'. $provider->image) }}" class="w-12 border-slate-200 border rounded p-1">
                                         </div>
                                         <div>
                                             {{ $provider->title }}

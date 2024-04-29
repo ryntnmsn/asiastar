@@ -14,6 +14,9 @@ use App\Livewire\Admin\Dashboard\DashboardIndex;
 use App\Livewire\Admin\Game\GameCreate;
 use App\Livewire\Admin\Game\GameEdit;
 use App\Livewire\Admin\Game\GameIndex;
+use App\Livewire\Admin\GameBanner\GameBannerCreate;
+use App\Livewire\Admin\GameBanner\GameBannerEdit;
+use App\Livewire\Admin\GameBanner\GameBannerIndex;
 use App\Livewire\Admin\Language\LanguageCreate;
 use App\Livewire\Admin\Language\LanguageEdit;
 use App\Livewire\Admin\Language\LanguageIndex;
@@ -24,6 +27,7 @@ use App\Livewire\Admin\Provider\ProviderCreate;
 use App\Livewire\Admin\Provider\ProviderEdit;
 use App\Livewire\Admin\Provider\ProviderIndex;
 use App\Livewire\Auth\Login;
+use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\HomeIndex;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +38,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/locale/{lang}',[LocaleController::class,'setLocale']);
 
 Route::get('/', HomeIndex::class)->name('home.index');
-
+Route::get('/games', GameHomeIndex::class)->name('game.home.index');
 
 Route::middleware('redirectIfAuthenticated')->group(function () {
     Route::get('/admin', Login::class)->name('login');
@@ -71,6 +75,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/game', GameIndex::class)->name('game.index');
         Route::get('/game/create', GameCreate::class)->name('game.create');
         Route::get('/game/edit/{id}', GameEdit::class)->name('game.edit');
+
+        //Game Banners
+        Route::get('/game/banner', GameBannerIndex::class)->name('game.banner.index');
+        Route::get('/game/banner/create', GameBannerCreate::class)->name('game.banner.create');
+        Route::get('/game/banner/edit/{id}', GameBannerEdit::class)->name('game.banner.edit');
 
         //Providers
         Route::get('/game/provider', ProviderIndex::class)->name('game.provider.index');

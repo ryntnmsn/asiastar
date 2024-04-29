@@ -38,7 +38,9 @@ return new class extends Migration
                 ->nullable();
             $table->string('region');
             $table->string('theme');
-            $table->string('image');
+            $table->string('image_square');
+            $table->string('image_vertical');
+            $table->string('image_horizontal');
             $table->timestamps();
         });
     }
