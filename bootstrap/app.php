@@ -17,6 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
            'isAdmin' => IsAdmin::class,
            'redirectIfAuthenticated' => RedirectIfAuthenticated::class
         ]);
+
+        $middleware->web(append:[
+            App\Http\Middleware\LocalizationMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

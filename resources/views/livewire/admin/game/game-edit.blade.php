@@ -151,7 +151,7 @@
                 <div>
                     <div class="flex gap-5">
                         <div class="flex-1">
-                            <label class="block mb-2 font-medium text-slate-700">Image</label>
+                            <label class="block mb-2 font-medium text-slate-700">Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x950 pixels)</span></label>
                             <input wire:model="new_image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
                             <input wire:model="old_image" type="text" class="hidden">
 
@@ -167,8 +167,8 @@
                                 </div>
                             @endif
 
-                            @if($errors->has('image'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('image') }}</span>
+                            @if($errors->has('new_image'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('new_image') }}</span>
                             @endif
                         </div>
                         <div class="flex-1">

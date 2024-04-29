@@ -39,7 +39,7 @@ class GameCreate extends Component
         'theme' => 'required',
         'region' => 'required',
         'game_category' => 'required',
-        'image' => 'required|image|mimes:jpg,jpeg,png',
+        'image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=950,max_width=560,max_height=950',
     ];
 
     public function store() {

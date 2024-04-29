@@ -29,7 +29,8 @@ class ArticleCreate extends Component
         'description' => 'required',
         'language_id' => 'required',
         'article_category_id' => 'required',
-        'image' => 'required|image|mimes:jpg,jpeg,png',
+        'image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=560,max_width=1080,max_height=560'
+
     ];
 
     public function store() {

@@ -28,9 +28,18 @@ class PartnerEdit extends Component
 
     public function update() {
 
-        $this->validate([
-            'title' => 'required|max:255',
-        ]);
+        if(isset($this->new_image)){
+            $validate_array = [
+                'title' => 'required|max:255',
+                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=350,min_height=350,max_width=350,max_height=350'
+            ];
+        } else {
+            $validate_array = [
+                'title' => 'required|max:255',
+            ];
+        }
+
+        $this->validate($validate_array);
 
         $partner = Partner::where('id', $this->id)->first();
 

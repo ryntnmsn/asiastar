@@ -19,7 +19,7 @@ class PartnerCreate extends Component
     public function store() {
         $this->validate([
             'title' => 'required|max:255|unique:providers',
-            'image' => 'required|image|mimes:png,jpg,jpeg'
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=350,min_height=350,max_width=350,max_height=350'
         ]);
 
         Partner::create([

@@ -30,5 +30,6 @@
     </div>
 
     @include('layouts.admin.footer')
+    {{-- @livewireScripts() --}}
 </body>
 </html>

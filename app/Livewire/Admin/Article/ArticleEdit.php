@@ -22,15 +22,6 @@ class ArticleEdit extends Component
     public $new_image;
     public $old_image;
 
-    protected $rules = [
-        'name' => 'required',
-        'short_description' => 'required',
-        'description' => 'required',
-        'language_id' => 'required',
-        'article_category_id' => 'required',
-        // 'new_image' => 'image|mimes:jpg,jpeg,png',
-    ];
-
     public function mount($id) {
         $article = Article::where('id', $id)->first();
         $this->id = $article->id;
@@ -44,7 +35,27 @@ class ArticleEdit extends Component
     }
 
     public function update() {
-        $this->validate();
+
+        if(isset($this->new_image)) {
+            $validate_array = [
+                'name' => 'required',
+                'short_description' => 'required',
+                'description' => 'required',
+                'language_id' => 'required',
+                'article_category_id' => 'required',
+                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=560,max_width=1080,max_height=560'
+            ];
+        } else {
+            $validate_array = [
+                'name' => 'required',
+                'short_description' => 'required',
+                'description' => 'required',
+                'language_id' => 'required',
+                'article_category_id' => 'required',
+            ];
+        }
+
+        $this->validate($validate_array);
         $article = Article::where('id', $this->id)->first();
 
         $image = '';

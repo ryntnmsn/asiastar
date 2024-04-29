@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocaleController;
 use App\Livewire\Admin\Article\ArticleCategoryCreate;
 use App\Livewire\Admin\Article\ArticleCategoryEdit;
 use App\Livewire\Admin\Article\ArticleCategoryIndex;
@@ -23,11 +24,16 @@ use App\Livewire\Admin\Provider\ProviderCreate;
 use App\Livewire\Admin\Provider\ProviderEdit;
 use App\Livewire\Admin\Provider\ProviderIndex;
 use App\Livewire\Auth\Login;
+use App\Livewire\Home\HomeIndex;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/locale/{lang}',[LocaleController::class,'setLocale']);
+
+Route::get('/', HomeIndex::class)->name('home.index');
 
 
 Route::middleware('redirectIfAuthenticated')->group(function () {

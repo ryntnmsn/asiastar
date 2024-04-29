@@ -53,6 +53,33 @@ class GameEdit extends Component
     }
 
     public function update() {
+        
+        if(isset($this->new_image)) {
+            $validate_array = [
+                'title' => 'required|max:255',
+                'language_id' => 'required',
+                'provider_id' => 'required',
+                'game_type' => 'required',
+                'theme' => 'required',
+                'region' => 'required',
+                'game_category' => 'required',
+                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=950,max_width=560,max_height=950'
+            ];
+        }else {
+            $validate_array = [
+                'title' => 'required|max:255',
+                'language_id' => 'required',
+                'provider_id' => 'required',
+                'game_type' => 'required',
+                'theme' => 'required',
+                'region' => 'required',
+                'game_category' => 'required',
+            ];
+        }
+        
+
+        $this->validate($validate_array);
+
         $game = Game::where('id', $this->id)->first();
 
         $image = '';

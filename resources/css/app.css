@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 html, body {
-    font-size:15px
+    font-size:15px;
+    height: 100%;
+    width: 100%;
 }
+
+.roboto-slab {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+

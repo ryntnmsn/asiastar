@@ -45,7 +45,14 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
-                                    {{ $partner->title }}
+                                    <div class="flex items-center gap-4">
+                                        <div>
+                                            <img src="{{ url('storage/', $partner->image) }}" class="w-12 border-slate-200 border rounded-md px-1">
+                                        </div>
+                                        <div>
+                                            {{ $partner->title }}
+                                        </div>
+                                    </div>
                                 </th>
                                 <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
                                     @if($partner->status == 1)
