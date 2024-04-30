@@ -1,20 +1,43 @@
-<div>
+<div class="h-full">
     @if(count($gameBanners) != null)
-        <div wire:ignore id="default-carousel" class="relative w-full" data-carousel="slide">
-            <!-- Carousel wrapper -->
-            <div class="relative h-[480px] overflow-hidden">
+        <!-- Game Banners -->
+        <div class="swiper gameBanner">
+            <div class="swiper-wrapper">
                 @foreach ($gameBanners as $gameBanner)
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ url('storage/'. $gameBanner->image) }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-                    </div>
-                @endforeach
+                <div class="swiper-slide">
+                    <div class="h-[380px] md:h-[480px] w-full bg-cover bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
+                </div>
+            @endforeach
             </div>
-            <!-- Slider indicators -->
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                @foreach ($gameBanners as $gameBanner)
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="{{$gameBanner->id}}"></button>
-                @endforeach
+            <div class="swiper-pagination"></div>
+            <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
             </div>
         </div>
     @endif
+
+    <div class="flex flex-row max-w-[1280px] w-full h-full mx-auto mt-20">
+        <div class="w-[15%] h-full border-r border-slate-200">
+            @include('layouts.home.game-home-nav-desktop')
+        </div>
+        <div class="w-[85%] pl-10">
+            <x-heading>Featured</x-heading>
+            <div>
+                <div class="swiper gameBanner">
+                    <div class="swiper-wrapper">
+                        @foreach ($isFeatured as $isFeatured)
+                        <div class="swiper-slide">
+                            <img src="{{ url('storage/'. $isFeatured->image_horizontal) }}" alt="">
+                        </div>
+                    @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
