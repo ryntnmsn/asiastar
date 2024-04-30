@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
@@ -104,6 +103,24 @@
       prevEl: ".rtpGames-prev"
     },
   });
+</script>
+
+<script>
+  const blurDivs = document.querySelectorAll('.blur-load')
+  blurDivs.foreach(div => {
+    const img = div.querySelector("img")
+
+    function loaded() {
+      div.classList.add('loaded')
+    }
+
+    if(img.complete) {
+      loaded()
+    } else {
+      img.addEventListener("load", loaded);
+    }
+
+  })
 </script>
 
 </body>

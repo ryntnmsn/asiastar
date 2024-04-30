@@ -15,9 +15,22 @@ html, body {
   font-style: normal;
 }
 
-.lato {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
+.noto-sans {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.blur-load {
+  aspect-ratio: 1/1;
+  background-position: center;
+  background-size: cover;
+}
+
+.blur-load.loaded > img {
+  display: 1;
+}
+
+.blur-load > img {
+  display: 0;
 }
 
 .details {

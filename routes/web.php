@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/locale/{lang}',[LocaleController::class,'setLocale']);
 
 Route::get('/', HomeIndex::class)->name('home.index');
-Route::get('/games', GameHomeIndex::class)->name('game.home.index');
+Route::get('/games', GameHomeIndex::class)->lazy()->name('game.home.index');
 
 Route::middleware('redirectIfAuthenticated')->group(function () {
     Route::get('/admin', Login::class)->name('login');

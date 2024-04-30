@@ -44,11 +44,13 @@
                             @foreach ($isFeatured as $isFeatured)
                                 <div class="swiper-slide hover:-translate-y-2 ease-in-out duration-300">
                                     <div class="flex flex-col">
-                                        <img src="{{ url('storage/'. $isFeatured->image_horizontal) }}" alt="" class="rounded-xl swiper-img">
+                                        <div>
+                                            <img src="{{ url('storage/'. $isFeatured->image_horizontal) }}" alt="{{ $isFeatured->title }}" class="rounded-xl swiper-img" loading="lazy">
+                                        </div>
                                         <div class="flex mt-4 gap-4">
-                                            <div>
+                                            <div class="blur-load">
                                                 <div class="overflow-hidden rounded-md p-1 border border-slate-200">
-                                                    <img src="{{ url('storage/'. $isFeatured->image_square) }}" alt="" class="!w-[120px] rounded-md">
+                                                    <img src="{{ url('storage/'. $isFeatured->image_square) }}" alt="{{ $isFeatured->title }}" class="!w-[120px] rounded-md" loading="lazy">
                                                 </div>
                                             </div>
                                             <div class="text-left">
@@ -87,12 +89,12 @@
                             @foreach ($hotGames as $hotGame)
                                 <div class="swiper-slide hover:-translate-y-2 ease-in-out duration-300 hover:shadow-xl">
                                     <div class="flex flex-col">
-                                        <div class="relative  rounded-xl overflow-hidden bg-amber-100">
-                                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-500">
-                                                <x-heading class="!text-base !text-white mt-2">{{ $hotGame->title }}</x-heading>
-                                            </div>
-                                            <div class="border border-amber-100 p-1 rounded-xl overflow-hidden ">
-                                                <img src="{{ url('storage/'. $hotGame->image_vertical) }}" alt="" class="swiper-img rounded-xl">
+                                        <div class="relative rounded-xl overflow-hidden border border-slate-200 p-1 ">
+                                            <div class="rounded-xl overflow-hidden relative">
+                                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-600">
+                                                    <x-heading class="!text-base !text-white mt-2">{{ $hotGame->title }}</x-heading>
+                                                </div>
+                                                <img src="{{ url('storage/'. $hotGame->image_vertical) }}" alt="{{ $hotGame->title }}" class="swiper-img rounded-xl" loading="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -123,12 +125,12 @@
                             @foreach ($newGames as $newGame)
                                 <div class="swiper-slide hover:-translate-y-2 ease-in-out duration-300 hover:shadow-xl">
                                     <div class="flex flex-col">
-                                        <div class="relative rounded-xl overflow-hidden bg-amber-100">
-                                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-500">
-                                                <x-heading class="!text-base !text-white mt-2">{{ $newGame->title }}</x-heading>
-                                            </div>
-                                            <div class="border border-amber-100 p-1 rounded-xl overflow-hidden ">
-                                                <img src="{{ url('storage/'. $newGame->image_square) }}" alt="" class="swiper-img rounded-xl">
+                                        <div class="relative rounded-xl overflow-hidden border border-slate-200 p-1 ">
+                                            <div class="rounded-xl overflow-hidden relative">
+                                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-600">
+                                                    <x-heading class="!text-base !text-white mt-2">{{ $hotGame->title }}</x-heading>
+                                                </div>
+                                                <img src="{{ url('storage/'. $newGame->image_square) }}" alt="{{ $hotGame->title }}" class="swiper-img rounded-xl" loading="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -159,11 +161,11 @@
                             @foreach ($rtpGames as $rtpGame)
                             <div class="swiper-slide hover:-translate-y-2 ease-in-out duration-300">
                                 <div class="flex flex-col">
-                                    <img src="{{ url('storage/'. $rtpGame->image_horizontal) }}" alt="" class="rounded-xl swiper-img">
+                                    <img src="{{ url('storage/'. $rtpGame->image_horizontal) }}" alt="{{ $rtpGame->title }}" class="rounded-xl swiper-img" loading="lazy">
                                     <div class="flex mt-4 gap-4">
                                         <div>
                                             <div class="overflow-hidden rounded-md p-1 border border-slate-200">
-                                                <img src="{{ url('storage/'. $rtpGame->image_square) }}" alt="" class="!w-[120px] rounded-md">
+                                                <img src="{{ url('storage/'. $rtpGame->image_square) }}" alt="{{ $rtpGame->title }}" class="!w-[120px] rounded-md" loading="lazy">
                                             </div>
                                         </div>
                                         <div class="text-left">

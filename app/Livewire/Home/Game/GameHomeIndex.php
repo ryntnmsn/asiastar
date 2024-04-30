@@ -8,9 +8,9 @@ use Livewire\Component;
 
 class GameHomeIndex extends Component
 {
+
     public function render()
     {
-
         $gameBanners = GameBanner::where('status', 1);
         $games = Game::with('provider')->where('status', 1);
 
