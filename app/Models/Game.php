@@ -35,4 +35,8 @@ class Game extends Model
         return $this->belongsTo(Language::class);
     }
 
+    public function provider() {
+        return $this->belongsTo(Provider::class);
+    }
+
 }

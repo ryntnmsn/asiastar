@@ -1,5 +1,5 @@
 <div class="w-full">
-    <ul class="flex flex-col gap-5">
+    <ul class="flex flex-col gap-5 text-lg">
         <li>
             <a href="#" class="text-slate-400 font-light flex gap-2 items-center duration-300 ease-in-out hover:pl-1.5">
                 <span>

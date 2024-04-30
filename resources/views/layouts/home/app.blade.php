@@ -58,7 +58,7 @@
   var swiper = new Swiper(".featuredGames", {
     slidesPerView: 2,
     spaceBetween: 30,
-    loopedSlides: true,
+    loop: true,
     navigation: {
       nextEl: ".featuredGames-next",
       prevEl: ".featuredGames-prev"
@@ -70,7 +70,7 @@
   var swiper = new Swiper(".hotGames", {
     slidesPerView: 4,
     spaceBetween: 30,
-    loopedSlides: true,
+    loop: true,
     navigation: {
       nextEl: ".hotGames-next",
       prevEl: ".hotGames-prev"
@@ -82,10 +82,26 @@
   var swiper = new Swiper(".newGames", {
     slidesPerView: 3,
     spaceBetween: 30,
-    loopedSlides: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+    },
+    loop: true,
     navigation: {
       nextEl: ".newGames-next",
       prevEl: ".newGames-prev"
+    },
+  });
+</script>
+
+<script>
+  var swiper = new Swiper(".rtpGames", {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: ".rtpGames-next",
+      prevEl: ".rtpGames-prev"
     },
   });
 </script>
