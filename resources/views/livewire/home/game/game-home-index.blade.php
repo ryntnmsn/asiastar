@@ -20,19 +20,111 @@
     @endif
 
     <div class="flex flex-row max-w-[1280px] w-full h-full mx-auto mt-20">
-        <div class="w-[15%] h-full border-r border-slate-200">
+        <div class="w-[15%] h-full">
             @include('layouts.home.game-home-nav-desktop')
         </div>
-        <div class="w-[85%] pl-10">
-            <x-heading>Featured</x-heading>
+        <div class="w-[85%] pl-10  border-l border-slate-200 flex flex-col gap-20">
+            {{-- Featured Games --}}
             <div>
-                <div class="swiper gameBanner">
-                    <div class="swiper-wrapper">
-                        @foreach ($isFeatured as $isFeatured)
-                        <div class="swiper-slide">
-                            <img src="{{ url('storage/'. $isFeatured->image_horizontal) }}" alt="">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <x-heading>Featured</x-heading>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <div class="featuredGames-prev"><x-arrow-next></x-arrow-next></div>
+                            <div class="featuredGames-next"><x-arrow-prev></x-arrow-prev></div>
                         </div>
-                    @endforeach
+                    </div>
+                </div>
+                <div>
+                    <div class="swiper featuredGames">
+                        <div class="swiper-wrapper">
+                            @foreach ($isFeatured as $isFeatured)
+                                <div class="swiper-slide">
+                                    <div class="flex flex-col">
+                                        <img src="{{ url('storage/'. $isFeatured->image_horizontal) }}" alt="" class="rounded-xl swiper-img">
+                                        <div class="flex mt-4 gap-4">
+                                            <div>
+                                                <div class="overflow-hidden rounded-md p-1 border border-slate-200">
+                                                    <img src="{{ url('storage/'. $isFeatured->image_square) }}" alt="" class="!w-[120px] rounded-md">
+                                                </div>
+                                            </div>
+                                            <div class="text-left">
+                                                <x-heading class="!text-xl !mb-1">{{ $isFeatured->title }}</x-heading>
+                                                @if($isFeatured->description != null)
+                                                    <x-sub-heading class="!mb-3 !text-sm">{{ strip_tags(Str::words($isFeatured->description, 15, '...')) }}</x-sub-heading>
+                                                @endif
+                                                <x-primary-button class="!text-sm">Read more</x-primary-button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Hot Games --}}
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <x-heading>Hot Games</x-heading>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <div class="hotGames-prev"><x-arrow-next></x-arrow-next></div>
+                            <div class="hotGames-next"><x-arrow-prev></x-arrow-prev></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="swiper hotGames">
+                        <div class="swiper-wrapper">
+                            @foreach ($hotGames as $hotGame)
+                                <div class="swiper-slide">
+                                    <div class="flex flex-col">
+                                        <div class="relative rounded-xl overflow-hidden ">
+                                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-600">
+                                                <x-heading class="!text-base !text-white mt-2">{{ $hotGame->title }}</x-heading>
+                                            </div>
+                                            <img src="{{ url('storage/'. $hotGame->image_vertical) }}" alt="" class="swiper-img">
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+             {{-- New Games --}}
+             <div>
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <x-heading>New Games</x-heading>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <div class="newGames-prev"><x-arrow-next></x-arrow-next></div>
+                            <div class="newGames-next"><x-arrow-prev></x-arrow-prev></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="swiper newGames">
+                        <div class="swiper-wrapper">
+                            @foreach ($newGames as $newGame)
+                                <div class="swiper-slide">
+                                    <div class="flex flex-col">
+                                        <img src="{{ url('storage/'. $newGame->image_square) }}" alt="" class="rounded-xl swiper-img">
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

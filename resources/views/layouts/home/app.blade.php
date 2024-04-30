@@ -54,5 +54,41 @@
     });
   </script>
 
+<script>
+  var swiper = new Swiper(".featuredGames", {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loopedSlides: true,
+    navigation: {
+      nextEl: ".featuredGames-next",
+      prevEl: ".featuredGames-prev"
+    },
+  });
+</script>
+
+<script>
+  var swiper = new Swiper(".hotGames", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loopedSlides: true,
+    navigation: {
+      nextEl: ".hotGames-next",
+      prevEl: ".hotGames-prev"
+    },
+  });
+</script>
+
+<script>
+  var swiper = new Swiper(".newGames", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loopedSlides: true,
+    navigation: {
+      nextEl: ".newGames-next",
+      prevEl: ".newGames-prev"
+    },
+  });
+</script>
+
 </body>
 </html>
