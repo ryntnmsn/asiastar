@@ -1,4 +1,4 @@
-<div  class="h-full">
+<div class="h-full">
     @if(count($gameBanners) != null)
         <!-- Game Banners -->
         <div wire:ignore class="swiper gameBanner">
