@@ -3,95 +3,122 @@
 @tailwind utilities;
 
 html, body {
-  font-family: "Lato", sans-serif;
-  font-size:15px;
-  height: 100%;
-  width: 100%;
-  font-size:16px;
+    font-family: "Lato", sans-serif;
+    font-size:15px;
+    height: 100%;
+    width: 100%;
+    font-size:16px;
 }
 .montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .noto-sans {
-  font-family: "Noto Sans", sans-serif;
+    font-family: "Noto Sans", sans-serif;
 }
 
-.blur-load {
-  aspect-ratio: 1/1;
-  background-position: center;
-  background-size: cover;
+.button-view {
+    visibility: hidden;
+    position: absolute;
+    bottom:0;
+    top:0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: rgb(0, 0, 0, .50);
+    transition: opacity .2s, visibility .2s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    border-radius: 20px;
 }
 
-.blur-load.loaded > img {
-  display: 1;
+.button-details {
+    transition: opacity .2s, visibility .2s;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom:0;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 0, .50);
 }
 
-.blur-load > img {
-  display: 0;
+.button-details span {
+    background-color: #f59e0b;
+    color:#fff;
+    padding:6px 12px;
+    font-size:16px;
+    border-radius: 4px;
 }
 
-.details {
-  display:none
+
+.button-view span:hover {
+    background:#d48700;
 }
 
-.box-container:hover + .details {
-  display:block;
+.box-container:hover .button-details {
+    visibility: visible;
+    opacity: 1;
 }
 
 .swiper {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .swiper-pagination-bullet-active {
-  background:#f59e0b;
+    background:#f59e0b;
 }
 
 .swiper-slide .swiper-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .autoplay-progress {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 10;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #f59e0b;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #f59e0b;
 }
 
 .autoplay-progress svg {
-  --progress: 0;
-  position: absolute;
-  left: 0;
-  top: 0px;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  stroke-width: 4px;
-  stroke: #f59e0b;
-  fill: none;
-  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-  stroke-dasharray: 125.6;
-  transform: rotate(-90deg);
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: #f59e0b;
+    fill: none;
+    stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
 }

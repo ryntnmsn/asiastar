@@ -22,7 +22,7 @@
         @include('layouts.home.footer')
     </div>
     @livewireScripts
-    
+
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -95,7 +95,7 @@
 
 <script>
   var swiper = new Swiper(".rtpGames", {
-    slidesPerView: 2,
+    slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
     navigation: {
@@ -105,23 +105,7 @@
   });
 </script>
 
-<script>
-  const blurDivs = document.querySelectorAll('.blur-load')
-  blurDivs.foreach(div => {
-    const img = div.querySelector("img")
 
-    function loaded() {
-      div.classList.add('loaded')
-    }
-
-    if(img.complete) {
-      loaded()
-    } else {
-      img.addEventListener("load", loaded);
-    }
-
-  })
-</script>
 
 </body>
 </html>

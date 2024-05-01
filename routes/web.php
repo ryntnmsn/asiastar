@@ -27,6 +27,7 @@ use App\Livewire\Admin\Provider\ProviderCreate;
 use App\Livewire\Admin\Provider\ProviderEdit;
 use App\Livewire\Admin\Provider\ProviderIndex;
 use App\Livewire\Auth\Login;
+use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\HomeIndex;
 use Illuminate\Support\Facades\Route;
@@ -38,7 +39,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/locale/{lang}',[LocaleController::class,'setLocale']);
 
 Route::get('/', HomeIndex::class)->name('home.index');
-Route::get('/games', GameHomeIndex::class)->lazy()->name('game.home.index');
+Route::get('/games', GameHomeIndex::class)->name('game.home.index');
+Route::get('/games/all', AllGameHomeIndex::class)->name('all.game.home.index');
 
 Route::middleware('redirectIfAuthenticated')->group(function () {
     Route::get('/admin', Login::class)->name('login');
