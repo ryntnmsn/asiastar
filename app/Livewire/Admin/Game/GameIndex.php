@@ -41,6 +41,12 @@ class GameIndex extends Component
         $this->js('window.location.reload');
     }
 
+    public function clone($id) {
+        $game = Game::where('id', $id)->first();
+        $clone = $game->replicate();
+        $clone->save();
+    }
+
 
     public function render()
     {

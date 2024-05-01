@@ -77,6 +77,7 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/game', GameIndex::class)->name('game.index');
         Route::get('/game/create', GameCreate::class)->name('game.create');
         Route::get('/game/edit/{id}', GameEdit::class)->name('game.edit');
+        Route::get('game/clone/{id}', GameIndex::class)->name('game.clone');
 
         //Game Banners
         Route::get('/game/banner', GameBannerIndex::class)->name('game.banner.index');

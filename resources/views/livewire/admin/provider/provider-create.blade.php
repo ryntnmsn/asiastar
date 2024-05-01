@@ -13,7 +13,7 @@
                     @endif
                 </div>
                 <div>
-                    <x-label>Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 350x350 pixels)</span></x-label>
+                    <x-label>Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 420x240 pixels)</span></x-label>
                     <input wire:model="image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
 
                     @if($image)

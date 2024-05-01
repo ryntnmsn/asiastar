@@ -1,7 +1,7 @@
-<div class="h-full">
+<div  class="h-full">
     @if(count($gameBanners) != null)
         <!-- Game Banners -->
-        <div class="swiper gameBanner">
+        <div wire:ignore class="swiper gameBanner">
             <div class="swiper-wrapper">
                 @foreach ($gameBanners as $gameBanner)
                 <div class="swiper-slide">
@@ -51,9 +51,6 @@
                                         <div class="swiper-slide box-container hover:-translate-y-2 ease-in-out duration-300">
                                             <div class="flex flex-col">
                                                 <div class="relative rounded-xl overflow-hidden">
-                                                    <div class="button-view">
-                                                        <span>@lang('View more')</span>
-                                                    </div>
                                                     <img src="{{ url('storage/'. $isFeatured->image_horizontal) }}" alt="{{ $isFeatured->title }}" class="rounded-xl swiper-img" loading="lazy">
                                                 </div>
                                                 <div class="flex mt-4 gap-4">
@@ -97,14 +94,22 @@
                             <div class="swiper hotGames">
                                 <div class="swiper-wrapper my-5">
                                     @foreach ($hotGames as $hotGame)
-                                        <div class="swiper-slide rounded-xl overflow-hidden hover:-translate-y-2 ease-in-out duration-300 hover:shadow-xl">
-                                            <div class="flex flex-col">
-                                                <div class="relative rounded-xl overflow-hidden border border-slate-200 p-1 ">
-                                                    <div class="rounded-xl overflow-hidden relative">
-                                                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-600">
-                                                            <x-heading class="!text-base !text-white mt-2">{{ $hotGame->title }}</x-heading>
+                                        <div class="swiper-slide border border-slate-200 p-1 box-container cursor-pointer group rounded-xl overflow-hidden hover:-translate-y-2 ease-in-out duration-300">
+
+                                            <div class="relative">
+                                                <div class="button-details rounded-xl">
+                                                    <div class="w-full h-full flex items-center justify-center">
+                                                        <span>@lang('View more')</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <div class="relative rounded-xl overflow-hidden">
+                                                        <div class="rounded-xl overflow-hidden relative">
+                                                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-600">
+                                                                <x-heading class="!text-base !text-white mt-2">{{ $hotGame->title }}</x-heading>
+                                                            </div>
+                                                            <img src="{{ url('storage/'. $hotGame->image_vertical) }}" alt="{{ $hotGame->title }}" class="swiper-img rounded-xl group-hover:scale-[1.1] group-hover:object-cover duration-300 ease-in-out" loading="lazy">
                                                         </div>
-                                                        <img src="{{ url('storage/'. $hotGame->image_vertical) }}" alt="{{ $hotGame->title }}" class="swiper-img rounded-xl" loading="lazy">
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,14 +140,23 @@
                             <div class="swiper newGames">
                                 <div class="swiper-wrapper my-5">
                                     @foreach ($newGames as $newGame)
-                                        <div class="swiper-slide rounded-xl overflow-hidden hover:-translate-y-2 ease-in-out duration-300 hover:shadow-xl">
-                                            <div class="flex flex-col">
-                                                <div class="relative rounded-xl overflow-hidden border border-slate-200 p-1 ">
-                                                    <div class="rounded-xl overflow-hidden relative">
-                                                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-600">
-                                                            <x-heading class="!text-base !text-white mt-2">{{ $newGame->title }}</x-heading>
+                                        <div class="swiper-slide cursor-pointer box-container group rounded-xl overflow-hidden hover:-translate-y-2 ease-in-out duration-300 hover:shadow-xl border border-slate-200 p-1">
+
+                                            <div class="relative">
+                                                <div class="button-details rounded-xl">
+                                                    <div class="w-full h-full flex items-center justify-center">
+                                                        <span>@lang('View more')</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex flex-col">
+                                                    <div class="relative rounded-xl overflow-hidden">
+                                                        <div class="rounded-xl overflow-hidden relative">
+                                                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-600">
+                                                                <x-heading class="!text-base !text-white mt-2">{{ $newGame->title }}</x-heading>
+                                                            </div>
+                                                            <img src="{{ url('storage/'. $newGame->image_square) }}" alt="{{ $newGame->title }}" class="swiper-img rounded-xl group-hover:scale-[1.1] group-hover:object-cover duration-300 ease-in-out" loading="lazy">
                                                         </div>
-                                                        <img src="{{ url('storage/'. $newGame->image_square) }}" alt="{{ $newGame->title }}" class="swiper-img rounded-xl" loading="lazy">
                                                     </div>
                                                 </div>
                                             </div>
@@ -173,10 +187,10 @@
                             <div class="swiper rtpGames">
                                 <div class="swiper-wrapper my-5">
                                     @foreach ($rtpGames as $rtpGame)
-                                    <div class="swiper-slide box-container hover:-translate-y-2 ease-in-out duration-300 rounded-2xl overflow-hidden cursor-pointer">
-                                        <div class="relative">
+                                    <div class="swiper-slide box-container hover:-translate-y-2 ease-in-out duration-300 rounded-xl overflow-hidden cursor-pointer group border border-slate-200 p-[3px]">
+                                        <div class="relative rounded-xl">
 
-                                            <div class="button-details">
+                                            <div class="button-details rounded-xl">
                                                 <div class="w-full h-1/2 flex items-center justify-center">
                                                     <span>@lang('View more')</span>
                                                 </div>
@@ -191,7 +205,7 @@
                                                             </div>
                                                         </div>
                                                         <div>
-                                                            <x-heading class="text-[18px] !mb-0 text-slate-800">{{ $rtpGame->title }}</x-heading>
+                                                            <x-heading class="text-[16px] !mb-0 text-slate-800">{{ $rtpGame->title }}</x-heading>
                                                             @if($rtpGame->description != null)
                                                                 <x-sub-heading class="!mb-3 text-slate-600">{{ strip_tags(Str::words($rtpGame->description, 10, '...')) }}</x-sub-heading>
                                                             @endif
@@ -201,19 +215,19 @@
                                                         <div class="flex">
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-1 uppercase">{{ $rtpGame->volatility }}</x-heading>
+                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->volatility }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Volatility</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-1 uppercase">{{ $rtpGame->rtp }}</x-heading>
+                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->rtp }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">RTP</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-1 uppercase">{{ $rtpGame->maximum_win }}</x-heading>
+                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->maximum_win }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Maximum win</x-sub-heading>
                                                                 </div>
                                                             </div>
@@ -221,19 +235,19 @@
                                                         <div class="flex">
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-1 uppercase">{{ $rtpGame->provider->title }}</x-heading>
+                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->provider->title }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Provider</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-1 uppercase">{{ $rtpGame->region }}</x-heading>
+                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->region }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Region</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-1 uppercase">{{ \Carbon\Carbon::parse($rtpGame->released_date)->format('m/d/Y') }}</x-heading>
+                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ \Carbon\Carbon::parse($rtpGame->released_date)->format('m/d/Y') }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Released date</x-sub-heading>
                                                                 </div>
                                                             </div>
@@ -243,7 +257,7 @@
                                             </div>
                                             <div class="relative rounded-xl overflow-hidden">
                                                 <div>
-                                                    <img src="{{ url('storage/'. $rtpGame->image_vertical) }}" alt="{{ $rtpGame->title }}" class="rounded-xl swiper-img" loading="lazy">
+                                                    <img src="{{ url('storage/'. $rtpGame->image_vertical) }}" alt="{{ $rtpGame->title }}" class="rounded-xl swiper-img group-hover:scale-[1.1] group-hover:object-cover duration-300 ease-in-out" loading="lazy">
                                                 </div>
                                             </div>
                                         </div>
