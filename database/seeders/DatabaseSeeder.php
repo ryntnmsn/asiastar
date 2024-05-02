@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,10 +15,14 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-            UserLoginTestSeeder::class,
-            LanguageSeeder::class,
+            // UserLoginTestSeeder::class,
+            // LanguageSeeder::class,
+            FeatureSeeder::class,
+            GameCategorySeeder::class,
+            GameTypeSeeder::class,
+            ThemeSeeder::class
         ]);
-        
+
         // User::factory(10)->create();
 
         // User::factory()->create([
