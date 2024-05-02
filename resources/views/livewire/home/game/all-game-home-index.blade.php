@@ -26,9 +26,9 @@
                 @include('layouts.home.filter-home-nav-desktop')
             </div>
         </div>
-        <div class="w-[85%] pl-10  border-l border-slate-200 flex flex-col gap-20">
+        <div class="w-[85%] pl-10 flex flex-col gap-20">
         {{-- Games --}}
-        @if(count($games) != null)
+
         <div>
             <div class="flex justify-between items-center">
                 <div>
@@ -56,7 +56,7 @@
                 {{-- Grid View --}}
                 @if($isGridView)
                     <div class="my-5 grid grid-cols-3 gap-5">
-                        @foreach ($games as $game)
+                        @forelse ($games as $game)
                             <div class="box-container hover:-translate-y-2 ease-in-out duration-300 rounded-xl overflow-hidden cursor-pointer group border border-slate-200 p-[3px]">
                                 <div class="relative rounded-xl">
 
@@ -132,7 +132,9 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div>No game found</div>
+                        @endforelse
                     </div>
                     <div class="flex items-center justify-center py-5">
                         <x-primary-button wire:click="loadMore">Load more</x-primary-button>
@@ -149,7 +151,7 @@
                             <div class="w-[15%] text-center">Provider</div>
                             <div class="w-[15%] text-center">Released date</div>
                         </div>
-                        @foreach ($games as $game)
+                        @forelse ($games as $game)
                             <div class="flex flex-row px-4 py-8 cursor-pointer items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out even:bg-slate-100 hover:bg-slate-100 w-full">
                                 <div class="flex gap-2 items-center w-[25%]">
                                     <div>
@@ -196,7 +198,11 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div>
+                                No game found
+                            </div>
+                        @endforelse
                     </div>
                     <div class="flex items-center justify-center py-5">
                         <x-primary-button wire:click="loadMore">Load more</x-primary-button>
@@ -205,7 +211,7 @@
 
             </div>
         </div>
-        @endif
+
         </div>
     </div>
 </div>
