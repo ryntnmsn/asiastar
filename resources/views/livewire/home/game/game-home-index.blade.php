@@ -215,19 +215,19 @@
                                                         <div class="flex">
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->volatility }}</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase">{{ $rtpGame->volatility }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Volatility</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->rtp }}</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase">x{{ $rtpGame->rtp }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">RTP</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->maximum_win }}</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase">{{ $rtpGame->maximum_win }}%</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Maximum win</x-sub-heading>
                                                                 </div>
                                                             </div>
@@ -235,19 +235,19 @@
                                                         <div class="flex">
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->provider->title }}</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase">{{ $rtpGame->provider->title }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Provider</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ $rtpGame->region }}</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase">{{ $rtpGame->region }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Region</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-sm !mb-0 uppercase">{{ \Carbon\Carbon::parse($rtpGame->released_date)->format('m/d/Y') }}</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase">{{ \Carbon\Carbon::parse($rtpGame->released_date)->format('m/d/Y') }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Released date</x-sub-heading>
                                                                 </div>
                                                             </div>

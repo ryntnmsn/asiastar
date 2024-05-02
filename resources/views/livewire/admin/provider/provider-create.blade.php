@@ -40,7 +40,7 @@
     window.addEventListener('created',function(e){
         Swal.fire({
             title: 'Created',
-            text: 'New article tag created',
+            text: 'New provider created',
             icon: 'success',
             iconColor: 'lightgreen',
             confirmButtonColor: '#f59e0b',

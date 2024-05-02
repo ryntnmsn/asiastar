@@ -11,12 +11,21 @@ use App\Livewire\Admin\Article\ArticleTagCreate;
 use App\Livewire\Admin\Article\ArticleTagEdit;
 use App\Livewire\Admin\Article\ArticleTagIndex;
 use App\Livewire\Admin\Dashboard\DashboardIndex;
+use App\Livewire\Admin\Feature\FeatureCreate;
+use App\Livewire\Admin\Feature\FeatureEdit;
+use App\Livewire\Admin\Feature\FeatureIndex;
 use App\Livewire\Admin\Game\GameCreate;
 use App\Livewire\Admin\Game\GameEdit;
 use App\Livewire\Admin\Game\GameIndex;
 use App\Livewire\Admin\GameBanner\GameBannerCreate;
 use App\Livewire\Admin\GameBanner\GameBannerEdit;
 use App\Livewire\Admin\GameBanner\GameBannerIndex;
+use App\Livewire\Admin\GameCategory\GameCategoryCreate;
+use App\Livewire\Admin\GameCategory\GameCategoryEdit;
+use App\Livewire\Admin\GameCategory\GameCategoryIndex;
+use App\Livewire\Admin\GameType\GameTypeCreate;
+use App\Livewire\Admin\GameType\GameTypeEdit;
+use App\Livewire\Admin\GameType\GameTypeIndex;
 use App\Livewire\Admin\Language\LanguageCreate;
 use App\Livewire\Admin\Language\LanguageEdit;
 use App\Livewire\Admin\Language\LanguageIndex;
@@ -26,10 +35,14 @@ use App\Livewire\Admin\Partner\PartnerIndex;
 use App\Livewire\Admin\Provider\ProviderCreate;
 use App\Livewire\Admin\Provider\ProviderEdit;
 use App\Livewire\Admin\Provider\ProviderIndex;
+use App\Livewire\Admin\Theme\ThemeCreate;
+use App\Livewire\Admin\Theme\ThemeEdit;
+use App\Livewire\Admin\Theme\ThemeIndex;
 use App\Livewire\Auth\Login;
 use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\HomeIndex;
+use App\Models\Feature;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -83,6 +96,26 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/game/banner', GameBannerIndex::class)->name('game.banner.index');
         Route::get('/game/banner/create', GameBannerCreate::class)->name('game.banner.create');
         Route::get('/game/banner/edit/{id}', GameBannerEdit::class)->name('game.banner.edit');
+
+        //Themes
+        Route::get('/game/theme', ThemeIndex::class)->name('theme.index');
+        Route::get('/game/theme/create', ThemeCreate::class)->name('theme.create');
+        Route::get('/game/theme/edit/{id}', ThemeEdit::class)->name('theme.edit');
+
+        //Features
+        Route::get('/game/feature', FeatureIndex::class)->name('feature.index');
+        Route::get('/game/feature/create', FeatureCreate::class)->name('feature.create');
+        Route::get('/game/feature/edit/{id}', FeatureEdit::class)->name('feature.edit');
+
+        //Game types
+        Route::get('/game/type', GameTypeIndex::class)->name('game.type.index');
+        Route::get('/game/type/create', GameTypeCreate::class)->name('game.type.create');
+        Route::get('/game/type/edit/{id}', GameTypeEdit::class)->name('game.type.edit');
+
+        //Game categories
+        Route::get('/game/category', GameCategoryIndex::class)->name('game.category.index');
+        Route::get('/game/category/create', GameCategoryCreate::class)->name('game.category.create');
+        Route::get('/game/category/edit/{id}', GameCategoryEdit::class)->name('game.category.edit');
 
         //Providers
         Route::get('/game/provider', ProviderIndex::class)->name('game.provider.index');

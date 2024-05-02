@@ -5,7 +5,7 @@
             <div class="swiper-wrapper">
                 @foreach ($gameBanners as $gameBanner)
                 <div class="swiper-slide">
-                    <div class="h-[380px] md:h-[480px] w-full bg-cover bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
+                    <div class="h-[380px] md:h-[480px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
                 </div>
             @endforeach
             </div>
