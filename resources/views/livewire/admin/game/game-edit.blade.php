@@ -34,15 +34,15 @@
                             @endif
                         </div>
                         <div class="flex-1">
-                            <x-label for="game_category">Game Category</x-label>
-                            <x-select wire:model="game_category" class="!w-full">
+                            <x-label for="game_category_id">Game Category</x-label>
+                            <x-select wire:model="game_category_id" class="!w-full">
                                 <option value="" class="hidden">--Select game category--</option>
-                                <option value="live_pachinko">Live Pachinko</option>
-                                <option value="live_casino">Live Casino</option>
-                                <option value="live_cockfighting">Live Cockfighting</option>
+                                @foreach ($gameCategories as $gameCategory)
+                                    <option value="{{ $gameCategory->id }}">{{ $gameCategory->name }}</option>
+                                @endforeach
                             </x-select>
-                            @if($errors->has('game_category'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('game_category') }}</span>
+                            @if($errors->has('game_category_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('game_category_id') }}</span>
                             @endif
                         </div>
                     </div>
@@ -52,14 +52,14 @@
                     <div class="flex gap-5">
                         <div class="flex-1">
                             <x-label for="game_type">Game Type</x-label>
-                            <x-select wire:model="game_type" class="!w-full">
+                            <x-select wire:model="game_type_id" class="!w-full">
                                 <option value="" class="hidden">--Select game type--</option>
-                                <option value="hot_game">Hot Game</option>
-                                <option value="new_game">New Game</option>
-                                <option value="coming_soon_game">Coming Soon Game</option>
+                                @foreach ($gameTypes as $gameType)
+                                    <option value="{{ $gameType->id }}">{{ $gameType->name }}</option>
+                                @endforeach
                             </x-select>
-                            @if($errors->has('game_type'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('game_type') }}</span>
+                            @if($errors->has('game_type_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('game_type_id') }}</span>
                             @endif
                         </div>
                         <div class="flex-1">
@@ -83,7 +83,11 @@
                         </div>
                         <div class="flex-1">
                             <x-label for="volatility">Volatility</x-label>
-                            <x-input wire:model="volatility" type="text" class="!w-full"></x-input>
+                            <x-select wire:model="volatility" class="!w-full">
+                                <option {{ $volatility == 'low' ? 'selected' : '' }} value="low">Low</option>
+                                <option {{ $volatility == 'medium' ? 'selected' : '' }} value="medium">Medium</option>
+                                <option {{ $volatility == 'high' ? 'selected' : '' }} value="high">High</option>
+                            </x-select>
                         </div>
                     </div>
                 </div>
@@ -92,11 +96,11 @@
                     <div class="flex gap-5">
                         <div class="flex-1">
                             <x-label for="rtp">RTP</x-label>
-                            <x-date wire:model="rtp" type="text"></x-date>
+                            <x-date wire:model="rtp" type="number"></x-date>
                         </div>
                         <div class="flex-1">
                             <x-label for="maximum_win">Maximum Win</x-label>
-                            <x-input wire:model="maximum_win" type="text" class="!w-full"></x-input>
+                            <x-input wire:model="maximum_win" type="number" class="!w-full"></x-input>
                         </div>
                     </div>
                 </div>
@@ -105,12 +109,14 @@
                     <div class="flex gap-5">
                         <div class="flex-1">
                             <x-label for="theme">Theme</x-label>
-                            <x-select wire:model="theme" class="!w-full">
+                            <x-select wire:model="theme_id" class="!w-full">
                                 <option value="" class="hidden">--Select theme--</option>
-                                <option value="asia">Asia</option>
+                                @foreach ($themes as $theme)
+                                    <option value="{{ $theme->id }}">{{ $theme->name }}</option>
+                                @endforeach
                             </x-select>
-                            @if($errors->has('theme'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('theme') }}</span>
+                            @if($errors->has('theme_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('theme_id') }}</span>
                             @endif
                         </div>
                         <div class="flex-1">
@@ -123,6 +129,33 @@
                             </x-select>
                             @if($errors->has('provider_id'))
                                 <span class="text-sm text-rose-500">{{ $errors->first('provider_id') }}</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex gap-5">
+                        <div class="flex-1">
+                            <x-label for="theme">Available languages</x-label>
+                            <x-select  class="!w-full">
+                                <option value="" class="hidden">--Select languages--</option>
+                                
+                            </x-select>
+                            {{-- @if($errors->has('theme_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('theme_id') }}</span>
+                            @endif --}}
+                        </div>
+                        <div class="flex-1">
+                            <x-label for="theme">Feature</x-label>
+                            <x-select wire:model="feature_id" class="!w-full">
+                                <option value="" class="hidden">--Select feature--</option>
+                                @foreach ($features as $feature)
+                                    <option value="{{$feature->id}}">{{$feature->name}}</option>
+                                @endforeach
+                            </x-select>
+                            @if($errors->has('feature_id'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('feature_id') }}</span>
                             @endif
                         </div>
                     </div>
@@ -147,12 +180,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
 
 
                 <div>

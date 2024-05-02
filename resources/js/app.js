@@ -2,6 +2,27 @@ import './bootstrap';
 import 'flowbite';
 
 document.addEventListener('livewire:navigated', () => {
-    // initFlowbite();
-    new Swiper();
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".gameBanner", {
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      on: {
+        autoplayTimeLeft(s, time, progress) {
+          progressCircle.style.setProperty("--progress", 1 - progress);
+          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        }
+      }
+    });
 });

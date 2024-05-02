@@ -16,15 +16,16 @@ class Game extends Model
         'language_id',
         'provider_id',
         'status',
-        'game_category',
-        'game_type',
+        'game_category_id',
+        'game_type_id',
         'is_featured',
         'released_date',
         'volatility',
         'rtp',
         'maximum_win',
         'region',
-        'theme',
+        'theme_id',
+        'feature_id',
         'image_square',
         'image_horizontal',
         'image_vertical',
@@ -37,6 +38,22 @@ class Game extends Model
 
     public function provider() {
         return $this->belongsTo(Provider::class);
+    }
+
+    public function game_category() {
+        return $this->belongsTo(GameCategory::class);
+    }
+
+    public function game_type() {
+        return $this->belongsTo(GameType::class);
+    }
+
+    public function theme() {
+        return $this->belongsTo(Theme::class);
+    }
+
+    public function feature() {
+        return $this->belongsTo(Feature::class);
     }
 
 }

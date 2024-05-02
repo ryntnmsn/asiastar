@@ -25,8 +25,14 @@ return new class extends Migration
                 ->cascadeOnDelete()
                 ->nullable();
             $table->boolean('status')->default(false);
-            $table->string('game_category');
-            $table->string('game_type');
+            $table->foreignId('game_category_id')
+                ->constrained('game_categories')
+                ->cascadeOnDelete()
+                ->nullable();
+            $table->foreignId('game_type_id')
+                ->constrained('game_types')
+                ->cascadeOnDelete()
+                ->nullable();
             $table->boolean('is_featured')->default(false);
             $table->date('released_date')
                 ->nullable();
@@ -37,7 +43,14 @@ return new class extends Migration
             $table->string('maximum_win')
                 ->nullable();
             $table->string('region');
-            $table->string('theme');
+            $table->foreignId('theme_id')
+                ->constrained('themes')
+                ->cascadeOnDelete()
+                ->nullable();
+            $table->foreignId('feature_id')
+                ->constrained('features')
+                ->cascadeOnDelete()
+                ->nullable();
             $table->string('image_square');
             $table->string('image_vertical');
             $table->string('image_horizontal');

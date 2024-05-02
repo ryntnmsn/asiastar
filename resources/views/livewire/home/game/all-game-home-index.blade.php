@@ -20,9 +20,10 @@
     @endif
 
     <div class="flex flex-row max-w-[1280px] w-full h-full mx-auto mt-20">
-        <div class="w-[15%] h-full">
+        <div class="w-[15%] h-full pr-5">
             <div>
                 @include('layouts.home.game-home-nav-desktop')
+                @include('layouts.home.filter-home-nav-desktop')
             </div>
         </div>
         <div class="w-[85%] pl-10  border-l border-slate-200 flex flex-col gap-20">

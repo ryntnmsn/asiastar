@@ -2,9 +2,13 @@
 
 namespace App\Livewire\Admin\Game;
 
+use App\Models\Feature;
 use App\Models\Game;
+use App\Models\GameCategory;
+use App\Models\GameType;
 use App\Models\Language;
 use App\Models\Provider;
+use App\Models\Theme;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
@@ -19,16 +23,17 @@ class GameEdit extends Component
     public $description;
     public $language_id = '';
     public $provider_id = '';
-    public $status = false;
-    public $game_category = '';
-    public $game_type = '';
-    public $is_featured = false;
+    public $status;
+    public $game_category_id = '';
+    public $game_type_id = '';
+    public $is_featured;
     public $released_date;
-    public $volatility;
+    public $volatility = '';
     public $rtp;
     public $maximum_win;
     public $region = '';
-    public $theme = '';
+    public $theme_id = '';
+    public $feature_id = '';
     public $old_image_square;
     public $old_image_horizontal;
     public $old_image_vertical;
@@ -44,15 +49,16 @@ class GameEdit extends Component
         $this->language_id = $game->language_id;
         $this->provider_id = $game->provider_id;
         $this->status = $game->status;
-        $this->game_category = $game->game_category;
-        $this->game_type = $game->game_type;
+        $this->game_category_id = $game->game_category_id;
+        $this->game_type_id = $game->game_type_id;
         $this->is_featured = $game->is_featured;
         $this->released_date = $game->released_date;
         $this->volatility = $game->volatility;
         $this->rtp = $game->rtp;
         $this->maximum_win = $game->maximum_win;
         $this->region = $game->region;
-        $this->theme = $game->theme;
+        $this->theme_id = $game->theme_id;
+        $this->feature_id = $game->feature_id;
         $this->old_image_square = $game->image_square;
         $this->old_image_horizontal = $game->image_horizontal;
         $this->old_image_vertical = $game->image_vertical;
@@ -64,10 +70,11 @@ class GameEdit extends Component
             'title' => 'required|max:255',
             'language_id' => 'required',
             'provider_id' => 'required',
-            'game_type' => 'required',
-            'theme' => 'required',
+            'game_type_id' => 'required',
+            'game_category_id' => 'required',
+            'feature_id' => 'required',
+            'theme_id' => 'required',
             'region' => 'required',
-            'game_category' => 'required',
         ];
 
         if(isset($this->new_image_square)) {
@@ -122,15 +129,16 @@ class GameEdit extends Component
             'language_id' => $this->language_id,
             'provider_id' => $this->provider_id,
             'status' => $this->status,
-            'game_category' => $this->game_category,
-            'game_type' => $this->game_type,
+            'game_category_id' => $this->game_category_id,
+            'game_type_id' => $this->game_type_id,
             'is_featured' => $this->is_featured,
             'released_date' => $this->released_date,
             'volatility' => $this->volatility,
             'rtp' => $this->rtp,
             'maximum_win' => $this->maximum_win,
             'region' => $this->region,
-            'theme' => $this->theme,
+            'theme_id' => $this->theme_id,
+            'feature_id' => $this->feature_id,
             'image_square' => $image_square,
             'image_horizontal' => $image_horizontal,
             'image_vertical' => $image_vertical,
@@ -144,10 +152,18 @@ class GameEdit extends Component
     {
         $languages = Language::all();
         $providers = Provider::all();
+        $themes = Theme::all();
+        $gameTypes = GameType::all();
+        $gameCategories = GameCategory::all();
+        $features = Feature::all();
 
         return view('livewire.admin.game.game-edit', [
             'languages' => $languages,
-            'providers' => $providers
+            'providers' => $providers,
+            'themes' => $themes,
+            'gameTypes' => $gameTypes,
+            'gameCategories' => $gameCategories,
+            'features' => $features,
         ])->extends('layouts.admin.app')->section('contents');
     }
 }

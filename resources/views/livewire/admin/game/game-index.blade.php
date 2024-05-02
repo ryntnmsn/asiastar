@@ -97,10 +97,10 @@
                                 {{ $game->language->name }}
                             </td>
                             <td class="px-6 py-4 capitalize">
-                                {{ str_replace('_', ' ', $game->game_category) }}
+                                {{ str_replace('_', ' ', $game->game_category->name) }}
                             </td>
                             <td class="px-6 py-4 capitalize">
-                                {{ str_replace('_', ' ', $game->game_type) }}
+                                {{ str_replace('_', ' ', $game->game_type->name) }}
                             </td>
                             <td class="px-6 py-4 capitalize">
                                 {{ $game->region }}

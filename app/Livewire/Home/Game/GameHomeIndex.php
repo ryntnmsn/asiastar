@@ -4,6 +4,7 @@ namespace App\Livewire\Home\Game;
 
 use App\Models\Game;
 use App\Models\GameBanner;
+use App\Models\GameType;
 use Livewire\Component;
 
 class GameHomeIndex extends Component
@@ -11,14 +12,19 @@ class GameHomeIndex extends Component
 
     public function render()
     {
-        $gameBanners = GameBanner::where('status', 1);
-        $games = Game::with('provider')->where('status', 1);
+        $gameBanners = GameBanner::where('status', 1)->get();
+        $games = Game::where('status', 1);
 
-        $gameBanners = $gameBanners->get();
         $isFeatured = $games->where('is_featured', 1)->get();
-        $hotGames = $games->where('game_type', 'hot_game')->get();
-        $newGames = Game::where('status', 1)->where('game_type', 'new_game')->get();
-        $rtpGames = $games->orderBy('rtp', 'desc')->take(5)->get();
+
+        $getGameTypeNewGame = GameType::where('slug', 'new-game')->value('id');
+        $getGameTypeHotGame = GameType::where('slug', 'hot-game')->value('id');
+
+        // dd($getGameTypeNewGame);
+        $newGames = Game::where('status', 1)->where('game_type_id', $getGameTypeNewGame)->get();
+        $hotGames = Game::where('status', 1)->where('game_type_id', $getGameTypeHotGame)->get();
+
+        $rtpGames = $games->orderByRaw('CAST(rtp AS UNSIGNED) DESC')->take(6)->get();
 
         return view('livewire.home.game.game-home-index', [
             'gameBanners' => $gameBanners,
