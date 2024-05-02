@@ -4,6 +4,8 @@ namespace App\Livewire\Home\Game;
 
 use App\Models\Game;
 use App\Models\GameBanner;
+use App\Models\GameType;
+use App\Models\Provider;
 use App\Models\Theme;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -19,6 +21,8 @@ class AllGameHomeIndex extends Component
     public $paginate = 15;
     public $amount = 15;
     public $filterTheme = '';
+    public $filterProvider = '';
+    public $filterGameType = '';
 
     public function grid() {
         $this->isGridView = true;
@@ -36,17 +40,30 @@ class AllGameHomeIndex extends Component
 
     public function render()
     {
+        $themes = Theme::all();
+        $gameTypes = GameType::all();
+        $providers = Provider::all();
+
         $gameBanners = GameBanner::where('status', 1);
+        
         $games = Game::where('status', 1)->orderBy('created_at', 'desc')
             ->when($this->filterTheme, function($query) {
                 return $query->where('theme_id', $this->filterTheme);
+            })
+            ->when($this->filterGameType, function($query) {
+                return $query->where('game_type_id', $this->filterGameType);
+            })
+            ->when($this->filterProvider, function($query) {
+                return $query->where('provider_id', $this->filterProvider);
             })->take($this->amount);
-        $themes = Theme::all();
+        
 
         return view('livewire.home.game.all-game-home-index', [
             'gameBanners' => $gameBanners->get(),
             'games' => $games->get(),
             'themes' => $themes,
+            'gameTypes' => $gameTypes,
+            'providers' => $providers,
         ])->extends('layouts.home.app')->section('contents');;
     }
 }

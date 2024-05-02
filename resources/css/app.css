@@ -20,6 +20,10 @@ html, body {
     font-family: "Noto Sans", sans-serif;
 }
 
+#bar-fixed.stickIt {
+    position: fixed;
+    top: 0px;
+  }
 
 .button-details {
     transition: opacity .2s, visibility .2s;
