@@ -69,6 +69,8 @@ class GameEdit extends Component
         $validate_array = [
             'title' => 'required|max:255',
             'language_id' => 'required',
+            'rtp' => 'required|numeric|between:0,99.99',
+            'maximum_win' => 'required|numeric',
             'provider_id' => 'required',
             'game_type_id' => 'required',
             'game_category_id' => 'required',

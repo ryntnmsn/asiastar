@@ -100,11 +100,17 @@
                     <div class="flex gap-5">
                         <div class="flex-1">
                             <x-label for="rtp">RTP</x-label>
-                            <x-date wire:model="rtp" type="number"></x-date>
+                            <x-input wire:model="rtp" type="text"></x-input>
+                            @if($errors->has('rtp'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('rtp') }}</span>
+                            @endif
                         </div>
                         <div class="flex-1">
                             <x-label for="maximum_win">Maximum Win</x-label>
-                            <x-input wire:model="maximum_win" type="number" class="!w-full"></x-input>
+                            <x-input wire:model="maximum_win" type="text" class="!w-full"></x-input>
+                            @if($errors->has('maximum_win'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('maximum_win') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -168,7 +174,7 @@
                 <div>
                     <div class="flex gap-5">
                         <div class="flex-1">
-                            <x-label for="featured">Featured</x-label>
+                            <x-label for="featured">Is Featured</x-label>
                             <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" wire:model="is_featured" name="is_featured" class="sr-only peer">
                                 <div class="relative w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-100 dark:peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>

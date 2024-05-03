@@ -74,6 +74,9 @@
                             Type
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            RTP
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Region
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -101,6 +104,9 @@
                             </td>
                             <td class="px-6 py-4 capitalize">
                                 {{ str_replace('_', ' ', $game->game_type->name) }}
+                            </td>
+                            <td class="px-6 py-4 capitalize">
+                                {{ $game->rtp }}
                             </td>
                             <td class="px-6 py-4 capitalize">
                                 {{ $game->region }}

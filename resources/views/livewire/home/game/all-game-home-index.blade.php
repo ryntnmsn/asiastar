@@ -21,7 +21,7 @@
 
     <div class="flex flex-row max-w-[1280px] w-full h-full mx-auto mt-20">
         <div wire:ignore class="w-[15%] h-full pr-5 relative">
-            <div id="bar-fixed" >
+            <div>
                 @include('layouts.home.game-home-nav-desktop')
                 @include('layouts.home.filter-home-nav-desktop')
             </div>
@@ -34,21 +34,70 @@
                 <div>
                     <x-heading>All Games</x-heading>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 items-center">
                     <div>
-                        <x-label>View:</x-label>
+                        <div wire:ignore class="flex gap-2">
+                            <button id="multiLevelDropdownButton" data-dropdown-toggle="multi-dropdown" class="text-slate-600 font-medium rounded-lg text-sm px-5 py-2 border border-slate-200 text-center inline-flex items-center" type="button">
+                                <span>Select Sort</span>
+                                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                </svg>
+                            </button>
+                            <!-- Volatility -->
+                            <div id="multi-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                <ul class="py-2 text-sm text-slate-600" aria-labelledby="multiLevelDropdownButton">
+                                    <li>
+                                        <button id="dropdownHoverButtonVola" data-dropdown-toggle="dropdownHoverVola" data-dropdown-trigger="hover" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-slate-100">
+                                            Volatility
+                                        </button>
+                                        <div id="dropdownHoverVola" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                            <ul class="py-2 text-sm text-slate-600" aria-labelledby="doubleDropdownButtonVola">
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">High - Low</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">Low - High</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <button id="dropdownHoverButtonRTP" data-dropdown-toggle="dropdownHoverRTP" data-dropdown-trigger="hover" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-slate-100">
+                                            RTP
+                                        </button>
+                                        <div id="dropdownHoverRTP" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                            <ul class="py-2 text-sm text-slate-600" aria-labelledby="doubleDropdownButtonRTP">
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">High - Low</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">Low - High</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <button type="button" wire:click="grid">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-slate-700">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
-                            </svg>
-                        </button>
-                        <button type="button" wire:click="list">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-slate-700">
-                                <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
-                              </svg>
-                        </button>
+
+                    <div class="flex gap-2 items-center">
+                        <div>
+                            <x-label class="!text-slate-400 !mb-0 !text-sm">View:</x-label>
+                        </div>
+                        <div class="flex items-center">
+                            <button type="button" wire:click="grid">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-slate-600">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                                </svg>
+                            </button>
+                            <button type="button" wire:click="list">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-slate-600">
+                                    <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                                  </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,13 +140,13 @@
                                                     </div>
                                                     <div class="flex-1">
                                                         <div class="flex flex-col">
-                                                            <x-heading class="!text-sm !mb-0 uppercase">{{ $game->rtp }}</x-heading>
+                                                            <x-heading class="!text-sm !mb-0 uppercase">{{ $game->rtp }}<span class="text-[10px]">%</span></x-heading>
                                                             <x-sub-heading class="text-slate-500 capitalize">RTP</x-sub-heading>
                                                         </div>
                                                     </div>
                                                     <div class="flex-1">
                                                         <div class="flex flex-col">
-                                                            <x-heading class="!text-sm !mb-0 uppercase">{{ $game->maximum_win }}</x-heading>
+                                                            <x-heading class="!text-sm !mb-0 uppercase"><span class="text-[10px]">x</span>{{ $game->maximum_win }}</x-heading>
                                                             <x-sub-heading class="text-slate-500 capitalize">Maximum win</x-sub-heading>
                                                         </div>
                                                     </div>
@@ -208,7 +257,6 @@
                         <x-primary-button wire:click="loadMore">Load more</x-primary-button>
                     </div>
                 @endif
-
             </div>
         </div>
 

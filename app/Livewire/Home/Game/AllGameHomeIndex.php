@@ -23,6 +23,7 @@ class AllGameHomeIndex extends Component
     public $filterTheme = '';
     public $filterProvider = '';
     public $filterGameType = '';
+    public $filterRTP = '';
 
     public function grid() {
         $this->isGridView = true;
@@ -37,6 +38,7 @@ class AllGameHomeIndex extends Component
     public function loadMore() {
         $this->amount += 6;
     }
+
 
     public function render()
     {
@@ -55,7 +57,21 @@ class AllGameHomeIndex extends Component
             })
             ->when($this->filterProvider, function($query) {
                 return $query->where('provider_id', $this->filterProvider);
-            })->take($this->amount);
+            })
+            ->when($this->filterRTP, function($query) {
+                
+                if($this->filterRTP == 50) {
+                    return $query->where('rtp', '<=' , 50);
+                } else {
+                    return $query->where('rtp', '>=' ,$this->filterRTP)->where('rtp', '<' , $this->filterRTP + 10);
+                }
+            })
+            ->take($this->amount);
+
+            // $gamestest = Game::where('rtp', '>=', 90)->where('rtp', '<' , 91 + 10)->get();
+            
+            // dd($gamestest);
+
         
 
         return view('livewire.home.game.all-game-home-index', [

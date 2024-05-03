@@ -2,16 +2,16 @@ import { initFlowbite } from 'flowbite';
 import './bootstrap';
 import 'flowbite';
 
-  /* SIDEBAR*/
-  var topLimit = $('#bar-fixed').offset().top;
-  $(window).scroll(function() {
-    //console.log(topLimit <= $(window).scrollTop())
-    if (topLimit <= $(window).scrollTop()) {
-      $('#bar-fixed').addClass('stickIt')
-    } else {
-      $('#bar-fixed').removeClass('stickIt')
-    }
-  });
+  // /* SIDEBAR*/
+  // var topLimit = $('#bar-fixed').offset().top;
+  // $(window).scroll(function() {
+  //   //console.log(topLimit <= $(window).scrollTop())
+  //   if (topLimit <= $(window).scrollTop()) {
+  //     $('#bar-fixed').addClass('stickIt')
+  //   } else {
+  //     $('#bar-fixed').removeClass('stickIt')
+  //   }
+  // });
 
 document.addEventListener('livewire:navigated', () => {
 

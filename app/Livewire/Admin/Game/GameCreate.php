@@ -44,6 +44,8 @@ class GameCreate extends Component
         'provider_id' => 'required',
         'volatility' => 'required',
         'game_type_id' => 'required',
+        'rtp' => 'required|numeric|between:0,99.99',
+        'maximum_win' => 'required|numeric',
         'theme_id' => 'required',
         'region' => 'required',
         'game_category_id' => 'required',

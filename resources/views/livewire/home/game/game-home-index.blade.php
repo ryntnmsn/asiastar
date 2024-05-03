@@ -1,4 +1,4 @@
-<div class="h-full">
+<div  class="h-full">
     @if(count($gameBanners) != null)
         <!-- Game Banners -->
         <div wire:ignore class="swiper gameBanner">
@@ -221,13 +221,13 @@
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-xs !mb-0 uppercase">x{{ $rtpGame->rtp }}</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase">{{ $rtpGame->rtp }}<span class="text-[9px]">%</span></x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">RTP</x-sub-heading>
                                                                 </div>
                                                             </div>
                                                             <div class="flex-1">
                                                                 <div class="flex flex-col">
-                                                                    <x-heading class="!text-xs !mb-0 uppercase">{{ $rtpGame->maximum_win }}%</x-heading>
+                                                                    <x-heading class="!text-xs !mb-0 uppercase"><span class="text-[9px]">x</span>{{ $rtpGame->maximum_win }}</x-heading>
                                                                     <x-sub-heading class="text-slate-500 capitalize">Maximum win</x-sub-heading>
                                                                 </div>
                                                             </div>
