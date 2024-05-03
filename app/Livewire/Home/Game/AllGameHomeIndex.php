@@ -24,6 +24,8 @@ class AllGameHomeIndex extends Component
     public $filterProvider = '';
     public $filterGameType = '';
     public $filterRTP = '';
+    public $filterSortSelect = '';
+    public $filterSortOrder = '';
 
     public function grid() {
         $this->isGridView = true;
@@ -39,7 +41,6 @@ class AllGameHomeIndex extends Component
         $this->amount += 6;
     }
 
-
     public function render()
     {
         $themes = Theme::all();
@@ -48,7 +49,7 @@ class AllGameHomeIndex extends Component
 
         $gameBanners = GameBanner::where('status', 1);
         
-        $games = Game::where('status', 1)->orderBy('created_at', 'desc')
+        $games = Game::where('status', 1)
             ->when($this->filterTheme, function($query) {
                 return $query->where('theme_id', $this->filterTheme);
             })
@@ -66,6 +67,14 @@ class AllGameHomeIndex extends Component
                     return $query->where('rtp', '>=' ,$this->filterRTP)->where('rtp', '<' , $this->filterRTP + 10);
                 }
             })
+            ->when($this->filterSortOrder, function($query) {
+                if($this->filterSortSelect == 'maximum_win') {
+                    return $query->orderByRaw('CAST(maximum_win AS UNSIGNED)' . $this->filterSortOrder);
+                } else {
+                    return $query->orderBy($this->filterSortSelect, $this->filterSortOrder);
+                }
+            })
+            ->orderBy('created_at', 'desc')
             ->take($this->amount);
 
             // $gamestest = Game::where('rtp', '>=', 90)->where('rtp', '<' , 91 + 10)->get();

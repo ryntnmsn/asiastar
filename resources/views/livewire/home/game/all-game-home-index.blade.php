@@ -35,51 +35,18 @@
                     <x-heading>All Games</x-heading>
                 </div>
                 <div class="flex gap-2 items-center">
-                    <div>
-                        <div wire:ignore class="flex gap-2">
-                            <button id="multiLevelDropdownButton" data-dropdown-toggle="multi-dropdown" class="text-slate-600 font-medium rounded-lg text-sm px-5 py-2 border border-slate-200 text-center inline-flex items-center" type="button">
-                                <span>Select Sort</span>
-                                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                                </svg>
-                            </button>
-                            <!-- Volatility -->
-                            <div id="multi-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                                <ul class="py-2 text-sm text-slate-600" aria-labelledby="multiLevelDropdownButton">
-                                    <li>
-                                        <button id="dropdownHoverButtonVola" data-dropdown-toggle="dropdownHoverVola" data-dropdown-trigger="hover" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-slate-100">
-                                            Volatility
-                                        </button>
-                                        <div id="dropdownHoverVola" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                                            <ul class="py-2 text-sm text-slate-600" aria-labelledby="doubleDropdownButtonVola">
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">High - Low</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">Low - High</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <button id="dropdownHoverButtonRTP" data-dropdown-toggle="dropdownHoverRTP" data-dropdown-trigger="hover" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-slate-100">
-                                            RTP
-                                        </button>
-                                        <div id="dropdownHoverRTP" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                                            <ul class="py-2 text-sm text-slate-600" aria-labelledby="doubleDropdownButtonRTP">
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">High - Low</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-slate-100">Low - High</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="flex gap-2">
+                        <x-select wire:model.live="filterSortSelect">
+                            <option value="" class="hidden">Select sort</option>
+                            <option value="volatility">Volatility</option>
+                            <option value="rtp">RTP</option>
+                            <option value="maximum_win">Maximum win</option>
+                        </x-select>
+                        <x-select wire:model.live="filterSortOrder">
+                            <option value="" class="hidden">Select order</option>
+                            <option value="desc">High - Low</option>
+                            <option value="asc">Low - High</option>
+                        </x-select>
                     </div>
 
                     <div class="flex gap-2 items-center">
