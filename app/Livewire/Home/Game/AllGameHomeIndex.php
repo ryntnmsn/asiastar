@@ -24,7 +24,7 @@ class AllGameHomeIndex extends Component
     public $filterProvider = '';
     public $filterGameType = '';
     public $filterRTP = '';
-    public $filterSortSelect = '';
+    public $filterSortSelect = 'status';
     public $filterSortOrder = '';
 
     public function grid() {
@@ -47,9 +47,9 @@ class AllGameHomeIndex extends Component
         $gameTypes = GameType::all();
         $providers = Provider::all();
 
-        $gameBanners = GameBanner::where('status', 1);
+        $gameBanners = GameBanner::where('status', true);
         
-        $games = Game::where('status', 1)
+        $games = Game::where('status', true)
             ->when($this->filterTheme, function($query) {
                 return $query->where('theme_id', $this->filterTheme);
             })
