@@ -23,9 +23,13 @@ html, body {
 .select2-container--default .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: 1px solid #cbd5e1;
     background-color: #f8fafc;
-    padding-top: 0.190rem;
-    padding-bottom:0.390rem;
+    padding-top: 0.520rem;
+    padding-bottom:0.520rem;
     border-radius: 7px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    margin-top: 0;
 }
 
 #bar-fixed.stickIt {
@@ -135,4 +139,49 @@ html, body {
     stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
+}
+
+#modalAnimation {
+    animation: modalanimation 0.5s forwards;
+}
+
+#slideAnimation {
+    animation: slideDown 0.5s;
+}
+
+@keyframes modalanimation{
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-5%);
+	}
+	50%{
+		transform: translateY(8%);
+	}
+	65%{
+		transform: translateY(-4%);
+	}
+	80%{
+		transform: translateY(4%);
+	}
+	95%{
+		transform: translateY(-2%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
 }

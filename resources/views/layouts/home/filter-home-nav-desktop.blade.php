@@ -21,8 +21,8 @@
                         </svg>
                     </button>
                 </h2>
-                <div id="accordion-open-body-1" class="hidden mt-4 duration-300 ease-in-out" aria-labelledby="accordion-open-heading-1">
-                    <fieldset>
+                <div id="accordion-open-body-1" class="hidden mt-4 duration-300 ease-in-out" aria-labelledby="accordion-open-heading-1 relative">
+                    <fieldset id="slideAnimation">
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterTheme" id="theme-option-all" type="radio" value="" checked name="theme" class="w-4 h-4 border-slate-300 checked:bg-amber-500 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                 <span class="text-slate-500">
@@ -30,7 +30,7 @@
                                 </span>
                             </label>
                         </div>
-                        @foreach ($themes as $theme)
+                        @foreach ($getThemes as $theme)
                             <div class="flex items-center gap-2 mb-4">
                                 <input wire:model.live="filterTheme" id="theme-option-{{ $theme->id }}" value="{{ $theme->id }}" type="radio" name="theme"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                     <span class="text-slate-500">
@@ -39,7 +39,7 @@
                                 </label>
                             </div>
                         @endforeach
-                    </fieldset>      
+                    </fieldset>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
                     </button>
                 </h2>
                 <div id="accordion-open-body-2" class="hidden mt-4 duration-300 ease-in-out" aria-labelledby="accordion-open-heading-2">
-                    <fieldset>
+                    <fieldset id="slideAnimation">
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterGameType" id="gameType-option-all" type="radio" value="" checked name="filterGameType" class="w-4 h-4 border-slate-300 checked:bg-amber-500 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                 <span class="text-slate-500">
@@ -72,7 +72,7 @@
                                 </label>
                             </div>
                         @endforeach
-                    </fieldset>      
+                    </fieldset>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@
                     </button>
                 </h2>
                 <div id="accordion-open-body-3" class="hidden mt-4 duration-300 ease-in-out" aria-labelledby="accordion-open-heading-3">
-                    <fieldset>
+                    <fieldset id="slideAnimation">
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterProvider" id="provider-option-all" type="radio" value="" checked name="filterProvider" class="w-4 h-4 border-slate-300 checked:bg-amber-500 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                 <span class="text-slate-500">
@@ -104,7 +104,7 @@
                                 </label>
                             </div>
                         @endforeach
-                    </fieldset>      
+                    </fieldset>
                 </div>
             </div>
 
@@ -116,10 +116,10 @@
                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 duration-300 ease-in-out" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                         </svg>
-                    </button>
+                    </button id="slideAnimation">
                 </h2>
                 <div id="accordion-open-body-4" class="hidden mt-4 duration-300 ease-in-out" aria-labelledby="accordion-open-heading-4">
-                    <fieldset>
+                    <fieldset id="slideAnimation">
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterRTP" id="rtp-option-1" value="" type="radio" name="filterRTP"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                 <span class="text-slate-500">
@@ -137,14 +137,14 @@
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterRTP" id="rtp-option-3" value="51" type="radio" name="filterRTP"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                 <span class="text-slate-500">
-                                    51% - 60% 
+                                    51% - 60%
                                 </span>
                             </label>
                         </div>
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterRTP" id="rtp-option-4" value="61" type="radio" name="filterRTP"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                 <span class="text-slate-500">
-                                    61% - 70% 
+                                    61% - 70%
                                 </span>
                             </label>
                         </div>
@@ -169,7 +169,39 @@
                                 </span>
                             </label>
                         </div>
-                    </fieldset>      
+                    </fieldset>
+                </div>
+            </div>
+
+            {{-- Language Filter --}}
+            <div class="border-b border-slate-200 py-4">
+                <h2 id="accordion-open-heading-3">
+                    <button type="button" class="flex items-center justify-between w-full font-medium rtl:text-right text-slate-600" data-accordion-target="#accordion-open-body-5" aria-expanded="false" aria-controls="accordion-open-body-5">
+                        <span>Language</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 duration-300 ease-in-out" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-open-body-5" class="hidden mt-4 duration-300 ease-in-out" aria-labelledby="accordion-open-heading-5">
+                    <fieldset id="slideAnimation">
+                        <div class="flex items-center gap-2 mb-4">
+                            <input wire:model.live="filterLanguage" id="provider-option-all" type="radio" value="" checked name="filterLanguage" class="w-4 h-4 border-slate-300 checked:bg-amber-500 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
+                                <span class="text-slate-500">
+                                    All
+                                </span>
+                            </label>
+                        </div>
+                        @foreach ($availableLanguages as $availableLanguage)
+                            <div class="flex items-center gap-2 mb-4">
+                                <input wire:model.live="filterLanguage" id="language-option-{{ $availableLanguage->id }}" value="{{ $availableLanguage->id }}" type="radio" name="filterLanguage"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
+                                    <span class="text-slate-500">
+                                        {{ $availableLanguage->name }}
+                                    </span>
+                                </label>
+                            </div>
+                        @endforeach
+                    </fieldset>
                 </div>
             </div>
 

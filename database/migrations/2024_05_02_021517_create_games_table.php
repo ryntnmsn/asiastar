@@ -43,14 +43,6 @@ return new class extends Migration
             $table->string('maximum_win')
                 ->nullable();
             $table->string('region');
-            $table->foreignId('theme_id')
-                ->constrained('themes')
-                ->cascadeOnDelete()
-                ->nullable();
-            $table->foreignId('feature_id')
-                ->constrained('features')
-                ->cascadeOnDelete()
-                ->nullable();
             $table->string('image_square');
             $table->string('image_vertical');
             $table->string('image_horizontal');

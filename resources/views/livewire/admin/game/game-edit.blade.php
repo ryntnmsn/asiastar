@@ -115,14 +115,15 @@
                     <div class="flex gap-5">
                         <div class="flex-1">
                             <x-label for="theme">Theme</x-label>
-                            <x-select wire:model="theme_id" class="!w-full">
-                                <option value="" class="hidden">--Select theme--</option>
-                                @foreach ($themes as $theme)
-                                    <option value="{{ $theme->id }}">{{ $theme->name }}</option>
-                                @endforeach
-                            </x-select>
-                            @if($errors->has('theme_id'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('theme_id') }}</span>
+                            <div wire:ignore>
+                                <x-select wire:model='themes' class="w-full" id="themes" multiple='multiple'>
+                                    @foreach ($getThemes as $theme)
+                                        <option value="{{$theme->id}}">{{$theme->name}}</option>
+                                    @endforeach
+                                </x-select>
+                            </div>
+                            @if($errors->has('themes'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('themes') }}</span>
                             @endif
                         </div>
                         <div class="flex-1">
@@ -157,14 +158,15 @@
                         </div>
                         <div class="flex-1">
                             <x-label for="theme">Feature</x-label>
-                            <x-select wire:model="feature_id" class="!w-full">
-                                <option value="" class="hidden">--Select feature--</option>
-                                @foreach ($features as $feature)
-                                    <option value="{{$feature->id}}">{{$feature->name}}</option>
-                                @endforeach
-                            </x-select>
-                            @if($errors->has('feature_id'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('feature_id') }}</span>
+                            <div wire:ignore>
+                                <x-select wire:model='features' class="w-full" id="features" multiple='multiple'>
+                                    @foreach ($getFeatures as $feature)
+                                        <option value="{{$feature->id}}">{{$feature->name}}</option>
+                                    @endforeach
+                                </x-select>
+                            </div>
+                            @if($errors->has('features'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('features') }}</span>
                             @endif
                         </div>
                     </div>
@@ -290,6 +292,30 @@
             $('#availableLanguage').on('change', function() {
                 let $data = $(this).val();
                 $wire.set('available_language', $data);
+            });
+        });
+    </script>
+@endscript
+
+@script()
+    <script>
+        $(document).ready(function() {
+            $('#themes').select2();
+            $('#themes').on('change', function() {
+                let $data = $(this).val();
+                $wire.set('themes', $data);
+            });
+        });
+    </script>
+@endscript
+
+@script()
+    <script>
+        $(document).ready(function() {
+            $('#features').select2();
+            $('#features').on('change', function() {
+                let $data = $(this).val();
+                $wire.set('features', $data);
             });
         });
     </script>

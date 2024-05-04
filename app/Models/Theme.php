@@ -12,4 +12,8 @@ class Theme extends Model
     protected $fillable = [
         'name', 'slug'
     ];
+
+    public function games() {
+        return $this->belongsToMany(Game::class);
+    }
 }

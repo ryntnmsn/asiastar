@@ -24,8 +24,6 @@ class Game extends Model
         'rtp',
         'maximum_win',
         'region',
-        'theme_id',
-        'feature_id',
         'image_square',
         'image_horizontal',
         'image_vertical',
@@ -48,12 +46,12 @@ class Game extends Model
         return $this->belongsTo(GameType::class);
     }
 
-    public function theme() {
-        return $this->belongsTo(Theme::class);
+    public function themes() {
+        return $this->belongsToMany(Theme::class);
     }
 
-    public function feature() {
-        return $this->belongsTo(Feature::class);
+    public function features() {
+        return $this->belongsToMany(Feature::class);
     }
 
     public function available_languages() {

@@ -33,8 +33,8 @@ class GameEdit extends Component
     public $rtp;
     public $maximum_win;
     public $region = '';
-    public $theme_id = '';
-    public $feature_id = '';
+    public $themes = [];
+    public $features = [];
     public $available_language = [];
     public $old_image_square;
     public $old_image_horizontal;
@@ -45,7 +45,13 @@ class GameEdit extends Component
 
     public function mount($id) {
         $game = Game::where('id', $id)->first();
+
+        $this->themes = $game->themes->pluck('id');
+
+        $this->features = $game->features->pluck('id');
+
         $this->available_language = $game->available_languages->pluck('id');
+
         $this->id = $game->id;
         $this->title = $game->title;
         $this->description = $game->description;
@@ -60,8 +66,6 @@ class GameEdit extends Component
         $this->rtp = $game->rtp;
         $this->maximum_win = $game->maximum_win;
         $this->region = $game->region;
-        $this->theme_id = $game->theme_id;
-        $this->feature_id = $game->feature_id;
         $this->old_image_square = $game->image_square;
         $this->old_image_horizontal = $game->image_horizontal;
         $this->old_image_vertical = $game->image_vertical;
@@ -78,8 +82,8 @@ class GameEdit extends Component
             'game_type_id' => 'required',
             'game_category_id' => 'required',
             'available_language' => 'required',
-            'feature_id' => 'required',
-            'theme_id' => 'required',
+            'features' => 'required',
+            'themes' => 'required',
             'region' => 'required',
         ];
 
@@ -143,21 +147,37 @@ class GameEdit extends Component
             'rtp' => $this->rtp,
             'maximum_win' => $this->maximum_win,
             'region' => $this->region,
-            'theme_id' => $this->theme_id,
-            'feature_id' => $this->feature_id,
             'image_square' => $image_square,
             'image_horizontal' => $image_horizontal,
             'image_vertical' => $image_vertical,
         ]);
 
-        $count = count($game->available_languages);
+        $countLanguages = count($game->available_languages);
+        $countThemes = count($game->themes);
+        $countFeatures = count($game->features);
 
-        if($count == 0) {
+        if($countLanguages == 0) {
             foreach($this->available_language as $key => $value) {
                 $game->available_languages()->attach($this->available_language[$key]);
             }
         } else {
             $game->available_languages()->sync($this->available_language);
+        }
+
+        if($countThemes == 0) {
+            foreach($this->themes as $key => $value) {
+                $game->themes()->attach($this->themes[$key]);
+            }
+        } else {
+            $game->themes()->sync($this->themes);
+        }
+
+        if($countFeatures == 0) {
+            foreach($this->features as $key => $value) {
+                $game->features()->attach($this->features[$key]);
+            }
+        } else {
+            $game->features()->sync($this->features);
         }
 
         $this->dispatch('updated');
@@ -168,19 +188,19 @@ class GameEdit extends Component
     {
         $languages = Language::all();
         $providers = Provider::all();
-        $themes = Theme::all();
+        $getThemes = Theme::all();
         $gameTypes = GameType::all();
         $gameCategories = GameCategory::all();
-        $features = Feature::all();
+        $getFeatures = Feature::all();
         $availableLanguages = AvailableLanguage::all();
 
         return view('livewire.admin.game.game-edit', [
             'languages' => $languages,
             'providers' => $providers,
-            'themes' => $themes,
+            'getThemes' => $getThemes,
             'gameTypes' => $gameTypes,
             'gameCategories' => $gameCategories,
-            'features' => $features,
+            'getFeatures' => $getFeatures,
             'availableLanguages' => $availableLanguages
         ])->extends('layouts.admin.app')->section('contents');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Home\Game;
 
+use App\Models\AvailableLanguage;
 use App\Models\Game;
 use App\Models\GameBanner;
 use App\Models\GameType;
@@ -26,6 +27,9 @@ class AllGameHomeIndex extends Component
     public $filterRTP = '';
     public $filterSortSelect = 'status';
     public $filterSortOrder = '';
+    public $filterLanguage = '';
+    public $searchQuery = '';
+    public $textLive = '';
 
     public function grid() {
         $this->isGridView = true;
@@ -41,17 +45,27 @@ class AllGameHomeIndex extends Component
         $this->amount += 6;
     }
 
+    public function resetSearch() {
+        $this->searchQuery = '';
+    }
+
     public function render()
     {
-        $themes = Theme::all();
+
+        $lang = app()->getLocale();
+
+        $getThemes = Theme::all();
         $gameTypes = GameType::all();
         $providers = Provider::all();
+        $availableLanguages = AvailableLanguage::all();
 
         $gameBanners = GameBanner::where('status', true);
-        
+
         $games = Game::where('status', true)
             ->when($this->filterTheme, function($query) {
-                return $query->where('theme_id', $this->filterTheme);
+                $query->whereHas('themes', function($query) {
+                    return $query->where('theme_id', $this->filterTheme);
+                });
             })
             ->when($this->filterGameType, function($query) {
                 return $query->where('game_type_id', $this->filterGameType);
@@ -60,7 +74,7 @@ class AllGameHomeIndex extends Component
                 return $query->where('provider_id', $this->filterProvider);
             })
             ->when($this->filterRTP, function($query) {
-                
+
                 if($this->filterRTP == 50) {
                     return $query->where('rtp', '<=' , 50);
                 } else {
@@ -74,21 +88,32 @@ class AllGameHomeIndex extends Component
                     return $query->orderBy($this->filterSortSelect, $this->filterSortOrder);
                 }
             })
+            ->when($this->filterLanguage, function($query) {
+                $query->whereHas('available_languages', function ($query) {
+                    return $query->where('available_language_id', $this->filterLanguage);
+                });
+            })
+            ->whereHas('language', function($query) use($lang) {
+                $query->where('code', $lang);
+            })
             ->orderBy('created_at', 'desc')
             ->take($this->amount);
 
-            // $gamestest = Game::where('rtp', '>=', 90)->where('rtp', '<' , 91 + 10)->get();
-            
-            // dd($gamestest);
 
-        
+        $results = [];
+        if(strlen($this->searchQuery) >= 2) {
+            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')->get();
+        }
+
 
         return view('livewire.home.game.all-game-home-index', [
             'gameBanners' => $gameBanners->get(),
             'games' => $games->get(),
-            'themes' => $themes,
+            'getThemes' => $getThemes,
             'gameTypes' => $gameTypes,
             'providers' => $providers,
+            'availableLanguages' => $availableLanguages,
+            'results' => $results
         ])->extends('layouts.home.app')->section('contents');;
     }
 }

@@ -34,8 +34,8 @@ class GameCreate extends Component
     public $rtp;
     public $maximum_win;
     public $region = '';
-    public $theme_id = '';
-    public $feature_id = '';
+    public $themes = [];
+    public $features = [];
     public $image_square;
     public $image_horizontal;
     public $image_vertical;
@@ -48,7 +48,8 @@ class GameCreate extends Component
         'game_type_id' => 'required',
         'rtp' => 'required|numeric|between:0,99.99',
         'maximum_win' => 'required|numeric',
-        'theme_id' => 'required',
+        'themes' => 'required',
+        'features' => 'required',
         'region' => 'required',
         'game_category_id' => 'required',
         'available_language' => 'required',
@@ -74,8 +75,6 @@ class GameCreate extends Component
             'rtp' => $this->rtp,
             'maximum_win' => $this->maximum_win,
             'region' => $this->region,
-            'theme_id' => $this->theme_id,
-            'feature_id' => $this->feature_id,
             'image_square' => $this->image_square->store('games', 'public'),
             'image_vertical' => $this->image_vertical->store('games', 'public'),
             'image_horizontal' => $this->image_horizontal->store('games', 'public'),
@@ -83,6 +82,14 @@ class GameCreate extends Component
 
         foreach($this->available_language as $key => $value) {
             $game->available_languages()->attach($this->available_language[$key]);
+        }
+
+        foreach($this->themes as $key => $value) {
+            $game->themes()->attach($this->themes[$key]);
+        }
+
+        foreach($this->features as $key => $value) {
+            $game->features()->attach($this->features[$key]);
         }
 
         $this->dispatch('created');
@@ -93,19 +100,19 @@ class GameCreate extends Component
 
         $languages = Language::all();
         $providers = Provider::all();
-        $themes = Theme::all();
+        $getThemes = Theme::all();
         $gameTypes = GameType::all();
         $gameCategories = GameCategory::all();
-        $features = Feature::all();
+        $getFeatures = Feature::all();
         $availableLanguages = AvailableLanguage::all();
 
         return view('livewire.admin.game.game-create', [
             'languages' => $languages,
             'providers' => $providers,
-            'themes' => $themes,
+            'getThemes' => $getThemes,
             'gameTypes' => $gameTypes,
             'gameCategories' => $gameCategories,
-            'features' => $features,
+            'getFeatures' => $getFeatures,
             'availableLanguages' => $availableLanguages
         ])->extends('layouts.admin.app')->section('contents');
     }
