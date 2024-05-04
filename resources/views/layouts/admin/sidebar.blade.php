@@ -51,6 +51,9 @@
                         <a href="{{ route('theme.index') }}" class="{{ request()->is('admin/game/theme*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Theme</a>
                     </li>
                     <li>
+                        <a href="{{ route('game.available.language.index') }}" class="{{ request()->is('admin/game/available-language*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Languages</a>
+                    </li>
+                    <li>
                         <a href="{{ route('game.create') }}" class="{{ request()->is('admin/game/create') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Create +</a>
                     </li>
                 </ul>

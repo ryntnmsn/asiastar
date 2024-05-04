@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Game;
 
+use App\Models\AvailableLanguage;
 use App\Models\Feature;
 use App\Models\Game;
 use App\Models\GameCategory;
@@ -34,6 +35,7 @@ class GameEdit extends Component
     public $region = '';
     public $theme_id = '';
     public $feature_id = '';
+    public $available_language = [];
     public $old_image_square;
     public $old_image_horizontal;
     public $old_image_vertical;
@@ -43,6 +45,7 @@ class GameEdit extends Component
 
     public function mount($id) {
         $game = Game::where('id', $id)->first();
+        $this->available_language = $game->available_languages->pluck('id');
         $this->id = $game->id;
         $this->title = $game->title;
         $this->description = $game->description;
@@ -74,6 +77,7 @@ class GameEdit extends Component
             'provider_id' => 'required',
             'game_type_id' => 'required',
             'game_category_id' => 'required',
+            'available_language' => 'required',
             'feature_id' => 'required',
             'theme_id' => 'required',
             'region' => 'required',
@@ -146,6 +150,16 @@ class GameEdit extends Component
             'image_vertical' => $image_vertical,
         ]);
 
+        $count = count($game->available_languages);
+
+        if($count == 0) {
+            foreach($this->available_language as $key => $value) {
+                $game->available_languages()->attach($this->available_language[$key]);
+            }
+        } else {
+            $game->available_languages()->sync($this->available_language);
+        }
+
         $this->dispatch('updated');
     }
 
@@ -158,6 +172,7 @@ class GameEdit extends Component
         $gameTypes = GameType::all();
         $gameCategories = GameCategory::all();
         $features = Feature::all();
+        $availableLanguages = AvailableLanguage::all();
 
         return view('livewire.admin.game.game-edit', [
             'languages' => $languages,
@@ -166,6 +181,7 @@ class GameEdit extends Component
             'gameTypes' => $gameTypes,
             'gameCategories' => $gameCategories,
             'features' => $features,
+            'availableLanguages' => $availableLanguages
         ])->extends('layouts.admin.app')->section('contents');
     }
 }

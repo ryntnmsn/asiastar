@@ -144,13 +144,16 @@
                     <div class="flex gap-5">
                         <div class="flex-1">
                             <x-label for="theme">Available languages</x-label>
-                            <x-select  class="!w-full">
-                                <option value="" class="hidden">--Select languages--</option>
-                                
-                            </x-select>
-                            {{-- @if($errors->has('theme_id'))
-                                <span class="text-sm text-rose-500">{{ $errors->first('theme_id') }}</span>
-                            @endif --}}
+                            <div wire:ignore>
+                                <x-select wire:model='available_language' class="w-full" id="availableLanguage" multiple='multiple'>
+                                    @foreach ($availableLanguages as $availableLanguage)
+                                        <option value="{{$availableLanguage->id}}">{{$availableLanguage->name}}</option>
+                                    @endforeach
+                                </x-select>
+                            </div>
+                            @if($errors->has('available_language'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('available_language') }}</span>
+                            @endif
                         </div>
                         <div class="flex-1">
                             <x-label for="theme">Feature</x-label>
@@ -271,20 +274,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <div>
                     <x-button type="submit" wire:target="update">Create</x-button>
                 </div>
@@ -292,6 +281,19 @@
         </form>
     </div>
 </div>
+
+
+@script()
+    <script>
+        $(document).ready(function() {
+            $('#availableLanguage').select2();
+            $('#availableLanguage').on('change', function() {
+                let $data = $(this).val();
+                $wire.set('available_language', $data);
+            });
+        });
+    </script>
+@endscript
 
 
 <script>

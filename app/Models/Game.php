@@ -56,4 +56,8 @@ class Game extends Model
         return $this->belongsTo(Feature::class);
     }
 
+    public function available_languages() {
+        return $this->belongsToMany(AvailableLanguage::class);
+    }
+
 }

@@ -10,6 +10,9 @@ use App\Livewire\Admin\Article\ArticleIndex;
 use App\Livewire\Admin\Article\ArticleTagCreate;
 use App\Livewire\Admin\Article\ArticleTagEdit;
 use App\Livewire\Admin\Article\ArticleTagIndex;
+use App\Livewire\Admin\AvailableLanguage\AvailableLanguageCreate;
+use App\Livewire\Admin\availableLanguage\AvailableLanguageEdit;
+use App\Livewire\Admin\AvailableLanguage\AvailableLanguageIndex;
 use App\Livewire\Admin\Dashboard\DashboardIndex;
 use App\Livewire\Admin\Feature\FeatureCreate;
 use App\Livewire\Admin\Feature\FeatureEdit;
@@ -91,6 +94,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/game/create', GameCreate::class)->name('game.create');
         Route::get('/game/edit/{id}', GameEdit::class)->name('game.edit');
         Route::get('game/clone/{id}', GameIndex::class)->name('game.clone');
+
+        //Available Languages
+        Route::get('/game/available-language', AvailableLanguageIndex::class)->name('game.available.language.index');
+        Route::get('/game/available-language/create', AvailableLanguageCreate::class)->name('game.available.language.create');
+        Route::get('/game/available-language/edit/{id}', AvailableLanguageEdit::class)->name('game.available.language.edit');
 
         //Game Banners
         Route::get('/game/banner', GameBannerIndex::class)->name('game.banner.index');

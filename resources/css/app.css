@@ -20,6 +20,14 @@ html, body {
     font-family: "Noto Sans", sans-serif;
 }
 
+.select2-container--default .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    padding-top: 0.190rem;
+    padding-bottom:0.390rem;
+    border-radius: 7px;
+}
+
 #bar-fixed.stickIt {
     position: fixed;
     top: 0px;

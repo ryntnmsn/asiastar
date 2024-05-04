@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Game;
 
+use App\Models\AvailableLanguage;
 use App\Models\Feature;
 use App\Models\Game;
 use App\Models\GameCategory;
@@ -24,6 +25,7 @@ class GameCreate extends Component
     public $language_id = '';
     public $provider_id = '';
     public $status;
+    public $available_language = [];
     public $game_category_id = '';
     public $game_type_id = '';
     public $is_featured;
@@ -49,6 +51,7 @@ class GameCreate extends Component
         'theme_id' => 'required',
         'region' => 'required',
         'game_category_id' => 'required',
+        'available_language' => 'required',
         'image_square' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=560',
         'image_vertical' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=950',
         'image_horizontal' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=950,min_height=560,max_width=950,max_height=560',
@@ -56,7 +59,7 @@ class GameCreate extends Component
 
     public function store() {
         $this->validate();
-        Game::create([
+        $game = Game::create([
             'title' => $this->title,
             'slug' => Str::slug($this->title),
             'description' => $this->description,
@@ -78,6 +81,10 @@ class GameCreate extends Component
             'image_horizontal' => $this->image_horizontal->store('games', 'public'),
         ]);
 
+        foreach($this->available_language as $key => $value) {
+            $game->available_languages()->attach($this->available_language[$key]);
+        }
+
         $this->dispatch('created');
     }
 
@@ -90,6 +97,7 @@ class GameCreate extends Component
         $gameTypes = GameType::all();
         $gameCategories = GameCategory::all();
         $features = Feature::all();
+        $availableLanguages = AvailableLanguage::all();
 
         return view('livewire.admin.game.game-create', [
             'languages' => $languages,
@@ -98,6 +106,7 @@ class GameCreate extends Component
             'gameTypes' => $gameTypes,
             'gameCategories' => $gameCategories,
             'features' => $features,
+            'availableLanguages' => $availableLanguages
         ])->extends('layouts.admin.app')->section('contents');
     }
 }
