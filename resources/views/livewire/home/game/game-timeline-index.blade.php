@@ -54,9 +54,23 @@
                                         </label>
                                     </div>
                                     <div class="flex items-center gap-2 mb-4">
+                                        <input wire:model.live="filterYear" id="year-option-2022" value="2022" type="radio" name="year"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
+                                            <span class="text-slate-500">
+                                                2022
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center gap-2 mb-4">
                                         <input wire:model.live="filterYear" id="year-option-2023" value="2023" type="radio" name="year"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                             <span class="text-slate-500">
                                                 2023
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <input wire:model.live="filterYear" id="year-option-2024" value="2024" type="radio" name="year"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
+                                            <span class="text-slate-500">
+                                                2024
                                             </span>
                                         </label>
                                     </div>

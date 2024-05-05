@@ -40,13 +40,17 @@ class GameTimelineIndex extends Component
 
         $games = Game::where('status', true)
             ->when($this->filterYear, function ($query) {
-                $query->where(date('Y', strtotime('released_date')), $this->filterYear);
+                $query->whereYear('released_date', $this->filterYear);
             })
+            ->orderBy('released_date', 'desc')
             ->take($this->amount);
 
-        $date = date('Y', strtotime($games->released_date));
 
-        dd($date);
+
+        // $gameTest = Game::where('id', '25')->get();
+        // $date = date('Y', strtotime($gameTest->released_date));
+
+        // dd($date);
 
         $results = [];
         if(strlen($this->searchQuery) >= 2) {
