@@ -32,12 +32,12 @@
         <div>
             <div class="flex justify-between items-center">
                 <div>
-                    <ul>
+                    {{-- <ul>
                         <li><a href="{{ config('app.url') . '/locale/en' }}">English</a></li>
                         <li><a href="{{ config('app.url') . '/locale/jp' }}">Japanese</a></li>
                         <li><a href="{{ config('app.url') . '/locale/ch' }}">Chinese</a></li>
                         <li><a href="{{ config('app.url') . '/locale/ko' }}">Korean</a></li>
-                    </ul>
+                    </ul> --}}
                     <x-heading>All Games</x-heading>
                 </div>
                 <div class="flex gap-2 items-center">
@@ -79,8 +79,8 @@
                 @if($isGridView)
                     <div class="my-5 grid grid-cols-3 gap-5">
                         @forelse ($games as $game)
-                            <div class="box-container hover:-translate-y-2 ease-in-out duration-300 rounded-xl overflow-hidden cursor-pointer group border border-slate-200 p-[3px]">
-                                <div class="relative rounded-xl">
+                            <div class="box-container hover:-translate-y-2 ease-in-out duration-300 rounded-2xl overflow-hidden cursor-pointer group border border-slate-200 p-[3px]">
+                                <div class="relative rounded-2xl">
 
                                     <div class="button-details rounded-xl">
                                         <div class="w-full h-1/2 flex items-center justify-center">
@@ -88,12 +88,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-4 rounded-xl flex mt-4 gap-4 py-4 px-4 absolute bottom-0 left-0 right-0 z-[100] bg-white/[.70] backdrop-blur-md">
+                                    <div class="m-4 rounded-2xl flex mt-4 gap-4 py-4 px-4 absolute bottom-0 left-0 right-0 z-[100] bg-white/[.70] backdrop-blur-md">
                                         <div class="text-left">
                                             <div class="flex gap-2">
                                                 <div>
-                                                    <div class="overflow-hidden rounded-md p-[2px] bg-slate-50">
-                                                        <img src="{{ url('storage/'. $game->image_square) }}" alt="{{ $game->title }}" class="!w-[80px] rounded-md" loading="lazy">
+                                                    <div class="overflow-hidden rounded-xl p-[2px] bg-slate-50">
+                                                        <img src="{{ url('storage/'. $game->image_square) }}" alt="{{ $game->title }}" class="!w-[80px] rounded-xl" loading="lazy">
                                                     </div>
                                                 </div>
                                                 <div>
@@ -147,9 +147,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="relative rounded-xl overflow-hidden">
+                                    <div class="relative rounded-2xl overflow-hidden">
                                         <div>
-                                            <img src="{{ url('storage/'. $game->image_vertical) }}" alt="{{ $game->title }}" class="rounded-xl swiper-img group-hover:scale-[1.1] group-hover:object-cover duration-300 ease-in-out" loading="lazy">
+                                            <img src="{{ url('storage/'. $game->image_vertical) }}" alt="{{ $game->title }}" class="rounded-2xl swiper-img group-hover:scale-[1.1] group-hover:object-cover duration-300 ease-in-out" loading="lazy">
                                         </div>
                                     </div>
                                 </div>

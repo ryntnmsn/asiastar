@@ -92,9 +92,9 @@ class AllGameHomeIndex extends Component
                     return $query->where('available_language_id', $this->filterLanguage);
                 });
             })
-            ->whereHas('language', function($query) use($lang) {
-                $query->where('code', $lang);
-            })
+            // ->whereHas('language', function($query) use($lang) {
+            //     $query->where('code', $lang);
+            // })
             ->orderBy('created_at', 'desc')
             ->take($this->amount);
 

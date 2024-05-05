@@ -18,18 +18,18 @@
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
                 <div>
-                    <input wire:model.live.debounce.500ms="searchQuery" type="text" class="w-full rounded-md p-2 border-2 border-slate-300 text-lg text-slate-600 placeholder:text-slate-400 focus:ring-amber-500 focus:border-amber-500">
+                    <input wire:model.live.debounce.500ms="searchQuery" type="text" class="w-full rounded-md p-2 border-2 border-slate-300 text-lg text-slate-600 placeholder:text-slate-400 focus:ring-amber-500 focus:border-amber-500" placeholder="Enter here...">
                 </div>
 
                 @if(strlen($searchQuery) >= 2)
                 <div class="mt-10">
-                    Search Result
+                    <span class="text-slate-600">Search Result</span>
                     @forelse ($results as $result)
                         <div class="flex flex-col even:bg-slate-50 hover:bg-slate-50 rounded-xl px-3 cursor-pointer hover:-translate-y-2 duration-300 ease-in-out">
                             <div class="flex gap-3 py-3">
                                 <div>
-                                    <div class="w-[80px] rounded-lg p-1 overflow-hidden bg-white">
-                                        <img src="{{url('storage/'.$result->image_square)}}" alt="{{$result->title}}" class="rounded-lg">
+                                    <div class="w-[80px] rounded-2xl p-1 overflow-hidden bg-white">
+                                        <img src="{{url('storage/'.$result->image_square)}}" alt="{{$result->title}}" class="rounded-2xl" loading="lazy">
                                     </div>
                                 </div>
                                 <div>
