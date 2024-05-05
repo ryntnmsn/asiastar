@@ -188,13 +188,12 @@ html, body {
 
 
 .timeline{
-	width:800px;
 	color:#fff;
 	padding:0 20px;
 }
 .timeline ul{
 	list-style-type:none;
-	border-left:2px solid #fff8e1;
+	border-left:2px solid #e9eff7;
 	padding:10px 5px;
 }
 .timeline ul li{
@@ -230,8 +229,8 @@ html, body {
 	background-color:#071f2a;
 } */
 .timeline ul li:hover:before{
-	background-color:rgb(255, 238, 0);
-	box-shadow:0px 0px 10px 2px rgb(255, 251, 0);
+	background-color:rgb(255, 208, 0);
+	box-shadow:0px 0px 10px 2px rgb(255, 230, 0);
 }
 @media (max-width:300px){
 	.timeline{

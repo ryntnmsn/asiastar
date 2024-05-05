@@ -8,6 +8,7 @@ use App\Models\GameBanner;
 use App\Models\GameType;
 use App\Models\Provider;
 use App\Models\Theme;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class GameTimelineIndex extends Component
@@ -21,6 +22,7 @@ class GameTimelineIndex extends Component
     public $filterSortOrder = '';
     public $filterLanguage = '';
     public $searchQuery = '';
+    public $filterYear = '';
 
     public function loadMore() {
         $this->amount += 6;
@@ -36,7 +38,15 @@ class GameTimelineIndex extends Component
 
         $gameBanners = GameBanner::where('status', true);
 
-        $games = Game::where('status', true)->orderBy('released_date', 'desc')->take($this->amount);
+        $games = Game::where('status', true)
+            ->when($this->filterYear, function ($query) {
+                $query->where(date('Y', strtotime('released_date')), $this->filterYear);
+            })
+            ->take($this->amount);
+
+        $date = date('Y', strtotime($games->released_date));
+
+        dd($date);
 
         $results = [];
         if(strlen($this->searchQuery) >= 2) {

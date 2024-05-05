@@ -54,7 +54,7 @@
                                         </label>
                                     </div>
                                     <div class="flex items-center gap-2 mb-4">
-                                        <input wire:model.live="filterYear" id="year-option-" value="" type="radio" name="year"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
+                                        <input wire:model.live="filterYear" id="year-option-2023" value="2023" type="radio" name="year"  class="w-4 h-4 checked:bg-amber-500 border-slate-300 focus:ring-2 focus:ring-amber-500 focus:bg-amber-500 active:bg-amber-500 focus:border-amber-500">
                                             <span class="text-slate-500">
                                                 2023
                                             </span>
@@ -72,18 +72,18 @@
                 <x-heading>Coming Soon</x-heading>
 
                 <div class="mt-10">
-                    <div class="timeline">
-                        <ul>
+                    <div class="timeline !w-full">
+                        <ul class="w-full">
                             @foreach ($games as $game)
-                            <li>
-                                <div class="content flex gap-4">
-                                    <div>
-                                        <img src="{{url('storage/'. $game->image_horizontal)}}" alt="" class="w-[440px] rounded-lg">
+                            <li class=" hover:bg-slate-100 border-b border-slate-200 hover:rounded-xl">
+                                <div class="content flex gap-4 hover:translate-x-3 duration-300 ease-in-out group">
+                                    <div class="rounded-lg overflow-hidden">
+                                        <img src="{{url('storage/'. $game->image_horizontal)}}" alt="" class="w-[440px] group-hover:scale-[1.1] group-hover:object-cover rounded-lg duration-300 ease-out">
                                     </div>
                                     <div class="flex gap-4 items-center">
                                         <div class="flex flex-col justify-center items-center">
                                             <span class="text-4xl font-bold montserrat text-slate-600">{{date('m.d', strtotime($game->released_date))}}</span>
-                                            <span class="text-[22px] font-bold montserrat text-slate-400">{{date('Y', strtotime($game->released_date))}}</span>
+                                            <span class="text-[22px] font-bold montserrat text-slate-300">{{date('Y', strtotime($game->released_date))}}</span>
                                         </div>
                                         <div class="border-l border-slate-200 pl-3">
                                             <div>
