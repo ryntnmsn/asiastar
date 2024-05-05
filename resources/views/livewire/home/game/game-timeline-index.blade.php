@@ -72,33 +72,35 @@
                 <x-heading>Coming Soon</x-heading>
 
                 <div class="mt-10">
-                    <ol class="relative border-s border-slate-200 flex flex-col gap-10">
-                        @foreach ($games as $game)
-                            <li class="mb-10 ms-6 flex items-center p-5 group rounded-xl hover:bg-slate-100 cursor-pointer">
-                                <div>
-                                    <img src="{{url('storage/' . $game->image_horizontal)}}" alt="{{$game->title}}" class="w-[340px] rounded-xl">
-                                </div>
-                                <div>
-                                    <span class="absolute flex items-center justify-center w-8 h-8 bg-amber-100 rounded-full -start-4 ring-8 ring-amber-50">
-                                        <svg class="w-4 h-4 text-amber-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div class="flex gap-5">
-                                    <div class="flex flex-col items-center justify-center">
-                                        <div>
-                                            <h3 class="flex items-center m-0 p-0 text-[42px] font-bold montserrat text-slate-600">
-                                                {{date('m.d', strtotime($game->released_date))}}
-                                            </h3>
-                                            <x-heading class="!mb-0">{{$game->title}}</x-heading>
-                                            <x-sub-heading class="!mb-3 !text-sm">{{ strip_tags(Str::words($game->description, 10, '...')) }}</x-sub-heading>
+                    <div class="timeline">
+                        <ul>
+                            @foreach ($games as $game)
+                            <li>
+                                <div class="content flex gap-4">
+                                    <div>
+                                        <img src="{{url('storage/'. $game->image_horizontal)}}" alt="" class="w-[440px] rounded-lg">
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <div class="flex flex-col justify-center items-center">
+                                            <span class="text-4xl font-bold montserrat text-slate-600">{{date('m.d', strtotime($game->released_date))}}</span>
+                                            <span class="text-[22px] font-bold montserrat text-slate-400">{{date('Y', strtotime($game->released_date))}}</span>
+                                        </div>
+                                        <div class="border-l border-slate-200 pl-3">
+                                            <div>
+                                                <x-heading class="!mb-0 !text-lg">{{$game->title}}</x-heading>
+                                            </div>
+                                            <div>
+                                                @if($game->description != null)
+                                                    <x-sub-heading class="!mb-0 !pb-0 !text-sm">{{ strip_tags(Str::words($game->description, 15, '...')) }}</x-sub-heading>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                        @endforeach
-                    </ol>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
 
             </div>
