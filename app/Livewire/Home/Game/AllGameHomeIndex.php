@@ -29,7 +29,6 @@ class AllGameHomeIndex extends Component
     public $filterSortOrder = '';
     public $filterLanguage = '';
     public $searchQuery = '';
-    public $textLive = '';
 
     public function grid() {
         $this->isGridView = true;

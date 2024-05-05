@@ -235,9 +235,6 @@
 
         </div>
     </div>
-
-
     @include('layouts.home.game-search')
-
 </div>
 

@@ -9,6 +9,12 @@ use Livewire\Component;
 
 class GameHomeIndex extends Component
 {
+    public $searchQuery = '';
+
+
+    public function resetSearch() {
+        $this->searchQuery = '';
+    }
 
     public function render()
     {
@@ -26,12 +32,18 @@ class GameHomeIndex extends Component
 
         $rtpGames = $games->orderByRaw('CAST(rtp AS UNSIGNED) DESC')->take(6)->get();
 
+        $results = [];
+        if(strlen($this->searchQuery) >= 2) {
+            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')->get();
+        }
+
         return view('livewire.home.game.game-home-index', [
             'gameBanners' => $gameBanners,
             'isFeatured' => $isFeatured,
             'hotGames' => $hotGames,
             'newGames' => $newGames,
-            'rtpGames' => $rtpGames
+            'rtpGames' => $rtpGames,
+            'results' => $results
         ])->extends('layouts.home.app')->section('contents');
     }
 }

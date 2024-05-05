@@ -9,6 +9,7 @@
             Filters
         </span>
     </div>
+
     <div>
         <div id="accordion-open" data-accordion="open" data-active-classes="bg-none">
             {{-- Theme Filter --}}
@@ -207,4 +208,5 @@
 
         </div>
     </div>
+
 </div>

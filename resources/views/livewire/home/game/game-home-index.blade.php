@@ -19,7 +19,7 @@
         </div>
     @endif
 
-    <div class="flex flex-row max-w-[1280px] w-full h-full mx-auto mt-20">
+    <div wire:ignore class="flex flex-row max-w-[1280px] w-full h-full mx-auto mt-20">
         @if(count($isFeatured) == null && count($hotGames) == null && count($newGames) == null && count($rtpGames) == null)
             <div class="flex justify-center items-center w-full text-slate-700">@lang('No games available')</div>
         @else
@@ -272,6 +272,6 @@
             </div>
         </div>
     @endif
-
+    @include('layouts.home.game-search')
 </div>
 
