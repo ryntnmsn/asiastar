@@ -16,7 +16,7 @@
                         @endif
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-slate-900">Your email</label>
-                            <input wire:model="email" type="email" name="email" id="email" class="bg-slate-50 border border-slate-300 text-slate-900 sm:text-sm rounded-lg focus:ring-amber-600 focus:border-amber-500 block w-full p-2.5" placeholder="name@company.com">
+                            <input wire:model="email" type="email" name="email" id="email" class="bg-slate-50 border border-slate-300 text-slate-900 sm:text-sm rounded-lg focus:ring-amber-600 focus:border-amber-500 block w-full p-2.5" placeholder="Enter email">
                             @error($email)
                                 <span class="text-sm text-rose-500">{{ $message }}</span>
                             @enderror

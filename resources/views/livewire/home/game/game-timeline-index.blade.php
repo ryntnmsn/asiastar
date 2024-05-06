@@ -91,10 +91,10 @@
                             @foreach ($games as $game)
                             <li class=" hover:bg-slate-100 border-b border-slate-200 hover:rounded-xl">
                                 <div class="content flex gap-4 hover:translate-x-3 duration-300 ease-in-out group">
-                                    <div class="rounded-lg overflow-hidden">
-                                        <img src="{{url('storage/'. $game->image_horizontal)}}" alt="" class="w-[440px] group-hover:scale-[1.1] group-hover:object-cover rounded-lg duration-300 ease-out">
+                                    <div class="rounded-lg overflow-hidden w-1/2">
+                                        <img src="{{url('storage/'. $game->image_horizontal)}}" alt="" class="w-full group-hover:scale-[1.1] group-hover:object-cover rounded-lg duration-300 ease-out">
                                     </div>
-                                    <div class="flex gap-4 items-center">
+                                    <div class="flex gap-4 items-center w-1/2">
                                         <div class="flex flex-col justify-center items-center">
                                             <span class="text-4xl font-bold montserrat text-slate-600">{{date('m.d', strtotime($game->released_date))}}</span>
                                             <span class="text-[22px] font-bold montserrat text-slate-300">{{date('Y', strtotime($game->released_date))}}</span>

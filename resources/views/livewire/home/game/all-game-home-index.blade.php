@@ -91,12 +91,12 @@
                                     <div class="m-4 rounded-2xl flex mt-4 gap-4 py-4 px-4 absolute bottom-0 left-0 right-0 z-[100] bg-white/[.70] backdrop-blur-md">
                                         <div class="text-left">
                                             <div class="flex gap-2">
-                                                <div>
+                                                <div class="w-1/4">
                                                     <div class="overflow-hidden rounded-xl p-[2px] bg-slate-50">
-                                                        <img src="{{ url('storage/'. $game->image_square) }}" alt="{{ $game->title }}" class="!w-[80px] rounded-xl" loading="lazy">
+                                                        <img src="{{ url('storage/'. $game->image_square) }}" alt="{{ $game->title }}" class="w-full rounded-xl" loading="lazy">
                                                     </div>
                                                 </div>
-                                                <div>
+                                                <div class="w-3/4">
                                                     <x-heading class="text-[16px] !mb-0 text-slate-800">{{ $game->title }}</x-heading>
                                                     @if($game->description != null)
                                                         <x-sub-heading class="!mb-3 text-slate-600">{{ strip_tags(Str::words($game->description, 10, '...')) }}</x-sub-heading>
