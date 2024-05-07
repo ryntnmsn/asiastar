@@ -42,9 +42,9 @@
                     <div class="grid grid-cols-4 gap-10">
                         @foreach ($latestNews as $latestNews)
                             <div id="zoomEffect">
-                                <div class="flex gap-2 flex-col w-full">
+                                <div class="flex gap-2 flex-col w-full hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
                                     <div>
-                                        <img src="{{url('storage/'. $latestNews->image)}}" alt="" class="w-full rounded-xl">
+                                        <img src="{{url('storage/'. $latestNews->image)}}" alt="{{$latestNews->name}}" class="w-full rounded-xl">
                                     </div>
                                     <div>
                                         <div class="flex text-left flex-col items-start">
@@ -62,6 +62,11 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="mt-20 text-center">
+                    <div>
+                        <x-primary-button>View all news</x-primary-button>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -76,9 +81,9 @@
                 <div class="grid grid-cols-4 gap-10">
                     @foreach ($achievements as $achievement)
                         <div id="zoomEffect">
-                            <div class="flex gap-2 flex-col w-full">
+                            <div class="flex gap-2 flex-col w-full hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
                                 <div>
-                                    <img src="{{url('storage/'. $achievement->image)}}" alt="" class="w-full rounded-xl">
+                                    <img src="{{url('storage/'. $achievement->image)}}" alt="{{$achievement->name}}" class="w-full rounded-xl">
                                 </div>
                                 <div>
                                     <div class="flex text-left flex-col items-start">
@@ -94,7 +99,11 @@
                             </div>
                         </div>
                     @endforeach
-
+                </div>
+            </div>
+            <div class="mt-20 text-center">
+                <div>
+                    <x-primary-button>View all achievements</x-primary-button>
                 </div>
             </div>
         </div>

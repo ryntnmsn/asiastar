@@ -85,6 +85,6 @@ class ArticleEdit extends Component
         return view('livewire.admin.article.article-edit', [
             'languages' => $languages,
             'articleCategories' => $articleCategories,
-        ])->extends('layouts.admin.app')->section('contents');;
+        ])->extends('layouts.admin.app')->section('contents');
     }
 }

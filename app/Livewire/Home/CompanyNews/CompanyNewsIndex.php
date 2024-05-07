@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Admin\Home\CompanyNews;
+namespace App\Livewire\Home\CompanyNews;
 
 use App\Models\Article;
 use Livewire\Component;
@@ -15,7 +15,7 @@ class CompanyNewsIndex extends Component
         $latestNews = $articles->where('category', 'company_news')->orderBy('created_at', 'desc')->limit(4)->get();
         $achievements = Article::where('status', true)->where('category', 'achievements')->get();
 
-        return view('livewire.admin.home.company-news.company-news-index', [
+        return view('livewire.home.company-news.company-news-index', [
             'companyNews' => $companyNews,
             'achievements' => $achievements,
             'latestNews' => $latestNews

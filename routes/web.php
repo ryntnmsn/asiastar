@@ -29,7 +29,7 @@ use App\Livewire\Admin\GameCategory\GameCategoryIndex;
 use App\Livewire\Admin\GameType\GameTypeCreate;
 use App\Livewire\Admin\GameType\GameTypeEdit;
 use App\Livewire\Admin\GameType\GameTypeIndex;
-use App\Livewire\Admin\Home\CompanyNews\CompanyNewsIndex;
+use App\Livewire\Home\CompanyNews\CompanyNewsIndex;
 use App\Livewire\Admin\Language\LanguageCreate;
 use App\Livewire\Admin\Language\LanguageEdit;
 use App\Livewire\Admin\Language\LanguageIndex;
@@ -44,6 +44,7 @@ use App\Livewire\Admin\Theme\ThemeEdit;
 use App\Livewire\Admin\Theme\ThemeIndex;
 use App\Livewire\Auth\Login;
 use App\Livewire\Home\About\AboutOurCompany;
+use App\Livewire\Home\Companynews\SingleCompanyNews;
 use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\Game\GameTimelineIndex;
@@ -68,7 +69,8 @@ Route::get('/games/{id}', SingleGameIndex::class)->name('single.game.index');
 
 //About
 Route::get('/about-our-company', AboutOurCompany::class)->name('about.our.company.index');
-Route::get('/company-news', CompanyNewsIndex::class)->name('company.news.index');
+Route::get('/news', CompanyNewsIndex::class)->name('company.news.index');
+Route::get('/news/{slug}', SingleCompanyNews::class)->name('single.news.index');
 
 Route::middleware('redirectIfAuthenticated')->group(function () {
     Route::get('/admin', Login::class)->name('login');
