@@ -28,6 +28,14 @@ class ArticleIndex extends Component
         $this->js('window.location.reload');
     }
 
+    public function clone($id) {
+        $article = Article::where('id', $id)->first();
+
+        $clone = $article->replicate();
+
+        $clone->save();
+    }
+
     public function render()
     {
 

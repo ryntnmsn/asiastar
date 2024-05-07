@@ -72,12 +72,12 @@
                     <li>
                         <a href="{{ route('article.index') }}" class="{{ request()->is('admin/article') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group">All</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('article.category.index') }}" class="{{ request()->is('admin/article/category*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Categories</a>
                     </li>
                     <li>
                         <a href="{{ route('article.tag.index') }}" class="{{ request()->is('admin/article/tag*') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Tags</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="{{ route('article.create') }}" class="{{ request()->is('admin/article/create') ? 'text-white bg-amber-500' : 'text-slate-700' }} flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group">Create +</a>
                     </li>

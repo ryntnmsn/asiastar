@@ -41,6 +41,25 @@ document.addEventListener('livewire:navigated', () => {
         }
       }
     });
+
+    //Company News Slider
+    var swiper = new Swiper(".companyNews", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false
+          },
+      });
+
+      //4 Column Slider
+      var swiper = new Swiper(".fourColumnSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+      });
+
 });
 
 

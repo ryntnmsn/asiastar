@@ -8,7 +8,7 @@
             <div class="flex flex-col gap-4">
                 <div>
                     <label class="block mb-2 font-medium text-slate-700">Title</label>
-                    <x-input wire:model="name" name="name" type="text"></x-input>
+                    <x-input wire:model="name" name="title" type="text"></x-input>
                     @if($errors->has('name'))
                         <span class="text-sm text-rose-500">{{ $errors->first('name') }}</span>
                     @endif
@@ -41,7 +41,20 @@
                                 <span class="text-sm text-rose-500">{{ $errors->first('language_id') }}</span>
                             @endif
                         </div>
+
                         <div class="flex-1">
+                            <label class="block mb-2 font-medium text-slate-700">Category</label>
+                            <x-select wire:model="category" class="!w-full">
+                                    <option value="" class="hidden">--Select category--</option>
+                                    <option value="company_news">Company News</option>
+                                    <option value="achievements">Achievements</option>
+                            </x-select>
+                            @if($errors->has('category'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('category') }}</span>
+                            @endif
+                        </div>
+
+                        {{-- <div class="flex-1">
                             <label class="block mb-2 font-medium text-slate-700">Category</label>
                             <x-select wire:model="article_category_id" name="article_category_id" class="!w-full">
                                 @foreach ($articleCategories as $articleCategory)
@@ -52,7 +65,7 @@
                             @if($errors->has('article_category_id'))
                                 <span class="text-sm text-rose-500">{{ $errors->first('article_category_id') }}</span>
                             @endif
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div>
@@ -63,7 +76,7 @@
                     </label>
                 </div>
                 <div>
-                    <label class="block mb-2 font-medium text-slate-700">Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 560x950 pixels)</span></label>
+                    <label class="block mb-2 font-medium text-slate-700">Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 1080x640 pixels)</span></label>
                     <input wire:model="image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
 
                     @if($image)

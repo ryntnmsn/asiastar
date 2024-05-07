@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('games', function (Blueprint $table) {
-            $table->string('hero_image')
-                ->nullable()
-                ->after('image_horizontal');
+        Schema::table('articles', function (Blueprint $table) {
+            $table->string('category')
+                ->after('language_id');
         });
     }
 
@@ -23,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('games', function (Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             //
         });
     }

@@ -46,6 +46,7 @@ return new class extends Migration
             $table->string('image_square');
             $table->string('image_vertical');
             $table->string('image_horizontal');
+            $table->string('hero_image');
             $table->timestamps();
         });
     }

@@ -43,6 +43,17 @@
                         </div>
                         <div class="flex-1">
                             <label class="block mb-2 font-medium text-slate-700">Category</label>
+                            <x-select wire:model="category" class="!w-full">
+                                    <option value="" class="hidden">--Select category--</option>
+                                    <option value="company_news">Company News</option>
+                                    <option value="achievements">Achievements</option>
+                            </x-select>
+                            @if($errors->has('category'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('category') }}</span>
+                            @endif
+                        </div>
+                        {{-- <div class="flex-1">
+                            <label class="block mb-2 font-medium text-slate-700">Category</label>
                             <x-select wire:model="article_category_id" name="article_category_id" class="!w-full">
                                 @foreach ($articleCategories as $articleCategory)
                                     <option value="" class="hidden">--Select category--</option>
@@ -52,7 +63,7 @@
                             @if($errors->has('article_category_id'))
                                 <span class="text-sm text-rose-500">{{ $errors->first('article_category_id') }}</span>
                             @endif
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div>

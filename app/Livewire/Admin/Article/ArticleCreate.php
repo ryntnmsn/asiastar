@@ -18,7 +18,8 @@ class ArticleCreate extends Component
     public $short_description;
     public $description;
     public $language_id = '';
-    public $article_category_id = '';
+    public $category = '';
+    // public $article_category_id = '';
     public $status = false;
     public $image;
     public $search = '';
@@ -28,9 +29,9 @@ class ArticleCreate extends Component
         'short_description' => 'required',
         'description' => 'required',
         'language_id' => 'required',
-        'article_category_id' => 'required',
-        'image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=560,max_width=1080,max_height=560'
-
+        'category' => 'required',
+        // 'article_category_id' => 'required',
+        'image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=640,max_width=1080,max_height=640'
     ];
 
     public function store() {
@@ -41,7 +42,8 @@ class ArticleCreate extends Component
             'short_description' => $this->short_description,
             'description' => $this->description,
             'language_id' => $this->language_id,
-            'article_category_id' => $this->article_category_id,
+            'category' => $this->category,
+            // 'article_category_id' => $this->article_category_id,
             'status' => $this->status,
             'image' => $this->image->store('articles', 'public')
         ]);
@@ -59,7 +61,7 @@ class ArticleCreate extends Component
 
         return view('livewire.admin.article.article-create', [
             'languages' => $languages,
-            'articleCategories' => $articleCategories
+            // 'articleCategories' => $articleCategories
         ])->extends('layouts.admin.app')->section('contents');;
     }
 }

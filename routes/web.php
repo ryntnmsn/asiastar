@@ -29,6 +29,7 @@ use App\Livewire\Admin\GameCategory\GameCategoryIndex;
 use App\Livewire\Admin\GameType\GameTypeCreate;
 use App\Livewire\Admin\GameType\GameTypeEdit;
 use App\Livewire\Admin\GameType\GameTypeIndex;
+use App\Livewire\Admin\Home\CompanyNews\CompanyNewsIndex;
 use App\Livewire\Admin\Language\LanguageCreate;
 use App\Livewire\Admin\Language\LanguageEdit;
 use App\Livewire\Admin\Language\LanguageIndex;
@@ -42,6 +43,7 @@ use App\Livewire\Admin\Theme\ThemeCreate;
 use App\Livewire\Admin\Theme\ThemeEdit;
 use App\Livewire\Admin\Theme\ThemeIndex;
 use App\Livewire\Auth\Login;
+use App\Livewire\Home\About\AboutOurCompany;
 use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\Game\GameTimelineIndex;
@@ -56,12 +58,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/locale/{lang}',[LocaleController::class,'setLocale']);
 
+
+//Home
 Route::get('/', HomeIndex::class)->name('home.index');
 Route::get('/games', GameHomeIndex::class)->name('game.home.index');
 Route::get('/games/all', AllGameHomeIndex::class)->name('all.game.home.index');
 Route::get('/games/timeline', GameTimelineIndex::class)->name('game.timeline.index');
 Route::get('/games/{id}', SingleGameIndex::class)->name('single.game.index');
 
+//About
+Route::get('/about-our-company', AboutOurCompany::class)->name('about.our.company.index');
+Route::get('/company-news', CompanyNewsIndex::class)->name('company.news.index');
 
 Route::middleware('redirectIfAuthenticated')->group(function () {
     Route::get('/admin', Login::class)->name('login');
