@@ -39,6 +39,7 @@ class GameCreate extends Component
     public $image_square;
     public $image_horizontal;
     public $image_vertical;
+    public $hero_image;
 
     protected $rules = [
         'title' => 'required|max:255',
@@ -56,6 +57,7 @@ class GameCreate extends Component
         'image_square' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=560',
         'image_vertical' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=950',
         'image_horizontal' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=950,min_height=560,max_width=950,max_height=560',
+        'hero_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=1080,max_width=1080,max_height=1080',
     ];
 
     public function store() {
@@ -78,6 +80,7 @@ class GameCreate extends Component
             'image_square' => $this->image_square->store('games', 'public'),
             'image_vertical' => $this->image_vertical->store('games', 'public'),
             'image_horizontal' => $this->image_horizontal->store('games', 'public'),
+            'hero_image' => $this->hero_image->store('games', 'public'),
         ]);
 
         foreach($this->available_language as $key => $value) {

@@ -27,6 +27,7 @@ class Game extends Model
         'image_square',
         'image_horizontal',
         'image_vertical',
+        'hero_image',
     ];
 
 

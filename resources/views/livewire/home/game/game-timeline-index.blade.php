@@ -85,7 +85,7 @@
             <div>
                 <x-heading>Coming Soon</x-heading>
 
-                <div class="mt-10">
+                <div id="slideAnimationGames" class="mt-10">
                     <div class="timeline !w-full">
                         <ul class="w-full">
                             @foreach ($games as $game)

@@ -77,9 +77,10 @@
             <div>
                 {{-- Grid View --}}
                 @if($isGridView)
-                    <div class="my-5 grid grid-cols-3 gap-5">
+                    <div id="slideAnimationGames" class="my-5 grid grid-cols-3 gap-5">
                         @forelse ($games as $game)
-                            <div class="box-container hover:-translate-y-2 ease-in-out duration-300 rounded-2xl overflow-hidden cursor-pointer group border border-slate-200 p-[3px]">
+                            <div class="box-container relative hover:-translate-y-2 ease-in-out duration-300 rounded-2xl overflow-hidden cursor-pointer group border border-slate-200 p-[3px]">
+                                <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                 <div class="relative rounded-2xl">
 
                                     <div class="button-details rounded-xl">
@@ -164,7 +165,7 @@
                 @endif
 
                 @if($isListView)
-                    <div wire:transition class="my-5 grid grid-cols-1">
+                    <div id="slideAnimationGames" class="my-5 grid grid-cols-1">
                         <div class="flex flex-row text-slate-500 uppercase text-xs py-4 bg-slate-200 rounded-lg mb-4">
                             <div class="w-[25%] text-center">Game Name</div>
                             <div class="w-[15%] text-center">Volatility</div>

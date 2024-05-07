@@ -39,9 +39,11 @@ class GameEdit extends Component
     public $old_image_square;
     public $old_image_horizontal;
     public $old_image_vertical;
+    public $old_hero_image;
     public $new_image_square;
     public $new_image_horizontal;
     public $new_image_vertical;
+    public $new_hero_image;
 
     public function mount($id) {
         $game = Game::where('id', $id)->first();
@@ -69,6 +71,7 @@ class GameEdit extends Component
         $this->old_image_square = $game->image_square;
         $this->old_image_horizontal = $game->image_horizontal;
         $this->old_image_vertical = $game->image_vertical;
+        $this->old_hero_image = $game->hero_image;
     }
 
     public function update() {
@@ -105,6 +108,12 @@ class GameEdit extends Component
             ];
         }
 
+        if(isset($this->new_hero_image)) {
+            $validate_array = [
+                'new_hero_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=1080,max_width=1080,max_height=1080'
+            ];
+        }
+
 
         $this->validate($validate_array);
 
@@ -113,6 +122,7 @@ class GameEdit extends Component
         $image_square = '';
         $image_horizontal = '';
         $image_vertical = '';
+        $hero_image = '';
 
         if($this->new_image_square != null) {
             $image_square = $this->new_image_square->store('games', 'public');
@@ -130,6 +140,12 @@ class GameEdit extends Component
             $image_vertical = $this->new_image_vertical->store('games', 'public');
         } else {
             $image_vertical = $this->old_image_vertical;
+        }
+
+        if($this->new_hero_image != null) {
+            $hero_image = $this->new_hero_image->store('games', 'public');
+        } else {
+            $hero_image = $this->old_hero_image;
         }
 
         $game->update([
@@ -150,6 +166,7 @@ class GameEdit extends Component
             'image_square' => $image_square,
             'image_horizontal' => $image_horizontal,
             'image_vertical' => $image_vertical,
+            'hero_image' => $hero_image,
         ]);
 
         $countLanguages = count($game->available_languages);

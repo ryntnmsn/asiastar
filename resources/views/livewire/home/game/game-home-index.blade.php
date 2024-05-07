@@ -28,7 +28,7 @@
                     @include('layouts.home.game-home-nav-desktop')
                 </div>
             </div>
-            <div class="w-[85%] pl-10  border-l border-slate-200 flex flex-col gap-20">
+            <div id="slideAnimationGames" class="w-[85%] pl-10  border-l border-slate-200 flex flex-col gap-20">
 
                 {{-- Featured Games --}}
                 @if(count($isFeatured) != null)
