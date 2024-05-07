@@ -84,9 +84,9 @@
                         <div class="flex-1">
                             <x-label for="volatility">Volatility</x-label>
                             <x-select wire:model="volatility" class="!w-full">
-                                <option {{ $volatility == 'low' ? 'selected' : '' }} value="low">Low</option>
-                                <option {{ $volatility == 'medium' ? 'selected' : '' }} value="medium">Medium</option>
-                                <option {{ $volatility == 'high' ? 'selected' : '' }} value="high">High</option>
+                                <option {{ $volatility == 'low' ? 'selected' : '' }} value="1">Low</option>
+                                <option {{ $volatility == 'medium' ? 'selected' : '' }} value="2">Medium</option>
+                                <option {{ $volatility == 'high' ? 'selected' : '' }} value="3">High</option>
                             </x-select>
                         </div>
                     </div>
@@ -268,7 +268,6 @@
                                 <span class="text-sm text-rose-500">{{ $errors->first('new_image_vertical') }}</span>
                             @endif
                         </div>
-
 
                         {{-- Hero Image --}}
                         <div class="flex-1">

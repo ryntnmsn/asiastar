@@ -5,7 +5,7 @@
                 <h1 class="noto-sans text-[120px] font-bold text-slate-200 tracking-tighter leading-[140px]">{{$title}}</h1>
             </div>
             <div class="flex-1">
-                <img src="{{url('storage/' . $hero_image)}}" alt="{{$title}}" class="w-full">
+                <img id="zoomEffect" src="{{url('storage/' . $hero_image)}}" alt="{{$title}}" class="w-full">
             </div>
         </div>
         <div>
@@ -93,8 +93,8 @@
 
         <div class="mt-40">
             <div class="mb-10 border-b border-slate-200 flex justify-between items-center">
-                <x-heading class="Capitalize">Other Games</x-heading>
-                <a href="" class="montserrat">All games</a>
+                <x-heading class="capitalize">Other Games</x-heading>
+                <a href="{{route('all.game.home.index')}}" class="montserrat text-slate-600">All Games</a>
             </div>
             <div>
                 <div class="grid grid-cols-6 gap-14">

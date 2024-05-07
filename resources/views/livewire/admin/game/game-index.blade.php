@@ -18,17 +18,17 @@
                     <div class="flex justify-end">
                         <x-select wire:model.live="sort_by_game_category" class="">
                             <option value="" class="hidden">Sort by category</option>
-                            <option value="live_pachinko">Live Pachinko</option>
-                            <option value="live_casino">Live Casino</option>
-                            <option value="live_cockfighting">Live Cockfighting</option>
+                            @foreach ($game_categories as $game_category)
+                                <option value="{{$game_category->id}}">{{$game_category->name}}</option>
+                            @endforeach
                         </x-select>
                     </div>
                     <div class="flex justify-end">
                         <x-select wire:model.live="sort_by_game_type" class="">
                             <option value="" class="hidden">Sort by game type</option>
-                            <option value="new_game">New Game</option>
-                            <option value="hot_game">Hot Game</option>
-                            <option value="coming_soon_game">Coming Soon Game</option>
+                            @foreach ($game_types as $game_type)
+                                <option value="{{$game_type->id}}">{{$game_type->name}}</option>
+                            @endforeach
                         </x-select>
                     </div>
                     <div>

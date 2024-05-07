@@ -85,9 +85,9 @@
                             <x-label for="volatility">Volatility</x-label>
                             <x-select wire:model="volatility" class="!w-full">
                                 <option value="" class="hidden">--Select volatility--</option>
-                                <option value="low">Low</option>
-                                <option value="medium">Medium</option>
-                                <option value="high">High</option>
+                                <option value="1">Low</option>
+                                <option value="2">Medium</option>
+                                <option value="3">High</option>
                             </x-select>
                             @if($errors->has('volatility'))
                                 <span class="text-sm text-rose-500">{{ $errors->first('volatility') }}</span>
