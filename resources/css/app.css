@@ -28,6 +28,10 @@ html, body {
     border-radius: 7px;
 }
 
+.description p {
+    color:#64748b
+}
+
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
     margin-top: 0;
 }

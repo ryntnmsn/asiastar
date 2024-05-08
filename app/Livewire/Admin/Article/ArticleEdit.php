@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\Language;
 use Livewire\Component;
+use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class ArticleEdit extends Component
@@ -65,6 +66,7 @@ class ArticleEdit extends Component
 
         $article->update([
             'name' => $this->name,
+            'slug' => Str::slug($this->name),
             'short_description' => $this->short_description,
             'description' => $this->description,
             'language_id' => $this->language_id,

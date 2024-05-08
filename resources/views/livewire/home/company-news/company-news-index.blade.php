@@ -7,13 +7,14 @@
 
             @if(count($companyNews) != null)
                 <!-- Companies News -->
-                <div id="zoomEffect" wire:ignore class="swiper companyNews">
+                <div id="zoomEffect" wire:ignore class="swiper companyNews rounded-2xl overflow-hidden">
                     <div class="swiper-wrapper">
                         @foreach ($companyNews as $companyNews)
-                        <div class="swiper-slide">
+                        <div class="swiper-slide relative duration-300 ease-in-out cursor-pointer group">
+                            <a href="{{route('single.news.index', $companyNews->slug)}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
                             <div class="flex w-full gap-10">
                                 <div class="flex-1">
-                                    <img src="{{url('storage/'.$companyNews->image)}}" alt="" class="w-full rounded-xl">
+                                    <img src="{{url('storage/'.$companyNews->image)}}" alt="" class="w-full rounded-2xl">
                                 </div>
                                 <div class="flex-1">
                                     <div class="flex text-left flex-col items-start">
@@ -23,7 +24,7 @@
                                         <x-paragraph>
                                             {{$companyNews->short_description}}
                                         </x-paragraph>
-                                        <x-button-orange>Read more</x-button-orange>
+                                        <x-primary-button class="!text-[16px] ">Read more</x-primary-button>
                                     </div>
                                 </div>
                             </div>
@@ -41,10 +42,11 @@
                 <div>
                     <div class="grid grid-cols-4 gap-10">
                         @foreach ($latestNews as $latestNews)
-                            <div id="zoomEffect">
-                                <div class="flex gap-2 flex-col w-full hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
+                            <div id="zoomEffect" class="relative group">
+                                <a href="{{route('single.news.index', $latestNews->slug)}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
+                                <div class="flex gap-2 flex-col w-full group-hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
                                     <div>
-                                        <img src="{{url('storage/'. $latestNews->image)}}" alt="{{$latestNews->name}}" class="w-full rounded-xl">
+                                        <img src="{{url('storage/'. $latestNews->image)}}" alt="{{$latestNews->name}}" class="w-full rounded-2xl">
                                     </div>
                                     <div>
                                         <div class="flex text-left flex-col items-start">
@@ -52,7 +54,7 @@
                                                 {{$latestNews->name}}
                                             </x-heading>
                                             <x-paragraph class="!text-sm">
-                                                {{$latestNews->short_description}}
+                                                {{Str::words($latestNews->short_description, 10, '...')}}
                                             </x-paragraph>
                                             <a href="" class="text-amber-500 text-sm">Read more</a>
                                         </div>
@@ -80,10 +82,11 @@
             <div>
                 <div class="grid grid-cols-4 gap-10">
                     @foreach ($achievements as $achievement)
-                        <div id="zoomEffect">
-                            <div class="flex gap-2 flex-col w-full hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
+                        <div id="zoomEffect" class="relative group">
+                            <a href="{{route('single.news.index', $achievement->slug)}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
+                            <div class="flex gap-2 flex-col w-full group-hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
                                 <div>
-                                    <img src="{{url('storage/'. $achievement->image)}}" alt="{{$achievement->name}}" class="w-full rounded-xl">
+                                    <img src="{{url('storage/'. $achievement->image)}}" alt="{{$achievement->name}}" class="w-full rounded-2xl">
                                 </div>
                                 <div>
                                     <div class="flex text-left flex-col items-start">
@@ -91,7 +94,7 @@
                                             {{$achievement->name}}
                                         </x-heading>
                                         <x-paragraph class="!text-sm">
-                                            {{$achievement->short_description}}
+                                            {{Str::words($achievement->short_description, 10, '...')}}
                                         </x-paragraph>
                                         <a href="" class="text-amber-500 text-sm">Read more</a>
                                     </div>
