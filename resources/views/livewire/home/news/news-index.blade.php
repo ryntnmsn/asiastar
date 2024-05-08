@@ -11,7 +11,7 @@
                     <div class="swiper-wrapper">
                         @foreach ($companyNews as $companyNews)
                         <div class="swiper-slide relative duration-300 ease-in-out cursor-pointer group">
-                            <a href="{{route('single.news.index', $companyNews->slug)}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
+                            <a href="{{route('single.news.index', ['category' => $companyNews->category, 'slug' => $companyNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
                             <div class="flex w-full gap-10">
                                 <div class="flex-1">
                                     <img src="{{url('storage/'.$companyNews->image)}}" alt="" class="w-full rounded-2xl">
@@ -43,7 +43,7 @@
                     <div class="grid grid-cols-4 gap-10">
                         @foreach ($latestNews as $latestNews)
                             <div id="zoomEffect" class="relative group">
-                                <a href="{{route('single.news.index', $latestNews->slug)}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
+                                <a href="{{route('single.news.index', ['category' => $latestNews->category, 'slug' => $latestNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
                                 <div class="flex gap-2 flex-col w-full group-hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
                                     <div>
                                         <img src="{{url('storage/'. $latestNews->image)}}" alt="{{$latestNews->name}}" class="w-full rounded-2xl">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="mt-20 text-center">
                     <div>
-                        <x-primary-button>View all news</x-primary-button>
+                        <x-primary-button href="{{route('all.company.news.index')}}">View all news</x-primary-button>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                 <div class="grid grid-cols-4 gap-10">
                     @foreach ($achievements as $achievement)
                         <div id="zoomEffect" class="relative group">
-                            <a href="{{route('single.news.index', $achievement->slug)}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
+                            <a href="{{route('single.news.index', ['category' => $achievement->category, 'slug' => $achievement->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
                             <div class="flex gap-2 flex-col w-full group-hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
                                 <div>
                                     <img src="{{url('storage/'. $achievement->image)}}" alt="{{$achievement->name}}" class="w-full rounded-2xl">
@@ -106,7 +106,7 @@
             </div>
             <div class="mt-20 text-center">
                 <div>
-                    <x-primary-button>View all achievements</x-primary-button>
+                    <x-primary-button href="{{route('all.achivements.news.index')}}">View all achievements</x-primary-button>
                 </div>
             </div>
         </div>

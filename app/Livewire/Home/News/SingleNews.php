@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Livewire\Home\Companynews;
+namespace App\Livewire\Home\News;
 
 use App\Models\Article;
 use Livewire\Component;
 
-class SingleCompanyNews extends Component
+class SingleNews extends Component
 {
-    public $id;
+    public $slug;
     public $title;
     public $description;
     public $image;
@@ -16,7 +16,7 @@ class SingleCompanyNews extends Component
 
     public function mount($slug) {
         $news = Article::where('slug', $slug)->first();
-        $this->id = $news->id;
+        $this->slug = $news->slug;
         $this->title = $news->name;
         $this->description = $news->description;
         $this->image = $news->image;
@@ -26,9 +26,9 @@ class SingleCompanyNews extends Component
 
     public function render()
     {
-        $relatedNews = Article::where('status', true)->where('category', $this->category)->where('id', '!=', $this->id)->inRandomOrder()->limit(4)->get();
+        $relatedNews = Article::where('status', true)->where('category', $this->category)->where('id', '!=', $this->slug)->inRandomOrder()->limit(4)->get();
 
-        return view('livewire.home.company-news.single-company-news', [
+        return view('livewire.home.news.single-news', [
             'relatedNews' => $relatedNews
         ])->extends('layouts.home.app')->section('contents');
     }

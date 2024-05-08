@@ -26,14 +26,18 @@
             <div class="mt-40">
                 <div class="mb-10 border-b border-slate-200 flex justify-between items-center">
                     <x-heading class="capitalize">Related news</x-heading>
-                    <a href="" class="montserrat text-slate-600">All news</a>
+                    @if($category == 'company_news')
+                        <a href="{{route('all.company.news.index')}}" class="montserrat text-slate-600">All news</a>
+                    @else
+                        <a href="{{route('all.achivements.news.index')}}" class="montserrat text-slate-600">All achievements</a>
+                    @endif
                 </div>
                 <div>
                     <!-- Companies News -->
                     <div class="grid grid-cols-4 gap-10">
                         @foreach ($relatedNews as $relatedNews)
                             <div id="zoomEffect" class="relative group">
-                                <a href="{{route('single.news.index', $relatedNews->slug)}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
+                                <a href="{{route('single.news.index', ['category' => $relatedNews->category, 'slug' => $relatedNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
                                 <div class="flex gap-2 flex-col w-full group-hover:-translate-y-2 duration-300 ease-in-out cursor-pointer">
                                     <div>
                                         <img src="{{url('storage/'. $relatedNews->image)}}" alt="{{$relatedNews->name}}" class="w-full rounded-2xl">

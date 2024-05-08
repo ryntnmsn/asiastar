@@ -29,7 +29,6 @@ use App\Livewire\Admin\GameCategory\GameCategoryIndex;
 use App\Livewire\Admin\GameType\GameTypeCreate;
 use App\Livewire\Admin\GameType\GameTypeEdit;
 use App\Livewire\Admin\GameType\GameTypeIndex;
-use App\Livewire\Home\CompanyNews\CompanyNewsIndex;
 use App\Livewire\Admin\Language\LanguageCreate;
 use App\Livewire\Admin\Language\LanguageEdit;
 use App\Livewire\Admin\Language\LanguageIndex;
@@ -39,17 +38,24 @@ use App\Livewire\Admin\Partner\PartnerIndex;
 use App\Livewire\Admin\Provider\ProviderCreate;
 use App\Livewire\Admin\Provider\ProviderEdit;
 use App\Livewire\Admin\Provider\ProviderIndex;
+use App\Livewire\Admin\Recruitment\RecruitmentCreate;
+use App\Livewire\Admin\Recruitment\RecruitmentEdit;
+use App\Livewire\Admin\Recruitment\RecruitmentIndex;
 use App\Livewire\Admin\Theme\ThemeCreate;
 use App\Livewire\Admin\Theme\ThemeEdit;
 use App\Livewire\Admin\Theme\ThemeIndex;
 use App\Livewire\Auth\Login;
 use App\Livewire\Home\About\AboutOurCompany;
-use App\Livewire\Home\Companynews\SingleCompanyNews;
 use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\Game\GameTimelineIndex;
 use App\Livewire\Home\Game\SingleGameIndex;
 use App\Livewire\Home\HomeIndex;
+use App\Livewire\Home\Joinus\JoinUsIndex;
+use App\Livewire\Home\News\AllAchievementsIndex;
+use App\Livewire\Home\News\AllNewsIndex;
+use App\Livewire\Home\News\NewsIndex;
+use App\Livewire\Home\News\SingleNews;
 use App\Models\Feature;
 use Illuminate\Support\Facades\Route;
 
@@ -69,8 +75,14 @@ Route::get('/games/{id}', SingleGameIndex::class)->name('single.game.index');
 
 //About
 Route::get('/about-our-company', AboutOurCompany::class)->name('about.our.company.index');
-Route::get('/news', CompanyNewsIndex::class)->name('company.news.index');
-Route::get('/news/{slug}', SingleCompanyNews::class)->name('single.news.index');
+Route::get('/news', NewsIndex::class)->name('news.index');
+Route::get('/news/{category}/{slug}', SingleNews::class)->name('single.news.index');
+Route::get('/news/company', AllNewsIndex::class)->name('all.company.news.index');
+Route::get('/news/achievements', AllAchievementsIndex::class)->name('all.achivements.news.index');
+
+//Join Us
+Route::get('/join-us', JoinUsIndex::class)->name('join.us.index');
+
 
 Route::middleware('redirectIfAuthenticated')->group(function () {
     Route::get('/admin', Login::class)->name('login');
@@ -148,6 +160,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/partner', PartnerIndex::class)->name('partner.index');
         Route::get('/partner/create', PartnerCreate::class)->name('partner.create');
         Route::get('/partner/edit/{id}', PartnerEdit::class)->name('partner.edit');
+
+        //Recruitments
+        Route::get('/recruitment', RecruitmentIndex::class)->name('recruitment.index');
+        Route::get('/recruitment/create', RecruitmentCreate::class)->name('recruitment.create');
+        Route::get('/recruitment/edit/{id}', RecruitmentEdit::class)->name('recruitment.edit');
 
     });
 });
