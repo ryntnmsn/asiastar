@@ -157,6 +157,10 @@ html, body {
     animation: slideDown 0.5s;
 }
 
+.slideAnimation {
+    animation: slideDown 0.5s;
+}
+
 #slideAnimationGames {
     animation: slideDownGames 0.4s;
 }

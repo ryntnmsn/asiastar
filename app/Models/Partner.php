@@ -13,6 +13,11 @@ class Partner extends Model
         'title',
         'slug',
         'status',
-        'image'
+        'image',
+        'description',
+        'website',
+        'address',
+        'license',
+        'country'
     ];
 }

@@ -56,6 +56,7 @@ use App\Livewire\Home\News\AllAchievementsIndex;
 use App\Livewire\Home\News\AllNewsIndex;
 use App\Livewire\Home\News\NewsIndex;
 use App\Livewire\Home\News\SingleNews;
+use App\Livewire\Home\Partner\PartnerHomeIndex;
 use App\Models\Feature;
 use Illuminate\Support\Facades\Route;
 
@@ -82,6 +83,9 @@ Route::get('/news/achievements', AllAchievementsIndex::class)->name('all.achivem
 
 //Join Us
 Route::get('/join-us', JoinUsIndex::class)->name('join.us.index');
+
+//Partners
+Route::get('/partners', PartnerHomeIndex::class)->name('partner.home.index');
 
 
 Route::middleware('redirectIfAuthenticated')->group(function () {

@@ -14,18 +14,27 @@ class PartnerCreate extends Component
 
     public $title;
     public $image;
+    public $description;
+    public $website;
+    public $address;
+    public $license;
+    public $country;
     public $status = false;
 
     public function store() {
         $this->validate([
             'title' => 'required|max:255|unique:providers',
-            'image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=350,min_height=350,max_width=350,max_height=350'
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=420,min_height=420,max_width=420,max_height=420'
         ]);
 
         Partner::create([
             'title' => $this->title,
             'slug' => Str::slug($this->title),
             'status' => $this->status,
+            'description' => $this->description,
+            'license' => $this->license,
+            'website' => $this->website,
+            'address' => $this->address,
             'image' => $this->image->store('partners', 'public')
         ]);
 

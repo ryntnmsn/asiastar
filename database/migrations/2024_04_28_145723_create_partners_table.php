@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->longText('description');
+            $table->string('website');
             $table->string('slug');
             $table->boolean('status')->default(false);
             $table->string('image');

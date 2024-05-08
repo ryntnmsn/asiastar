@@ -12,8 +12,27 @@
                         <span class="text-sm text-rose-500">{{ $errors->first('title') }}</span>
                     @endif
                 </div>
+                <div wire:ignore>
+                    <label class="block mb-2 font-medium text-slate-700">Description</label>
+                    <x-textarea wire:model="description" name="description" type="text" id="description"></x-textarea>
+                    @if($errors->has('description'))
+                        <span class="text-sm text-rose-500">{{ $errors->first('description') }}</span>
+                    @endif
+                </div>
                 <div>
-                    <x-label>Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 350x350 pixels)</span></x-label>
+                    <x-label>Address</x-label>
+                    <x-input wire:model="address" type="text" id="address"></x-input>
+                </div>
+                <div>
+                    <x-label>Website</x-label>
+                    <x-input wire:model="website" type="text" id="website"></x-input>
+                </div>
+                <div>
+                    <x-label>License</x-label>
+                    <x-input wire:model="license" type="text" id="license"></x-input>
+                </div>
+                <div>
+                    <x-label>Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 420x420 pixels)</span></x-label>
                     <input wire:model="image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
 
                     @if($image)
@@ -55,5 +74,20 @@
         }).then(function() {
             location.reload();
         });
+    });
+</script>
+
+<script>
+    tinymce.init({
+        selector: '#description',
+        forced_root_block: false,
+        setup: function (editor) {
+            editor.on('init change', function () {
+                editor.save();
+            });
+            editor.on('change', function (e) {
+                @this.set('description', editor.getContent());
+            });
+        }
     });
 </script>

@@ -7,7 +7,7 @@
     <div class="w-full h-full max-w-[1280px] mx-auto px-10 mt-20">
         <div>
             <div>
-                <x-heading class="text-3xl">About Our Company</x-heading>
+                <x-heading class="text-4xl">About Our Company</x-heading>
             </div>
             <div class="flex gap-10">
                 <div class="flex-1">
@@ -19,34 +19,34 @@
                 </div>
                 <div class="flex-1">
                     <div class="p-4">
-                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="rounded-2xl shadow-2xl">
+                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="shadow-2xl">
                     </div>
                 </div>
             </div>
         </div>
         <div class="mt-44">
             <div class="text-center">
-                <x-heading class="text-3xl">Our Strengths</x-heading>
+                <x-heading class="text-4xl">Our Strengths</x-heading>
                 <p class="text-slate-500 noto-sans font-light leading-loose">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>
                 </p>
             </div>
             <div>
-                <div class="grid grid-cols-4 gap-10">
-                    <div class="flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:-translate-y-2">
-                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="rounded-2xl shadow-xl">
+                <div class="grid grid-cols-4">
+                    <div class="bg-white p-5 border border-slate-50 flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" >
                         <x-heading class="text-xl">Lorem Ipsum</x-heading>
                     </div>
-                    <div class="flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:-translate-y-2">
-                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="rounded-2xl shadow-xl">
+                    <div class="bg-white p-5 border border-slate-50 flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" >
                         <x-heading class="text-xl">Lorem Ipsum</x-heading>
                     </div>
-                    <div class="flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:-translate-y-2">
-                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="rounded-2xl shadow-xl">
+                    <div class="bg-white p-5 border border-slate-50 flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" >
                         <x-heading class="text-xl">Lorem Ipsum</x-heading>
                     </div>
-                    <div class="flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:-translate-y-2">
-                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="rounded-2xl shadow-xl">
+                    <div class="bg-white p-5 border border-slate-50 flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" >
                         <x-heading class="text-xl">Lorem Ipsum</x-heading>
                     </div>
                 </div>

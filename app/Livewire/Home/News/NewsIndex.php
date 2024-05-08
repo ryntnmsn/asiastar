@@ -10,9 +10,9 @@ class NewsIndex extends Component
     public function render()
     {
         $articles = Article::where('status', true);
-        $companyNews = $articles->where('category', 'company_news')->orderBy('created_at', 'desc')->limit(3)->get();
-        $latestNews = $articles->where('category', 'company_news')->orderBy('created_at', 'desc')->limit(4)->get();
-        $achievements = Article::where('status', true)->where('category', 'achievements')->limit(8)->get();
+        $companyNews = $articles->where('category', 'company_news')->orderBy('created_at', 'desc')->limit(6)->get();
+        $latestNews = $articles->where('category', 'company_news')->orderBy('created_at', 'desc')->limit(6)->get();
+        $achievements = Article::where('status', true)->where('category', 'achievements')->limit(6)->get();
 
         return view('livewire.home.news.news-index', [
             'companyNews' => $companyNews,
