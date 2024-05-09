@@ -1,6 +1,6 @@
 <div>
     <div class="h-full w-full">
-        <div class="w-full h-full max-w-[1280px] mx-auto px-10 mt-20">
+        <div class="w-full h-full max-w-[1280px] mx-auto mt-20">
             <div>
 
                 <div>
@@ -23,7 +23,7 @@
                         <div id="accordion-collapse" data-accordion="collapse" data-active-classes="shadow-2xl" >
                             @foreach($recruitments as $recruitment)
                                 <div class="">
-                                    <h2 id="accordion-collapse-heading-{{$recruitment->id}}" class="bg-white hover:shadow-2xl hover:z-10 mb-5 duration-300 ease-in-out hover:-translate-y-2 border border-slate-100  group">
+                                    <h2 id="accordion-collapse-heading-{{$recruitment->id}}" class="bg-slate-50 hover:shadow-2xl hover:z-10 mb-5 duration-300 ease-in-out hover:-translate-y-2 border border-slate-100  group">
                                         <button type="button" class="py-10 flex items-center justify-between w-full p-5 font-medium rtl:text-right text-slate-600  gap-3 text-lg " data-accordion-target="#accordion-collapse-body-{{$recruitment->id}}" aria-expanded="false" aria-controls="accordion-collapse-body-{{$recruitment->id}}">
                                             <span class="flex items-center gap-2">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">

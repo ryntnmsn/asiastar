@@ -24,7 +24,7 @@
 
         <div class="mt-20">
             <div class="mt-40">
-                <div class="mb-10 border-b border-slate-200 flex justify-between items-center">
+                <div class="mb-10 border-b border-slate-300 flex justify-between items-center">
                     <x-heading class="capitalize">Related news</x-heading>
                     @if($category == 'company_news')
                         <a href="{{route('all.company.news.index')}}" class="montserrat text-slate-600">All news</a>
@@ -37,7 +37,7 @@
                     <div class="grid grid-cols-4">
                         @foreach ($relatedNews as $relatedNews)
                             <div class="group">
-                                <div class="flex border border-slate-50 bg-white p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">
+                                <div class="flex border border-slate-100 bg-white p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">
                                     <a href="{{route('single.news.index', ['category' => $relatedNews->category, 'slug' => $relatedNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-20"></a>
                                     <div class="relative">
                                         <div class="absolute top-0 left-0 bg-white m-2 w-14 h-14 p-1 shadow-xl">

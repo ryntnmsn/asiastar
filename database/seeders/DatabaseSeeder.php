@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-            // UserLoginTestSeeder::class,
-            // LanguageSeeder::class,
+            UserLoginTestSeeder::class,
+            LanguageSeeder::class,
             FeatureSeeder::class,
             GameCategorySeeder::class,
             GameTypeSeeder::class,

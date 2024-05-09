@@ -20,9 +20,6 @@ return new class extends Migration
             $table->foreignId('language_id')
                 ->constrained('languages')
                 ->cascadeOnDelete();
-            $table->foreignId('article_category_id')
-                ->constrained('article_categories')
-                ->cascadeOnDelete();
             $table->boolean('status')
                 ->default(false);
             $table->string('image');
