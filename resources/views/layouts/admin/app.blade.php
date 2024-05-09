@@ -10,13 +10,22 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+    {{-- <script src="https://cdn.tiny.cloud/1/19bxp0ozoqy0r717lfry5erv2vaaxw8lz3a0an0aeii0l8da/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script> --}}
+
+
+
     <script src="{{ url('assets/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
     <title>AsiaStar Admin</title>
-    <script>
+    {{-- <script>
         tinymce.init({
             plugins: 'code table lists',
             toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
         });
+    </script> --}}
+    <script>
+        tinymce.init({
+          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',        });
     </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles

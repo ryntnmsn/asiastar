@@ -6,6 +6,7 @@
 
         <form wire:submit.prevent="store">
             <div class="flex flex-col gap-4">
+
                 <div>
                     <label class="block mb-2 font-medium text-slate-700">Title</label>
                     <x-input wire:model="name" name="title" type="text"></x-input>
@@ -46,7 +47,6 @@
         </form>
     </div>
 </div>
-
 <script>
     window.addEventListener('created',function(e){
         Swal.fire({
@@ -64,6 +64,8 @@
 <script>
     tinymce.init({
         selector: '#description',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
         forced_root_block: false,
         setup: function (editor) {
             editor.on('init change', function () {

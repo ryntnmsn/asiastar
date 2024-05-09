@@ -25,12 +25,17 @@
                                 <div class="">
                                     <h2 id="accordion-collapse-heading-{{$recruitment->id}}" class="bg-slate-50 hover:shadow-2xl hover:z-10 mb-5 duration-300 ease-in-out hover:-translate-y-2 border border-slate-100  group">
                                         <button type="button" class="py-10 flex items-center justify-between w-full p-5 font-medium rtl:text-right text-slate-600  gap-3 text-lg " data-accordion-target="#accordion-collapse-body-{{$recruitment->id}}" aria-expanded="false" aria-controls="accordion-collapse-body-{{$recruitment->id}}">
-                                            <span class="flex items-center gap-2">
+                                            <span class="flex items-center gap-4">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                                                     <path fill-rule="evenodd" d="M7.5 5.25a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0 1 12 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 0 1 7.5 5.455V5.25Zm7.5 0v.09a49.488 49.488 0 0 0-6 0v-.09a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5Zm-3 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
                                                     <path d="M3 18.4v-2.796a4.3 4.3 0 0 0 .713.31A26.226 26.226 0 0 0 12 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 0 1-6.477-.427C4.047 21.128 3 19.852 3 18.4Z" />
                                                 </svg>
-                                                <span>{{$recruitment->name}}</span>
+                                                <div class="flex flex-col items-start ">
+                                                    <span>{{$recruitment->name}}</span>
+                                                    <span class="text-slate-400 text-sm">
+                                                        Date posted: {{ date('F j, Y', strtotime($recruitment->created_at)) }}
+                                                    </span>
+                                                </div>
                                             </span>
                                             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 duration-300 ease-in-out" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
@@ -38,7 +43,7 @@
                                         </button>
                                     </h2>
                                     <div id="accordion-collapse-body-{{$recruitment->id}}" class="slideAnimation hidden bg-white shadow-2xl mb-5" aria-labelledby="accordion-collapse-heading-{{$recruitment->id}}">
-                                        <div class="p-5 border border-b border-slate-200 text-slate-500">
+                                        <div class="p-5 border border-b border-slate-200 text-slate-500 prose">
                                             {!! $recruitment->description !!}
                                         </div>
                                     </div>

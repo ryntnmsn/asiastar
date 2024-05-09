@@ -1,6 +1,6 @@
 <div>
     <div class="flex justify-between items-center">
-        <x-title>Edit Article</x-title>
+        <x-title>Edit Job</x-title>
     </div>
     <div class="mt-10">
 
