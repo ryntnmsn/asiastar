@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\GameBanner;
 
 use App\Models\GameBanner;
+use App\Models\GameCategory;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
@@ -13,12 +14,14 @@ class GameBannerEdit extends Component
 
     public $id;
     public $status = false;
+    public $game_category_id;
     public $old_image;
     public $new_image;
 
     public function mount($id) {
         $gameBanner = GameBanner::where('id', $id)->first();
         $this->id = $gameBanner->id;
+        $this->game_category_id = $gameBanner->game_category_id;
         $this->status = $gameBanner->status;
         $this->old_image = $gameBanner->image;
     }
@@ -27,7 +30,7 @@ class GameBannerEdit extends Component
 
         if(isset($this->new_image)){
             $this->validate([
-                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=1920,min_height=480,max_width=1920,max_height=480'
+                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1200,min_height=480,max_width=1200,max_height=480'
             ]);
         }
 
@@ -42,6 +45,7 @@ class GameBannerEdit extends Component
 
         $gameBanner->update([
             'status' => $this->status,
+            'game_category_id' => $this->game_category_id,
             'image' => $image,
         ]);
 
@@ -50,7 +54,11 @@ class GameBannerEdit extends Component
 
     public function render()
     {
-        return view('livewire.admin.game-banner.game-banner-edit')
-        ->extends('layouts.admin.app')->section('contents');
+
+        $gameCategories = GameCategory::all();
+
+        return view('livewire.admin.game-banner.game-banner-edit', [
+            'gameCategories' => $gameCategories
+        ])->extends('layouts.admin.app')->section('contents');
     }
 }

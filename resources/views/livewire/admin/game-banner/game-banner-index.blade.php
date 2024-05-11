@@ -28,7 +28,10 @@
                                 No.
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Name
+                                Image
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Category
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Status
@@ -45,7 +48,7 @@
                                 <td class="px-6 py-4 w-1">
                                     {{ $loop->iteration }}
                                 </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
+                                <th scope="row" class="px-6 py-4 font-medium">
                                     <div class="flex items-center gap-4">
                                         <div>
                                             <img src="{{ url('storage/'. $gameBanner->image) }}" class="w-24 border-slate-200 border rounded p-1">
@@ -53,6 +56,9 @@
                                     </div>
                                 </th>
                                 <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
+                                    {{$gameBanner->game_category->name}}
+                                </th>
+                                <th scope="row" class="px-6 py-4 font-medium">
                                     @if($gameBanner->status == 1)
                                         <x-active></x-active>
                                     @else

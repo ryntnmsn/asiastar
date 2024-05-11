@@ -18,7 +18,7 @@
 <body>
     <div class="w-full h-full">
         @include('layouts.home.header')
-        <div>
+        <div class="h-full">
             @yield('contents')
         </div>
         @include('layouts.home.footer')

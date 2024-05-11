@@ -50,6 +50,7 @@ use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\Game\GameTimelineIndex;
 use App\Livewire\Home\Game\SingleGameIndex;
+use App\Livewire\Home\GameCategory\GameCategoryHomeIndex;
 use App\Livewire\Home\HomeIndex;
 use App\Livewire\Home\Joinus\JoinUsIndex;
 use App\Livewire\Home\News\AllAchievementsIndex;
@@ -73,6 +74,9 @@ Route::get('/games', GameHomeIndex::class)->name('game.home.index');
 Route::get('/games/all', AllGameHomeIndex::class)->name('all.game.home.index');
 Route::get('/games/timeline', GameTimelineIndex::class)->name('game.timeline.index');
 Route::get('/games/{id}', SingleGameIndex::class)->name('single.game.index');
+
+//Game Category
+Route::get('/games/category/{slug}', GameCategoryHomeIndex::class)->name('game.category.home.index');
 
 //About
 Route::get('/about-our-company', AboutOurCompany::class)->name('about.our.company.index');

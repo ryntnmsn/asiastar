@@ -11,6 +11,11 @@ class GameBanner extends Model
 
     protected $fillable = [
         'image',
-        'status'
+        'status',
+        'game_category_id'
     ];
+
+    public function game_category() {
+        return $this->belongsTo(GameCategory::class);
+    }
 }
