@@ -28,7 +28,7 @@ class GameCreate extends Component
     public $available_language = [];
     public $game_category_id = '';
     public $game_type_id = '';
-    public $is_featured;
+    public $is_featured = false;
     public $released_date;
     public $volatility = '';
     public $rtp;

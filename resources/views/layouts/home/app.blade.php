@@ -13,77 +13,132 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
     @livewireStyles
 </head>
-<body>
+<body class="dark:bg-gray-900 min-h-full">
     <div class="w-full h-full">
         @include('layouts.home.header')
-        <div class="h-full">
+        <div>
             @yield('contents')
         </div>
         @include('layouts.home.footer')
     </div>
     @livewireScripts
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
 
 
 <script>
-  var swiper = new Swiper(".featuredGames", {
-    slidesPerView: 2,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      nextEl: ".featuredGames-next",
-      prevEl: ".featuredGames-prev"
-    },
-  });
+    var swiper = new Swiper(".featuredGames", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+        nextEl: ".featuredGames-next",
+        prevEl: ".featuredGames-prev"
+        },
+    });
 </script>
 
 <script>
-  var swiper = new Swiper(".hotGames", {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      nextEl: ".hotGames-next",
-      prevEl: ".hotGames-prev"
-    },
-  });
+    var swiper = new Swiper(".hotGames", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+        nextEl: ".hotGames-next",
+        prevEl: ".hotGames-prev"
+        },
+    });
 </script>
 
 <script>
-  var swiper = new Swiper(".newGames", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-    },
-    loop: true,
-    navigation: {
-      nextEl: ".newGames-next",
-      prevEl: ".newGames-prev"
-    },
-  });
+    var swiper = new Swiper(".comingSoonGames", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+        nextEl: ".comingSoonGames-next",
+        prevEl: ".comingSoonGames-prev"
+        },
+    });
 </script>
 
 <script>
-  var swiper = new Swiper(".rtpGames", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      nextEl: ".rtpGames-next",
-      prevEl: ".rtpGames-prev"
-    },
-  });
+    var swiper = new Swiper(".newGames", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+        nextEl: ".newGames-next",
+        prevEl: ".newGames-prev"
+        },
+    });
+</script>
+
+<script>
+    var swiper = new Swiper(".rtpGames", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+        nextEl: ".rtpGames-next",
+        prevEl: ".rtpGames-prev"
+        },
+    });
 </script>
 
 
+<script>
+    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
+    // Change the icons inside the button based on previous settings
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.remove('hidden');
+    } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    var themeToggleBtn = document.getElementById('theme-toggle');
+
+    themeToggleBtn.addEventListener('click', function() {
+
+    // toggle icons inside button
+    themeToggleDarkIcon.classList.toggle('hidden');
+    themeToggleLightIcon.classList.toggle('hidden');
+
+    // if set via local storage previously
+    if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        }
+
+    // if NOT set via local storage previously
+    } else {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        }
+    }
+
+    });
+</script>
 </body>
 </html>

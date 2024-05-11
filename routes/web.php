@@ -50,6 +50,7 @@ use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\Game\GameTimelineIndex;
 use App\Livewire\Home\Game\SingleGameIndex;
+use App\Livewire\Home\GameCategory\GameCategoryHomeAllIndex;
 use App\Livewire\Home\GameCategory\GameCategoryHomeIndex;
 use App\Livewire\Home\HomeIndex;
 use App\Livewire\Home\Joinus\JoinUsIndex;
@@ -67,7 +68,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/locale/{lang}',[LocaleController::class,'setLocale']);
 
-
 //Home
 Route::get('/', HomeIndex::class)->name('home.index');
 Route::get('/games', GameHomeIndex::class)->name('game.home.index');
@@ -76,7 +76,9 @@ Route::get('/games/timeline', GameTimelineIndex::class)->name('game.timeline.ind
 Route::get('/games/{id}', SingleGameIndex::class)->name('single.game.index');
 
 //Game Category
-Route::get('/games/category/{slug}', GameCategoryHomeIndex::class)->name('game.category.home.index');
+Route::get('/games/category/home/{slug}', GameCategoryHomeIndex::class)->name('game.category.home.index');
+Route::get('/games/category/all/{slug}', GameCategoryHomeAllIndex::class)->name('game.category.home.all.index');
+
 
 //About
 Route::get('/about-our-company', AboutOurCompany::class)->name('about.our.company.index');

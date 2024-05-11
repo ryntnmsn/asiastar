@@ -94,7 +94,14 @@
                                 {{ $loop->iteration }}
                             </td>
                             <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
-                                {{ $game->title }}
+                                <div class="flex items-center gap-2">
+                                    <div>
+                                        <img src="{{url('storage/'.$game->image_square)}}" alt="" class="w-10 rounded-lg">
+                                    </div>
+                                    <div>
+                                        {{ $game->title }}
+                                    </div>
+                                </div>
                             </th>
                             <td class="px-6 py-4">
                                 {{ $game->language->name }}

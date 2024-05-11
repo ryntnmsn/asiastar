@@ -295,7 +295,7 @@
                 </div>
 
                 <div>
-                    <x-button type="submit" wire:target="update">Create</x-button>
+                    <x-button type="submit" wire:target="update">Update</x-button>
                 </div>
             </div>
         </form>
