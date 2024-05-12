@@ -1,14 +1,15 @@
-<div>
+<div wire:ignore>
     <ul class="w-full flex flex-col gap-5">
         <li class="cursor-pointer">
-            <a href="" class="hover:text-slate-600 text-slate-600 flex flex-row gap-3 items-center duration-300 ease-in-out">
+
+            <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="hover:text-slate-600 text-slate-600 flex flex-row gap-3 items-center duration-300 ease-in-out">
                 <span>
                     <x-icon-search></x-icon-search>
                 </span>
                 <span>
                     <x-text>Search</x-text>
                 </span>
-            </a>
+            </button>
         </li>
         <li class="cursor-pointer">
             <a wire:navigate href="{{route('game.category.home.index',$gameCategorySlug)}}" class="{{request()->is('games/category/home/*') ? '!font-semibold !text-slate-400' : 'text-slate-600'}} flex gap-3 items-center duration-300 ease-in-out">

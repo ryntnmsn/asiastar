@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
-    font-family: "Lato", sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size:15px;
     height: 100%;
     width: 100%;

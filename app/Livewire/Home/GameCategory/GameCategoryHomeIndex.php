@@ -11,11 +11,16 @@ class GameCategoryHomeIndex extends Component
 {
 
     public $gameCategorySlug;
+    public $searchQuery = '';
 
     public function mount($slug) {
         $gameCategory = GameCategory::where('slug', $slug)->first();
 
         $this->gameCategorySlug = $gameCategory->slug;
+    }
+
+    public function resetSearch() {
+        $this->searchQuery = '';
     }
 
     public function render()

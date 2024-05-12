@@ -51,7 +51,8 @@
                                 @if($isGridView)
                                     <div id="slideAnimationGames" class="grid grid-cols-3 gap-8 pt-5 pb-10 relative">
                                         @foreach ($games as $game)
-                                            <div class="group swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                            <div class="relative group swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                                <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                                 <div class="p-5 flex flex-col gap-4">
                                                     <div class="overflow-hidden rounded-2xl">
                                                         <img src="{{ url('storage/'. $game->image_horizontal) }}" class="w-full rounded-2xl object-cover group-hover:scale-[1.1] group-hover:rotate-3 duration-300 ease-in-out" alt="{{ $game->title }}" >
@@ -131,7 +132,8 @@
                                             <div class="w-[15%] text-center">Provider</div>
                                         </div>
                                         @foreach ($games as $game)
-                                            <div class="flex flex-row px-4 py-8 cursor-pointer items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover w-full mb-3">
+                                            <div class="relative flex flex-row px-4 py-8 cursor-pointer items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover w-full mb-3">
+                                                <a href="{{ route('single.game.index', $game->id) }}" class="group absolute top-0 bottom-0 left-0 right-0 z-[10]"></a>
                                                 <div class="flex gap-2 items-center w-[40%]">
                                                     <div>
                                                         <img src="{{url('storage/'.$game->image_square)}}" alt="{{$game->title}}" class="w-[60px] rounded-xl">
@@ -140,11 +142,11 @@
                                                         <x-heading class="!text-base whitespace-nowrap !text-slate-400">{{$game->title}}</x-heading>
                                                     </div>
                                                 </div>
-                                                <div class="w-[15%]">
+                                                <div class="w-[15%] relative z-[20]">
                                                     <div class="flex items-center justify-center h-full volatility-container">
                                                         <div class="relative">
                                                             <div class="volatility-details">
-                                                                <span class="uppercase text-xs">
+                                                                <span class="uppercase text-xs noto-sans">
                                                                     @if($game->volatility == 3)
                                                                         High
                                                                     @elseif($game->volatility == 2)
@@ -176,7 +178,7 @@
                                                 </div>
                                                 <div class="w-[15%]">
                                                     <div class="flex items-center justify-center h-full">
-                                                        <img src="{{url('storage/'.$game->provider->image)}}" alt="{{$game->provider->title}}" class="w-20 grayscale">
+                                                        <img src="{{url('storage/'.$game->provider->image)}}" alt="{{$game->provider->title}}" class="w-20">
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,6 +186,9 @@
                                     </div>
                                 @endif
                             </div>
+                        </div>
+                        <div class="text-center">
+                            <x-primary-button-new wire:click="loadMore" class="!px-4 !py-2">Load more</x-primary-button-new>
                         </div>
                     @else
                         <div class="flex flex-row gap-2">
@@ -198,4 +203,5 @@
             </div>
         </div>
     </div>
+    @include('layouts.home.game-search')
 </div>

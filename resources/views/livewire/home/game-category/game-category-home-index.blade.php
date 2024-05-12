@@ -48,7 +48,8 @@
                             <div class="swiper hotGames">
                                 <div class="swiper-wrapper pt-5 pb-10 relative">
                                     @foreach ($hotGames as $game)
-                                        <div class="group swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                            <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                             <div class="p-5 flex flex-col gap-4">
                                                 <div class="overflow-hidden rounded-2xl">
                                                     <img src="{{ url('storage/'. $game->image_horizontal) }}" class="w-full rounded-2xl object-cover group-hover:scale-[1.1] group-hover:rotate-3 duration-300 ease-in-out" alt="{{ $game->title }}" >
@@ -137,7 +138,8 @@
                             <div class="swiper newGames">
                                 <div class="swiper-wrapper pt-5 pb-10 relative">
                                     @foreach ($newGames as $game)
-                                        <div class="group swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                            <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                             <div class="p-5 flex flex-col gap-4">
                                                 <div class="overflow-hidden rounded-2xl">
                                                     <img src="{{ url('storage/'. $game->image_horizontal) }}" class="w-full rounded-2xl object-cover group-hover:scale-[1.1] group-hover:rotate-3 duration-300 ease-in-out" alt="{{ $game->title }}" >
@@ -226,7 +228,8 @@
                             <div class="swiper comingSoonGames">
                                 <div class="swiper-wrapper pt-5 pb-10 relative">
                                     @foreach ($comingSoonGames as $game)
-                                        <div class="group swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                            <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                             <div class="p-5 flex flex-col gap-4">
                                                 <div class="overflow-hidden rounded-2xl">
                                                     <img src="{{ url('storage/'. $game->image_horizontal) }}" class="w-full rounded-2xl object-cover group-hover:scale-[1.1] group-hover:rotate-3 duration-300 ease-in-out" alt="{{ $game->title }}" >
@@ -301,6 +304,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    @include('layouts.home.game-search')
+
 </div>
