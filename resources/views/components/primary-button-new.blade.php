@@ -1,1 +1,1 @@
-<a {!! $attributes->merge(['class' => 'text-sm cursor-pointer text-slate-50 px-4 py-1 duration-300 ease-in-out w-full rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 montserrat group-hover:from-cyan-500 group-hover:to-blue-500']) !!}>{{ $slot }}</a>
+<a {!! $attributes->merge(['class' => 'text-sm cursor-pointer text-slate-50 px-4 py-1 duration-300 ease-in-out w-full rounded-full bg-gradient-to-r from-sky-600 to-sky-800 montserrat group-hover:from-sky-500 group-hover:to-sky-700 group-hover:duration-300 group-hover:ease-in-out']) !!}>{{ $slot }}</a>
