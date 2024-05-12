@@ -80,6 +80,9 @@
                             Region
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Volatility
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Status
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -117,6 +120,15 @@
                             </td>
                             <td class="px-6 py-4 capitalize">
                                 {{ $game->region }}
+                            </td>
+                            <td class="px-6 py-4 capitalize">
+                                @if($game->volatility == 3)
+                                    High
+                                @elseif($game->volatility == 2)
+                                    Medium
+                                @else
+                                    Low
+                                @endif
                             </td>
                             <td class="px-6 py-4">
                                 @if($game->status == 1)

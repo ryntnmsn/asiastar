@@ -53,7 +53,11 @@ class GameCategoryHomeAllIndex extends Component
         $this->filterGameType = '';
         $this->filterRTP = '';
         $this->filterLanguage = '';
+    }
 
+    public function resetSort() {
+        $this->filterSortOrder = '';
+        $this->filterSortSelect = 'status';
     }
 
     public function mount($slug) {

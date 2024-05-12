@@ -84,9 +84,9 @@
                         <div class="flex-1">
                             <x-label for="volatility">Volatility</x-label>
                             <x-select wire:model="volatility" class="!w-full">
-                                <option {{ $volatility == 'low' ? 'selected' : '' }} value="1">Low</option>
-                                <option {{ $volatility == 'medium' ? 'selected' : '' }} value="2">Medium</option>
-                                <option {{ $volatility == 'high' ? 'selected' : '' }} value="3">High</option>
+                                <option {{ $volatility == '1' ? 'selected' : '' }} value="1">Low</option>
+                                <option {{ $volatility == '2' ? 'selected' : '' }} value="2">Medium</option>
+                                <option {{ $volatility == '3' ? 'selected' : '' }} value="3">High</option>
                             </x-select>
                         </div>
                     </div>
