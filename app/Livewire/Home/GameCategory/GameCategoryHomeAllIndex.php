@@ -47,6 +47,15 @@ class GameCategoryHomeAllIndex extends Component
         $this->searchQuery = '';
     }
 
+    public function resetFilters() {
+        $this->filterTheme = '';
+        $this->filterProvider = '';
+        $this->filterGameType = '';
+        $this->filterRTP = '';
+        $this->filterLanguage = '';
+
+    }
+
     public function mount($slug) {
         $gameCategory = GameCategory::where('slug', $slug)->first();
 

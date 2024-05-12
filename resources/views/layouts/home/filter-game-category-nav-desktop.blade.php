@@ -9,7 +9,7 @@
             Filters
         </span>
         <span>
-            <x-primary-button-new class="!text-xs !px-2 !py-1">Reset</x-primary-button-new>
+            <x-primary-button-new wire:click="resetFilters" class="!text-xs !px-2 !py-1">Reset</x-primary-button-new>
         </span>
     </div>
 
@@ -205,13 +205,3 @@
     </div>
 
 </div>
-
-<script>
-    function onlyOne(checkbox) {
-        var checkboxes = document.getElementById('theme');
-        checkboxes.forEach((item) => {
-            if (item !== checkbox)
-            item.checked = false;
-        })
-    }
-</script>

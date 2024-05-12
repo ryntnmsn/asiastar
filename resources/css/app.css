@@ -68,8 +68,8 @@ html, body {
     justify-content: center;
     align-items: center;
     color:#fff;
-    border-radius: 8px;
-    background-color: #f59e0b;
+    border-radius: 20px;
+    background-image: linear-gradient(#0284c7, #075985);
 }
 
 .button-details span {
@@ -82,7 +82,7 @@ html, body {
 
 
 .button-view span:hover {
-    background:#d48700;
+    background:#075985;
 }
 
 .box-container:hover .button-details, .volatility-container:hover .volatility-details {

@@ -33,7 +33,7 @@
 
                     {{-- Hot Games --}}
                     @if(count($hotGames) != null)
-                        <div class="mb-10">
+                        <div id="slideAnimationGames" class="mb-10">
                             <div class="flex justify-between items-center">
                                 <div>
                                     <x-heading class="!mb-0 !text-slate-400">Hot Games</x-heading>
