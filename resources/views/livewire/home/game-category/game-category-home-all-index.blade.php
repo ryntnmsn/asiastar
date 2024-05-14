@@ -25,7 +25,7 @@
         <div class="mt-10">
             <div class="flex">
                 <div class="w-[20%]">
-                    <div wire:ignore class="bg-dark-blue p-5 rounded-2xl mr-8">
+                    <div wire:ignore class="dark:bg-dark-blue bg-slate-100 p-5 rounded-2xl mr-8">
                         @include('layouts.home.game-category-nav-desktop')
                         @include('layouts.home.sort-game-category-nav-desktop')
                         @include('layouts.home.filter-game-category-nav-desktop')
@@ -38,7 +38,7 @@
                         <div class="mb-10">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <x-heading class="!mb-0 !text-slate-400">All Games</x-heading>
+                                    <x-heading class="!mb-0">All Games</x-heading>
                                 </div>
                                 <div>
                                     <div class="flex dark:text-slate-400">
@@ -51,72 +51,71 @@
                                 @if($isGridView)
                                     <div id="slideAnimationGames" class="grid grid-cols-3 gap-8 pt-5 pb-10 relative">
                                         @foreach ($games as $game)
-                                            <div class="relative group swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
-                                                <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
-                                                <div class="p-5 flex flex-col gap-4">
-                                                    <div class="overflow-hidden rounded-2xl">
-                                                        <img src="{{ url('storage/'. $game->image_horizontal) }}" class="w-full rounded-2xl object-cover group-hover:scale-[1.1] group-hover:rotate-3 duration-300 ease-in-out" alt="{{ $game->title }}" >
-                                                    </div>
-                                                    <div class="flex flex-col gap-2">
-                                                        <div class="flex gap-2 items-center border-b border-slate-700/[.50] pb-3">
-                                                            <div>
-                                                                <img src="{{url('storage/'.$game->image_square)}}" alt="{{ $game->title }}" class="w-10 rounded-lg ">
-                                                            </div>
-                                                            <div class="flex flex-col gap-1 items-start">
-                                                                <x-heading class="!text-base !leading-[14px] !mb-0 !text-slate-400">{{ $game->title }}</x-heading>
-                                                                <x-text class="!text-xs !font-medium !text-slate-600">{{$game->provider->title}}</x-text>
-                                                            </div>
-                                                        </div>
+                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                            <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
+                                            <div class="p-5 flex flex-col gap-4">
+                                                <div class="overflow-hidden rounded-2xl">
+                                                    <img src="{{ url('storage/'. $game->image_horizontal) }}" class="w-full rounded-2xl object-cover group-hover:scale-[1.1] group-hover:rotate-3 duration-300 ease-in-out" alt="{{ $game->title }}" >
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex gap-2 items-center border-b border-slate-300 dark:border-slate-700/[.50] pb-3">
                                                         <div>
-                                                            <x-sub-heading class="!mb-3 !text-xs text-left !text-slate-400">{{ strip_tags(Str::words($game->description, 15, '...')) }}</x-sub-heading>
+                                                            <img src="{{url('storage/'.$game->image_square)}}" alt="{{ $game->title }}" class="w-10 rounded-lg ">
                                                         </div>
-                                                        <div>
-                                                            <div class="flex">
-                                                                <div class="flex-1">
-                                                                    <div class="flex flex-col">
-                                                                        <x-text class="!text-xs !font-medium uppercase !text-slate-400">
-                                                                            @if($game->volatility == 3)
-                                                                                High
-                                                                            @elseif($game->volatility == 2)
-                                                                                Medium
-                                                                            @else
-                                                                                Low
-                                                                            @endif
-                                                                        </x-text>
-                                                                        <x-text class="!text-xs !font-medium !text-slate-600">
-                                                                            Volatility
-                                                                        </x-text>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex-1">
-                                                                    <div class="flex flex-col">
-                                                                        <x-text class="!text-xs !font-medium uppercase !text-slate-400">
-                                                                            {{$game->rtp}}%
-                                                                        </x-text>
-                                                                        <x-text class="!text-xs !font-medium !text-slate-600">
-                                                                            RTP
-                                                                        </x-text>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex-1">
-                                                                    <div class="flex flex-col">
-                                                                        <x-text class="!text-xs !font-medium uppercase !text-slate-400">
-                                                                            <span class="text-[8px]">x</span>{{$game->maximum_win}}
-                                                                        </x-text>
-                                                                        <x-text class="!text-xs !font-medium !text-slate-600">
-                                                                            Max win
-                                                                        </x-text>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mt-2">
-                                                            <x-primary-button-new>More details</x-primary-button-new>
+                                                        <div class="flex flex-col gap-1 items-start">
+                                                            <x-heading class="!text-base !leading-[14px] !mb-0">{{ $game->title }}</x-heading>
+                                                            <x-text class="!text-xs !font-medium">{{$game->provider->title}}</x-text>
                                                         </div>
                                                     </div>
-
+                                                    <div>
+                                                        <x-sub-heading class="!mb-3 !text-xs text-left">{{ strip_tags(Str::words($game->description, 15, '...')) }}</x-sub-heading>
+                                                    </div>
+                                                    <div>
+                                                        <div class="flex">
+                                                            <div class="flex-1">
+                                                                <div class="flex flex-col">
+                                                                    <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
+                                                                        @if($game->volatility == 3)
+                                                                            High
+                                                                        @elseif($game->volatility == 2)
+                                                                            Medium
+                                                                        @else
+                                                                            Low
+                                                                        @endif
+                                                                    </x-text>
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
+                                                                        Volatility
+                                                                    </x-text>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-1">
+                                                                <div class="flex flex-col">
+                                                                    <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
+                                                                        {{$game->rtp}}%
+                                                                    </x-text>
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
+                                                                        RTP
+                                                                    </x-text>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-1">
+                                                                <div class="flex flex-col">
+                                                                    <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
+                                                                        <span class="text-[8px]">x</span>{{$game->maximum_win}}
+                                                                    </x-text>
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
+                                                                        Max win
+                                                                    </x-text>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <x-primary-button-new>More details</x-primary-button-new>
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </div>
                                         @endforeach
                                     </div>
                                 @endif
@@ -132,14 +131,14 @@
                                             <div class="w-[15%] text-center">Provider</div>
                                         </div>
                                         @foreach ($games as $game)
-                                            <div class="relative flex flex-row px-4 py-8 cursor-pointer items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-dark-blue hover:bg-dark-blue-hover w-full mb-3">
+                                            <div class="relative flex flex-row px-4 py-8 cursor-pointer items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover w-full mb-3">
                                                 <a href="{{ route('single.game.index', $game->id) }}" class="group absolute top-0 bottom-0 left-0 right-0 z-[10]"></a>
                                                 <div class="flex gap-2 items-center w-[40%]">
                                                     <div>
                                                         <img src="{{url('storage/'.$game->image_square)}}" alt="{{$game->title}}" class="w-[60px] rounded-xl">
                                                     </div>
                                                     <div>
-                                                        <x-heading class="!text-base whitespace-nowrap !text-slate-400">{{$game->title}}</x-heading>
+                                                        <x-heading class="!text-base whitespace-nowrap">{{$game->title}}</x-heading>
                                                     </div>
                                                 </div>
                                                 <div class="w-[15%] relative z-[20]">
@@ -168,12 +167,12 @@
                                                 </div>
                                                 <div class="w-[15%]">
                                                     <div class="flex items-center justify-center h-full">
-                                                        <x-heading class="!text-base font-semibold !mb-0 !text-slate-400">{{$game->rtp}}%</x-heading>
+                                                        <x-heading class="!text-base font-semibold !mb-0">{{$game->rtp}}%</x-heading>
                                                     </div>
                                                 </div>
                                                 <div class="w-[15%]">
                                                     <div class="flex items-center justify-center h-full">
-                                                        <x-heading class="!text-base font-semibold !mb-0 !text-slate-400">x{{$game->maximum_win}}</x-heading>
+                                                        <x-heading class="!text-base font-semibold !mb-0">x{{$game->maximum_win}}</x-heading>
                                                     </div>
                                                 </div>
                                                 <div class="w-[15%]">

@@ -3,7 +3,7 @@
         <div class="w-full h-full max-w-[1280px] mx-auto mt-20">
             <div>
                 <div>
-                    <img src="{{url('storage/images/image-placeholder-banner.jpg')}}" alt="">
+                    <img src="{{url('storage/images/image-placeholder-banner.jpg')}}" alt="" class="rounded-2xl">
                 </div>
                 <div class="mt-20 text-center">
                     <x-heading class="text-4xl">Our Partners</x-heading>
@@ -15,7 +15,7 @@
                     <div class="grid grid-cols-3">
                         @foreach ($partners as $partner)
                             <div>
-                                <div class="border border-slate-100 bg-slate-50 py-10 px-5 flex flex-col items-center justify-center gap-5 hover:shadow-2xl hover:z-10 hover:-translate-y-2 duration-300 ease-in-out cursor-pointer relative">
+                                <div class="border border-slate-100 bg-slate-50 dark:bg-dark-blue hover:dark:bg-dark-blue-hover dark:border-slate-900 py-10 px-5 flex flex-col items-center justify-center gap-5 hover:shadow-2xl hover:z-10 hover:-translate-y-2 duration-300 ease-in-out cursor-pointer relative">
                                     <a href="{{$partner->website}}" target="__blank" class="absolute top-0 bottom-0 right-0 left-0"></a>
                                     <div>
                                         <img src="{{url('storage/'.$partner->image)}}" alt="{{$partner->title}}" class="w-20">

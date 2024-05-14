@@ -77,8 +77,6 @@ class GameCategoryHomeAllIndex extends Component
             })->get();
 
 
-
-
         $getThemes = Theme::all();
         $gameTypes = GameType::all();
         $providers = Provider::all();

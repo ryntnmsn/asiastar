@@ -2,7 +2,7 @@
     <div class="w-full h-full max-w-[1280px] mx-auto mt-20">
         <div>
             <div>
-                <x-heading class="text-3xl">Company News</x-heading>
+                <x-heading class="text-3xl dark:text-slate-400">Company News</x-heading>
             </div>
 
             @if(count($companyNews) != null)
@@ -27,13 +27,13 @@
                                 </div>
                                 <div class="flex-1">
                                     <div class="flex text-left flex-col items-start">
-                                        <x-heading>
+                                        <x-heading class="">
                                             {{$companyNews->name}}
                                         </x-heading>
                                         <x-paragraph>
                                             {{$companyNews->short_description}}
                                         </x-paragraph>
-                                        <x-primary-button class="!text-[16px] ">Read more</x-primary-button>
+                                        <x-primary-button-new class="!text-[16px] !py-2 !px-4">Read more</x-primary-button-new>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                     <div class="grid grid-cols-3 py-5">
                         @foreach ($latestNews as $latestNews)
                             <div class="group">
-                                <div class="flex border border-slate-50 bg-slate-50 p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">
+                                <div class="flex border border-slate-100 bg-slate-50 dark:bg-dark-blue hover:dark:bg-dark-blue-hover dark:border-slate-900 p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">
                                     <a href="{{route('single.news.index', ['category' => $latestNews->category, 'slug' => $latestNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-20"></a>
                                     <div class="relative">
                                         <div class="absolute top-0 left-0 bg-slate-100 m-2 w-14 h-14 p-1 shadow-xl rounded-xl">
@@ -65,13 +65,13 @@
                                     </div>
                                     <div>
                                         <div class="flex text-left flex-col justify-between items-start">
-                                            <x-heading class="text-base !font-medium !text-slate-600">
+                                            <x-heading class="text-base !font-medium ">
                                                 {{$latestNews->name}}
                                             </x-heading>
                                             <x-paragraph class="!text-sm">
                                                 {{Str::words($latestNews->short_description, 13, '...')}}
                                             </x-paragraph>
-                                            <a href="" class="text-amber-500 text-sm">Read more</a>
+                                            <a href="" class="text-cyan-600 text-sm ">Read more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="mt-20 text-center">
                     <div>
-                        <x-primary-button href="{{route('all.company.news.index')}}">View all news</x-primary-button>
+                        <x-primary-button-new class="!px-4 !py-2" href="{{route('all.company.news.index')}}">View all news</x-primary-button-new>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                     <div class="grid grid-cols-3 py-5">
                         @foreach ($achievements as $achievement)
                             <div class="group">
-                                <div class="flex border border-slate-100 bg-slate-50 p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">
+                                <div class="flex border border-slate-100 bg-slate-50 dark:bg-dark-blue hover:dark:bg-dark-blue-hover dark:border-slate-900 p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">
                                     <a href="{{route('single.news.index', ['category' => $achievement->category, 'slug' => $achievement->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-20"></a>
                                     <div class="relative">
                                         <div class="absolute top-0 left-0 bg-slate-50 m-2 w-14 h-14 p-1 shadow-xl rounded-xl">
@@ -113,13 +113,13 @@
                                     </div>
                                     <div>
                                         <div class="flex text-left flex-col justify-between items-start">
-                                            <x-heading class="text-base !font-medium !text-slate-600">
+                                            <x-heading class="text-base !font-medium">
                                                 {{$achievement->name}}
                                             </x-heading>
                                             <x-paragraph class="!text-sm">
                                                 {{Str::words($achievement->short_description, 13, '...')}}
                                             </x-paragraph>
-                                            <a href="" class="text-amber-500 text-sm">Read more</a>
+                                            <a href="" class="text-cyan-600 text-sm">Read more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@
                 </div>
                 <div class="mt-20 text-center">
                     <div>
-                        <x-primary-button href="{{route('all.achivements.news.index')}}">View all achievements</x-primary-button>
+                        <x-primary-button-new class="!px-4 !py-2" href="{{route('all.achivements.news.index')}}">View all achievements</x-primary-button-new>
                     </div>
                 </div>
             </div>

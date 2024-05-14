@@ -8,7 +8,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-size:16px;
-    /* background-color: #ecf4fe; */
+    /* background-color: #f6faff; */
 }
 .montserrat {
     font-family: "Montserrat", sans-serif;
@@ -19,6 +19,25 @@ html, body {
 .noto-sans {
     font-family: "Noto Sans", sans-serif;
 }
+
+
+.youtube-container {
+	overflow: hidden;
+	width: 100%;
+	/* Keep it the right aspect-ratio */
+	aspect-ratio: 16/9;
+	/* No clicking/hover effects */
+	pointer-events: none;
+
+	iframe {
+		/* Extend it beyond the viewport... */
+		width: 300%;
+		height: 100%;
+		/* ...and bring it back again */
+		margin-left: -100%;
+	}
+}
+
 
 .select2-container--default .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: 1px solid #cbd5e1;
@@ -291,9 +310,9 @@ input[type="radio"]:not(:checked) + label:before {
     top: 0;
     width: 18px;
     height: 18px;
-    border: 1px solid #475569;
+    border: 1px solid #64758b;
     border-radius: 100%;
-    background: #475569;
+    /* background: #475569; */
 }
 input[type="radio"]:checked + label:after,
 input[type="radio"]:not(:checked) + label:after {
@@ -318,3 +337,9 @@ input[type="radio"]:not(:checked) + label:after {
      -webkit-transform: scale(1);
      transform: scale(1);
  }
+
+
+
+
+
+ /* HEADER */

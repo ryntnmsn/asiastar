@@ -13,6 +13,9 @@ use App\Livewire\Admin\Article\ArticleTagIndex;
 use App\Livewire\Admin\AvailableLanguage\AvailableLanguageCreate;
 use App\Livewire\Admin\availableLanguage\AvailableLanguageEdit;
 use App\Livewire\Admin\AvailableLanguage\AvailableLanguageIndex;
+use App\Livewire\Admin\Contact\ContactCreate;
+use App\Livewire\Admin\Contact\ContactEdit;
+use App\Livewire\Admin\Contact\ContactIndex;
 use App\Livewire\Admin\Dashboard\DashboardIndex;
 use App\Livewire\Admin\Feature\FeatureCreate;
 use App\Livewire\Admin\Feature\FeatureEdit;
@@ -46,6 +49,7 @@ use App\Livewire\Admin\Theme\ThemeEdit;
 use App\Livewire\Admin\Theme\ThemeIndex;
 use App\Livewire\Auth\Login;
 use App\Livewire\Home\About\AboutOurCompany;
+use App\Livewire\Home\Contact\ContactHomeIndex;
 use App\Livewire\Home\Game\AllGameHomeIndex;
 use App\Livewire\Home\Game\GameHomeIndex;
 use App\Livewire\Home\Game\GameTimelineIndex;
@@ -75,6 +79,7 @@ Route::get('/games/all', AllGameHomeIndex::class)->name('all.game.home.index');
 Route::get('/games/timeline', GameTimelineIndex::class)->name('game.timeline.index');
 Route::get('/games/{id}', SingleGameIndex::class)->name('single.game.index');
 
+
 //Game Category
 Route::get('/games/category/home/{slug}', GameCategoryHomeIndex::class)->name('game.category.home.index');
 Route::get('/games/category/all/{slug}', GameCategoryHomeAllIndex::class)->name('game.category.home.all.index');
@@ -86,6 +91,10 @@ Route::get('/news', NewsIndex::class)->name('news.index');
 Route::get('/news/{category}/{slug}', SingleNews::class)->name('single.news.index');
 Route::get('/news/company', AllNewsIndex::class)->name('all.company.news.index');
 Route::get('/news/achievements', AllAchievementsIndex::class)->name('all.achivements.news.index');
+
+
+//Contact Us
+Route::get('contact-us', ContactHomeIndex::class)->name('contact.home.index');
 
 //Join Us
 Route::get('/join-us', JoinUsIndex::class)->name('join.us.index');
@@ -175,6 +184,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
         Route::get('/recruitment', RecruitmentIndex::class)->name('recruitment.index');
         Route::get('/recruitment/create', RecruitmentCreate::class)->name('recruitment.create');
         Route::get('/recruitment/edit/{id}', RecruitmentEdit::class)->name('recruitment.edit');
+
+        //Contacts
+        Route::get('/contact', ContactIndex::class)->name('contact.index');
+        Route::get('/contact/create', ContactCreate::class)->name('contact.create');
+        Route::get('/contact/edit/{id}', ContactEdit::class)->name('contact.edit');
 
     });
 });

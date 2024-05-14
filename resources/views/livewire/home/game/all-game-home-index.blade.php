@@ -88,7 +88,6 @@
                                             <span>@lang('View more')</span>
                                         </div>
                                     </div>
-
                                     <div class="m-4 rounded-2xl flex mt-4 gap-4 py-4 px-4 absolute bottom-0 left-0 right-0 z-[100] bg-white/[.70] backdrop-blur-md">
                                         <div class="text-left">
                                             <div class="flex gap-2">
