@@ -18,7 +18,6 @@ class GameCategoryHomeAllIndex extends Component
 
     public $isGridView = true;
     public $isListView = false;
-    public $paginate = 15;
     public $amount = 15;
     public $filterTheme = '';
     public $filterProvider = '';
@@ -28,6 +27,7 @@ class GameCategoryHomeAllIndex extends Component
     public $filterSortOrder = '';
     public $filterLanguage = '';
     public $searchQuery = '';
+
 
     public function grid() {
         $this->isGridView = true;
@@ -125,11 +125,10 @@ class GameCategoryHomeAllIndex extends Component
             ->take($this->amount)
             ->get();
 
-
-            $results = [];
-            if(strlen($this->searchQuery) >= 2) {
-                $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')->get();
-            }
+        $results = [];
+        if(strlen($this->searchQuery) >= 2) {
+            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')->get();
+        }
 
         return view('livewire.home.game-category.game-category-home-all-index', [
             'games' => $games,

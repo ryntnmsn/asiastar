@@ -1,10 +1,31 @@
-<div class="h-full">
-    <div class="h-full">
+<div class="">
+
+
+    <div class="relative">
+        <div class="absolute bottom-0 left-0 top-0 right-0 w-full max-w-[1280px] mx-auto items-center justify-center flex">
+            <x-heading class="text-animation !text-[112px] pb-40 !text-center !leading-[112px] !font-bold z-20 !text-slate-50">Every Ball <br>Sparks a Fortune!</x-heading>
+        </div>
+        <div class="absolute bottom-0 z-30 pb-40 flex items-center justify-center left-0 right-0">
+            <a href="#games">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 text-slate-600 hover:text-slate-50 duration-300 ease-in-out hover:-translate-y-2">
+                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-.53 14.03a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V8.25a.75.75 0 0 0-1.5 0v5.69l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3Z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+        <div class="bg-gradient-to-t from-slate-900 absolute top-0 left-0 right-0 bottom-0 z-10">
+
+        </div>
         <div class="youtube-container">
             <iframe src="https://www.youtube.com/embed/_Td7JjCTfyc?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&rel=0&loop=1&playlist=_Td7JjCTfyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p><a href="https://www.youtube.com/watch?v=WhY7uyc56ms">Source video</a></p>
     </div>
+
+
+
+
+    <div id="games" class="py-96"></div>
+
+
     <div>
         {{-- <ul>
             <li><a href="locale/en">English</a></li>

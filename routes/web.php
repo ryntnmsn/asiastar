@@ -56,6 +56,7 @@ use App\Livewire\Home\Game\GameTimelineIndex;
 use App\Livewire\Home\Game\SingleGameIndex;
 use App\Livewire\Home\GameCategory\GameCategoryHomeAllIndex;
 use App\Livewire\Home\GameCategory\GameCategoryHomeIndex;
+use App\Livewire\Home\GameCategory\GameHomeAll;
 use App\Livewire\Home\HomeIndex;
 use App\Livewire\Home\Joinus\JoinUsIndex;
 use App\Livewire\Home\News\AllAchievementsIndex;

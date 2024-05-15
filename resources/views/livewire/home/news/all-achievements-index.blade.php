@@ -28,7 +28,7 @@
                                         <x-paragraph class="!text-sm">
                                             {{Str::words($achievement->short_description, 13, '...')}}
                                         </x-paragraph>
-                                        <a href="" class="text-cyan-600 text-sm">Read more</a>
+                                        <a href="" class="text-sky-600 text-sm">Read more</a>
                                     </div>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -52,37 +52,76 @@
 
 <script>
     var swiper = new Swiper(".hotGames", {
-        slidesPerView: 3,
         spaceBetween: 30,
         loop: true,
         navigation: {
         nextEl: ".hotGames-next",
         prevEl: ".hotGames-prev"
         },
+        breakpoints: {
+            520: {
+            slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1280: {
+                slidesPerView: 3,
+            },
+        }
     });
 </script>
 
 <script>
     var swiper = new Swiper(".comingSoonGames", {
-        slidesPerView: 3,
         spaceBetween: 30,
         loop: true,
         navigation: {
         nextEl: ".comingSoonGames-next",
         prevEl: ".comingSoonGames-prev"
         },
+        breakpoints: {
+            520: {
+            slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1280: {
+                slidesPerView: 3,
+            },
+        }
     });
 </script>
 
 <script>
     var swiper = new Swiper(".newGames", {
-        slidesPerView: 3,
         spaceBetween: 30,
         loop: true,
         navigation: {
         nextEl: ".newGames-next",
         prevEl: ".newGames-prev"
         },
+        breakpoints: {
+            520: {
+            slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1280: {
+                slidesPerView: 3,
+            },
+        }
     });
 </script>
 
@@ -141,5 +180,6 @@
 
     });
 </script>
+
 </body>
 </html>

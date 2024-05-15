@@ -18,7 +18,7 @@
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
                 <div>
-                    <input wire:model.live.debounce.500ms="searchQuery" type="text" class="w-full rounded-md p-2 border-2 border-slate-300 text-lg text-slate-600 placeholder:text-slate-400 focus:ring-amber-500 focus:border-amber-500" placeholder="Enter here...">
+                    <input wire:model.live.debounce.500ms="searchQuery" type="text" class="w-full rounded-md p-2 border-2 border-slate-300 text-lg text-slate-600 placeholder:text-slate-400 focus:ring-sky-600 focus:border-sky-600" placeholder="Enter here...">
                 </div>
 
                 @if(strlen($searchQuery) >= 2)

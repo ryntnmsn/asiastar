@@ -1,9 +1,9 @@
-<div class="h-full">
+<div class="h-full mt-40 px-5">
     <div class="h-full w-full max-w-[1280px] mx-auto">
         @if(count($gameBanners) != null)
             <!-- Game Banners -->
             <div class="mt-10">
-                <div wire:ignore class="swiper gameBanner rounded-3xl">
+                <div wire:ignore class="swiper gameBanner rounded-3xl py-10">
                     <div class="swiper-wrapper">
                         @foreach ($gameBanners as $gameBanner)
                         <div class="swiper-slide">
@@ -23,13 +23,13 @@
         @endif
 
         <div class="mt-10">
-            <div class="flex">
-                <div class="w-[20%]">
-                    <div class="bg-slate-100 dark:bg-dark-blue p-5 rounded-2xl mr-8">
+            <div class="flex flex-col xl:flex-row">
+                <div class="w-full xl:w-[20%]">
+                    <div class="bg-slate-100 dark:bg-dark-blue p-5 rounded-2xl mr-0 xl:mr-8 xl:mb-0 mb-8">
                         @include('layouts.home.game-category-nav-desktop')
                     </div>
                 </div>
-                <div wire:ignore class="w-[80%] relative">
+                <div wire:ignore class="w-full xl:w-[80%] relative">
 
                     {{-- Hot Games --}}
                     @if(count($hotGames) != null)
@@ -60,7 +60,7 @@
                                                             <img src="{{url('storage/'.$game->image_square)}}" alt="{{ $game->title }}" class="w-10 rounded-lg ">
                                                         </div>
                                                         <div class="flex flex-col gap-1 items-start">
-                                                            <x-heading class="!text-base !leading-[14px] !mb-0">{{ $game->title }}</x-heading>
+                                                            <x-heading class="!text-base text-left !leading-[14px] !mb-0">{{ $game->title }}</x-heading>
                                                             <x-text class="!text-xs !font-medium">{{$game->provider->title}}</x-text>
                                                         </div>
                                                     </div>
@@ -80,7 +80,7 @@
                                                                             Low
                                                                         @endif
                                                                     </x-text>
-                                                                    <x-text class="!text-xs !font-medium">
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                         Volatility
                                                                     </x-text>
                                                                 </div>
@@ -90,7 +90,7 @@
                                                                     <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                         {{$game->rtp}}%
                                                                     </x-text>
-                                                                    <x-text class="!text-xs !font-medium ">
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                         RTP
                                                                     </x-text>
                                                                 </div>
@@ -100,7 +100,7 @@
                                                                     <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                         <span class="text-[8px]">x</span>{{$game->maximum_win}}
                                                                     </x-text>
-                                                                    <x-text class="!text-xs !font-medium">
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                         Max win
                                                                     </x-text>
                                                                 </div>
@@ -169,7 +169,7 @@
                                                                             Low
                                                                         @endif
                                                                     </x-text>
-                                                                    <x-text class="!text-xs !font-medium">
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                         Volatility
                                                                     </x-text>
                                                                 </div>
@@ -179,7 +179,7 @@
                                                                     <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                         {{$game->rtp}}%
                                                                     </x-text>
-                                                                    <x-text class="!text-xs !font-medium ">
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                         RTP
                                                                     </x-text>
                                                                 </div>
@@ -189,7 +189,7 @@
                                                                     <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                         <span class="text-[8px]">x</span>{{$game->maximum_win}}
                                                                     </x-text>
-                                                                    <x-text class="!text-xs !font-medium">
+                                                                    <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                         Max win
                                                                     </x-text>
                                                                 </div>
@@ -258,7 +258,7 @@
                                                                         Low
                                                                     @endif
                                                                 </x-text>
-                                                                <x-text class="!text-xs !font-medium">
+                                                                <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                     Volatility
                                                                 </x-text>
                                                             </div>
@@ -268,7 +268,7 @@
                                                                 <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                     {{$game->rtp}}%
                                                                 </x-text>
-                                                                <x-text class="!text-xs !font-medium ">
+                                                                <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                     RTP
                                                                 </x-text>
                                                             </div>
@@ -278,7 +278,7 @@
                                                                 <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                     <span class="text-[8px]">x</span>{{$game->maximum_win}}
                                                                 </x-text>
-                                                                <x-text class="!text-xs !font-medium">
+                                                                <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
                                                                     Max win
                                                                 </x-text>
                                                             </div>

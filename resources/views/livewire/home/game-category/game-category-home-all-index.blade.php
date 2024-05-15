@@ -1,9 +1,9 @@
-<div class="h-full">
+<div class="h-full mt-40 px-5">
     <div class="h-full w-full max-w-[1280px] mx-auto">
         @if(count($gameBanners) != null)
             <!-- Game Banners -->
             <div class="mt-10">
-                <div wire:ignore class="swiper gameBanner rounded-3xl">
+                <div wire:ignore class="swiper gameBanner rounded-3xl py-10">
                     <div class="swiper-wrapper">
                         @foreach ($gameBanners as $gameBanner)
                         <div class="swiper-slide">
@@ -23,15 +23,22 @@
         @endif
 
         <div class="mt-10">
-            <div class="flex">
-                <div class="w-[20%]">
-                    <div wire:ignore class="dark:bg-dark-blue bg-slate-100 p-5 rounded-2xl mr-8">
-                        @include('layouts.home.game-category-nav-desktop')
-                        @include('layouts.home.sort-game-category-nav-desktop')
-                        @include('layouts.home.filter-game-category-nav-desktop')
+            <div class="flex flex-col xl:flex-row">
+                <div class="w-full xl:w-[20%]">
+                    <div wire:ignore class="dark:bg-dark-blue bg-slate-100 p-5 rounded-2xl mr-0 xl:mr-8 mb-8 xl:mb-0">
+                        <div>
+                            @include('layouts.home.game-category-nav-desktop')
+                        </div>
+
+                        <div id="filterBox" class="hidden xl:block">
+                            <div id="slideAnimationGames">
+                                @include('layouts.home.sort-game-category-nav-desktop')
+                                @include('layouts.home.filter-game-category-nav-desktop')
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="w-[80%] relative">
+                <div class="w-full xl:w-[80%] relative">
 
                     {{-- Games --}}
                     @if(count($games) != null)
@@ -41,15 +48,15 @@
                                     <x-heading class="!mb-0">All Games</x-heading>
                                 </div>
                                 <div>
-                                    <div class="flex dark:text-slate-400">
-                                        <div wire:click="grid" class="hotGames-next"><x-icon-grid-view></x-icon-grid-view></div>
-                                        <div wire:click="list" class="hotGames-prev"><x-icon-list-view></x-icon-list-view></div>
+                                    <div class="xl:flex text-slate-400 dark:text-slate-400">
+                                        <button wire:click="grid"><x-icon-grid-view></x-icon-grid-view></button>
+                                        <button wire:click="list"><x-icon-list-view></x-icon-list-view></button>
                                     </div>
                                 </div>
                             </div>
                             <div>
                                 @if($isGridView)
-                                    <div id="slideAnimationGames" class="grid grid-cols-3 gap-8 pt-5 pb-10 relative">
+                                    <div id="slideAnimationGames" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-5 pb-10 relative">
                                         @foreach ($games as $game)
                                         <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
                                             <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
@@ -123,17 +130,19 @@
 
                                 @if($isListView)
                                     <div id="slideAnimationGames" class="my-5 grid grid-cols-1">
-                                        <div class="flex flex-row text-slate-500 uppercase text-xs py-4 rounded-lg mb-4">
+                                        <div class="hidden md:flex flex-row text-slate-500 uppercase text-xs py-4 rounded-lg mb-4">
                                             <div class="w-[40%] text-left">Game Name</div>
-                                            <div class="w-[15%] text-center">Volatility</div>
-                                            <div class="w-[15%] text-center">RTP</div>
-                                            <div class="w-[15%] text-center">Maximum win</div>
-                                            <div class="w-[15%] text-center">Provider</div>
+                                            <div class="w-[60%] flex">
+                                                <div class="w-[25%] text-center">Volatility</div>
+                                                <div class="w-[25%] text-center">RTP</div>
+                                                <div class="w-[25%] text-center">Maximum win</div>
+                                                <div class="w-[25%] text-center">Provider</div>
+                                            </div>
                                         </div>
                                         @foreach ($games as $game)
-                                            <div class="relative flex flex-row px-4 py-8 cursor-pointer items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover w-full mb-3">
+                                            <div class="relative flex flex-col md:flex-row px-4 py-4 md:py-8 cursor-pointer md:items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover w-full mb-3">
                                                 <a href="{{ route('single.game.index', $game->id) }}" class="group absolute top-0 bottom-0 left-0 right-0 z-[10]"></a>
-                                                <div class="flex gap-2 items-center w-[40%]">
+                                                <div class="flex gap-2 items-center w-full md:w-[40%]">
                                                     <div>
                                                         <img src="{{url('storage/'.$game->image_square)}}" alt="{{$game->title}}" class="w-[60px] rounded-xl">
                                                     </div>
@@ -141,11 +150,34 @@
                                                         <x-heading class="!text-base whitespace-nowrap">{{$game->title}}</x-heading>
                                                     </div>
                                                 </div>
-                                                <div class="w-[15%] relative z-[20]">
-                                                    <div class="flex items-center justify-center h-full volatility-container">
-                                                        <div class="relative">
-                                                            <div class="volatility-details">
-                                                                <span class="uppercase text-xs noto-sans">
+                                                <div class="w-full md:w-[60%] flex justify-start md:justify-center">
+                                                    <div class="w-full md:w-[25%] relative z-[20]">
+                                                        <div class="hidden md:flex items-center justify-center h-full volatility-container">
+                                                            <div class="relative">
+                                                                <div class="volatility-details">
+                                                                    <span class="uppercase text-xs noto-sans">
+                                                                        @if($game->volatility == 3)
+                                                                            High
+                                                                        @elseif($game->volatility == 2)
+                                                                            Medium
+                                                                        @else
+                                                                            Low
+                                                                        @endif
+                                                                    </span>
+                                                                </div>
+                                                                @if($game->volatility == '3')
+                                                                    <img src="{{url('storage/images/high-icon.png')}}" alt="" class="w-20">
+                                                                @elseif($game->volatility == '2')
+                                                                    <img src="{{url('storage/images/medium-icon.png')}}" alt="" class="w-20">
+                                                                @else
+                                                                    <img src="{{url('storage/images/low-icon.png')}}" alt="" class="w-20">
+                                                                @endif
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="md:hidden block h-full">
+                                                            <div class="flex flex-col items-center justify-center h-full">
+                                                                <x-heading class="text-sm md:!text-base !mb-0">
                                                                     @if($game->volatility == 3)
                                                                         High
                                                                     @elseif($game->volatility == 2)
@@ -153,31 +185,28 @@
                                                                     @else
                                                                         Low
                                                                     @endif
-                                                                </span>
+                                                                </x-heading>
+                                                                <x-paragraph class="md:hidden block !text-xs !mb-0">Volatility</x-paragraph>
                                                             </div>
-                                                            @if($game->volatility == 'high')
-                                                                <img src="{{url('storage/images/high-icon.png')}}" alt="" class="w-20" data-tooltip-target="tooltip-light">
-                                                            @elseif($game->volatility == 'medium')
-                                                                <img src="{{url('storage/images/medium-icon.png')}}" alt="" class="w-20" data-tooltip-target="tooltip-light">
-                                                            @else
-                                                                <img src="{{url('storage/images/low-icon.png')}}" alt="" class="w-20" data-tooltip-target="tooltip-light">
-                                                            @endif
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="w-[15%]">
-                                                    <div class="flex items-center justify-center h-full">
-                                                        <x-heading class="!text-base font-semibold !mb-0">{{$game->rtp}}%</x-heading>
+                                                    <div class="w-full md:w-[25%]">
+                                                        <div class="flex flex-col items-center justify-center h-full">
+                                                            <x-heading class="text-sm md:!text-base !mb-0">{{$game->rtp}}%</x-heading>
+                                                            <x-paragraph class="md:hidden block !text-xs !mb-0">RTP</x-paragraph>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="w-[15%]">
-                                                    <div class="flex items-center justify-center h-full">
-                                                        <x-heading class="!text-base font-semibold !mb-0">x{{$game->maximum_win}}</x-heading>
+                                                    <div class="w-full md:w-[25%]">
+                                                        <div class="flex flex-col items-center justify-center h-full">
+                                                            <x-heading class="text-sm md:!text-base !mb-0">x{{$game->maximum_win}}</x-heading>
+                                                            <x-paragraph class="md:hidden block !text-xs !mb-0">Max win</x-paragraph>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="w-[15%]">
-                                                    <div class="flex items-center justify-center h-full">
-                                                        <img src="{{url('storage/'.$game->provider->image)}}" alt="{{$game->provider->title}}" class="w-20">
+                                                    <div class="w-full md:w-[25%]">
+                                                        <div class="flex flex-col items-center justify-center h-full">
+                                                            <img src="{{url('storage/'.$game->provider->image)}}" alt="{{$game->provider->title}}" class="w-20">
+                                                            <x-paragraph class="md:hidden block !text-xs !mb-0">Provider</x-paragraph>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

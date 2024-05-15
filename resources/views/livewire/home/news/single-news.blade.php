@@ -27,9 +27,9 @@
                 <div class="mb-10 border-b border-slate-300 dark:border-slate-800 flex justify-between items-center">
                     <x-heading class="capitalize">Related news</x-heading>
                     @if($category == 'company_news')
-                        <a href="{{route('all.company.news.index')}}" class="montserrat text-slate-600 dark:text-cyan-600">All news</a>
+                        <a href="{{route('all.company.news.index')}}" class="montserrat text-slate-600 dark:text-sky-600">All news</a>
                     @else
-                        <a href="{{route('all.achivements.news.index')}}" class="montserrat text-slate-600 dark:text-cyan-600">All achievements</a>
+                        <a href="{{route('all.achivements.news.index')}}" class="montserrat text-slate-600 dark:text-sky-600">All achievements</a>
                     @endif
                 </div>
                 <div>
@@ -56,7 +56,7 @@
                                             <x-paragraph class="!text-sm">
                                                 {{Str::words($relatedNews->short_description, 13, '...')}}
                                             </x-paragraph>
-                                            <a href="" class="text-cyan-600 text-sm">Read more</a>
+                                            <a href="" class="text-sky-600 text-sm">Read more</a>
                                         </div>
                                     </div>
                                 </div>

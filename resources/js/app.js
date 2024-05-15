@@ -21,11 +21,11 @@ document.addEventListener('livewire:navigated', () => {
     const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
     var swiper = new Swiper(".gameBanner", {
-
+        slidesPerView: 3,
+        spaceBetween: 0,
         effect: "coverflow",
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 2,
         coverflowEffect: {
           rotate: 50,
           stretch: 0,
@@ -37,6 +37,17 @@ document.addEventListener('livewire:navigated', () => {
         autoplay: {
             delay: 5000,
             disableOnInteraction: false
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 1,
+            },
+            1080: {
+                slidesPerView: 2,
+            },
         }
 
     //   centeredSlides: true,
@@ -69,7 +80,7 @@ document.addEventListener('livewire:navigated', () => {
         autoplay: {
             delay: 10000,
             disableOnInteraction: false
-          },
+        },
       });
 
       //4 Column Slider
@@ -79,9 +90,27 @@ document.addEventListener('livewire:navigated', () => {
         loop: true,
       });
 
+
+
+          // SHOW HIDE FILTER
+    let toggleButton = document.getElementById("toggleButton");
+    let filterBox = document.getElementById("filterBox");
+    let isVisible = false; // initial state: div is visible
+
+    toggleButton.addEventListener("click", function() {
+        if (isVisible) {
+            filterBox.style.display = "none";
+            isVisible = false;
+        } else {
+            filterBox.style.display = "block";
+            isVisible = true;
+        }
+    });
+
+
 });
 
 
 
 
-//HEADER
+

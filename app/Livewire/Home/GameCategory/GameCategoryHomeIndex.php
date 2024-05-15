@@ -53,11 +53,18 @@ class GameCategoryHomeIndex extends Component
                 $query->where('slug', $this->gameCategorySlug);
             })->get();
 
+
+        $results = [];
+        if(strlen($this->searchQuery) >= 2) {
+            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')->get();
+        }
+
         return view('livewire.home.game-category.game-category-home-index', [
             'gameBanners' => $gameBanners,
             'hotGames' => $hotGames,
             'newGames' => $newGames,
             'comingSoonGames' => $comingSoonGames,
+            'results' => $results
         ])->extends('layouts.home.app')->section('contents');
     }
 }
