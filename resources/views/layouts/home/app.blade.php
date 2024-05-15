@@ -191,7 +191,7 @@
         pin:".right",
         animation: animation,
         scrub:true,
-        // markers:true
+        markers:false
     })
 
 </script>

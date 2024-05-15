@@ -464,7 +464,6 @@ input[type="radio"]:not(:checked) + label:after {
 
 .gallery {
     display:flex;
-    outline:1px solid red;
   }
 
   .left {
@@ -478,7 +477,6 @@ input[type="radio"]:not(:checked) + label:after {
 
   .details {
       height:100vh;
-      outline:1px solid green;
       display:flex;
       flex-direction:column;
       justify-content:center;
@@ -486,7 +484,6 @@ input[type="radio"]:not(:checked) + label:after {
 
 
   .right {
-      outline:1px solid purple;
       width:50%;
       height:100vh;
       display:flex;

@@ -91,29 +91,37 @@
     <div class="mt-40">
         <div class="gallery">
             <div class="left">
-                <div class="detailsWrapper">
+                <div class="detailsWrapper text-slate-50">
                     <div class="details">
-                        <div class="headline red"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
+                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
+                        <div class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
                     </div>
 
                     <div class="details">
-                        <div class="headline green"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
+                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
+                        <div class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
                     </div>
 
                     <div class="details">
-                        <div class="headline blue"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
-                        <div class="text"></div>
+                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
+                        <div class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                    </div>
+
+                    <div class="details">
+                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
+                        <div class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
                     </div>
 
                 </div>
@@ -123,19 +131,22 @@
                 <div class="photos">
 
                         <div class="w-64 relative h-full">
-                            <div>
-                                <div class="photo flex items-center justify-center">
+                            <div class="">
+                                <div class="photo">
                                     <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-64">
                                 </div>
-                                <div class="photo flex items-center justify-center">
+                                <div class="photo">
                                     <img src="{{url('storage/images/sample02.png')}}" alt="" class="w-64">
                                 </div>
-                                <div class="photo flex items-center justify-center">
+                                <div class="photo">
                                     <img src="{{url('storage/images/sample03.png')}}" alt="" class="w-64">
+                                </div>
+                                <div class="photo">
+                                    <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-64">
                                 </div>
                             </div>
                             <div class="absolute flex items-center justify-center z-10">
-                                <img src="{{url('storage/images/phone.png')}}" alt="" class="w-64 ">
+                                <img src="{{url('storage/images/phone.png')}}" alt="" class="w-64">
                             </div>
                         </div>
 
