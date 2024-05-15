@@ -13,6 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -175,7 +177,24 @@
     });
 </script>
 
+<script>
+    gsap.set(".photo:not(:first-child)", {opacity:0, scale:0.5})
 
+    const animation = gsap.to(".photo:not(:first-child)", {
+        opacity:1, scale:1, duration:1, stagger:1
+    })
+
+    ScrollTrigger.create({
+        trigger:".gallery",
+        start:"top top",
+        end:"bottom bottom",
+        pin:".right",
+        animation: animation,
+        scrub:true,
+        // markers:true
+    })
+
+</script>
 
 
 <script>
