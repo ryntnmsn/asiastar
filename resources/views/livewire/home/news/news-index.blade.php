@@ -1,8 +1,8 @@
-<div class="h-full w-full">
+<div class="h-full w-full px-5">
     <div class="w-full h-full max-w-[1280px] mx-auto mt-20">
         <div>
             <div>
-                <x-heading class="text-3xl dark:text-slate-400">Company News</x-heading>
+                <x-heading class="text-3xl">Company News</x-heading>
             </div>
 
             @if(count($companyNews) != null)
@@ -12,7 +12,7 @@
                         @foreach ($companyNews as $companyNews)
                         <div class="swiper-slide relative duration-300 ease-in-out cursor-pointer group">
                             <a href="{{route('single.news.index', ['category' => $companyNews->category, 'slug' => $companyNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
-                            <div class="flex w-full gap-10">
+                            <div class="flex md:flex-row flex-col w-full gap-10">
                                 <div class="flex-1">
                                     <div class="relative">
                                         <div class="absolute top-0 left-0 bg-slate-50 m-5 w-16 h-16 p-1 shadow-xl rounded-xl">
@@ -49,7 +49,7 @@
                 </div>
                 <!-- Companies Latest -->
                 <div>
-                    <div class="grid grid-cols-3 py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5">
                         @foreach ($latestNews as $latestNews)
                             <div class="group">
                                 <div class="flex border border-slate-100 bg-slate-50 dark:bg-dark-blue hover:dark:bg-dark-blue-hover dark:border-slate-900 p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">
@@ -97,7 +97,7 @@
                     </p>
                 </div>
                 <div>
-                    <div class="grid grid-cols-3 py-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5">
                         @foreach ($achievements as $achievement)
                             <div class="group">
                                 <div class="flex border border-slate-100 bg-slate-50 dark:bg-dark-blue hover:dark:bg-dark-blue-hover dark:border-slate-900 p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">

@@ -1,4 +1,4 @@
-<div>
+<div class="px-5">
     <div class="h-full w-full">
         <div class="w-full h-full max-w-[1280px] mx-auto mt-20">
             <div>

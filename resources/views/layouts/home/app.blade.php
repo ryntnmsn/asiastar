@@ -138,6 +138,46 @@
 </script>
 
 
+
+<script>
+    var swiper = new Swiper(".cardPachinko", {
+        effect: "cards",
+        grabCursor: true,
+        loop:true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+    });
+</script>
+
+<script>
+    var swiper = new Swiper(".cardCasino", {
+        effect: "cards",
+        grabCursor: true,
+        loop:true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+    });
+</script>
+
+<script>
+    var swiper = new Swiper(".cardCockfighting", {
+        effect: "cards",
+        grabCursor: true,
+        loop:true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+    });
+</script>
+
+
+
+
 <script>
     var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

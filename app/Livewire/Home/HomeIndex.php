@@ -9,14 +9,16 @@ class HomeIndex extends Component
 {
     public function render()
     {
-        $lang = app()->getLocale();
+        // $lang = app()->getLocale();
 
-        $games = Game::whereHas('language', function ($query) use ($lang) {
-            $query->where('code', $lang);
-        });
+        // $games = Game::whereHas('language', function ($query) use ($lang) {
+        //     $query->where('code', $lang);
+        // });
+
+        $games = Game::where('status', true);
 
         return view('livewire.home.home-index', [
-            'games' => $games->paginate(20)
+            'games' => $games->get()
         ])->extends('layouts.home.app')->section('contents');
     }
 }

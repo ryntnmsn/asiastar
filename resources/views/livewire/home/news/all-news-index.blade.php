@@ -6,7 +6,7 @@
         @if(count($companyNews) != null)
             <!-- Companies News -->
             <div class="rounded-2xl overflow-hidden">
-                <div class="grid grid-cols-3 py-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5">
                     @foreach ($companyNews as $companyNews)
                         <div class="group">
                             <div class="flex border border-slate-100 dark:border-slate-900 dark:bg-dark-blue dark:hover:bg-dark-blue-hover bg-slate-50 p-5 gap-2 flex-col w-full group-hover:-translate-y-2 hover:shadow-2xl hover:z-10 duration-300 ease-in-out cursor-pointer relative h-full">

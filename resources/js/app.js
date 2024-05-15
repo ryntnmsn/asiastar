@@ -92,6 +92,8 @@ document.addEventListener('livewire:navigated', () => {
 
 
 
+
+
           // SHOW HIDE FILTER
     let toggleButton = document.getElementById("toggleButton");
     let filterBox = document.getElementById("filterBox");

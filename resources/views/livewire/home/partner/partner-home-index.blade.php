@@ -1,4 +1,4 @@
-<div>
+<div class="px-5">
     <div class="h-full w-full">
         <div class="w-full h-full max-w-[1280px] mx-auto mt-20">
             <div>
@@ -12,7 +12,7 @@
                     </x-paragraph>
                 </div>
                 <div class="mt-20">
-                    <div class="grid grid-cols-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                         @foreach ($partners as $partner)
                             <div>
                                 <div class="border border-slate-100 bg-slate-50 dark:bg-dark-blue hover:dark:bg-dark-blue-hover dark:border-slate-900 py-10 px-5 flex flex-col items-center justify-center gap-5 hover:shadow-2xl hover:z-10 hover:-translate-y-2 duration-300 ease-in-out cursor-pointer relative">
