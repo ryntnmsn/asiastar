@@ -25,7 +25,7 @@
     </script>
     @livewireStyles
 </head>
-<body class="dark:bg-gray-900 min-h-full">
+<body class="dark:bg-gray-900 bg-slate-200 min-h-full">
     <div class="w-full h-full">
         @include('layouts.home.header')
         <div>

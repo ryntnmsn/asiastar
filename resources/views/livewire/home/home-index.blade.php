@@ -21,75 +21,99 @@
     </div>
 
 
-    <div id="games" class="w-full max-w-[1280px] mx-auto relative pt-40">
-        <div class="flex justify-center pb-10">
-            <x-heading class="!font-bold !text-[52px]">Games</x-heading>
-        </div>
-        <div class="flex">
-            <div wire:ignore class="flex-1">
-                <div class="flex flex-col gap-5 items-center">
-                    <div class="swiper-pachi cardPachinko">
-                        <div class="swiper-wrapper">
-                            @foreach ($games as $game)
-                                <div class="swiper-slide">
-                                    <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                </div>
-                            @endforeach
+    <div id="games" class="w-full max-w-[1280px] mx-auto relative h-screen flex items-center justify-center">
+        <div class="flex flex-col gap-10">
+            <div class="flex justify-center">
+                <x-heading class="!font-bold !text-[52px]">Games</x-heading>
+            </div>
+            <div class="flex gap-40">
+                <div wire:ignore class="flex-1">
+                    <div class="flex flex-col gap-5 items-center">
+                        <div class="swiper-pachi cardPachinko">
+                            <div class="swiper-wrapper">
+                                @foreach ($games as $game)
+                                    <div class="swiper-slide">
+                                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <x-heading>Live Pachinko</x-heading>
-                    </div>
-                    <div>
-                        <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                        <div>
+                            <x-heading>Live Pachinko</x-heading>
+                        </div>
+                        <div>
+                            <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex-1">
-                <div class="flex flex-col gap-5 items-center">
-                    <div class="swiper-pachi cardCasino">
-                        <div class="swiper-wrapper">
-                            @foreach ($games as $game)
-                                <div class="swiper-slide">
-                                    <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                </div>
-                            @endforeach
+                <div class="flex-1">
+                    <div class="flex flex-col gap-5 items-center">
+                        <div class="swiper-pachi cardCasino">
+                            <div class="swiper-wrapper">
+                                @foreach ($games as $game)
+                                    <div class="swiper-slide">
+                                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <x-heading>Live Casino</x-heading>
-                    </div>
-                    <div>
-                        <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                        <div>
+                            <x-heading>Live Casino</x-heading>
+                        </div>
+                        <div>
+                            <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex-1">
-                <div class="flex flex-col gap-5 items-center">
-                    <div class="swiper-pachi cardCockfighting">
-                        <div class="swiper-wrapper">
-                            @foreach ($games as $game)
-                                <div class="swiper-slide">
-                                    <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                </div>
-                            @endforeach
+                <div class="flex-1">
+                    <div class="flex flex-col gap-5 items-center">
+                        <div class="swiper-pachi cardCockfighting">
+                            <div class="swiper-wrapper">
+                                @foreach ($games as $game)
+                                    <div class="swiper-slide">
+                                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <x-heading>Live Cockfighting</x-heading>
-                    </div>
-                    <div>
-                        <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                        <div>
+                            <x-heading>Live Cockfighting</x-heading>
+                        </div>
+                        <div>
+                            <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="mt-40 w-full max-w-[1280px] mx-auto h-screen">
+        <div wire:ignore class="gallery">
+            <div class="right">
+                <div class="photos">
+                        <div class="w-64 relative h-full flex items-center">
+                            <div class="flex items-center">
+                                <div class="photo">
+                                    <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-64">
+                                </div>
+                                <div class="photo">
+                                    <img src="{{url('storage/images/sample02.png')}}" alt="" class="w-64">
+                                </div>
+                                <div class="photo">
+                                    <img src="{{url('storage/images/sample03.png')}}" alt="" class="w-64">
+                                </div>
+                                <div class="photo">
+                                    <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-64">
+                                </div>
+                            </div>
+                            <div class="absolute flex items-center justify-center z-10">
+                                <img src="{{url('storage/images/phone.png')}}" alt="" class="w-64">
+                            </div>
+                        </div>
+                </div>
+            </div>
 
-
-    <div class="mt-40">
-        <div class="gallery">
             <div class="left">
                 <div class="detailsWrapper text-slate-50">
                     <div class="details">
@@ -127,33 +151,7 @@
                 </div>
             </div>
 
-            <div class="right">
-                <div class="photos">
-
-                        <div class="w-64 relative h-full">
-                            <div class="">
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-64">
-                                </div>
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample02.png')}}" alt="" class="w-64">
-                                </div>
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample03.png')}}" alt="" class="w-64">
-                                </div>
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-64">
-                                </div>
-                            </div>
-                            <div class="absolute flex items-center justify-center z-10">
-                                <img src="{{url('storage/images/phone.png')}}" alt="" class="w-64">
-                            </div>
-                        </div>
-
-
-
-                </div>
-            </div>
+            
         </div>
     </div>
 

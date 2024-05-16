@@ -39,11 +39,11 @@
                     </button>
                     <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="text-sm p-4 bg-gradient-to-r from-sky-600 to-sky-800 text-slate-50 rounded-md shadow flex flex-col gap-4">
-                            <a class="" href="#">Our Company</a>
-                            <a class="" href="#">Company News</a>
-                            <a class="" href="#">Partners</a>
-                            <a class="" href="#">Join us</a>
-                            <a class="" href="#">Contact us</a>
+                            <a class="" href="{{ route('about.our.company.index') }}">Our Company</a>
+                            <a class="" href="{{ route('all.company.news.index') }}">Company News</a>
+                            <a class="" href="{{ route('partner.home.index') }}">Partners</a>
+                            <a class="" href="{{ route('join.us.index') }}">Join us</a>
+                            <a class="" href="{{ route('contact.home.index') }}">Contact us</a>
                         </div>
                     </div>
                 </div>
