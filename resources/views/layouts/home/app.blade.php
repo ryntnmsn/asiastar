@@ -25,7 +25,7 @@
     </script>
     @livewireStyles
 </head>
-<body class="dark:bg-gray-900 bg-slate-200 min-h-full">
+<body class="dark:bg-dark-blue-gradient bg-slate-200 min-h-full bg-no-repeat bg-cover bg-fixed">
     <div class="w-full h-full">
         @include('layouts.home.header')
         <div>
@@ -179,11 +179,9 @@
 
 <script>
     gsap.set(".photo:not(:first-child)", {opacity:0, scale:0.5})
-
     const animation = gsap.to(".photo:not(:first-child)", {
         opacity:1, scale:1, duration:1, stagger:1
-    })
-
+    });
     ScrollTrigger.create({
         trigger:".gallery",
         start:"top top",
@@ -192,8 +190,7 @@
         animation: animation,
         scrub:true,
         markers:false
-    })
-
+    });
 </script>
 
 

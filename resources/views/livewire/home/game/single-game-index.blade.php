@@ -1,7 +1,7 @@
 <div class="h-full">
-    <div class="w-full h-full max-w-[1280px] mx-auto px-10">
+    <div class="w-full h-full max-w-[1280px] mx-auto px-5">
         <div class="flex h-full items-center justify-center my-20">
-            <div class="flex-1">
+            <div class="flex-1 lg:block hidden">
                 <h1 class="noto-sans text-[120px] font-bold dark:text-slate-800 text-slate-200 tracking-tighter leading-[140px]">{{$title}}</h1>
             </div>
             <div class="flex-1">
@@ -9,10 +9,10 @@
             </div>
         </div>
         <div>
-            <div class="flex gap-10 items-center">
+            <div class="flex gap-5 md:gap-10 items-center">
                 <div>
-                    <div class="w-[180px] rounded-[34px] overflow-hidden shadow-xl">
-                        <img src="{{url('storage/' . $image_square)}}" alt="{{$title}}" class="rounded-[30px]">
+                    <div class="w-[100px] md:w-[180px] rounded-[14px] md:rounded-[34px] overflow-hidden shadow-xl">
+                        <img src="{{url('storage/' . $image_square)}}" alt="{{$title}}" class="rounded-[14px] md:rounded-[30px]">
                     </div>
                 </div>
                 <div>
@@ -26,10 +26,10 @@
                 <div class="mb-10 border-b border-slate-300 dark:border-slate-800 flex justify-between items-center">
                     <x-heading class="capitalize !text-slate-400">Game Details</x-heading>
                 </div>
-                <div class="grid grid-cols-3 gap-10">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
                     @if($volatility != null)
                         <div>
-                            <x-heading class="uppercase !mb-1 !text-xl ">
+                            <x-heading class="uppercase !mb-1 !text-base md:!text-xl ">
                                 @if($volatility == 3)
                                     High
                                 @elseif($volatility == 2)
@@ -43,19 +43,19 @@
                     @endif
                     @if($rtp != null)
                         <div>
-                            <x-heading class="Capitalize !mb-1 !text-xl ">{{$rtp}}%</x-heading>
+                            <x-heading class="Capitalize !mb-1 !text-base md:!text-xl">{{$rtp}}%</x-heading>
                             <x-sub-heading class="!text-[14px] ">RTP</x-sub-heading>
                         </div>
                     @endif
                     @if($maximum_win != null)
                         <div>
-                            <x-heading class="Capitalize !mb-1 !text-xl "><span class="text-sm">x</span>{{$maximum_win}}</x-heading>
+                            <x-heading class="Capitalize !mb-1 !text-base md:!text-xl "><span class="text-sm">x</span>{{$maximum_win}}</x-heading>
                             <x-sub-heading class="!text-[14px] ">Maximum win</x-sub-heading>
                         </div>
                     @endif
                     @if($themes != null)
                         <div>
-                            <x-heading class="Capitalize !mb-1 !text-xl">
+                            <x-heading class="Capitalize !mb-1 !text-base md:!text-xl">
                                 @foreach ($themes as $theme)
                                     {{$theme->name}}{{$loop->last ? '' : ','}}
                                 @endforeach
@@ -65,13 +65,13 @@
                     @endif
                     @if($provider != null)
                         <div>
-                            <x-heading class="Capitalize !mb-1 !text-xl">{{$provider->title}}</x-heading>
+                            <x-heading class="Capitalize !mb-1 !text-base md:!text-xl">{{$provider->title}}</x-heading>
                             <x-sub-heading class="!text-[14px] ">Provider</x-sub-heading>
                         </div>
                     @endif
                     @if($features != null)
                         <div>
-                            <x-heading class="Capitalize !mb-1 !text-xl">
+                            <x-heading class="Capitalize !mb-1 !text-base md:!text-xl">
                                 @foreach ($features as $feature)
                                     {{$feature->name}}{{$loop->last ? '' : ','}}
                                 @endforeach
@@ -105,7 +105,7 @@
                 <a href="{{route('all.game.home.index')}}" class="montserrat text-cyan-600">All Games</a>
             </div>
             <div>
-                <div class="grid grid-cols-6 gap-14">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-14">
                     @foreach ($otherGames as $game)
                         <div class="hover:-translate-y-2 duration-300 ease-in-out cursor-pointer relative">
                             <a href="{{route('single.game.index', $game->id)}}" class="absolute z-10 bottom-0 top-0 right-0 left-0"></a>

@@ -232,4 +232,22 @@
         </div>
     </div>
     @include('layouts.home.game-search')
+
+    <script>
+            // SHOW HIDE FILTER
+    let toggleButton = document.getElementById("toggleButton");
+    let filterBox = document.getElementById("filterBox");
+    let isVisible = false; // initial state: div is visible
+
+    toggleButton.addEventListener("click", function() {
+        if (isVisible) {
+            filterBox.style.display = "none";
+            isVisible = false;
+        } else {
+            filterBox.style.display = "block";
+            isVisible = true;
+        }
+    });
+
+    </script>
 </div>
