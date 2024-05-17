@@ -64,13 +64,7 @@
 
 
 
-
-
-
-
-
-
-    <div wire:ignore id="games" style="background-image:url('{{ url('storage/images/bg-games01.png') }}')" class="bg-no-repeat bg-cover bg-fixed">
+    {{-- <div wire:ignore id="games" style="background-image:url('{{ url('storage/images/bg-games01.png') }}')" class="bg-no-repeat bg-cover bg-fixed">
         <div class="w-full max-w-[1280px] mx-auto relative h-screen flex items-center justify-center">
         <div class="flex flex-col gap-10">
             <div class="flex justify-center">
@@ -81,7 +75,7 @@
                         <div class="flex flex-col gap-5 items-center">
                             <div class="swiper-pachi cardPachinko">
                                 <div class="swiper-wrapper">
-                                    @foreach ($gamesCol1 as $game)
+                                    @foreach ($games as $game)
                                         <div class="swiper-slide">
                                             <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
                                         </div>
@@ -100,7 +94,7 @@
                         <div class="flex flex-col gap-5 items-center">
                             <div class="swiper-pachi cardCasino">
                                 <div class="swiper-wrapper">
-                                    @foreach ($gamesCol1 as $game)
+                                    @foreach ($games as $game)
                                         <div class="swiper-slide">
                                             <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
                                         </div>
@@ -119,7 +113,7 @@
                         <div class="flex flex-col gap-5 items-center">
                             <div class="swiper-pachi cardCockfighting">
                                 <div class="swiper-wrapper">
-                                    @foreach ($gamesCol1 as $game)
+                                    @foreach ($games as $game)
                                         <div class="swiper-slide">
                                             <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
                                         </div>
@@ -137,9 +131,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <div wire:ignore class="mt-40 w-full max-w-[1280px] mx-auto relative">
+    {{-- <div wire:ignore class="mt-40 w-full max-w-[1280px] mx-auto relative">
         <div class="gallery">
             <div class="right">
                 <div class="photos">
@@ -201,10 +195,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
-    <div wire:ignore class="box mt-40 w-full max-w-[1280px] mx-auto h-screen">
+    <div wire:ignore class="box mt-40 w-full max-w-[1280px] mx-auto h-full">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('About us')</x-heading>
@@ -275,7 +269,7 @@
     </div>
 
 
-    <div wire:ignore class="box mt-40 w-full max-w-[1280px] mx-auto h-screen">
+    <div wire:ignore class="box py-40 w-full max-w-[1280px] mx-auto h-full">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">Partners</x-heading>

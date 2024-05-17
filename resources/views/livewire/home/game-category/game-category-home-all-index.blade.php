@@ -75,7 +75,7 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <x-sub-heading class="!mb-3 !text-xs text-left">{{ strip_tags(Str::words($game->description, 15, '...')) }}</x-sub-heading>
+                                                        <x-sub-heading class="!mb-3 !text-xs text-left">{!! strip_tags(Str::limit($game->description, 120, '...')) !!}</x-sub-heading>
                                                     </div>
                                                     <div>
                                                         <div class="flex">
