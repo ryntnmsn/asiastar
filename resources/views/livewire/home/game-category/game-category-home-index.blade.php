@@ -36,7 +36,7 @@
                         <div id="slideAnimationGames" class="mb-10">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <x-heading class="!mb-0">Hot Games</x-heading>
+                                    <x-heading class="!mb-0">@lang('Hot Games')</x-heading>
                                 </div>
                                 <div>
                                     <div class="flex dark:text-slate-400">
@@ -65,7 +65,7 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <x-sub-heading class="!mb-3 !text-xs text-left">{{ strip_tags(Str::words($game->description, 15, '...')) }}</x-sub-heading>
+                                                        <x-sub-heading class="!mb-3 !text-xs text-left">{!! strip_tags(Str::limit($game->description, 120, '...')) !!}</x-sub-heading>
                                                     </div>
                                                     <div>
                                                         <div class="flex">
@@ -73,15 +73,15 @@
                                                                 <div class="flex flex-col">
                                                                     <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                         @if($game->volatility == 3)
-                                                                            High
+                                                                            @lang('High')
                                                                         @elseif($game->volatility == 2)
-                                                                            Medium
+                                                                            @lang('Medium')
                                                                         @else
-                                                                            Low
+                                                                            @lang('Low')
                                                                         @endif
                                                                     </x-text>
                                                                     <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                        Volatility
+                                                                        @lang('Volatility')
                                                                     </x-text>
                                                                 </div>
                                                             </div>
@@ -101,14 +101,14 @@
                                                                         <span class="text-[8px]">x</span>{{$game->maximum_win}}
                                                                     </x-text>
                                                                     <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                        Max win
+                                                                        @lang('Max win')
                                                                     </x-text>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="mt-2">
-                                                        <x-primary-button-new>More details</x-primary-button-new>
+                                                        <x-primary-button-new>@lang('More details')</x-primary-button-new>
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,7 +125,7 @@
                         <div class="mb-10">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <x-heading class="!mb-0">New Games</x-heading>
+                                    <x-heading class="!mb-0">@lang('New Games')</x-heading>
                                 </div>
                                 <div>
                                     <div class="flex dark:text-slate-400">
@@ -154,7 +154,7 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <x-sub-heading class="!mb-3 !text-xs text-left">{{ strip_tags(Str::words($game->description, 15, '...')) }}</x-sub-heading>
+                                                        <x-sub-heading class="!mb-3 !text-xs text-left">{!! strip_tags(Str::limit($game->description, 120, '...')) !!}</x-sub-heading>
                                                     </div>
                                                     <div>
                                                         <div class="flex">
@@ -162,15 +162,15 @@
                                                                 <div class="flex flex-col">
                                                                     <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                         @if($game->volatility == 3)
-                                                                            High
+                                                                            @lang('High')
                                                                         @elseif($game->volatility == 2)
-                                                                            Medium
+                                                                            @lang('Medium')
                                                                         @else
-                                                                            Low
+                                                                            @lang('Low')
                                                                         @endif
                                                                     </x-text>
                                                                     <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                        Volatility
+                                                                        @lang('Volatility')
                                                                     </x-text>
                                                                 </div>
                                                             </div>
@@ -190,14 +190,14 @@
                                                                         <span class="text-[8px]">x</span>{{$game->maximum_win}}
                                                                     </x-text>
                                                                     <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                        Max win
+                                                                        @lang('Max win')
                                                                     </x-text>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="mt-2">
-                                                        <x-primary-button-new>More details</x-primary-button-new>
+                                                        <x-primary-button-new>@lang('More details')</x-primary-button-new>
                                                     </div>
                                                 </div>
                                             </div>
@@ -214,7 +214,7 @@
                         <div class="mb-10">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <x-heading class="!mb-0">Coming Soon</x-heading>
+                                    <x-heading class="!mb-0">@lang('Coming Soon')</x-heading>
                                 </div>
                                 <div>
                                     <div class="flex dark:text-slate-400">
@@ -243,7 +243,7 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <x-sub-heading class="!mb-3 !text-xs text-left">{{ strip_tags(Str::words($game->description, 15, '...')) }}</x-sub-heading>
+                                                    <x-sub-heading class="!mb-3 !text-xs text-left">{!! strip_tags(Str::limit($game->description, 120, '...')) !!}</x-sub-heading>
                                                 </div>
                                                 <div>
                                                     <div class="flex">
@@ -251,15 +251,15 @@
                                                             <div class="flex flex-col">
                                                                 <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                     @if($game->volatility == 3)
-                                                                        High
+                                                                        @lang('High')
                                                                     @elseif($game->volatility == 2)
-                                                                        Medium
+                                                                        @lang('Medium')
                                                                     @else
-                                                                        Low
+                                                                        @lang('Low')
                                                                     @endif
                                                                 </x-text>
                                                                 <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                    Volatility
+                                                                    @lang('Volatility')
                                                                 </x-text>
                                                             </div>
                                                         </div>
@@ -279,14 +279,14 @@
                                                                     <span class="text-[8px]">x</span>{{$game->maximum_win}}
                                                                 </x-text>
                                                                 <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                    Max win
+                                                                    @lang('Max win')
                                                                 </x-text>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="mt-2">
-                                                    <x-primary-button-new>More details</x-primary-button-new>
+                                                    <x-primary-button-new>@lang('More details')</x-primary-button-new>
                                                 </div>
                                             </div>
                                         </div>
@@ -296,8 +296,6 @@
                             </div>
                         </div>
                     @endif
-
-
                 </div>
             </div>
         </div>

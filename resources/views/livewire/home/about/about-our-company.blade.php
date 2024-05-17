@@ -7,7 +7,7 @@
     <div class="w-full h-full max-w-[1280px] mx-auto px-10 mt-20">
         <div>
             <div>
-                <x-heading class="text-4xl">About Our Company</x-heading>
+                <x-heading class="text-4xl">@lang('About Our Company')</x-heading>
             </div>
             <div class="flex md:flex-row flex-col gap-10">
                 <div class="flex-1">
@@ -26,7 +26,7 @@
         </div>
         <div class="mt-44">
             <div class="text-center">
-                <x-heading class="text-4xl">Core Values</x-heading>
+                <x-heading class="text-4xl">@lang('Core Values')</x-heading>
                 <x-paragraph class="noto-sans leading-loose">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>
                 </x-paragraph>
@@ -49,7 +49,6 @@
                         <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="rounded-2xl">
                         <x-heading class="text-xl">Lorem Ipsum</x-heading>
                     </div>
-
                 </div>
             </div>
         </div>

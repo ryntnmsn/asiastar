@@ -14,10 +14,18 @@ return new class extends Migration
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('description');
-            $table->string('website');
+            $table->longText('description')
+                ->nullable();;
             $table->string('slug');
             $table->boolean('status')->default(false);
+            $table->string('website')
+                ->nullable();
+            $table->string('address')
+                ->nullable();
+            $table->string('country')
+                ->nullable();
+            $table->string('license')
+                ->nullable();;
             $table->string('image');
             $table->timestamps();
         });

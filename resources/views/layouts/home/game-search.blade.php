@@ -6,7 +6,7 @@
             <!-- Modal header -->
             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
                 <h3 class="text-xl font-semibold text-slate-600">
-                    Search games
+                    @lang('Search games')
                 </h3>
                 <button wire:click="resetSearch" type="button" class="text-slate-400 bg-transparent hover:bg-slate-200 hover:text-slate-600 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="default-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -23,7 +23,7 @@
 
                 @if(strlen($searchQuery) >= 2)
                 <div class="mt-10">
-                    <span class="text-slate-600">Search Result</span>
+                    <span class="text-slate-600">@lang('Search Result')</span>
                     @forelse ($results as $result)
                         <div class="flex flex-col even:bg-slate-50 hover:bg-slate-50 rounded-xl px-3 cursor-pointer hover:-translate-y-2 duration-300 ease-in-out">
                             <div class="flex gap-3 py-3">
@@ -40,7 +40,7 @@
                                     <div>
                                         <div class="flex flex-row gap-3">
                                             <div class="flex items-center">
-                                                <div class="text-[12px] uppercase text-slate-400">Volatility:</div>
+                                                <div class="text-[12px] uppercase text-slate-400">@lang('Volatility'):</div>
                                                 <div class="text-[12px] uppercase text-slate-600 ml-1">{{$result->volatility}}</div>
                                             </div>
                                             <div class="flex items-center">
@@ -48,7 +48,7 @@
                                                 <div class="text-[12px] uppercase text-slate-600 ml-1">{{$result->rtp}}%</div>
                                             </div>
                                             <div class="flex items-center">
-                                                <div class="text-[12px] uppercase text-slate-400">Max win:</div>
+                                                <div class="text-[12px] uppercase text-slate-400">@lang('Max win'):</div>
                                                 <div class="text-[12px] uppercase text-slate-600 ml-1">x{{$result->maximum_win}}</div>
                                             </div>
                                         </div>
@@ -58,7 +58,7 @@
                         </div>
                     @empty
                         <div>
-                            No results found
+                            @lang('No results found')
                         </div>
                     @endforelse
                 </div>

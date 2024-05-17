@@ -45,7 +45,7 @@
 
             <div class="mt-20">
                 <div>
-                    <x-heading class="text-3xl">Latest News</x-heading>
+                    <x-heading class="text-3xl">@lang('Latest News')</x-heading>
                 </div>
                 <!-- Companies Latest -->
                 <div>
@@ -71,7 +71,7 @@
                                             <x-paragraph class="!text-sm">
                                                 {{Str::words($latestNews->short_description, 13, '...')}}
                                             </x-paragraph>
-                                            <a href="" class="text-sky-600 text-sm ">Read more</a>
+                                            <a href="" class="text-sky-600 text-sm ">@lang('Read more')</a>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="mt-20 text-center">
                     <div>
-                        <x-primary-button-new class="!px-4 !py-2" href="{{route('all.company.news.index')}}">View all news</x-primary-button-new>
+                        <x-primary-button-new class="!px-4 !py-2" href="{{route('all.company.news.index')}}">@lang('View all news')</x-primary-button-new>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
         @if(count($achievements) != null)
             <div class="mt-44">
                 <div class="text-center">
-                    <x-heading class="text-3xl">Our Achievements</x-heading>
+                    <x-heading class="text-3xl">@lang('Achievements')</x-heading>
                     <p class="text-slate-500 noto-sans font-light leading-loose">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>
                     </p>
@@ -119,7 +119,7 @@
                                             <x-paragraph class="!text-sm">
                                                 {{Str::words($achievement->short_description, 13, '...')}}
                                             </x-paragraph>
-                                            <a href="" class="text-sky-600 text-sm">Read more</a>
+                                            <a href="" class="text-sky-600 text-sm">@lang('Read more')</a>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@
                 </div>
                 <div class="mt-20 text-center">
                     <div>
-                        <x-primary-button-new class="!px-4 !py-2" href="{{route('all.achivements.news.index')}}">View all achievements</x-primary-button-new>
+                        <x-primary-button-new class="!px-4 !py-2" href="{{route('all.achivements.news.index')}}">@lang('View all achievements')</x-primary-button-new>
                     </div>
                 </div>
             </div>

@@ -13,20 +13,19 @@
             <nav :class="{'flex': open, 'hidden': !open}" class=" items-center flex-col flex-grow gap-10 hidden md:flex md:justify-end md:flex-row">
 
                 {{-- Home --}}
-                <a class="{{request()->is('/') ? 'text-sky-500 !font-medium' : 'text-slate-50'}}" href="{{route('home.index')}}">Home</a>
+                <a class="{{request()->is('/') ? 'text-sky-500 !font-medium' : 'text-slate-50'}}" href="{{route('home.index')}}">@lang('Home')</a>
 
                 {{-- Games --}}
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open" class="{{request()->is('games*') ? '!text-sky-500 !font-medium' : 'text-slate-50'}} flex flex-row items-center gap-1 w-full text-left">
-                        <span>Games</span>
+                        <span>@lang('Games')</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="text-sm text-slate-50 p-4 bg-gradient-to-r from-sky-600 to-sky-800 rounded-md shadow flex flex-col gap-4">
                             @foreach ($getGameCategories as $category)
-                                <a wire:navigate class="" href="{{route('game.category.home.index', $category->slug)}}">{{$category->name}}</a>
+                                <a wire:navigate class="" href="{{route('game.category.home.index', $category->slug)}}">{{__($category->name)}}</a>
                             @endforeach
-
                         </div>
                     </div>
                 </div>
@@ -34,21 +33,21 @@
                 {{-- About us --}}
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open" class="{{request()->is('about-our-company') || request()->is('news*') || request()->is('join-us') || request()->is('contact-us') || request()->is('partners') ? 'text-sky-500 !font-medium' : 'text-slate-50'}} flex flex-row gap-1 items-center w-full text-left">
-                        <span>About us</span>
+                        <span>@lang('About us')</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="text-sm p-4 bg-gradient-to-r from-sky-600 to-sky-800 text-slate-50 rounded-md shadow flex flex-col gap-4">
-                            <a class="" href="{{ route('about.our.company.index') }}">Our Company</a>
-                            <a class="" href="{{ route('news.index') }}">Company News</a>
-                            <a class="" href="{{ route('partner.home.index') }}">Partners</a>
-                            <a class="" href="{{ route('join.us.index') }}">Join us</a>
-                            <a class="" href="{{ route('contact.home.index') }}">Contact us</a>
+                            <a class="" href="{{ route('about.our.company.index') }}">@lang('Our Company')</a>
+                            <a class="" href="{{ route('news.index') }}">@lang('Company News')</a>
+                            <a class="" href="{{ route('partner.home.index') }}">@lang('Partners')</a>
+                            <a class="" href="{{ route('join.us.index') }}">@lang('Join us')</a>
+                            <a class="" href="{{ route('contact.home.index') }}">@lang('Contact us')</a>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <x-primary-button-new class="!px-4 !py-2">Contact Us</x-primary-button-new>
+                    <x-primary-button-new class="!px-4 !py-2">@lang('Contact Us')</x-primary-button-new>
                 </div>
                 <div class="flex gap-2">
                     {{-- Languages --}}
@@ -62,19 +61,19 @@
                         </button>
                         <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                             <div class="text-sm p-4 bg-gradient-to-r from-sky-600 to-sky-800 text-slate-50 rounded-md shadow flex flex-col gap-4">
-                                <a class="flex gap-2 items-center" href="#">
+                                <a class="flex gap-2 items-center" href="{{ url('/locale/en') }}">
                                     <span class="fi fi-us"></span>
                                     <span>English</span>
                                 </a>
-                                <a class="flex gap-2 items-center" href="#">
+                                <a class="flex gap-2 items-center" href="{{ url('/locale/jp') }}">
                                     <span class="fi fi-jp"></span>
                                     <span>Japanese</span>
                                 </a>
-                                <a class="flex gap-2 items-center" href="#">
+                                <a class="flex gap-2 items-center" href="{{ url('/locale/ch') }}">
                                     <span class="fi fi-cn"></span>
                                     <span>Chinese</span>
                                 </a>
-                                <a class="flex gap-2 items-center" href="#">
+                                <a class="flex gap-2 items-center" href="{{ url('/locale/kr') }}">
                                     <span class="fi fi-kr"></span>
                                     <span>Korean</span>
                                 </a>

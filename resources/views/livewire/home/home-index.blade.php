@@ -20,66 +20,118 @@
         </div>
     </div>
 
-    <div wire:ignore id="games" class="w-full max-w-[1280px] mx-auto relative h-screen flex items-center justify-center">
+    
+    <div class="box w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-xl py-40">
+        <div class="flex flex-col gap-10">
+            <div class="flex flex-col justify-center items-center">
+                <x-heading class="!font-bold !text-[52px]">@lang('Games')</x-heading>
+                <x-paragraph class="text-center w-3/4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </x-paragraph>
+            </div>
+            <div class="main gap-5">
+                <div class="single-column flex flex-col gap-5 rounded-xl">
+                    @foreach ($gamesCol1 as $game)
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                    @endforeach
+                </div>
+                <div class="single-column flex flex-col gap-5 rounded-xl">
+                    @foreach ($gamesCol2 as $game)
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                    @endforeach
+                </div>
+                <div class="single-column flex flex-col gap-5 rounded-xl">
+                    @foreach ($gamesCol3 as $game)
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                    @endforeach
+                </div>
+                <div class="single-column flex flex-col gap-5 rounded-xl">
+                    @foreach ($gamesCol4 as $game)
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                    @endforeach
+                </div>
+                <div class="single-column flex flex-col gap-5 rounded-xl">
+                    @foreach ($gamesCol5 as $game)
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div wire:ignore id="games" style="background-image:url('{{ url('storage/images/bg-games01.png') }}')" class="bg-no-repeat bg-cover bg-fixed">
+        <div class="w-full max-w-[1280px] mx-auto relative h-screen flex items-center justify-center">
         <div class="flex flex-col gap-10">
             <div class="flex justify-center">
                 <x-heading class="!font-bold !text-[52px]">Games</x-heading>
             </div>
-            <div class="flex flex-row gap-40">
-                <div class="flex-1">
-                    <div class="flex flex-col gap-5 items-center">
-                        <div class="swiper-pachi cardPachinko">
-                            <div class="swiper-wrapper">
-                                @foreach ($games as $game)
-                                    <div class="swiper-slide">
-                                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                    </div>
-                                @endforeach
+                <div class="flex flex-row gap-40">
+                    <div class="flex-1">
+                        <div class="flex flex-col gap-5 items-center">
+                            <div class="swiper-pachi cardPachinko">
+                                <div class="swiper-wrapper">
+                                    @foreach ($gamesCol1 as $game)
+                                        <div class="swiper-slide">
+                                            <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <x-heading>Live Pachinko</x-heading>
-                        </div>
-                        <div>
-                            <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                            <div>
+                                <x-heading>Live Pachinko</x-heading>
+                            </div>
+                            <div>
+                                <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex-1">
-                    <div class="flex flex-col gap-5 items-center">
-                        <div class="swiper-pachi cardCasino">
-                            <div class="swiper-wrapper">
-                                @foreach ($games as $game)
-                                    <div class="swiper-slide">
-                                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                    </div>
-                                @endforeach
+                    <div class="flex-1">
+                        <div class="flex flex-col gap-5 items-center">
+                            <div class="swiper-pachi cardCasino">
+                                <div class="swiper-wrapper">
+                                    @foreach ($gamesCol1 as $game)
+                                        <div class="swiper-slide">
+                                            <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <x-heading>Live Casino</x-heading>
-                        </div>
-                        <div>
-                            <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                            <div>
+                                <x-heading>Live Casino</x-heading>
+                            </div>
+                            <div>
+                                <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex-1">
-                    <div class="flex flex-col gap-5 items-center">
-                        <div class="swiper-pachi cardCockfighting">
-                            <div class="swiper-wrapper">
-                                @foreach ($games as $game)
-                                    <div class="swiper-slide">
-                                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                    </div>
-                                @endforeach
+                    <div class="flex-1">
+                        <div class="flex flex-col gap-5 items-center">
+                            <div class="swiper-pachi cardCockfighting">
+                                <div class="swiper-wrapper">
+                                    @foreach ($gamesCol1 as $game)
+                                        <div class="swiper-slide">
+                                            <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <x-heading>Live Cockfighting</x-heading>
-                        </div>
-                        <div>
-                            <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                            <div>
+                                <x-heading>Live Cockfighting</x-heading>
+                            </div>
+                            <div>
+                                <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +139,7 @@
         </div>
     </div>
 
-    <div wire:ignore class="mt-40 w-full max-w-[1280px] mx-auto h-screen">
+    <div wire:ignore class="mt-40 w-full max-w-[1280px] mx-auto relative">
         <div class="gallery">
             <div class="right">
                 <div class="photos">
@@ -152,6 +204,104 @@
     </div>
 
 
+    <div wire:ignore class="box mt-40 w-full max-w-[1280px] mx-auto h-screen">
+        <div class="flex flex-col gap-10">
+            <div class="flex flex-col justify-center items-center">
+                <x-heading class="!font-bold !text-[52px]">@lang('About us')</x-heading>
+                <x-paragraph class="text-center w-3/4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </x-paragraph>
+            </div>
+            <div>
+                <div class="grid grid-cols-3 gap-10">
+                    <div>
+                        <div class="flex flex-col justify-between gap-10 h-full">
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            </div>
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col justify-between gap-10 h-full">
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            </div>
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            </div>
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col justify-between gap-10 h-full">
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            </div>
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div wire:ignore class="box mt-40 w-full max-w-[1280px] mx-auto h-screen">
+        <div class="flex flex-col gap-10">
+            <div class="flex flex-col justify-center items-center">
+                <x-heading class="!font-bold !text-[52px]">Partners</x-heading>
+                <x-paragraph class="text-center w-3/4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </x-paragraph>
+            </div>
+            <div>
+                <div class="flex flex-wrap gap-10 items-center justify-center">
+                    @foreach ($partners as $partner)
+                        <div class="dark:bg-dark-blue hover:dark:bg-dark-blue-hover px-6 py-2 rounded-full">
+                            <x-heading class="!text-base !mb-0 whitespace-nowrap">
+                                {{ $partner->title }}
+                            </x-heading>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
 
 
@@ -164,6 +314,7 @@
             <li><a href="locale/en">English</a></li>
             <li><a href="locale/jp">Japanese</a></li>
             <li><a href="locale/ch">Chinese</a></li>
+            <li><a href="locale/kr">Korean</a></li>
         </ul>
 
        <p class="py-10">

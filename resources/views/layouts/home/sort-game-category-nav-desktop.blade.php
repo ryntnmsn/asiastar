@@ -6,10 +6,10 @@
             </svg>
         </span>
         <span class="text-slate-400">
-            Sort
+            @lang('Sort')
         </span>
         <span>
-            <x-primary-button-new wire:click="resetSort" class="!text-xs !px-2 !py-1">Reset</x-primary-button-new>
+            <x-primary-button-new wire:click="resetSort" class="!text-xs !px-2 !py-1">@lang('Reset')</x-primary-button-new>
         </span>
     </div>
 
@@ -17,18 +17,17 @@
         <div>
             <div class="flex flex-col gap-2">
                 <x-select wire:model.live="filterSortSelect" class=" !text-sm !bg-transparent !border-0 !px-0 !text-slate-600 focus:border-0 focus:!ring-0">
-                    <option value="" class="hidden">Select sort</option>
-                    <option value="volatility">Volatility</option>
+                    <option value="" class="hidden">@lang('Select sort')</option>
+                    <option value="volatility">@lang('Volatility')</option>
                     <option value="rtp">RTP</option>
-                    <option value="maximum_win">Maximum win</option>
+                    <option value="maximum_win">@lang('Maximum win')</option>
                 </x-select>
                 <x-select wire:model.live="filterSortOrder" class=" !text-sm !bg-transparent !border-0 !px-0 !text-slate-600 focus:!border-0 focus:!ring-0">
-                    <option value="" class="hidden">Select order</option>
-                    <option value="desc">High - Low</option>
-                    <option value="asc">Low - High</option>
+                    <option value="" class="hidden">@lang('Select order')</option>
+                    <option value="desc">@lang('High') - @lang('High')</option>
+                    <option value="asc">@lang('Low') - @lang('High')</option>
                 </x-select>
             </div>
         </div>
     </div>
-
 </div>

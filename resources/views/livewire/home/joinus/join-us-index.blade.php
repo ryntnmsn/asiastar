@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="mt-20">
-                    <x-heading class="text-4xl">Join us</x-heading>
+                    <x-heading class="text-4xl">@lang('Join us')</x-heading>
                     <x-paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </x-paragraph>
@@ -18,7 +18,7 @@
 
                     @if(count($recruitments) != null)
                         <div>
-                        <x-heading >Available jobs</x-heading>
+                        <x-heading>@lang('Available jobs')</x-heading>
                         </div>
                         <div id="accordion-collapse" data-accordion="collapse" data-active-classes="shadow-2xl dark:text-slate-400 text-slate-600">
                             @foreach($recruitments as $recruitment)
@@ -33,7 +33,7 @@
                                                 <div class="flex flex-col items-start ">
                                                     <x-heading class="!text-base !mb-0">{{$recruitment->name}}</x-heading>
                                                     <x-paragraph class="!mb-0 text-sm">
-                                                        Date posted: {{ date('F j, Y', strtotime($recruitment->created_at)) }}
+                                                        @lang('Date posted'): {{ date('F j, Y', strtotime($recruitment->created_at)) }}
                                                     </x-paragraph>
                                                 </div>
                                             </span>

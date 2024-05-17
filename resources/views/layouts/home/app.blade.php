@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -191,6 +192,24 @@
         scrub:true,
         markers:false
     });
+</script>
+
+<script>
+    [...document.querySelectorAll(".single-column")].map((column) => {
+    column.style.setProperty("--animation", "slide");
+    column.style.setProperty("height", "200%");
+    column.innerHTML = column.innerHTML + column.innerHTML;
+    });
+</script>
+
+<script>
+    var boxReveal = {
+        delay    : 200,
+        distance : '50px'
+        // rotate   : { z: 6 }
+    };
+    window.sr = ScrollReveal();
+    sr.reveal('.box', boxReveal);
 </script>
 
 

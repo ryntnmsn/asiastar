@@ -25,11 +25,11 @@
         <div class="mt-20">
             <div class="mt-40">
                 <div class="mb-10 border-b border-slate-300 dark:border-slate-800 flex justify-between items-center">
-                    <x-heading class="capitalize">Related news</x-heading>
+                    <x-heading class="capitalize">@lang('Related news')</x-heading>
                     @if($category == 'company_news')
-                        <a href="{{route('all.company.news.index')}}" class="montserrat text-slate-600 dark:text-sky-600">All news</a>
+                        <a href="{{route('all.company.news.index')}}" class="montserrat text-slate-600 dark:text-sky-600">@lang('All news')</a>
                     @else
-                        <a href="{{route('all.achivements.news.index')}}" class="montserrat text-slate-600 dark:text-sky-600">All achievements</a>
+                        <a href="{{route('all.achivements.news.index')}}" class="montserrat text-slate-600 dark:text-sky-600">@lang('All achievements')</a>
                     @endif
                 </div>
                 <div>
@@ -56,7 +56,7 @@
                                             <x-paragraph class="!text-sm">
                                                 {{Str::words($relatedNews->short_description, 13, '...')}}
                                             </x-paragraph>
-                                            <a href="" class="text-sky-600 text-sm">Read more</a>
+                                            <a href="" class="text-sky-600 text-sm">@lang('Related news')</a>
                                         </div>
                                     </div>
                                 </div>

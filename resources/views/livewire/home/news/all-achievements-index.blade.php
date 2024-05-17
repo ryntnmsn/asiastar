@@ -1,7 +1,7 @@
 <div>
     <div class="w-full max-w-[1280px] mx-auto mt-20">
         <div>
-            <x-heading class="text-3xl">Achievements</x-heading>
+            <x-heading class="text-3xl">@lang('Achievements')</x-heading>
         </div>
         @if(count($achievements) != null)
             <!-- Companies News -->
@@ -28,7 +28,7 @@
                                         <x-paragraph class="!text-sm">
                                             {{Str::words($achievement->short_description, 13, '...')}}
                                         </x-paragraph>
-                                        <a href="" class="text-sky-600 text-sm">Read more</a>
+                                        <a href="" class="text-sky-600 text-sm">@lang('Read more')</a>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
         </div>
         @endif
         <div class="flex items-center justify-center py-5">
-            <x-primary-button-new wire:click="loadMore" class="!px-4 !py-2">Load more</x-primary-button-new>
+            <x-primary-button-new wire:click="loadMore" class="!px-4 !py-2">@lang('Load more')</x-primary-button-new>
         </div>
     </div>
 </div>

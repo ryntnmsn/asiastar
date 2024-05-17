@@ -1,3 +1,31 @@
 {
-    "GAMES": "ゲーム"
+    "Home": "ホーム",
+    "Games": "ゲーム",
+    "About us": "私たちについて",
+    "Partners": "パートナー",
+    "Our Company": "私たちの会社について",
+    "Company News": "会社のニュース",
+    "Join us": "ご参加ください",
+    "Contact us": "お問い合わせ",
+    "Live Pachinko": "ライブパチンコ",
+    "Live Casino": "ライブパチンコ",
+    "Live Cockfighting": "ライブ闘鶏",
+
+    "Hot Games": "注目ゲーム",
+    "New Games": "新着ゲーム",
+    "Coming Soon": "まもなく登場のゲーム",
+
+    "Search": "検索",
+    "Games Home": "ゲーム ホーム",
+    "All Games": "すべてのゲーム",
+
+    "Search games": "ゲームを検索",
+    "Enter here": "",
+    "Volatility": "ボラティリティ",
+    "Max win": "マックス勝利",
+    "More details": "さらに詳しく",
+
+    "High": "高い",
+    "Medium": "中くらい",
+    "Low": "低い"
 }

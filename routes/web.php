@@ -72,7 +72,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/locale/{lang}',[LocaleController::class,'setLocale']);
-
 //Home
 Route::get('/', HomeIndex::class)->name('home.index');
 Route::get('/games', GameHomeIndex::class)->name('game.home.index');

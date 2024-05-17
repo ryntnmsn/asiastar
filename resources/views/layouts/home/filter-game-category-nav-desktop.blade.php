@@ -6,10 +6,10 @@
               </svg>
         </span>
         <span class="text-slate-400">
-            Filters
+            @lang('Filters')
         </span>
         <span>
-            <x-primary-button-new wire:click="resetFilters" class="!text-xs !px-2 !py-1">Reset</x-primary-button-new>
+            <x-primary-button-new wire:click="resetFilters" class="!text-xs !px-2 !py-1">@lang('Reset')</x-primary-button-new>
         </span>
     </div>
 
@@ -19,7 +19,7 @@
             <div class="py-4">
                 <h2 id="accordion-open-heading-1">
                     <button type="button" class="flex items-center justify-between w-full font-medium rtl:text-right text-slate-600" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
-                        <span>Theme</span>
+                        <span>@lang('Theme')</span>
                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 duration-300 ease-in-out" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                         </svg>
@@ -30,14 +30,14 @@
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterTheme" id="theme-all" value="" type="radio" name="filterTheme" class="">
                             <label for="theme-all">
-                                <span class="text-slate-600">All</span>
+                                <span class="text-slate-600">@lang('All')</span>
                             </label>
                         </div>
                         @foreach ($getThemes as $theme)
                             <div class="flex items-center gap-2 mb-4">
                                 <input wire:model.live="filterTheme" id="theme-{{ $theme->id }}" value="{{ $theme->id }}" type="radio" name="filterTheme" class="radio-buttons ring-0 focus:border-none dark:bg-slate-600 dark:border-slate-700 bg-slate-400">
                                 <label for="theme-{{ $theme->id }}">
-                                    <span class="text-slate-600">{{ $theme->name }}</span>
+                                    <span class="text-slate-600">{{ __($theme->name) }}</span>
                                 </label>
                             </div>
                         @endforeach
@@ -50,7 +50,7 @@
             <div class="py-4">
                 <h2 id="accordion-open-heading-2">
                     <button type="button" class="flex items-center justify-between w-full font-medium rtl:text-right text-slate-600" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
-                        <span>Type of Game</span>
+                        <span>@lang('Type of Game')</span>
                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 duration-300 ease-in-out" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                         </svg>
@@ -61,14 +61,14 @@
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterGameType" id="type-all" value="" type="radio" name="filterGameType" class="">
                             <label for="type-all">
-                                <span class="text-slate-600">All</span>
+                                <span class="text-slate-600">@lang('All')</span>
                             </label>
                         </div>
                         @foreach ($gameTypes as $gameType)
                             <div class="flex items-center gap-2 mb-4">
                                 <input wire:model.live="filterGameType" id="type-{{ $gameType->id }}" value="{{ $gameType->id }}" type="radio" name="filterGameType">
                                 <label for="type-{{ $gameType->id }}">
-                                    <span class="text-slate-600">{{ $gameType->name }}</span>
+                                    <span class="text-slate-600">{{ __($gameType->name) }}</span>
                                 </label>
                             </div>
                         @endforeach
@@ -80,7 +80,7 @@
             <div class="py-4">
                 <h2 id="accordion-open-heading-3">
                     <button type="button" class="flex items-center justify-between w-full font-medium rtl:text-right text-slate-600" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
-                        <span>Providers</span>
+                        <span>@lang('Providers')</span>
                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 duration-300 ease-in-out" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                         </svg>
@@ -91,14 +91,14 @@
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterProvider" id="providers-all" value="" type="radio" name="filterProvider">
                             <label for="providers-all">
-                                <span class="text-slate-600">All</span>
+                                <span class="text-slate-600">@lang('All')</span>
                             </label>
                         </div>
                         @foreach ($providers as $providers)
                             <div class="flex items-center gap-2 mb-4">
                                 <input wire:model.live="filterProvider" id="providers-{{ $providers->id }}" value="{{ $providers->id }}" type="radio" name="filterProvider" class="radio-buttons">
                                 <label for="providers-{{ $providers->id }}">
-                                    <span class="text-slate-600">{{ $providers->title }}</span>
+                                    <span class="text-slate-600">{{ __($providers->title) }}</span>
                                 </label>
                             </div>
                         @endforeach
@@ -121,14 +121,14 @@
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterRTP" id="rtp-option-1" value="" type="radio" name="filterRTP">
                             <label for="rtp-option-1">
-                                <span class="text-slate-600">All</span>
+                                <span class="text-slate-600">@lang('All')</span>
                             </label>
                         </div>
 
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterRTP" id="rtp-option-2" value="50" type="radio" name="filterRTP">
                             <label for="rtp-option-2">
-                                <span class="text-slate-600">Below 50%</span>
+                                <span class="text-slate-600">@lang('Below') 50%</span>
                             </label>
                         </div>
 
@@ -175,7 +175,7 @@
             <div class="py-4">
                 <h2 id="accordion-open-heading-3">
                     <button type="button" class="flex items-center justify-between w-full font-medium rtl:text-right text-slate-600" data-accordion-target="#accordion-open-body-5" aria-expanded="false" aria-controls="accordion-open-body-5">
-                        <span>Language</span>
+                        <span>@lang('Language')</span>
                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 duration-300 ease-in-out" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                         </svg>
@@ -186,14 +186,14 @@
                         <div class="flex items-center gap-2 mb-4">
                             <input wire:model.live="filterLanguage" id="languages-all" value="" type="radio" name="filterLanguage">
                             <label for="languages-all">
-                                <span class="text-slate-600">All</span>
+                                <span class="text-slate-600">@lang('All')</span>
                             </label>
                         </div>
                         @foreach ($availableLanguages as $availableLanguage)
                             <div class="flex items-center gap-2 mb-4">
                                 <input wire:model.live="filterLanguage" id="languages-{{ $availableLanguage->id }}" value="{{ $availableLanguage->id }}" type="radio" name="filterLanguage">
                                 <label for="languages-{{ $availableLanguage->id }}">
-                                    <span class="text-slate-600">{{ $availableLanguage->name }}</span>
+                                    <span class="text-slate-600">{{ __($availableLanguage->name) }}</span>
                                 </label>
                             </div>
                         @endforeach

@@ -45,7 +45,7 @@
                         <div class="mb-10">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <x-heading class="!mb-0">All Games</x-heading>
+                                    <x-heading class="!mb-0">@lang('All Games')</x-heading>
                                 </div>
                                 <div>
                                     <div class="xl:flex text-slate-400 dark:text-slate-400">
@@ -83,15 +83,15 @@
                                                                 <div class="flex flex-col">
                                                                     <x-text class="!text-xs !font-medium !text-slate-600 dark:!text-slate-400 uppercase">
                                                                         @if($game->volatility == 3)
-                                                                            High
+                                                                            @lang('High')
                                                                         @elseif($game->volatility == 2)
-                                                                            Medium
+                                                                            @lang('Medium')
                                                                         @else
-                                                                            Low
+                                                                            @lang('Low')
                                                                         @endif
                                                                     </x-text>
                                                                     <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                        Volatility
+                                                                        @lang('Volatility')
                                                                     </x-text>
                                                                 </div>
                                                             </div>
@@ -111,14 +111,14 @@
                                                                         <span class="text-[8px]">x</span>{{$game->maximum_win}}
                                                                     </x-text>
                                                                     <x-text class="!text-xs !font-medium dark:!text-slate-600 !text-slate-400">
-                                                                        Max win
+                                                                        @lang('Max win')
                                                                     </x-text>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="mt-2">
-                                                        <x-primary-button-new>More details</x-primary-button-new>
+                                                        <x-primary-button-new>@lang('More details')</x-primary-button-new>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,12 +131,12 @@
                                 @if($isListView)
                                     <div id="slideAnimationGames" class="my-5 grid grid-cols-1">
                                         <div class="hidden md:flex flex-row text-slate-500 uppercase text-xs py-4 rounded-lg mb-4">
-                                            <div class="w-[40%] text-left">Game Name</div>
+                                            <div class="w-[40%] text-left">@lang('Game Name')</div>
                                             <div class="w-[60%] flex">
-                                                <div class="w-[25%] text-center">Volatility</div>
+                                                <div class="w-[25%] text-center">@lang('Volatility')</div>
                                                 <div class="w-[25%] text-center">RTP</div>
-                                                <div class="w-[25%] text-center">Maximum win</div>
-                                                <div class="w-[25%] text-center">Provider</div>
+                                                <div class="w-[25%] text-center">@lang('Max win')</div>
+                                                <div class="w-[25%] text-center">@lang('Provider')</div>
                                             </div>
                                         </div>
                                         @foreach ($games as $game)
@@ -157,11 +157,11 @@
                                                                 <div class="volatility-details">
                                                                     <span class="uppercase text-xs noto-sans">
                                                                         @if($game->volatility == 3)
-                                                                            High
+                                                                            @lang('High')
                                                                         @elseif($game->volatility == 2)
-                                                                            Medium
+                                                                            @lang('Medium')
                                                                         @else
-                                                                            Low
+                                                                            @lang('Low')
                                                                         @endif
                                                                     </span>
                                                                 </div>
@@ -179,14 +179,14 @@
                                                             <div class="flex flex-col items-center justify-center h-full">
                                                                 <x-heading class="text-sm md:!text-base !mb-0">
                                                                     @if($game->volatility == 3)
-                                                                        High
+                                                                        @lang('High')
                                                                     @elseif($game->volatility == 2)
-                                                                        Medium
+                                                                        @lang('Medium')
                                                                     @else
-                                                                        Low
+                                                                        @lang('Low')
                                                                     @endif
                                                                 </x-heading>
-                                                                <x-paragraph class="md:hidden block !text-xs !mb-0">Volatility</x-paragraph>
+                                                                <x-paragraph class="md:hidden block !text-xs !mb-0">@lang('Volatility')</x-paragraph>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -199,13 +199,13 @@
                                                     <div class="w-full md:w-[25%]">
                                                         <div class="flex flex-col items-center justify-center h-full">
                                                             <x-heading class="text-sm md:!text-base !mb-0">x{{$game->maximum_win}}</x-heading>
-                                                            <x-paragraph class="md:hidden block !text-xs !mb-0">Max win</x-paragraph>
+                                                            <x-paragraph class="md:hidden block !text-xs !mb-0">@lang('Max win')</x-paragraph>
                                                         </div>
                                                     </div>
                                                     <div class="w-full md:w-[25%]">
                                                         <div class="flex flex-col items-center justify-center h-full">
                                                             <img src="{{url('storage/'.$game->provider->image)}}" alt="{{$game->provider->title}}" class="w-20">
-                                                            <x-paragraph class="md:hidden block !text-xs !mb-0">Provider</x-paragraph>
+                                                            <x-paragraph class="md:hidden block !text-xs !mb-0">@lang('Provider')</x-paragraph>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -216,14 +216,14 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <x-primary-button-new wire:click="loadMore" class="!px-4 !py-2">Load more</x-primary-button-new>
+                            <x-primary-button-new wire:click="loadMore" class="!px-4 !py-2">@lang('Load more')</x-primary-button-new>
                         </div>
                     @else
                         <div class="flex flex-row gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="text-slate-600 w-6 h-6">
                                 <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm-4.34 7.964a.75.75 0 0 1-1.061-1.06 5.236 5.236 0 0 1 3.73-1.538 5.236 5.236 0 0 1 3.695 1.538.75.75 0 1 1-1.061 1.06 3.736 3.736 0 0 0-2.639-1.098 3.736 3.736 0 0 0-2.664 1.098Z" clip-rule="evenodd" />
                             </svg>
-                            <span class="text-slate-600 montserrat">No game found</span>
+                            <span class="text-slate-600 montserrat">@lang('No game found')</span>
                         </div>
                     @endif
 

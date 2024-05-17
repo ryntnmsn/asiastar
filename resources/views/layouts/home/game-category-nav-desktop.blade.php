@@ -6,7 +6,7 @@
                     <x-icon-search></x-icon-search>
                 </span>
                 <span>
-                    Search
+                    @lang('Search')
                 </span>
             </button>
         </li>
@@ -16,7 +16,7 @@
                     <x-icon-home></x-icon-search>
                 </span>
                 <span class="whitespace-nowrap">
-                    Games Home
+                    @lang('Games Home')
                 </span>
             </a>
         </li>
@@ -26,7 +26,7 @@
                     <x-icon-games></x-icon-games>
                 </span>
                 <span class="whitespace-nowrap">
-                    All Games
+                    @lang('All Games')
                 </span>
             </a>
         </li>
@@ -37,7 +37,7 @@
                     <x-icon-filter></x-icon-filter>
                 </span>
                 <span class="whitespace-nowrap">
-                    Filters/Sort
+                    @lang('Filters/Sort')
                 </span>
             </button>
         </li>

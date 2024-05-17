@@ -26,26 +26,34 @@ class GameCategoryHomeIndex extends Component
     public function render()
     {
 
+        $lang = app()->getLocale();
+
         $hotGames = Game::where('status', true)->orderBy('created_at', 'desc')
             ->whereHas('game_category', function($query) {
                 $query->where('slug', $this->gameCategorySlug);
             })->whereHas('game_type', function($query) {
                 $query->where('slug', 'hot-game');
-           })->get();
+           })->whereHas('language', function($query) use ($lang) {
+            $query->where('code', $lang);
+        })->get();
 
         $newGames = Game::where('status', true)->orderBy('created_at', 'desc')
            ->whereHas('game_category', function($query) {
                $query->where('slug', $this->gameCategorySlug);
            })->whereHas('game_type', function($query) {
                $query->where('slug', 'new-game');
-          })->get();
+          })->whereHas('language', function($query) use ($lang) {
+            $query->where('code', $lang);
+        })->get();
 
         $comingSoonGames = Game::where('status', true)->orderBy('created_at', 'desc')
            ->whereHas('game_category', function($query) {
                $query->where('slug', $this->gameCategorySlug);
            })->whereHas('game_type', function($query) {
                $query->where('slug', 'coming-soon');
-          })->get();
+          })->whereHas('language', function($query) use ($lang) {
+            $query->where('code', $lang);
+        })->get();
 
 
         $gameBanners = GameBanner::where('status', true)
@@ -56,7 +64,10 @@ class GameCategoryHomeIndex extends Component
 
         $results = [];
         if(strlen($this->searchQuery) >= 2) {
-            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')->get();
+            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')
+            ->whereHas('language', function($query) use ($lang) {
+                $query->where('code', $lang);
+            })->get();
         }
 
         return view('livewire.home.game-category.game-category-home-index', [

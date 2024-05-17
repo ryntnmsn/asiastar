@@ -18,6 +18,9 @@ class GameHomeIndex extends Component
 
     public function render()
     {
+
+        $lang = app()->getLocale();
+
         $gameBanners = GameBanner::where('status', 1)->get();
         $games = Game::where('status', 1);
 
@@ -27,8 +30,14 @@ class GameHomeIndex extends Component
         $getGameTypeHotGame = GameType::where('slug', 'hot-game')->value('id');
 
         // dd($getGameTypeNewGame);
-        $newGames = Game::where('status', 1)->where('game_type_id', $getGameTypeNewGame)->get();
-        $hotGames = Game::where('status', 1)->where('game_type_id', $getGameTypeHotGame)->get();
+        $newGames = Game::where('status', 1)->where('game_type_id', $getGameTypeNewGame)
+            ->whereHas('language', function($query) use ($lang) {
+                $query->where('lang', $lang);
+            })->get();
+        $hotGames = Game::where('status', 1)->where('game_type_id', $getGameTypeHotGame)
+        ->whereHas('language', function($query) use ($lang) {
+            $query->where('lang', $lang);
+        })->get();
 
         $rtpGames = $games->orderByRaw('CAST(rtp AS UNSIGNED) DESC')->take(6)->get();
 
