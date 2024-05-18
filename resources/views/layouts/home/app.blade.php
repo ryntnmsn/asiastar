@@ -16,6 +16,8 @@
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
+    <script src="{{url('assets/js/inViewport/inViewport.js')}}"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -36,9 +38,9 @@
     </div>
     @livewireScripts
 
-    <!-- Swiper JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Initialize Swiper -->
+
 
 
 <script>
@@ -213,19 +215,78 @@
 </script>
 
 <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(".square", {
+        x: 0,
+        duration: 3,
+        scrollTrigger: {
+            trigger: ".square",
+        }
+    })
+</script>
 
-    $('.count').each(function () {
-        $(this).prop('Counter',0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 3000,
-            easing: 'swing',
-            step: function (now) {
-                $(this).text(Math.ceil(now));
-            }
-        });
+<script>
+   class CountUp {
+    constructor(triggerEl, counterEl) {
+    const counter = document.querySelector(counterEl)
+    const trigger = document.querySelector(triggerEl)
+    let num = 0
+    const decimals = counter.dataset.decimals
+
+    const countUp = () => {
+        if (num < counter.dataset.stop)
+
+        // Do we want decimals?
+        if (decimals) {
+            num += 0.01
+            counter.textContent = new Intl.NumberFormat('en-GB', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(num)
+        }
+
+        else {
+        // No decimals
+        num++
+        counter.textContent = num
+        }
+    }
+
+    const observer = new IntersectionObserver((el) => {
+        if (el[0].isIntersecting) {
+        const interval = setInterval(() => {
+            (num < counter.dataset.stop) ? countUp() : clearInterval(interval)
+        }, counter.dataset.speed)
+        }
+    }, { threshold: [0] })
+
+    observer.observe(trigger)
+    }
+    }
+
+    // Initialize any number of counters:
+    // new CountUp('#start1', '#counter1')
+    new CountUp('#start3', '#counter3')
+    new CountUp('#start2', '#counter2')
+</script>
+
+<script>
+$(function() {
+    $(window).on("scroll", function() {
+
+        if($(window).scrollTop() > 50) {
+            $(".text_header").addClass("active_text");
+        } else {
+           $(".text_header").removeClass("active_text");
+        }
+
+        if($(window).scrollTop() > 50) {
+            $(".header").addClass("active_header");
+        } else {
+           $(".header").removeClass("active_header");
+        }
     });
-
+});
 </script>
 
 <script>

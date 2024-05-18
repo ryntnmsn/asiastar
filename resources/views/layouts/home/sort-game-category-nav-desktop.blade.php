@@ -20,7 +20,7 @@
                     <option value="" class="hidden">@lang('Select sort')</option>
                     <option value="volatility">@lang('Volatility')</option>
                     <option value="rtp">RTP</option>
-                    <option value="maximum_win">@lang('Maximum win')</option>
+                    <option value="maximum_win">@lang('Max win')</option>
                 </x-select>
                 <x-select wire:model.live="filterSortOrder" class=" !text-sm !bg-transparent !border-0 !px-0 !text-slate-600 focus:!border-0 focus:!ring-0">
                     <option value="" class="hidden">@lang('Select order')</option>

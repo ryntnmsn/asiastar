@@ -13,6 +13,8 @@
 
     "Hot Games": "注目ゲーム",
     "New Games": "新着ゲーム",
+    "Hot Game": "注目ゲーム",
+    "New Game": "新着ゲーム",
     "Coming Soon": "まもなく登場のゲーム",
 
     "Search": "検索",
@@ -27,5 +29,28 @@
 
     "High": "高い",
     "Medium": "中くらい",
-    "Low": "低い"
+    "Low": "低い",
+
+    "Useful Links": "役立つリンク",
+    "Languages": "言語",
+    "Copyright": "著作権",
+    "All rights reserved": "無断転載を禁じます",
+
+    "Load more": "もっと読み込む",
+    "Filters": "フィルター",
+    "Sort": "選別",
+    "Select sort": "並べ替えを選択",
+    "Select order": "注文を選択してください",
+    "Reset": "リセット",
+    "Theme": "テーマ",
+    "Type of Game": "ゲームの種類",
+    "Providers": "プロバイダー",
+    "Provider": "プロバイダー",
+    "Language": "言語",
+
+    "Below": "下に",
+    "All": "全て",
+    "Game name": ""
+
+
 }

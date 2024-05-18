@@ -1,9 +1,7 @@
 <div class="">
-
-
     <div class="relative">
         <div class="absolute bottom-0 left-0 top-0 right-0 w-full max-w-[1280px] mx-auto items-center justify-center flex">
-            <x-heading class="text-animation !text-[112px] !text-center !leading-[112px] !font-bold z-20 !text-slate-50">Every Ball <br>Sparks a Fortune!</x-heading>
+            <x-heading class="text-animation md:!text-[60px] !text-[42px] lg:!text-[80px] xl:!text-[112px] !text-center !leading-[45px] md:!leading-[70px] lg:!leading-[90px]  xl:!leading-[112px] !font-bold z-20 !text-slate-50">Every Ball <br>Sparks a Fortune!</x-heading>
         </div>
         {{-- <div class="absolute bottom-0 z-30 pb-40 flex items-center justify-center left-0 right-0">
             <a href="#games">
@@ -16,12 +14,12 @@
 
         </div>
         <div class="youtube-container">
-            <iframe src="https://www.youtube.com/embed/_Td7JjCTfyc?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&rel=0&loop=1&playlist=_Td7JjCTfyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/9qVx-d4Cf4s?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&rel=0&loop=1&playlist=9qVx-d4Cf4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
 
-    <div class="box w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-xl py-40">
+    <div class="px-5 box w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-2xl py-40">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Games')</x-heading>
@@ -31,29 +29,29 @@
                 </x-paragraph>
             </div>
             <div class="main gap-5">
-                <div class="single-column flex flex-col gap-5 rounded-xl">
+                <div class="single-column flex flex-col gap-5 rounded-2xl">
                     @foreach ($gamesCol1 as $game)
-                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
                 </div>
-                <div class="single-column flex flex-col gap-5 rounded-xl">
+                <div class="single-column flex flex-col gap-5 rounded-2xl">
                     @foreach ($gamesCol2 as $game)
-                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
                 </div>
-                <div class="single-column flex flex-col gap-5 rounded-xl">
+                <div class="single-column flex flex-col gap-5 rounded-2xl">
                     @foreach ($gamesCol3 as $game)
-                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
                 </div>
-                <div class="single-column flex flex-col gap-5 rounded-xl">
+                <div class="single-column flex flex-col gap-5 rounded-2xl">
                     @foreach ($gamesCol4 as $game)
-                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
                 </div>
-                <div class="single-column flex flex-col gap-5 rounded-xl">
+                <div class="single-column flex flex-col gap-5 rounded-2xl">
                     @foreach ($gamesCol5 as $game)
-                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-xl">
+                        <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
                 </div>
             </div>
@@ -194,9 +192,10 @@
             </div>
         </div>
     </div> --}}
+    {{-- <div id="start1" class="start-counter">Counter starts counting here!</div>
+    <div id="counter1" class="counter" data-stop="30" data-speed="10" data-decimals="true">0</div> --}}
 
-
-    <div wire:ignore class="box mt-40 w-full max-w-[1080px] mx-auto h-full">
+    <div wire:ignore class="px-5 box mt-40 w-full max-w-[1280px] mx-auto h-full">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('About us')</x-heading>
@@ -206,64 +205,72 @@
                 </x-paragraph>
             </div>
             <div>
-                <div class="grid grid-cols-3 gap-10 about-us">
+                <div class="grid sm:grid-cols-3 gap-5 lg:gap-10 about-us">
                     <div>
-                        <div class="flex flex-col justify-between gap-10 h-full">
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full flex items-center justify-center flex-col">
-                                <x-heading class="!font-bold !text-[72px]">
-                                    <div class="count">
-                                        10
-                                    </div>
+                        <div class="flex flex-col justify-between gap-5 lg:gap-10 h-full">
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                                <x-heading class="!mb-0 !font-bold !text-[72px] flex">
+                                    <div id="start2" class="start-counter"></div>
+                                    <div id="counter2" data-stop="10" data-speed="100" class="text-amber-400">0</div>
+                                    <span>+</span>
                                 </x-heading>
-                                <x-heading class="!font-bold !text-[32px] leading-[40px] text-center">
+                                <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-center">
                                     <div>
                                         Years of experience
                                     </div>
                                 </x-heading>
                             </div>
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                                <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
+                                    <div>
+                                        Variety of professional Pachinko games
+                                    </div>
+                                </x-heading>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="flex flex-col justify-between gap-10 h-full">
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                        <div class="flex flex-col justify-between gap-5 lg:gap-10 h-full">
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                                <x-heading class="!mb-0 !font-bold !text-[72px] flex">
+                                    <div id="start3" class="start-counter"></div>
+                                    <div id="counter3" data-stop="200" data-speed="10" class="text-amber-400">0</div>
+                                    <span>+</span>
+                                </x-heading>
+                                <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-center">
+                                    <div>
+                                        Live casino games
+                                    </div>
+                                </x-heading>
                             </div>
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center">
+                                <img src="{{url('storage/images/ASIASTAR_LOGO_BLACK.png')}}" alt="" class="w-full max-w-[180px] block dark:hidden">
+                                <img src="{{url('storage/images/ASIASTAR_LOGO_WHITE.png')}}" alt="" class="w-full max-w-[180px] hidden dark:block">
                             </div>
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                                <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
+                                    <div>
+                                        24/7 Support
+                                    </div>
+                                </x-heading>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="flex flex-col justify-between gap-10 h-full">
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                        <div class="flex flex-col justify-between gap-5 lg:gap-10 h-full">
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                                <x-heading class="!font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
+                                    <div>
+                                        Available in 100+ countries and supports multiple currencies
+                                    </div>
+                                </x-heading>
                             </div>
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                                <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
+                                    <div>
+                                        API Distribution Business and CDN Services
+                                    </div>
+                                </x-heading>
                             </div>
                         </div>
                     </div>
@@ -284,7 +291,7 @@
             <div>
                 <div class="flex flex-wrap gap-10 items-center justify-center">
                     @foreach ($partners as $partner)
-                        <div class="dark:bg-dark-blue hover:dark:bg-dark-blue-hover px-6 py-2 rounded-full">
+                        <div class="bg-slate-50 shadow dark:bg-dark-blue hover:dark:bg-dark-blue-hover px-6 py-2 rounded-full">
                             <x-heading class="!text-base !mb-0 whitespace-nowrap">
                                 {{ $partner->title }}
                             </x-heading>

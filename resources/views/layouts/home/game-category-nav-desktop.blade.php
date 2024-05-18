@@ -37,7 +37,7 @@
                     <x-icon-filter></x-icon-filter>
                 </span>
                 <span class="whitespace-nowrap">
-                    @lang('Filters/Sort')
+                    @lang('Filters')/@lang('Sort')
                 </span>
             </button>
         </li>

@@ -13,7 +13,10 @@
 
     "Hot Games": "热门游戏",
     "New Games": "最新游戏",
+    "Hot Game": "热门游戏",
+    "New Game": "最新游戏",
     "Coming Soon": "即将推出游戏",
+
 
     "Search": "搜索",
     "Games Home": "游戏首页",
@@ -27,7 +30,28 @@
 
     "High": "高的",
     "Medium": "中等的",
-    "Low": "低的"
+    "Low": "低的",
 
-    
+    "Useful Links": "有用的链接",
+    "Languages": "语言",
+    "Copyright": "版权",
+    "All rights reserved": "版权所有",
+
+    "Load more": "装载更多",
+    "Filters": "过滤器",
+    "Sort": "种类",
+    "Select sort": "选择排序",
+    "Select order": "选择订单",
+    "Reset": "重置",
+    "Theme": "主题",
+    "Type of Game": "游戏类型",
+    "Providers": "供应商",
+    "Provider": "提供者",
+    "Language": "语言",
+
+    "Below": "以下",
+    "All": "全部",
+    "Game name": ""
+
+
 }

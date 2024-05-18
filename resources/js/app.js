@@ -1,6 +1,7 @@
 import { initFlowbite } from 'flowbite';
 import './bootstrap';
 import 'flowbite';
+import 'is-in-viewport';
 
   // /* SIDEBAR*/
   // var topLimit = $('#bar-fixed').offset().top;

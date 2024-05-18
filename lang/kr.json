@@ -13,6 +13,8 @@
 
     "Hot Games": "인기 게임",
     "New Games": "새로운 게임",
+    "Hot Game": "인기 게임",
+    "New Game": "새로운 게임",
     "Coming Soon": "곧 출시될 게임들",
 
     "Search": "搜索",
@@ -27,5 +29,26 @@
 
     "High": "높은",
     "Medium": "중간",
-    "Low": "낮은"
+    "Low": "낮은",
+
+    "Useful Links": "유용한 링크",
+    "Languages": "언어",
+    "Copyright": "저작권",
+    "All rights reserved": "판권 소유",
+
+    "Load more": "더 로드하기",
+    "Filters": "필터",
+    "Sort": "종류",
+    "Select sort": "정렬 선택",
+    "Select order": "주문 선택",
+    "Reset": "초기화",
+    "Theme": "주제",
+    "Type of Game": "게임 유형",
+    "Providers": "공급자",
+    "Provider": "공급자",
+    "Language": "언어",
+
+    "Below": "아래에",
+    "All": "모두",
+    "Game name": ""
 }
