@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    
+
     <div class="box w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-xl py-40">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
@@ -59,8 +59,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 
@@ -198,7 +196,7 @@
     </div> --}}
 
 
-    <div wire:ignore class="box mt-40 w-full max-w-[1280px] mx-auto h-full">
+    <div wire:ignore class="box mt-40 w-full max-w-[1080px] mx-auto h-full">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('About us')</x-heading>
@@ -208,14 +206,20 @@
                 </x-paragraph>
             </div>
             <div>
-                <div class="grid grid-cols-3 gap-10">
+                <div class="grid grid-cols-3 gap-10 about-us">
                     <div>
                         <div class="flex flex-col justify-between gap-10 h-full">
-                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
-                                <x-heading class="!font-bold !text-[52px]">About us</x-heading>
+                            <div class="p-10 rounded-xl dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                                <x-heading class="!font-bold !text-[72px]">
+                                    <div class="count">
+                                        10
+                                    </div>
+                                </x-heading>
+                                <x-heading class="!font-bold !text-[32px] leading-[40px] text-center">
+                                    <div>
+                                        Years of experience
+                                    </div>
+                                </x-heading>
                             </div>
                             <div class="p-10 rounded-xl dark:bg-dark-blue h-full">
                                 <x-heading class="!font-bold !text-[52px]">About us</x-heading>
@@ -268,11 +272,10 @@
         </div>
     </div>
 
-
     <div wire:ignore class="box py-40 w-full max-w-[1280px] mx-auto h-full">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
-                <x-heading class="!font-bold !text-[52px]">Partners</x-heading>
+                <x-heading class="!font-bold !text-[52px]">@lang('Partners')</x-heading>
                 <x-paragraph class="text-center w-3/4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

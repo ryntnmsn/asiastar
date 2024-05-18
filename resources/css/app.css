@@ -406,7 +406,7 @@ input[type="radio"]:not(:checked) + label:after {
 
 
 
-/* 
+/*
   .swiper-slide:nth-child(1n) {
     background-color: rgb(206, 17, 17);
   }
@@ -517,7 +517,7 @@ input[type="radio"]:not(:checked) + label:after {
     height: 50vw;
     /* background: #333; */
   }
-  
+
   .main img {
     max-width: 100%;
     vertical-align: middle;
@@ -525,28 +525,28 @@ input[type="radio"]:not(:checked) + label:after {
     box-sizing: border-box;
     transition: opacity 0.2s;
   }
-  
+
   .main:hover img {
     opacity: 0.5;
   }
-  
+
   .main img:hover {
     opacity: 1;
   }
-  
+
   .main .single-column {
     animation: var(--animation, none) 16s infinite linear;
   }
-  
+
   .main .single-column:hover {
     animation-play-state: paused;
   }
-  
+
   .main .single-column:nth-of-type(odd) {
     align-self: flex-end;
     --direction: 50%;
   }
-  
+
   @-webkit-keyframes slide {
     to {
       -webkit-transform: translateY(var(--direction, -50%));
@@ -559,4 +559,3 @@ input[type="radio"]:not(:checked) + label:after {
       transform: translateY(var(--direction, -50%));
     }
   }
-  
