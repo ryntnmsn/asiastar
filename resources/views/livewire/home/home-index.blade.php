@@ -167,17 +167,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
     <div>
         {{-- <ul>
             <li><a href="locale/en">English</a></li>

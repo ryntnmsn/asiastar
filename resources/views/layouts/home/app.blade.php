@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    @include('layouts.home.global-search');
+    @livewire('home.global-search')
 
 
     @livewireScripts
