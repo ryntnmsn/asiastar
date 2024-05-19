@@ -1,5 +1,5 @@
 <div class="w-full lg:p-5 top-0 lg:fixed relative lg:bg-transparent bg-slate-50 z-[100] montserrat duration-300 ease-in-out">
-    <div wire:ignore class="header w-full rounded-xl duration-300 ease-in-out px-8 py-4 shadow {{request()->is('about-our-company') || request()->is('news*') || request()->is('join-us') || request()->is('contact-us') || request()->is('partners') || request()->is('games*') ? 'bg-slate-50' : ''}}">
+    <div wire:ignore class="header w-full rounded-xl duration-300 ease-in-out md:px-8 px-4 py-4 {{request()->is('about-our-company') || request()->is('news*') || request()->is('join-us') || request()->is('contact-us') || request()->is('partners') || request()->is('games*') ? 'bg-slate-50' : ''}}">
         <div x-data="{ open: false }" class="flex flex-col md:items-center md:justify-between md:flex-row ">
             <div class="flex flex-row items-center justify-between">
                 <a href="{{route('home.index')}}" class="font-semibold tracking-widest text-slate-50 uppercase rounded-lg">
@@ -12,18 +12,18 @@
                     </svg>
                 </button>
             </div>
-            <nav :class="{'flex': open, 'hidden': !open}" class=" items-center flex-col flex-grow gap-10 hidden md:flex md:justify-end md:flex-row">
+            <nav :class="{'flex': open, 'hidden': !open}" class=" items-center flex-col flex-grow gap-10 hidden md:flex md:justify-end md:flex-row lg:!text-slate-900">
 
                 {{-- Home --}}
                 <a class="text_header {{request()->is('about-our-company') || request()->is('news*') || request()->is('join-us') || request()->is('contact-us') || request()->is('partners') || request()->is('games*') ? 'text-slate-600' : 'text-slate-50'}}" href="{{route('home.index')}}">@lang('Home')</a>
 
                 {{-- Games --}}
-                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <div @click.away="open = false" class="relative " x-data="{ open: false }">
                     <button @click="open = !open" class="{{request()->is('about-our-company') || request()->is('news*') || request()->is('join-us') || request()->is('contact-us') || request()->is('partners') || request()->is('games*') ? 'text-slate-600' : 'text-slate-50'}} text_header flex flex-row items-center gap-1 w-full text-left">
                         <span>@lang('Games')</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
-                    <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-6 origin-top-right rounded-md shadow-lg md:w-48">
+                    <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="z-[999] absolute right-0 w-48 mt-6 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="text-sm text-slate-50 p-4 bg-gradient-to-r from-sky-600 to-sky-800 rounded-md shadow flex flex-col gap-4">
                             @foreach ($getGameCategories as $category)
                                 <a wire:navigate class="" href="{{route('game.category.home.index', $category->slug)}}">{{__($category->name)}}</a>
@@ -38,7 +38,7 @@
                         <span>@lang('About us')</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
-                    <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-6 origin-top-right rounded-md shadow-lg md:w-48">
+                    <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="z-[999] absolute right-0 w-48 mt-6 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="text-sm p-4 bg-gradient-to-r from-sky-600 to-sky-800 text-slate-50 rounded-md shadow flex flex-col gap-4">
                             <a class="" href="{{ route('about.our.company.index') }}">@lang('Our Company')</a>
                             <a class="" href="{{ route('news.index') }}">@lang('Company News')</a>
@@ -49,7 +49,17 @@
                     </div>
                 </div>
 
-                <div class="flex gap-2">
+                <div class="flex gap-2 items-center">
+
+                    <div>
+                        <button data-modal-target="global-search-modal" data-modal-toggle="global-search-modal" type="button" class="{{request()->is('about-our-company') || request()->is('news*') || request()->is('join-us') || request()->is('contact-us') || request()->is('partners') || request()->is('games*') ? 'text-slate-600' : 'text-slate-50'}} text_header hover:bg-sky-600 focus:outline-none focus:ring-0 rounded-full text-sm p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M8.25 10.875a2.625 2.625 0 1 1 5.25 0 2.625 2.625 0 0 1-5.25 0Z" />
+                                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.125 4.5a4.125 4.125 0 1 0 2.338 7.524l2.007 2.006a.75.75 0 1 0 1.06-1.06l-2.006-2.007a4.125 4.125 0 0 0-3.399-6.463Z" clip-rule="evenodd" />
+                              </svg>
+                        </button>
+                    </div>
+
                     {{-- Languages --}}
                     <div @click.away="open = false" class="relative" x-data="{ open: false }">
                         <button @click="open = !open" class="{{request()->is('about-our-company') || request()->is('news*') || request()->is('join-us') || request()->is('contact-us') || request()->is('partners') || request()->is('games*') ? 'text-slate-600' : 'text-slate-50'}} text_header flex flex-row gap-1 items-center w-full text-left hover:bg-sky-600 rounded-full text-sm p-2">
@@ -59,7 +69,7 @@
                                 </svg>
                             </span>
                         </button>
-                        <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-5 origin-top-right rounded-md shadow-lg md:w-48">
+                        <div id="modalAnimation" x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="z-[999] absolute right-0 w-48 mt-6 origin-top-right rounded-md shadow-lg md:w-48">
                             <div class="text-sm p-4 bg-gradient-to-r from-sky-600 to-sky-800 text-slate-50 rounded-md shadow flex flex-col gap-4">
                                 <a class="flex gap-2 items-center" href="{{ url('/locale/en') }}">
                                     <span class="fi fi-us"></span>
@@ -89,14 +99,17 @@
                 </div>
 
                 <div>
-                    <button id="menu-toggle" class="bg-amber-400 p-3 rounded">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                          </svg>
-
+                    <button id="menu-toggle" class="bg-amber-400 p-3 rounded-full md:rounded">
+                        <div class="md:block hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </div>
+                        <div class="md:hidden block" @click="open = !open">
+                            <span class="font-medium">Contact us</span>
+                        </div>
                     </button>
                 </div>
-
             </nav>
         </div>
       </div>

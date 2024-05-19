@@ -19,7 +19,7 @@
     </div>
 
 
-    <div class="px-5 box w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-2xl py-40">
+    <div class="px-5 box w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-2xl pt-20">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Games')</x-heading>
@@ -28,7 +28,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </x-paragraph>
             </div>
-            <div class="main gap-5">
+            <div class="main gap-5 h-[420px] md:h-[50vw]">
                 <div class="single-column flex flex-col gap-5 rounded-2xl">
                     @foreach ($gamesCol1 as $game)
                         <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
@@ -44,12 +44,12 @@
                         <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
                 </div>
-                <div class="single-column flex flex-col gap-5 rounded-2xl">
+                <div class="single-column md:flex flex-col gap-5 rounded-2xl hidden">
                     @foreach ($gamesCol4 as $game)
                         <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
                 </div>
-                <div class="single-column flex flex-col gap-5 rounded-2xl">
+                <div class="single-column md:flex flex-col gap-5 rounded-2xl hidden">
                     @foreach ($gamesCol5 as $game)
                         <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
                     @endforeach
@@ -59,141 +59,6 @@
     </div>
 
 
-
-    {{-- <div wire:ignore id="games" style="background-image:url('{{ url('storage/images/bg-games01.png') }}')" class="bg-no-repeat bg-cover bg-fixed">
-        <div class="w-full max-w-[1280px] mx-auto relative h-screen flex items-center justify-center">
-        <div class="flex flex-col gap-10">
-            <div class="flex justify-center">
-                <x-heading class="!font-bold !text-[52px]">Games</x-heading>
-            </div>
-                <div class="flex flex-row gap-40">
-                    <div class="flex-1">
-                        <div class="flex flex-col gap-5 items-center">
-                            <div class="swiper-pachi cardPachinko">
-                                <div class="swiper-wrapper">
-                                    @foreach ($games as $game)
-                                        <div class="swiper-slide">
-                                            <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div>
-                                <x-heading>Live Pachinko</x-heading>
-                            </div>
-                            <div>
-                                <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex flex-col gap-5 items-center">
-                            <div class="swiper-pachi cardCasino">
-                                <div class="swiper-wrapper">
-                                    @foreach ($games as $game)
-                                        <div class="swiper-slide">
-                                            <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div>
-                                <x-heading>Live Casino</x-heading>
-                            </div>
-                            <div>
-                                <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex flex-col gap-5 items-center">
-                            <div class="swiper-pachi cardCockfighting">
-                                <div class="swiper-wrapper">
-                                    @foreach ($games as $game)
-                                        <div class="swiper-slide">
-                                            <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64">
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div>
-                                <x-heading>Live Cockfighting</x-heading>
-                            </div>
-                            <div>
-                                <x-primary-button-new class="!px-4 !py-2">View All Games</x-primary-button-new>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    {{-- <div wire:ignore class="mt-40 w-full max-w-[1280px] mx-auto relative">
-        <div class="gallery">
-            <div class="right">
-                <div class="photos">
-                        <div class="w-80 relative h-full flex items-center justify-center">
-                            <div class="flex items-center justify-center">
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-80">
-                                </div>
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample02.png')}}" alt="" class="w-80">
-                                </div>
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample03.png')}}" alt="" class="w-80">
-                                </div>
-                                <div class="photo">
-                                    <img src="{{url('storage/images/sample01.png')}}" alt="" class="w-80">
-                                </div>
-                            </div>
-                            <div class="absolute flex items-center justify-center z-10">
-                                <img src="{{url('storage/images/phone.png')}}" alt="" class="w-80">
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="left">
-                <div class="detailsWrapper text-slate-50">
-                    <div class="details">
-                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
-                        <div class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </div>
-                    </div>
-
-                    <div class="details">
-                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
-                        <div class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </div>
-                    </div>
-
-                    <div class="details">
-                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
-                        <div class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </div>
-                    </div>
-
-                    <div class="details">
-                        <div class="headline text-2xl font-bold">Lorem ipsum dolor sit amet</div>
-                        <div class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    {{-- <div id="start1" class="start-counter">Counter starts counting here!</div>
-    <div id="counter1" class="counter" data-stop="30" data-speed="10" data-decimals="true">0</div> --}}
 
     <div wire:ignore class="px-5 box mt-40 w-full max-w-[1280px] mx-auto h-full">
         <div class="flex flex-col gap-10">

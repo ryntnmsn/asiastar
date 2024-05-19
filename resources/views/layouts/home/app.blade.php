@@ -35,17 +35,25 @@
             @yield('contents')
             @include('layouts.home.footer')
         </div>
-        <div wire:ignore id="sidebar" class="bg-slate-50">
+        <div wire:ignore id="sidebar" class="bg-slate-50 relative">
             <div class="p-10 h-full">
                 <div class="w-full h-full max-w-[640px] mx-auto flex flex-col ">
-                    <x-heading class="!text-slate-600 dark:!text-slate-600">Contact Us</x-heading>
-                    <x-paragraph class="noto-sans leading-normal !text-sm text-center">
+                    <div class="flex justify-between items-center">
+                        <x-heading class="!text-slate-600 dark:!text-slate-600">Contact Us</x-heading>
+                        <button id="menu-toggle-close" class="absolute top-0 right-0 mt-5 mr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                              </svg>
+                        </button>
+                    </div>
+
+                    <x-paragraph class="noto-sans leading-normal !text-sm">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </x-paragraph>
                     <div class="flex gap-20 w-full">
                         <div class="flex-1">
                             <div class="rounded-2xl">
-                                <div class="flex flex-col gap-5 mt-10">
+                                <div class="flex flex-col gap-5 mt-5">
                                     <div>
                                         <x-heading class="!text-lg !text-slate-600">
                                             Fill out the information below
@@ -92,6 +100,8 @@
             </div>
         </div>
     </div>
+
+    @include('layouts.home.global-search');
 
 
     @livewireScripts
@@ -272,7 +282,7 @@
     sr.reveal('.box', boxReveal);
 </script>
 
-<script>
+{{-- <script>
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(".square", {
         x: 0,
@@ -281,7 +291,7 @@
             trigger: ".square",
         }
     })
-</script>
+</script> --}}
 
 <script>
    class CountUp {
@@ -349,14 +359,22 @@ $(function() {
 
 <script>
     $(document).ready(function() {
-
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("body").toggleClass("show-sidebar");
         });
-
     });
 </script>
+<script>
+    $(document).ready(function() {
+        $("#menu-toggle-close").click(function(e) {
+            e.preventDefault();
+            $("body").removeClass("show-sidebar");
+        });
+    });
+</script>
+
+
 
 <script>
     var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
