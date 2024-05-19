@@ -26,10 +26,20 @@ class SingleNews extends Component
 
     public function render()
     {
-        $relatedNews = Article::where('status', true)->where('category', $this->category)->where('id', '!=', $this->slug)->inRandomOrder()->limit(4)->get();
+
+        $lang = app()->getLocale();
+
+        $relatedNews = Article::where('status', true)
+        ->where('category', $this->category)
+        ->where('slug', '!=', $this->slug)
+        ->whereHas('language', function($query) use ($lang) {
+        $query->where('code', $lang);
+        })
+        ->inRandomOrder()
+        ->limit(4);
 
         return view('livewire.home.news.single-news', [
-            'relatedNews' => $relatedNews
+            'relatedNews' => $relatedNews->get()
         ])->extends('layouts.home.app')->section('contents');
     }
 }

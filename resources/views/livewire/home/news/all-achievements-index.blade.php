@@ -1,5 +1,5 @@
 <div>
-    <div class="w-full max-w-[1280px] mx-auto mt-20">
+    <div class="w-full px-5 max-w-[1280px] mx-auto mt-[3rem] lg:mt-[10rem]">
         <div>
             <x-heading class="text-3xl">@lang('Achievements')</x-heading>
         </div>

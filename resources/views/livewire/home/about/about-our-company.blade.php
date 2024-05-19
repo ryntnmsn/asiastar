@@ -11,15 +11,16 @@
             </div>
             <div class="flex md:flex-row flex-col gap-10">
                 <div class="flex-1">
-                    <x-paragraph class="noto-sans leading-loose">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>
-
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    <x-paragraph class="noto-sans leading-loose indent-10 text-justify">
+                        @lang('AS Pachinko is a well-established company with over 10 years of experience in the industry. We offer professional and comprehensive gaming interfaces, coupled with robust cash flow services, delivering round-the-clock support and accommodating multiple international currencies. Our diverse portfolio extends beyond our core offerings, encompassing offline property and office space solutions, on-site studio construction services, CDN-related services, API distribution, and more. Our global reach spans across 100+ countries and regions, including Southeast Asia, America, Europe, and Oceania.')
+                        <br><br>
+                        @lang('For more than 10 years, AS Pachinko has steadfastly adhered to the principles of mutually beneficial cooperation and unwavering customer-centricity. We continually strive for innovation and service excellence, aiming to provide our valued customers with increasingly professional and exceptional experiences. By choosing AS Pachinko, you embark on a journey towards a brilliant future, forged through our collaborative efforts and shared vision.')
                     </x-paragraph>
                 </div>
                 <div class="flex-1">
-                    <div class="p-4">
-                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="shadow-2xl rounded-2xl">
+                    <div class="p-4 flex justify-center items-center">
+                        <img src="{{url('storage/images/ASIASTAR_LOGO_BLACK.png')}}" alt="" class="w-full max-w-[240px] block dark:hidden">
+                        <img src="{{url('storage/images/ASIASTAR_LOGO_WHITE.png')}}" alt="" class="w-full max-w-[240px] hidden dark:block">
                     </div>
                 </div>
             </div>

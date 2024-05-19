@@ -18,9 +18,15 @@ class AllNewsIndex extends Component
 
     public function render()
     {
+
+        $lang = app()->getLocale();
+
         $companyNews = Article::where('status', true)
             ->where('category', 'company_news')
             ->orderBy('created_at', 'desc')
+            ->whereHas('language', function($query) use ($lang) {
+                $query->where('code', $lang);
+            })
             ->take($this->amount);
 
         return view('livewire.home.news.all-news-index', [

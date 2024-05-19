@@ -1,7 +1,7 @@
-<div class="bg-amber-400 mt-40">
+<div class="bg-amber-400 mt-40 px-5">
     <div class="py-20 w-full">
         <div class="w-full max-w-[1280px] mx-auto">
-            <div class="flex gap-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
                 <div class="flex-1">
                     <img src="{{url('storage/images/ASIASTAR_LOGO_HORIZONTAL_BLACK.png')}}" alt="" class="w-[180px] grayscale brightness-0 opacity-70">
                     <x-paragraph class="!text-slate-800 !text-xs mt-5 !font-normal">

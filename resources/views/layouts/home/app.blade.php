@@ -28,14 +28,72 @@
     </script>
     @livewireStyles
 </head>
-<body class="dark:bg-dark-blue-gradient bg-slate-200 min-h-full bg-no-repeat bg-cover bg-fixed">
-    <div class="w-full h-full">
-        @include('layouts.home.header')
-        <div>
+<body class="dark:bg-dark-blue-gradient bg-slate-200 min-h-full bg-no-repeat bg-cover bg-fixed" x-cloak x-data="{ open: false }">
+    <div class="flex flex-row wrapper">
+        <div id="main" class="w-full h-full dark:bg-slate-900 bg-slate-200">
+            @include('layouts.home.header')
             @yield('contents')
+            @include('layouts.home.footer')
         </div>
-        @include('layouts.home.footer')
+        <div wire:ignore id="sidebar" class="bg-slate-50">
+            <div class="p-10 h-full">
+                <div class="w-full h-full max-w-[640px] mx-auto flex flex-col ">
+                    <x-heading class="!text-slate-600 dark:!text-slate-600">Contact Us</x-heading>
+                    <x-paragraph class="noto-sans leading-normal !text-sm text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </x-paragraph>
+                    <div class="flex gap-20 w-full">
+                        <div class="flex-1">
+                            <div class="rounded-2xl">
+                                <div class="flex flex-col gap-5 mt-10">
+                                    <div>
+                                        <x-heading class="!text-lg !text-slate-600">
+                                            Fill out the information below
+                                        </x-heading>
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row gap-4">
+                                        <div class="flex-1 flex flex-col gap-2">
+                                            <x-text class="!text-sm">First name</x-text>
+                                            <x-input-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
+                                        </div>
+                                        <div class="flex-1 flex flex-col gap-2">
+                                            <x-text class="!text-sm">Last name</x-text>
+                                            <x-input-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row gap-4">
+                                        <div class="flex-1 flex flex-col gap-2">
+                                            <x-text class="!text-sm">Email address</x-text>
+                                            <x-input-home type="email" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row gap-4">
+                                        <div class="flex-1 flex flex-col gap-2">
+                                            <x-text class="!text-sm">Phone number</x-text>
+                                            <x-input-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row gap-4">
+                                        <div class="flex-1 flex flex-col gap-2">
+                                            <x-text class="!text-sm">Message</x-text>
+                                            <x-textarea-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-textarea-home>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div>
+                                            <x-primary-button-new class="!px-4 !py-2">Submit</x-primary-button-new>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
     @livewireScripts
 
 
@@ -287,6 +345,17 @@ $(function() {
         }
     });
 });
+</script>
+
+<script>
+    $(document).ready(function() {
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("body").toggleClass("show-sidebar");
+        });
+
+    });
 </script>
 
 <script>

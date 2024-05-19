@@ -5,6 +5,8 @@
     "Partners": "合作伙伴",
     "Our Company": "游戏",
     "Company News": "公司新闻",
+    "company news": "公司新闻",
+    "company_news": "公司新闻",
     "Join us": "加入我们",
     "Contact us": "联系我们",
     "Live Pachinko": "热门游戏",
@@ -51,7 +53,44 @@
 
     "Below": "以下",
     "All": "全部",
-    "Game name": ""
+    "Game Name": "游戏名称",
+
+    "Years of experience": "",
+    "Live casino games": "",
+    "Variety of professional Pachinko games": "",
+    "Live Cockfighting games": "",
+    "Available in 100+ countries and supports multiple currencies": "",
+    "24/7 Support": "",
+    "API Distribution Business and CDN Services": "",
+
+    "About Our Company": "关于我们公司",
+    "AS Pachinko is a well-established company with over 10 years of experience in the industry. We offer professional and comprehensive gaming interfaces, coupled with robust cash flow services, delivering round-the-clock support and accommodating multiple international currencies. Our diverse portfolio extends beyond our core offerings, encompassing offline property and office space solutions, on-site studio construction services, CDN-related services, API distribution, and more. Our global reach spans across 100+ countries and regions, including Southeast Asia, America, Europe, and Oceania.": "",
+
+    "For more than 10 years, AS Pachinko has steadfastly adhered to the principles of mutually beneficial cooperation and unwavering customer-centricity. We continually strive for innovation and service excellence, aiming to provide our valued customers with increasingly professional and exceptional experiences. By choosing AS Pachinko, you embark on a journey towards a brilliant future, forged through our collaborative efforts and shared vision.": "",
+
+    "Core Values": "核心价值",
+
+    "Read more": "阅读更多",
+    "Latest News": "最新消息",
+    "View all news": "查看所有新闻",
+    "Achievements": "成就",
+    "achievements": "成就",
+    "View all achievements": "查看所有成就",
+
+    "Related News": "相关新闻",
+    "All news": "所有新闻",
+    "All achievements": "所有成就",
+
+    "Date posted": "发布日期",
+    "Available jobs": "可用的职位",
+    "No jobs available": "没有空缺职位",
+
+    "Session volatility": "会话波动性",
+    "Features": "特征",
+    "Other Games": "其他游戏",
+    "Game Details": "游戏详情",
+
+    "No news available": "无可用消息"
 
 
 }

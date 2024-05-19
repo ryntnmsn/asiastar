@@ -1,49 +1,54 @@
 <div class="h-full w-full px-5">
-    <div class="w-full h-full max-w-[1280px] mx-auto mt-20">
+    <div class="w-full h-full max-w-[1280px] mx-auto mt-[10rem]">
+
         <div>
-            <div>
-                <x-heading class="text-3xl">Company News</x-heading>
-            </div>
+            <x-heading class="text-3xl">@lang('Company News')</x-heading>
+        </div>
 
-            @if(count($companyNews) != null)
-                <!-- Companies News -->
-                <div id="zoomEffect" wire:ignore class="swiper companyNews overflow-hidden">
-                    <div class="swiper-wrapper">
-                        @foreach ($companyNews as $companyNews)
-                        <div class="swiper-slide relative duration-300 ease-in-out cursor-pointer group">
-                            <a href="{{route('single.news.index', ['category' => $companyNews->category, 'slug' => $companyNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
-                            <div class="flex md:flex-row flex-col w-full gap-10">
-                                <div class="flex-1">
-                                    <div class="relative">
-                                        <div class="absolute top-0 left-0 bg-slate-50 m-5 w-16 h-16 p-1 shadow-xl rounded-xl">
-                                            <div class="flex flex-col items-center justify-center gap-0">
-                                                <span class="font-semibold mb-0 text-slate-600 !text-[32px] leading-[32px] montserrat">{{date('j', strtotime($companyNews->created_at) )}}</span>
+        @if(count($companyNews) == null && count($achievements) == null)
+            <x-paragraph>@lang('No news available')</x-paragraph>
+        @endif
 
-                                                <span class="text-[16px] leading-[16px] m-0 montserrat text-slate-600">{{date('M', strtotime($companyNews->created_at) )}}</span>
-                                            </div>
+        @if(count($companyNews) != null)
+            <!-- Companies News -->
+            <div id="zoomEffect" wire:ignore class="swiper companyNews overflow-hidden">
+                <div class="swiper-wrapper">
+                    @foreach ($companyNews as $companyNews)
+                    <div class="swiper-slide relative duration-300 ease-in-out cursor-pointer group">
+                        <a href="{{route('single.news.index', ['category' => $companyNews->category, 'slug' => $companyNews->slug])}}" class="absolute top-0 bottom-0 left-0 right-0 z-10"></a>
+                        <div class="flex md:flex-row flex-col w-full gap-10">
+                            <div class="flex-1">
+                                <div class="relative">
+                                    <div class="absolute top-0 left-0 bg-slate-50 m-5 w-16 h-16 p-1 shadow-xl rounded-xl">
+                                        <div class="flex flex-col items-center justify-center gap-0">
+                                            <span class="font-semibold mb-0 text-slate-600 !text-[32px] leading-[32px] montserrat">{{date('j', strtotime($companyNews->created_at) )}}</span>
+
+                                            <span class="text-[16px] leading-[16px] m-0 montserrat text-slate-600">{{date('M', strtotime($companyNews->created_at) )}}</span>
                                         </div>
-                                        <img src="{{url('storage/'.$companyNews->image)}}" alt="" class="w-full rounded-3xl">
                                     </div>
+                                    <img src="{{url('storage/'.$companyNews->image)}}" alt="" class="w-full rounded-3xl">
                                 </div>
-                                <div class="flex-1">
-                                    <div class="flex text-left flex-col items-start">
-                                        <x-heading class="">
-                                            {{$companyNews->name}}
-                                        </x-heading>
-                                        <x-paragraph>
-                                            {{$companyNews->short_description}}
-                                        </x-paragraph>
-                                        <x-primary-button-new class="!text-[16px] !py-2 !px-4">Read more</x-primary-button-new>
-                                    </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex text-left flex-col items-start">
+                                    <x-heading class="">
+                                        {{$companyNews->name}}
+                                    </x-heading>
+                                    <x-paragraph>
+                                        {{$companyNews->short_description}}
+                                    </x-paragraph>
+                                    <x-primary-button-new class="!text-[16px] !py-2 !px-4">@lang('Read more')</x-primary-button-new>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
                     </div>
+                @endforeach
                 </div>
-            @endif
+            </div>
+        @endif
 
-            <div class="mt-20">
+        @if(count($latestNews) != null)
+            <div class="my-20">
                 <div>
                     <x-heading class="text-3xl">@lang('Latest News')</x-heading>
                 </div>
@@ -85,11 +90,11 @@
                     </div>
                 </div>
             </div>
+        @endif
 
-        </div>
 
         @if(count($achievements) != null)
-            <div class="mt-44">
+            <div class="mt-20">
                 <div class="text-center">
                     <x-heading class="text-3xl">@lang('Achievements')</x-heading>
                     <p class="text-slate-500 noto-sans font-light leading-loose">

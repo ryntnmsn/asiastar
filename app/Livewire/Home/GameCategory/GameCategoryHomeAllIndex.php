@@ -76,7 +76,6 @@ class GameCategoryHomeAllIndex extends Component
                 $query->where('slug', $this->gameCategorySlug);
             })->get();
 
-
         $getThemes = Theme::all();
         $gameTypes = GameType::all();
         $providers = Provider::all();
@@ -118,16 +117,19 @@ class GameCategoryHomeAllIndex extends Component
                     return $query->where('available_language_id', $this->filterLanguage);
                 });
             })
-            // ->whereHas('language', function($query) use($lang) {
-            //     $query->where('code', $lang);
-            // })
+            ->whereHas('language', function($query) use($lang) {
+                $query->where('code', $lang);
+            })
             ->orderBy('created_at', 'desc')
             ->take($this->amount)
             ->get();
 
         $results = [];
         if(strlen($this->searchQuery) >= 2) {
-            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')->get();
+            $results = Game::where('title','LIKE','%'.$this->searchQuery.'%')
+            ->whereHas('language', function($query) use($lang) {
+                $query->where('code', $lang);
+            })->get();
         }
 
         return view('livewire.home.game-category.game-category-home-all-index', [

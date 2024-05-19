@@ -5,6 +5,8 @@
     "Partners": "파트너",
     "Our Company": "회사 소개",
     "Company News": "회사 뉴스",
+    "company news": "회사 뉴스",
+    "company_news": "회사 뉴스",
     "Join us": "합류하기",
     "Contact us": "연락처",
     "Live Pachinko": "라이브 파친코",
@@ -50,5 +52,42 @@
 
     "Below": "아래에",
     "All": "모두",
-    "Game name": ""
+    "Game Name": "게임 이름",
+
+    "Years of experience": "수년간의 경험",
+    "Live casino games": "라이브 카지노 게임",
+    "Variety of professional Pachinko games": "다양한 전문 파친코 게임",
+    "Live Cockfighting games": "실시간 닭싸움 게임",
+    "Available in 100+ countries and supports multiple currencies": "100개 이상의 국가에서 이용 가능하며 다양한 화폐 지원",
+    "24/7 Support": "24/7 지원",
+    "API Distribution Business and CDN Services": "API 배포 사업 및 CDN 서비스",
+
+    "About Our Company": "우리 회사 소개",
+    "AS Pachinko is a well-established company with over 10 years of experience in the industry. We offer professional and comprehensive gaming interfaces, coupled with robust cash flow services, delivering round-the-clock support and accommodating multiple international currencies. Our diverse portfolio extends beyond our core offerings, encompassing offline property and office space solutions, on-site studio construction services, CDN-related services, API distribution, and more. Our global reach spans across 100+ countries and regions, including Southeast Asia, America, Europe, and Oceania.": "AS Pachinko는 업계에서 10년 이상의 경험을 가진 잘 자리잡은 회사입니다. 저희는 전문적이고 종합적인 게이밍 인터페이스를 제공하며, 강력한 현금 흐름 서비스와 함께 24시간 지원을 제공하고, 여러 국제 통화를 수용합니다. 저희의 다양한 포트폴리오는 핵심 제공 사항을 넘어 오프라인 부동산 및 사무실 공간 솔루션, 현장 스튜디오 건설 서비스, CDN 관련 서비스, API 배포 등을 포괄합니다. 저희의 글로벌 리치는 동남아시아, 미국, 유럽, 오세아니아를 포함한 100개국 이상의 국가와 지역에 걸쳐 있습니다.",
+
+    "For more than 10 years, AS Pachinko has steadfastly adhered to the principles of mutually beneficial cooperation and unwavering customer-centricity. We continually strive for innovation and service excellence, aiming to provide our valued customers with increasingly professional and exceptional experiences. By choosing AS Pachinko, you embark on a journey towards a brilliant future, forged through our collaborative efforts and shared vision.": "10년 이상, AS Pachinko는 상호 유익한 협력과 변함없는 고객 중심의 원칙을 굳건히 준수해왔습니다. 우리는 혁신과 서비스 우수성을 지속적으로 추구하며, 고객님께 점점 더 전문적이고 탁월한 경험을 제공하기 위해 노력합니다. AS Pachinko를 선택함으로써, 고객님은 우리의 공동 노력과 공유된 비전을 통해 찬란한 미래로의 여정을 시작하게 됩니다.",
+
+    "Core Values": "핵심 가치",
+
+    "Read more": "더 읽어보세요",
+    "Latest News": "최근 뉴스",
+    "View all news": "모든 뉴스 보기",
+    "Achievements": "업적",
+    "achievements": "업적",
+    "View all achievements": "모든 업적 보기",
+
+    "Related News": "관련 뉴스",
+    "All news": "모든 뉴스",
+    "All achievements": "모든 업적",
+
+    "Date posted": "게시 된 날짜",
+    "Available jobs": "가능한 직업",
+    "No jobs available": "채용공고가 없습니다",
+
+    "Session volatility": "세션 변동성",
+    "Features": "특징",
+    "Other Games": "기타 게임",
+    "Game Details": "게임 세부정보",
+
+    "No news available": "뉴스가 없습니다."
 }

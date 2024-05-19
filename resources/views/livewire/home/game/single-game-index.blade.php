@@ -1,6 +1,6 @@
 <div class="h-full">
-    <div class="w-full h-full max-w-[1280px] mx-auto px-5">
-        <div class="flex h-full items-center justify-center my-20">
+    <div class="w-full h-full max-w-[1280px] mx-auto px-5 mt-[3rem] lg:mt-[10rem]">
+        <div class="flex h-full items-center justify-center">
             <div class="flex-1 lg:block hidden">
                 <h1 class="noto-sans text-[120px] font-bold dark:text-slate-800 text-slate-200 tracking-tighter leading-[140px]">{{$title}}</h1>
             </div>
@@ -24,21 +24,21 @@
             </div>
             <div class="my-20">
                 <div class="mb-10 border-b border-slate-300 dark:border-slate-800 flex justify-between items-center">
-                    <x-heading class="capitalize !text-slate-400">Game Details</x-heading>
+                    <x-heading class="capitalize !text-slate-400">@lang('Game Details')</x-heading>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
                     @if($volatility != null)
                         <div>
                             <x-heading class="uppercase !mb-1 !text-base md:!text-xl ">
                                 @if($volatility == 3)
-                                    High
+                                    @lang('High')
                                 @elseif($volatility == 2)
-                                    Medium
+                                    @lang('Medium')
                                 @else
-                                    Low
+                                    @lang('Low')
                                 @endif
                             </x-heading>
-                            <x-sub-heading class="!text-[14px] ">Session volatility</x-sub-heading>
+                            <x-sub-heading class="!text-[14px] ">@lang('Session volatility')</x-sub-heading>
                         </div>
                     @endif
                     @if($rtp != null)
@@ -50,7 +50,7 @@
                     @if($maximum_win != null)
                         <div>
                             <x-heading class="Capitalize !mb-1 !text-base md:!text-xl "><span class="text-sm">x</span>{{$maximum_win}}</x-heading>
-                            <x-sub-heading class="!text-[14px] ">Maximum win</x-sub-heading>
+                            <x-sub-heading class="!text-[14px] ">@lang('Max win')</x-sub-heading>
                         </div>
                     @endif
                     @if($themes != null)
@@ -60,13 +60,13 @@
                                     {{$theme->name}}{{$loop->last ? '' : ','}}
                                 @endforeach
                             </x-heading>
-                            <x-sub-heading class="!text-[14px] ">Theme</x-sub-heading>
+                            <x-sub-heading class="!text-[14px] ">@lang('Theme')</x-sub-heading>
                         </div>
                     @endif
                     @if($provider != null)
                         <div>
                             <x-heading class="Capitalize !mb-1 !text-base md:!text-xl">{{$provider->title}}</x-heading>
-                            <x-sub-heading class="!text-[14px] ">Provider</x-sub-heading>
+                            <x-sub-heading class="!text-[14px] ">@lang('Provider')</x-sub-heading>
                         </div>
                     @endif
                     @if($features != null)
@@ -76,7 +76,7 @@
                                     {{$feature->name}}{{$loop->last ? '' : ','}}
                                 @endforeach
                             </x-heading>
-                            <x-sub-heading class="!text-[14px]">Features</x-sub-heading>
+                            <x-sub-heading class="!text-[14px]">@lang('Features')</x-sub-heading>
                         </div>
                     @endif
                     @if($available_language != null)
@@ -92,7 +92,7 @@
                                     <img data-popover-target="popover-default-{{$available_language->id}}" src="{{url('storage/'.$available_language->image)}}" alt="{{$available_language->name}}" class="hover:opacity-100 hover:grayscale-0 duration-300 ease-in-out w-10 opacity-80 rounded-[4px] grayscale">
                                 @endforeach
                             </div>
-                            <x-sub-heading class="!text-[14px] ">Languages</x-sub-heading>
+                            <x-sub-heading class="!text-[14px] ">@lang('Languages')</x-sub-heading>
                         </div>
                     @endif
                 </div>
@@ -101,8 +101,7 @@
 
         <div class="mt-40">
             <div class="mb-10 border-b border-slate-300 dark:border-slate-800 flex justify-between items-center">
-                <x-heading class="capitalize">Other Games</x-heading>
-                <a href="{{route('all.game.home.index')}}" class="montserrat text-cyan-600">All Games</a>
+                <x-heading class="capitalize">@lang('Other Games')</x-heading>
             </div>
             <div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-14">

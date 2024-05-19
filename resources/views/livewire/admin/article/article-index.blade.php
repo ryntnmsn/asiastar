@@ -32,6 +32,9 @@
                                 Category
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Language
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Status
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -46,12 +49,18 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">
-                                    <p class="text-ellipsis overflow-hidden w-full max-w-[400px]">
-                                        {{ $article->name }}
-                                    </p>
+                                    <div class="flex gap-2 items-center">
+                                        <img src="{{url('storage/'.$article->image)}}" alt="" class="w-[50px] rounded-md">
+                                        <p class="text-ellipsis overflow-hidden w-full max-w-[400px]">
+                                            {{ $article->name }}
+                                        </p>
+                                    </div>
                                 </th>
                                 <td class="px-6 py-4">
                                     {{ $article->category }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $article->language->name }}
                                 </td>
                                 <td class="px-6 py-4">
                                     @if($article->status == 1)

@@ -24,7 +24,7 @@ document.addEventListener('livewire:navigated', () => {
     const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
     var swiper = new Swiper(".gameBanner", {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 0,
         effect: "coverflow",
         grabCursor: true,
@@ -49,7 +49,7 @@ document.addEventListener('livewire:navigated', () => {
                 slidesPerView: 1,
             },
             1080: {
-                slidesPerView: 2,
+                slidesPerView: 1,
             },
         }
 

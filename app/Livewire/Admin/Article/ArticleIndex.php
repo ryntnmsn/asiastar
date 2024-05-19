@@ -13,7 +13,7 @@ class ArticleIndex extends Component
     protected $paginationTheme = 'tailwind';
 
     public $id;
-    public $sort = 'asc';
+    public $sort = '';
     public $search = '';
 
     public function delete($id) {
@@ -45,7 +45,7 @@ class ArticleIndex extends Component
         })
         ->when($this->sort, function ($query) {
             return $query->orderBy('name', $this->sort);
-        });
+        })->orderBy('created_at', 'desc');
 
         return view('livewire.admin.article.article-index', [
             'articles' => $articles->paginate(20)

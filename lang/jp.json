@@ -5,6 +5,8 @@
     "Partners": "パートナー",
     "Our Company": "私たちの会社について",
     "Company News": "会社のニュース",
+    "company news": "会社のニュース",
+    "company_news": "会社のニュース",
     "Join us": "ご参加ください",
     "Contact us": "お問い合わせ",
     "Live Pachinko": "ライブパチンコ",
@@ -50,7 +52,44 @@
 
     "Below": "下に",
     "All": "全て",
-    "Game name": ""
+    "Game Name": "ゲーム名",
+
+    "Years of experience": "積年の経験",
+    "Live casino games": "ライブカジノゲーム",
+    "Variety of professional Pachinko games": "多様なプロフェッショナルパチンコゲーム",
+    "Live Cockfighting games": "ライブ闘鶏ゲーム",
+    "Available in 100+ countries and supports multiple currencies": "100カ国以上で利用可能で、複数の通貨に対応",
+    "24/7 Support": "24時間365日サポート",
+    "API Distribution Business and CDN Services": "API配布ビジネスおよびCDNサービス",
+
+    "About Our Company": "当社について",
+    "AS Pachinko is a well-established company with over 10 years of experience in the industry. We offer professional and comprehensive gaming interfaces, coupled with robust cash flow services, delivering round-the-clock support and accommodating multiple international currencies. Our diverse portfolio extends beyond our core offerings, encompassing offline property and office space solutions, on-site studio construction services, CDN-related services, API distribution, and more. Our global reach spans across 100+ countries and regions, including Southeast Asia, America, Europe, and Oceania.": "ASパチンコは、業界で10年以上の経験を有する確立された企業です。私たちは、プロフェッショナルで包括的なゲーミングインターフェースと、堅牢なキャッシュフローサービスを提供し、24時間体制のサポートを提供し、複数の国際通貨に対応しています。当社の多様なポートフォリオは、コアオファリングを超え、オフラインの不動産およびオフィススペースソリューション、オンサイトスタジオ建設サービス、CDN関連サービス、API配信などを含みます。当社のグローバルリーチは、東南アジア、アメリカ、ヨーロッパ、オセアニアを含む100カ国以上の国と地域にわたっています。",
+
+    "For more than 10 years, AS Pachinko has steadfastly adhered to the principles of mutually beneficial cooperation and unwavering customer-centricity. We continually strive for innovation and service excellence, aiming to provide our valued customers with increasingly professional and exceptional experiences. By choosing AS Pachinko, you embark on a journey towards a brilliant future, forged through our collaborative efforts and shared vision.": "10年以上にわたり、ASパチンコは相互に有益な協力と揺るぎない顧客中心主義の原則を堅持してきました。私たちは常に革新とサービスの卓越性を追求し、価値あるお客様にますますプロフェッショナルで特別な体験を提供することを目指しています。ASパチンコを選ぶことで、共同の努力と共有のビジョンを通じて素晴らしい未来への旅に出発します。",
+
+    "Core Values": "基本的価値観",
+
+    "Read more": "続きを読む",
+    "Latest News": "最新ニュース",
+    "View all news": "すべてのニュースを見る",
+    "Achievements": "業績",
+    "achievements": "業績",
+    "View all achievements": "すべての実績を見る",
+
+    "Related News": "関連ニュース",
+    "All news": "すべてのニュース",
+    "All achievements": "すべての実績",
+
+    "Date posted": "投稿日",
+    "Available jobs": "募集中の職種",
+    "No jobs available": "求人はありません",
+
+    "Session volatility": "セッションのボラティリティ",
+    "Features": "特徴",
+    "Other Games": "その他のゲーム",
+    "Game Details": "ゲーム詳細",
+
+    "No news available": "ニュースはありません"
 
 
 }

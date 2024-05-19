@@ -31,14 +31,14 @@ class ArticleCreate extends Component
         'language_id' => 'required',
         'category' => 'required',
         // 'article_category_id' => 'required',
-        'image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=640,max_width=1080,max_height=640'
+        'image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=640,min_height=420,max_width=640,max_height=420'
     ];
 
     public function store() {
         $this->validate();
         Article::create([
             'name' => $this->name,
-            'slug' => Str::slug($this->name),
+            'slug' => Str::slug($this->name, '-', 'ja'),
             'short_description' => $this->short_description,
             'description' => $this->description,
             'language_id' => $this->language_id,

@@ -28,7 +28,7 @@ class LanguageSeeder extends Seeder
             ],
             [
                 'name' => 'Korean',
-                'code' => 'ko',
+                'code' => 'kr',
             ],
         ]);
     }
