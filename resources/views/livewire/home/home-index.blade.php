@@ -19,7 +19,7 @@
     </div>
 
 
-    <div class="px-5 box w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-2xl pt-20">
+    <div class="px-5 w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-2xl pt-20">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Games')</x-heading>
@@ -59,8 +59,7 @@
     </div>
 
 
-
-    <div wire:ignore class="px-5 box mt-40 w-full max-w-[1280px] mx-auto h-full">
+    <div wire:ignore class="px-5 mt-40 w-full max-w-[1280px] mx-auto h-full">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('About us')</x-heading>
@@ -144,7 +143,7 @@
         </div>
     </div>
 
-    <div wire:ignore class="box py-40 w-full max-w-[1280px] mx-auto h-full">
+    <div wire:ignore class="py-40 w-full max-w-[1280px] mx-auto h-full">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Partners')</x-heading>
