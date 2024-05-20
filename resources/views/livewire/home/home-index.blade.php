@@ -1,8 +1,8 @@
 <div class="">
     <div class="relative">
-        <div class="absolute bottom-0 left-0 top-0 right-0 w-full max-w-[1280px] mx-auto items-center justify-center flex">
+        {{-- <div class="absolute bottom-0 left-0 top-0 right-0 w-full max-w-[1280px] mx-auto items-center justify-center flex">
             <x-heading class="text-animation md:!text-[60px] !text-[42px] lg:!text-[80px] xl:!text-[112px] !text-center !leading-[45px] md:!leading-[70px] lg:!leading-[90px]  xl:!leading-[112px] !font-bold z-20 !text-slate-50">Every Ball <br>Sparks a Fortune!</x-heading>
-        </div>
+        </div> --}}
         {{-- <div class="absolute bottom-0 z-30 pb-40 flex items-center justify-center left-0 right-0">
             <a href="#games">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 text-slate-600 hover:text-slate-50 duration-300 ease-in-out hover:-translate-y-2">
@@ -10,7 +10,7 @@
                 </svg>
             </a>
         </div> --}}
-        <div class="bg-gradient-to-t from-slate-900 absolute top-0 left-0 right-0 bottom-0 z-10">
+        <div class="bg-gradient-to-b from-slate-800 absolute top-0 left-0 right-0 bottom-0 z-10">
 
         </div>
         <div class="youtube-container">
