@@ -66,7 +66,7 @@
                             <x-label for="asia">Region</x-label>
                             <x-select wire:model="region" class="!w-full">
                                 <option value="" class="hidden">--Select region--</option>
-                                <option value="asia">Asia</option>
+                                <option value="Asia">Asia</option>
                             </x-select>
                             @if($errors->has('region'))
                                 <span class="text-sm text-rose-500">{{ $errors->first('region') }}</span>
@@ -80,6 +80,9 @@
                         <div class="flex-1">
                             <x-label for="released_date">Released Date</x-label>
                             <x-date wire:model="released_date" type="date"></x-date>
+                            @if($errors->has('released_date'))
+                                <span class="text-sm text-rose-500">{{ $errors->first('released_date') }}</span>
+                            @endif
                         </div>
                         <div class="flex-1">
                             <x-label for="volatility">Volatility</x-label>

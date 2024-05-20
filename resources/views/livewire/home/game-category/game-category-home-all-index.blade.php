@@ -231,7 +231,7 @@
             </div>
         </div>
     </div>
-    @include('layouts.home.game-search')
+    {{-- @include('layouts.home.game-search') --}}
 
     <script>
             // SHOW HIDE FILTER
@@ -248,6 +248,5 @@
             isVisible = true;
         }
     });
-
     </script>
 </div>

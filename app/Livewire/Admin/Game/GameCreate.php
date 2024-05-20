@@ -24,7 +24,7 @@ class GameCreate extends Component
     public $description;
     public $language_id = '';
     public $provider_id = '';
-    public $status;
+    public $status = true;
     public $available_language = [];
     public $game_category_id = '';
     public $game_type_id = '';
@@ -50,6 +50,7 @@ class GameCreate extends Component
         'rtp' => 'required|numeric|between:0,99.99',
         'maximum_win' => 'required|numeric',
         'themes' => 'required',
+        'released_date' => 'required',
         'features' => 'required',
         'region' => 'required',
         'game_category_id' => 'required',

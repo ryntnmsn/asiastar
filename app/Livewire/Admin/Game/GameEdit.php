@@ -84,6 +84,7 @@ class GameEdit extends Component
             'provider_id' => 'required',
             'game_type_id' => 'required',
             'game_category_id' => 'required',
+            'released_date' => 'required',
             'available_language' => 'required',
             'features' => 'required',
             'themes' => 'required',
