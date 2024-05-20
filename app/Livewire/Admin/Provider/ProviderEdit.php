@@ -28,7 +28,7 @@ class ProviderEdit extends Component
         if(isset($this->new_image)) {
             $validate_array = [
                 'title' => 'required|max:255',
-                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=420,min_height=240,max_width=420,max_height=240'
+                'new_image' => 'required|image|mimes:png,jpg,jpeg|max:128|dimensions:min_width=420,min_height=240,max_width=420,max_height=240'
             ];
         } else {
             $validate_array = [

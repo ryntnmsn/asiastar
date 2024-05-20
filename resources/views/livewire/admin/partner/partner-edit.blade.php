@@ -33,7 +33,7 @@
                 </div>
                 <div>
                     <div>
-                        <x-label>Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 420x420 pixels)</span></x-label>
+                        <x-label>Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 420x240 pixels)</span></x-label>
                         <input wire:model="new_image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
                         <input wire:model="old_image" type="text" class="hidden">
 
