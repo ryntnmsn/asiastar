@@ -11,7 +11,7 @@ use App\Livewire\Admin\Article\ArticleTagCreate;
 use App\Livewire\Admin\Article\ArticleTagEdit;
 use App\Livewire\Admin\Article\ArticleTagIndex;
 use App\Livewire\Admin\AvailableLanguage\AvailableLanguageCreate;
-use App\Livewire\Admin\availableLanguage\AvailableLanguageEdit;
+use App\Livewire\Admin\AvailableLanguage\AvailableLanguageEdit;
 use App\Livewire\Admin\AvailableLanguage\AvailableLanguageIndex;
 use App\Livewire\Admin\Contact\ContactCreate;
 use App\Livewire\Admin\Contact\ContactEdit;

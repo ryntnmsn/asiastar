@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Admin\availableLanguage;
+namespace App\Livewire\Admin\AvailableLanguage;
 
 use App\Models\AvailableLanguage;
 use Livewire\Component;
