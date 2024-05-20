@@ -92,25 +92,25 @@ class GameEdit extends Component
 
         if(isset($this->new_image_square)) {
             $validate_array = [
-                'new_image_square' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=560,max_width=560,max_height=560'
+                'new_image_square' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=560'
             ];
         }
 
         if(isset($this->new_image_horizontal)) {
             $validate_array = [
-                'new_image_horizontal' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=950,min_height=560,max_width=950,max_height=560'
+                'new_image_horizontal' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=950,min_height=560,max_width=950,max_height=560'
             ];
         }
 
         if(isset($this->new_image_vertical)) {
             $validate_array = [
-                'new_image_vertical' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=560,min_height=950,max_width=560,max_height=950'
+                'new_image_vertical' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=950,max_width=560,max_height=950'
             ];
         }
 
         if(isset($this->new_hero_image)) {
             $validate_array = [
-                'new_hero_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=1080,max_width=1080,max_height=1080'
+                'new_hero_image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=640,min_height=640,max_width=640,max_height=640'
             ];
         }
 

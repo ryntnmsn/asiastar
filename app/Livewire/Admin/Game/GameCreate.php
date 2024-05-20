@@ -57,7 +57,7 @@ class GameCreate extends Component
         'image_square' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=560',
         'image_vertical' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=560,min_height=560,max_width=560,max_height=950',
         'image_horizontal' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=950,min_height=560,max_width=950,max_height=560',
-        'hero_image' => 'required|image|mimes:png,jpg,jpeg|max:512|dimensions:min_width=1080,min_height=1080,max_width=1080,max_height=1080',
+        'hero_image' => 'required|image|mimes:png,jpg,jpeg|max:256|dimensions:min_width=640,min_height=640,max_width=640,max_height=640',
     ];
 
     public function store() {

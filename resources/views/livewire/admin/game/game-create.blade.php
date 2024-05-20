@@ -255,7 +255,7 @@
 
                         {{-- Hero Image --}}
                         <div class="flex-1">
-                            <label class="block mb-2 font-medium text-slate-700">Hero Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 1080x1080 pixels)</span></label>
+                            <label class="block mb-2 font-medium text-slate-700">Hero Image <span class="text-slate-500 text-xs font-normal">(Dimensions: 640x640 pixels)</span></label>
                             <input wire:model="hero_image" class="block w-full text-sm text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-slate-50 focus:outline-none" type="file">
 
                             @if($hero_image)
