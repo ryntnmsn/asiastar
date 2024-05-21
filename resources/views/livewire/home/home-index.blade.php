@@ -10,9 +10,9 @@
                 </svg>
             </a>
         </div> --}}
-        <div class="bg-gradient-to-b from-slate-800 absolute top-0 left-0 right-0 bottom-0 z-10">
+        {{-- <div class="bg-gradient-to-b from-slate-800 absolute top-0 left-0 right-0 bottom-0 z-10">
 
-        </div>
+        </div> --}}
         <div class="youtube-container">
             <iframe src="https://www.youtube.com/embed/9qVx-d4Cf4s?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&rel=0&loop=1&playlist=9qVx-d4Cf4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
