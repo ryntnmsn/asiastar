@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
@@ -28,14 +29,14 @@
     </script>
     @livewireStyles
 </head>
-<body class="dark:bg-dark-blue-gradient bg-slate-200 min-h-full bg-no-repeat bg-cover bg-fixed" x-cloak x-data="{ open: false }">
-    <div class="flex flex-row wrapper">
-        <div id="main" class="w-full h-full dark:bg-slate-900 bg-slate-200">
+<body class="min-h-full bg-no-repeat bg-cover bg-fixed" x-cloak x-data="{ open: false }">
+    <div class="bg-light-mode dark:bg-dark-mode flex flex-row wrapper">
+        <div id="main" class="w-full h-full ">
             @include('layouts.home.header')
             @yield('contents')
             @include('layouts.home.footer')
         </div>
-        <div wire:ignore id="sidebar" class="bg-slate-50 relative">
+        {{-- <div wire:ignore id="sidebar" class="relative">
             <div class="p-10 h-full">
                 <div class="w-full h-full max-w-[640px] mx-auto flex flex-col ">
                     <div class="flex justify-between items-center">
@@ -98,7 +99,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     @livewire('home.global-search')
@@ -209,8 +210,6 @@
         },
     });
 </script>
-
-
 
 <script>
     var swiper = new Swiper(".cardPachinko", {
@@ -341,7 +340,6 @@
 <script>
 $(function() {
     $(window).on("scroll", function() {
-
         if($(window).scrollTop() > 50) {
             $(".text_header").addClass("active_text");
         } else {
@@ -372,6 +370,54 @@ $(function() {
             $("body").removeClass("show-sidebar");
         });
     });
+</script>
+
+<script>
+let navbar = document.querySelector(".navbar");
+let searchBox = document.querySelector(".search-box .bx-search");
+
+searchBox.addEventListener("click", ()=>{
+  navbar.classList.toggle("showInput");
+  if(navbar.classList.contains("showInput")){
+    searchBox.classList.replace("bx-search" ,"bx-x");
+  }else {
+    searchBox.classList.replace("bx-x" ,"bx-search");
+  }
+});
+
+
+let navLinks = document.querySelector(".nav-links");
+let menuOpenBtn = document.querySelector(".navbar .bx-menu");
+let menuCloseBtn = document.querySelector(".nav-links .bx-x");
+menuOpenBtn.onclick = function() {
+navLinks.style.left = "0";
+}
+menuCloseBtn.onclick = function() {
+navLinks.style.left = "-100%";
+}
+
+
+let gamesArrow = document.querySelector(".games-arrow");
+gamesArrow.onclick = function() {
+ navLinks.classList.toggle("show1");
+}
+let servicesArrow = document.querySelector(".services-arrow");
+servicesArrow.onclick = function() {
+ navLinks.classList.toggle("show2");
+}
+let aboutArrow = document.querySelector(".about-arrow");
+aboutArrow.onclick = function() {
+ navLinks.classList.toggle("show3");
+}
+let languagesArrow = document.querySelector(".languages-arrow");
+languagesArrow.onclick = function() {
+ navLinks.classList.toggle("show4");
+}
+let moreArrow = document.querySelector(".more-arrow");
+moreArrow.onclick = function() {
+ navLinks.classList.toggle("show5");
+}
+
 </script>
 
 

@@ -6,7 +6,7 @@
         {{-- <div class="absolute bottom-0 z-30 pb-40 flex items-center justify-center left-0 right-0">
             <a href="#games">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 text-slate-600 hover:text-slate-50 duration-300 ease-in-out hover:-translate-y-2">
-                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-.53 14.03a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V8.25a.75.75 0 0 0-1.5 0v5.69l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3Z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.50 4.365-9.50 9.50s4.365 9.50 9.50 9.50 9.50-4.365 9.50-9.50S17.385 2.25 12 2.25Zm-.53 14.03a.50 0 0 0 1.06 0l3-3a.50 0 1 0-1.06-1.06l-1.72 1.72V8.25a.50 0 0 0-1.5 0v5.69l-1.72-1.72a.50 0 0 0-1.06 1.06l3 3Z" clip-rule="evenodd" />
                 </svg>
             </a>
         </div> --}}
@@ -28,7 +28,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </x-paragraph>
             </div>
-            <div class="main gap-5 h-[420px] md:h-[50vw]">
+            <div class="main gap-5 h-[420px] md:h-[50vw] rounded-2xl">
                 <div class="single-column flex flex-col gap-5 rounded-2xl">
                     @foreach ($gamesCol1 as $game)
                         <img src="{{url('storage/'.$game->image_vertical)}}" alt="" class="w-64 rounded-2xl">
@@ -72,7 +72,7 @@
                 <div class="grid sm:grid-cols-3 gap-5 lg:gap-10 about-us">
                     <div>
                         <div class="flex flex-col justify-between gap-5 lg:gap-10 h-full">
-                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-col hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
                                 <x-heading class="!mb-0 !font-bold !text-[72px] flex">
                                     <div id="start2" class="start-counter"></div>
                                     <div id="counter2" data-stop="10" data-speed="100" class="text-amber-400">0</div>
@@ -84,7 +84,7 @@
                                     </div>
                                 </x-heading>
                             </div>
-                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-cl hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
                                 <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
                                     <div>
                                         @lang('Variety of professional Pachinko games')
@@ -95,7 +95,7 @@
                     </div>
                     <div>
                         <div class="flex flex-col justify-between gap-5 lg:gap-10 h-full">
-                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-cl hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
                                 <x-heading class="!mb-0 !font-bold !text-[72px] flex">
                                     <div id="start3" class="start-counter"></div>
                                     <div id="counter3" data-stop="200" data-speed="10" class="text-amber-400">0</div>
@@ -107,11 +107,11 @@
                                     </div>
                                 </x-heading>
                             </div>
-                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center">
+                            <div class="p-10 rounded-2xl bg-slate-50 shadow-md dark:bg-slate-900 h-full flex items-center justify-center duration-300 ease-out hover:scale-[1.1]">
                                 <img src="{{url('storage/images/ASIASTAR_LOGO_BLACK.png')}}" alt="" class="w-full max-w-[180px] block dark:hidden">
                                 <img src="{{url('storage/images/ASIASTAR_LOGO_WHITE.png')}}" alt="" class="w-full max-w-[180px] hidden dark:block">
                             </div>
-                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-cl hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
                                 <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
                                     <div>
                                         @lang('24/7 Support')
@@ -122,14 +122,14 @@
                     </div>
                     <div>
                         <div class="flex flex-col justify-between gap-5 lg:gap-10 h-full">
-                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-col hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
                                 <x-heading class="!font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
                                     <div>
                                         @lang('Available in 100+ countries and supports multiple currencies')
                                     </div>
                                 </x-heading>
                             </div>
-                            <div class="p-10 rounded-2xl bg-slate-50 shadow dark:bg-dark-blue h-full flex items-center justify-center flex-col">
+                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-col hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
                                 <x-heading class="!mb-0 !font-bold !text-[24px] leading-[40px] text-left border-l-[6px] pl-3 border-amber-400">
                                     <div>
                                         @lang('API Distribution Business and CDN Services')
@@ -155,10 +155,8 @@
             <div>
                 <div class="flex flex-wrap gap-10 items-center justify-center">
                     @foreach ($partners as $partner)
-                        <div class="bg-slate-50 shadow dark:bg-dark-blue hover:dark:bg-dark-blue-hover px-6 py-2 rounded-full">
-                            <x-heading class="!text-base !mb-0 whitespace-nowrap">
-                                {{ $partner->title }}
-                            </x-heading>
+                        <div class="hover:dark:bg-slate-900-hover">
+                            <img src="{{ url('storage/'.$partner->image) }}" alt="" class="w-40 dark:brightness-0 dark:invert">
                         </div>
                     @endforeach
                 </div>
