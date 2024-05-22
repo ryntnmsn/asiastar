@@ -16,22 +16,6 @@ html, body {
     background-position: center; */
 }
 
-.bg-light-mode {
-  /* background-image: linear-gradient(to right top, #fffac7, #fffac1, #fff9ba, #fff9b4, #fff8ad, #fcf2a1, #faec95, #f8e689, #f3d975, #efcc62, #ebbf4f, #e7b23b); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.bg-dark-mode {
-  /* background-image: linear-gradient(to right top, #09152c, #081831, #071a37, #061c3c, #041f42, #042349, #032650, #032a57, #072f61, #0c356b, #113a75, #17407f); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 .active_header {
     background-color: #f8fafc;
     /* padding:8px 16px; */
@@ -83,16 +67,11 @@ color:#475569;
 .youtube-container {
 	overflow: hidden;
 	width: 100%;
-	/* Keep it the right aspect-ratio */
 	aspect-ratio: 16/9;
-	/* No clicking/hover effects */
 	pointer-events: none;
-
 	iframe {
-		/* Extend it beyond the viewport... */
 		width: 300%;
 		height: 100%;
-		/* ...and bring it back again */
 		margin-left: -100%;
 	}
 }
@@ -813,10 +792,10 @@ nav .navbar .links li:hover .languages-sub-menu{
 .navbar .search-box{
   position: relative;
   height: 71px;
-  width: 40px;
+  /* width: 40px; */
 }
 .navbar .search-box i{
-  position: absolute;
+  /* position: absolute; */
   height: 100%;
   width: 100%;
   line-height: 40px;

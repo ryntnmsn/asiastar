@@ -95,7 +95,7 @@
                     </div>
                     <div>
                         <div class="flex flex-col justify-between gap-5 lg:gap-10 h-full">
-                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-cl hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
+                            <div class="p-10 rounded-2xl bg-slate-50/[.50] backdrop-blur-xl shadow-md dark:bg-slate-900 h-full flex items-center justify-center flex-col hover:bg-slate-50/[.70] dark:border-0 duration-300 ease-out hover:scale-[1.1]">
                                 <x-heading class="!mb-0 !font-bold !text-[72px] flex">
                                     <div id="start3" class="start-counter"></div>
                                     <div id="counter3" data-stop="200" data-speed="10" class="text-amber-400">0</div>

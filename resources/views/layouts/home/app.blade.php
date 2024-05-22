@@ -417,7 +417,6 @@ let moreArrow = document.querySelector(".more-arrow");
 moreArrow.onclick = function() {
  navLinks.classList.toggle("show5");
 }
-
 </script>
 
 

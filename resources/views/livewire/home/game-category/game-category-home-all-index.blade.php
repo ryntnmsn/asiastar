@@ -25,7 +25,7 @@
         <div class="mt-10">
             <div class="flex flex-col xl:flex-row">
                 <div class="w-full xl:w-[20%]">
-                    <div wire:ignore class="dark:bg-dark-blue bg-slate-100 p-5 rounded-2xl mr-0 xl:mr-8 mb-8 xl:mb-0">
+                    <div wire:ignore class="dark:bg-slate-900 bg-white p-5 rounded-2xl mr-0 xl:mr-8 mb-8 xl:mb-0">
                         <div>
                             @include('layouts.home.game-category-nav-desktop')
                         </div>
@@ -58,7 +58,7 @@
                                 @if($isGridView)
                                     <div id="slideAnimationGames" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-5 pb-10 relative">
                                         @foreach ($games as $game)
-                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-white dark:bg-slate-900 dark:hover:bg-slate-900-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
                                             <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                             <div class="p-5 flex flex-col gap-4">
                                                 <div class="overflow-hidden rounded-2xl">
@@ -140,7 +140,7 @@
                                             </div>
                                         </div>
                                         @foreach ($games as $game)
-                                            <div class="relative flex flex-col md:flex-row px-4 py-4 md:py-8 cursor-pointer md:items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover w-full mb-3">
+                                            <div class="relative flex flex-col md:flex-row px-4 py-4 md:py-8 cursor-pointer md:items-center rounded-xl hover:-translate-y-2 duration-300 ease-in-out bg-white dark:bg-slate-900 dark:hover:bg-slate-900-hover w-full mb-3">
                                                 <a href="{{ route('single.game.index', $game->id) }}" class="group absolute top-0 bottom-0 left-0 right-0 z-[10]"></a>
                                                 <div class="flex gap-2 items-center w-full md:w-[40%]">
                                                     <div>
