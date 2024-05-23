@@ -35,7 +35,7 @@
             <div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                     <div class="dark:bg-dark-blue dark:hover:bg-dark-blue-hover dark:border-slate-900 bg-white p-5 border border-slate-50 flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
-                        <img id="zoomEffect" src="{{url('storage/images/image-placeholder.jpg')}}" alt="" class="rounded-2xl">
+                        <img id="zoomEffect" src="{{url('storage/images/location.png')}}" alt="" class="rounded-2xl">
                         <x-heading class="text-xl">Lorem Ipsum</x-heading>
                     </div>
                     <div class="dark:bg-dark-blue dark:hover:bg-dark-blue-hover dark:border-slate-900 bg-white p-5 border border-slate-50 flex flex-col items-center justify-center gap-4 duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">

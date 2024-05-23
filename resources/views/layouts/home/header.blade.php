@@ -10,22 +10,22 @@
             <div class="flex items-center">
                 <div class="nav-links">
                     <div class="sidebar-logo">
-                        <span class=" text-slate-600">Menu</span>
+                        <span class=" text-slate-600">@lang('Menu')</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bx bx-x text-slate-600">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                           </svg>
                     </div>
                     <ul class="links">
-                        <li class="group border-b border-white/[.30]">
-                            <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat">HOME</a>
+                        <li class="group border-b border-white/[.30] hover:bg-slate-50 duration-300 ease-in-out">
+                            <a href="#" class="text_header {{ request()->is('games*') || request()->is('news*') || request()->is('join-us*') || request()->is('partners*') || request()->is('contact-us*') ? 'text-slate-600' : 'text-slate-100' }} group-hover:text-amber-400 duration-300 ease-in-out montserrat">@lang('Home')</a>
                         </li>
-                        <li class="group border-b border-white/[.30]">
-                            <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat">GAMES</a>
+                        <li class="group border-b border-white/[.30] hover:bg-slate-50 duration-100 ease-in-out">
+                            <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat">@lang('Games')</a>
                             <i class='bx bxs-chevron-down games-arrow arrow text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out'></i>
-                            <ul class="games-sub-menu sub-menu">
+                            <ul class="games-sub-menu sub-menu duration-100 ease-in-out">
                                 @foreach ($getGameCategories as $category)
                                     <li>
-                                        <a href="{{ route('game.category.home.index', $category->slug) }}" class="montserrat uppercase">{{ $category->name }}</a>
+                                        <a href="{{ route('game.category.home.index', $category->slug) }}" class="montserrat uppercase">{{ __($category->name) }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -38,23 +38,24 @@
                             </ul>
                         </li>
                         <li class="group border-b border-white/[.30]">
-                            <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat">ABOUT</a>
+                            <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat uppercase">@lang('About us')</a>
                             <i class='bx bxs-chevron-down about-arrow arrow text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out'></i>
                             <ul class="about-sub-menu sub-menu">
-                                <li><a href="#" class="montserrat uppercase">Company News</a></li>
-                                <li><a href="#" class="montserrat uppercase">Contact Us</a></li>
-                                <li><a href="#" class="montserrat uppercase">Join Us</a></li>
-                                <li><a href="#" class="montserrat uppercase">Partners</a></li>
+                                <li><a href="{{ route('about.our.company.index') }}" class="montserrat uppercase">@lang('Our Company')</a></li>
+                                <li><a href="{{ route('news.index') }}" class="montserrat uppercase">@lang('Company News')</a></li>
+                                <li><a href="{{ route('contact.home.index') }}" class="montserrat uppercase">@lang('Contact us')</a></li>
+                                <li><a href="{{ route('join.us.index') }}" class="montserrat uppercase">@lang('Careers')</a></li>
+                                <li><a href="{{ route('partner.home.index') }}" class="montserrat uppercase">@lang('Partners')</a></li>
                             </ul>
                         </li>
                         <li class="group border-b border-white/[.30]">
-                            <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat">LANGUAGES</a>
+                            <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat uppercase">@lang('Languages')</a>
                             <i class='bx bxs-chevron-down languages-arrow arrow text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out'></i>
                             <ul class="languages-sub-menu sub-menu">
-                                <li><a href="#" class="montserrat uppercase">ENGLISH</a></li>
-                                <li><a href="#" class="montserrat uppercase">CHINESE</a></li>
-                                <li><a href="#" class="montserrat uppercase">JAPANESE</a></li>
-                                <li><a href="#" class="montserrat uppercase">KOREAN</a></li>
+                                <li><a href="{{ url('/locale/en') }}" class="montserrat uppercase">ENGLISH</a></li>
+                                <li><a href="{{ url('/locale/ch') }}" class="montserrat uppercase">CHINESE</a></li>
+                                <li><a href="{{ url('/locale/jp') }}" class="montserrat uppercase">JAPANESE</a></li>
+                                <li><a href="{{ url('/locale/kr') }}" class="montserrat uppercase">KOREAN</a></li>
                             </ul>
                         </li>
                     </ul>
