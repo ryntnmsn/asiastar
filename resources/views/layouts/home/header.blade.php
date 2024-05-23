@@ -30,14 +30,14 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class="group border-b border-white/[.30]">
+                        <li class="group border-b border-white/[.30] hover:bg-slate-50 duration-300 ease-in-out">
                             <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat">SERVICES</a>
                             <i class='bx bxs-chevron-down services-arrow arrow text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out'></i>
                             <ul class="services-sub-menu sub-menu">
                                 
                             </ul>
                         </li>
-                        <li class="group border-b border-white/[.30]">
+                        <li class="group border-b border-white/[.30] hover:bg-slate-50 duration-300 ease-in-out">
                             <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat uppercase">@lang('About us')</a>
                             <i class='bx bxs-chevron-down about-arrow arrow text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out'></i>
                             <ul class="about-sub-menu sub-menu">
@@ -48,7 +48,7 @@
                                 <li><a href="{{ route('partner.home.index') }}" class="montserrat uppercase">@lang('Partners')</a></li>
                             </ul>
                         </li>
-                        <li class="group border-b border-white/[.30]">
+                        <li class="group border-b border-white/[.30] hover:bg-slate-50 duration-300 ease-in-out">
                             <a href="#" class="text_header text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out montserrat uppercase">@lang('Languages')</a>
                             <i class='bx bxs-chevron-down languages-arrow arrow text-slate-100 group-hover:text-amber-400 duration-300 ease-in-out'></i>
                             <ul class="languages-sub-menu sub-menu">
