@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size:15px;
     height: 100%;
     width: 100%;
@@ -58,11 +58,6 @@ color:#475569;
     font-optical-sizing: auto;
     font-style: normal;
 }
-
-.noto-sans {
-    font-family: "Noto Sans", sans-serif;
-}
-
 
 .youtube-container {
 	overflow: hidden;
@@ -691,7 +686,7 @@ nav .show, nav input[type="checkbox"] {
 
 
 
-nav{
+ nav{
   position: fixed;
   top: 0;
   left: 0;
@@ -700,7 +695,7 @@ nav{
   height: 70px;
   z-index: 99;
 }
-nav .navbar{
+ nav .navbar{
   height: 100%;
   width: 100%;
   display: flex;
@@ -714,14 +709,14 @@ nav .navbar{
   text-decoration: none;
   font-weight: 600;
 }
-nav .navbar .nav-links{
+ nav .navbar .nav-links{
   line-height: 70px;
   height: 100%;
 }
-nav .navbar .links{
+ nav .navbar .links{
   display: flex;
 }
-nav .navbar .links li{
+ nav .navbar .links li{
   position: relative;
   display: flex;
   align-items: center;
@@ -729,18 +724,18 @@ nav .navbar .links li{
   list-style: none;
   padding: 0 24px;
 }
-nav .navbar .links li a{
+ nav .navbar .links li a{
   height: 100%;
   text-decoration: none;
   white-space: nowrap;
   /* color: #fff; */
   font-weight: 500;
 }
-nav .navbar .links li a:hover {
+ nav .navbar .links li a:hover {
   color:rgb(251 191 36)
 }
 
-nav .navbar .links li .arrow{
+ nav .navbar .links li .arrow{
   height: 100%;
   width: 22px;
   line-height: 70px;
@@ -748,7 +743,7 @@ nav .navbar .links li .arrow{
   display: inline-block;
   transition: all 0.3s ease;
 }
-nav .navbar .links li .sub-menu{
+ nav .navbar .links li .sub-menu{
   position: absolute;
   top: 70px;
   left: 0;
@@ -760,10 +755,10 @@ nav .navbar .links li .sub-menu{
   z-index: 2;
   border-radius: 6px;
 }
-nav .navbar .links li:hover .games-sub-menu,
-nav .navbar .links li:hover .services-sub-menu,
-nav .navbar .links li:hover .about-sub-menu,
-nav .navbar .links li:hover .languages-sub-menu{
+ nav .navbar .links li:hover .games-sub-menu,
+ nav .navbar .links li:hover .services-sub-menu,
+ nav .navbar .links li:hover .about-sub-menu,
+ nav .navbar .links li:hover .languages-sub-menu{
   display: block;
 }
 .navbar .links li .sub-menu li{
@@ -858,26 +853,26 @@ nav .navbar .links li:hover .languages-sub-menu{
   display: none;
 }
 @media (max-width:1024px) {
-  nav {
+   nav {
     position:static;
     background-color: #fff;
   }
-  nav .navbar{
+   nav .navbar{
     max-width: 100%;
     padding: 0 0 0 25px;
   }
 
-  nav .navbar .logo a{
+   nav .navbar .logo a{
     font-size: 27px;
   }
-  nav .navbar .links li{
+   nav .navbar .links li{
     padding: 0 10px;
     white-space: nowrap;
   }
-  nav .navbar .links li a{
+   nav .navbar .links li a{
     font-size: 15px;
   }
-  nav .navbar .links li a:hover{ 
+   nav .navbar .links li a:hover{ 
     color:rgb(251 191 36)
   }
 }
@@ -886,7 +881,7 @@ nav .navbar .links li:hover .languages-sub-menu{
   .navbar .bx-menu{
     display: block;
   }
-  nav .navbar .nav-links{
+   nav .navbar .nav-links{
     position: fixed;
     top: 0;
     left: -100%;
@@ -914,23 +909,23 @@ nav .navbar .links li:hover .languages-sub-menu{
       font-size: 25px;
       color: #fff;
     }
-  nav .navbar .links{
+   nav .navbar .links{
     display: block;
     margin-top: 20px;
   }
-  nav .navbar .links li .arrow{
+   nav .navbar .links li .arrow{
     line-height: 40px;
   }
-nav .navbar .links li{
+ nav .navbar .links li{
     display: block;
   }
-nav .navbar .links li .sub-menu{
+ nav .navbar .links li .sub-menu{
   position: relative;
   top: 0;
   box-shadow: none;
   display: none;
 }
-nav .navbar .links li .sub-menu li{
+ nav .navbar .links li .sub-menu li{
   border-bottom: none;
 
 }
@@ -956,10 +951,10 @@ nav .navbar .links li .sub-menu li{
   .links li .sub-menu .more:hover .more-sub-menu{
     display: none;
   }
-  nav .navbar .links li:hover .games-sub-menu,
-  nav .navbar .links li:hover .services-sub-menu,
-  nav .navbar .links li:hover .about-sub-menu,
-  nav .navbar .links li:hover .languages-sub-menu{
+   nav .navbar .links li:hover .games-sub-menu,
+   nav .navbar .links li:hover .services-sub-menu,
+   nav .navbar .links li:hover .about-sub-menu,
+   nav .navbar .links li:hover .languages-sub-menu{
     display: none;
   }
   .navbar .nav-links.show1 .links .games-sub-menu,
@@ -970,12 +965,12 @@ nav .navbar .links li .sub-menu li{
       display: block;
   }
 
-  nav .navbar .links li a {
+   nav .navbar .links li a {
     color:rgb(71 85 105)
   }
 }
 @media (max-width:370px){
-  nav .navbar .nav-links{
+   nav .navbar .nav-links{
   max-width: 100%;
 } 
 }

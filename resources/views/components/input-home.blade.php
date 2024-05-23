@@ -1,1 +1,1 @@
-<input {!! $attributes->merge(['class' => 'bg-white dark:text-slate-300 dark:bg-dark-blue-hover dark:border-slate-800 border border-slate-300 text-slate-900 rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5']) !!}>
+<input {!! $attributes->merge(['class' => 'bg-white dark:text-slate-50 dark:bg-slate-800 dark:border-slate-800 border border-slate-300 text-slate-600 rounded-lg focus:ring-amber-400 focus:border-amber-400 block w-full p-2.5']) !!}>

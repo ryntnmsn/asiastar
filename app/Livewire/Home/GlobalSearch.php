@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Home;
 
+use App\Models\Article;
 use App\Models\Game;
 use Livewire\Component;
 
@@ -20,16 +21,21 @@ class GlobalSearch extends Component
 
         $lang = app()->getLocale();
 
-        $globalSearchResults = [];
-        if(strlen($this->globalSearchQuery) >= 2) {
-            $globalSearchResults = Game::where('title','LIKE','%'.$this->globalSearchQuery.'%')
+        // $globalSearchResults = [];
+
+            $globalSearchResultsGames = Game::where('title','LIKE','%'.$this->globalSearchQuery.'%')
             ->whereHas('language', function($query) use($lang) {
                 $query->where('code', $lang);
-            })->get();
-        }
+            })->limit(10)->get();
+
+            $globalSearchResultsNews = Article::where('name','LIKE','%'.$this->globalSearchQuery.'%')
+            ->whereHas('language', function($query) use($lang) {
+                $query->where('code', $lang);
+            })->limit(10)->get();
 
         return view('livewire.home.global-search', [
-            'globalSearchResults' => $globalSearchResults
+            'globalSearchResultsGames' => $globalSearchResultsGames,
+            'globalSearchResultsNews' => $globalSearchResultsNews
         ]);
     }
 }

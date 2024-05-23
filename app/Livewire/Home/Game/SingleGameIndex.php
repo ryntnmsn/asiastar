@@ -50,7 +50,11 @@ class SingleGameIndex extends Component
 
     public function render()
     {
-        $otherGames = Game::where('status', true)->inRandomOrder()->limit(6)->get();
+        $lang = app()->getLocale();
+        $otherGames = Game::where('status', true)
+        ->whereHas('language', function($query) use($lang) {
+            $query->where('code', $lang);
+        })->inRandomOrder()->limit(6)->get();
 
         return view('livewire.home.game.single-game-index', [
             'otherGames' => $otherGames

@@ -9,9 +9,8 @@ class ContactHomeIndex extends Component
 {
     public function render()
     {
-
         $contacts = Contact::where('status', true);
-
+        
         return view('livewire.home.contact.contact-home-index', [
             'contacts' => $contacts->get()
         ])->extends('layouts.home.app')->section('contents');

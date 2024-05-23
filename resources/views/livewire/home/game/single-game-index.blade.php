@@ -2,7 +2,7 @@
     <div class="w-full h-full max-w-[1280px] mx-auto px-5 mt-[3rem] lg:mt-[10rem]">
         <div class="flex h-full items-center justify-center">
             <div class="flex-1 lg:block hidden">
-                <h1 class="noto-sans text-[120px] font-bold dark:text-slate-800 text-slate-200 tracking-tighter leading-[140px]">{{$title}}</h1>
+                <h1 class="noto-sans text-[120px] font-bold dark:text-slate-100 text-slate-800 tracking-tighter leading-[140px]">{{$title}}</h1>
             </div>
             <div class="flex-1">
                 <img id="zoomEffect" src="{{url('storage/' . $hero_image)}}" alt="{{$title}}" class="w-full">
@@ -20,11 +20,11 @@
                 </div>
             </div>
             <div class="my-20">
-                <div class="text-slate-600 leading-loose">{!! $description !!}</div>
+                <div class="text-slate-600 dark:text-slate-300 leading-loose">{!! $description !!}</div>
             </div>
             <div class="my-20">
                 <div class="mb-10 border-b border-slate-300 dark:border-slate-800 flex justify-between items-center">
-                    <x-heading class="capitalize !text-slate-400">@lang('Game Details')</x-heading>
+                    <x-heading class="capitalize !text-slate-600">@lang('Game Details')</x-heading>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
                     @if($volatility != null)

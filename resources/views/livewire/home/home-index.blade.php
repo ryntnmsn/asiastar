@@ -14,7 +14,7 @@
 
         </div> --}}
         <div class="youtube-container">
-            <iframe src="https://www.youtube.com/embed/9qVx-d4Cf4s?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&rel=0&loop=1&playlist=9qVx-d4Cf4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/9qVx-d4Cf4s?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&rel=0&loop=1&vq=hd1080&playlist=9qVx-d4Cf4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -24,8 +24,7 @@
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Games')</x-heading>
                 <x-paragraph class="text-center w-3/4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    @lang('AS Pachinko provides professional Pachinko, Live Casino, Live Cockfighting and other games, with exciting game plots, exquisite game graphics, and exciting game sound effects, allowing you to enjoy the fun of the game!')
                 </x-paragraph>
             </div>
             <div class="main gap-5 h-[420px] md:h-[50vw] rounded-2xl">
@@ -64,8 +63,7 @@
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('About us')</x-heading>
                 <x-paragraph class="text-center w-3/4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    @lang('Discover a world where every game promises an adventure, every story tells a unique tale, and every moment is an opportunity to experience something extraordinary.')
                 </x-paragraph>
             </div>
             <div>
@@ -148,8 +146,7 @@
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Partners')</x-heading>
                 <x-paragraph class="text-center w-3/4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    @lang('We work with a variety of partners who share the same goals as ours and help us strive for excellence. Through these strategic alliances, we grow stronger and make a bigger impact.')
                 </x-paragraph>
             </div>
             <div>

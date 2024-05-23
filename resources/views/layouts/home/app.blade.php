@@ -36,82 +36,14 @@
             @yield('contents')
             @include('layouts.home.footer')
         </div>
-        {{-- <div wire:ignore id="sidebar" class="relative">
-            <div class="p-10 h-full">
-                <div class="w-full h-full max-w-[640px] mx-auto flex flex-col ">
-                    <div class="flex justify-between items-center">
-                        <x-heading class="!text-slate-600 dark:!text-slate-600">Contact Us</x-heading>
-                        <button id="menu-toggle-close" class="absolute top-0 right-0 mt-5 mr-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                              </svg>
-                        </button>
-                    </div>
-
-                    <x-paragraph class="noto-sans leading-normal !text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </x-paragraph>
-                    <div class="flex gap-20 w-full">
-                        <div class="flex-1">
-                            <div class="rounded-2xl">
-                                <div class="flex flex-col gap-5 mt-5">
-                                    <div>
-                                        <x-heading class="!text-lg !text-slate-600">
-                                            Fill out the information below
-                                        </x-heading>
-                                    </div>
-                                    <div class="flex flex-col sm:flex-row gap-4">
-                                        <div class="flex-1 flex flex-col gap-2">
-                                            <x-text class="!text-sm">First name</x-text>
-                                            <x-input-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
-                                        </div>
-                                        <div class="flex-1 flex flex-col gap-2">
-                                            <x-text class="!text-sm">Last name</x-text>
-                                            <x-input-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-row gap-4">
-                                        <div class="flex-1 flex flex-col gap-2">
-                                            <x-text class="!text-sm">Email address</x-text>
-                                            <x-input-home type="email" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-row gap-4">
-                                        <div class="flex-1 flex flex-col gap-2">
-                                            <x-text class="!text-sm">Phone number</x-text>
-                                            <x-input-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-input-home>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-row gap-4">
-                                        <div class="flex-1 flex flex-col gap-2">
-                                            <x-text class="!text-sm">Message</x-text>
-                                            <x-textarea-home type="text" class="dark:!bg-white !border-slate-200 !text-slate-600"></x-textarea-home>
-                                        </div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div>
-                                            <x-primary-button-new class="!px-4 !py-2">Submit</x-primary-button-new>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
     </div>
 
+    {{-- @livewire('home.global-search') --}}
+    @livewire('home.contact.contact-home-index')
     @livewire('home.global-search')
+@livewireScripts
 
-
-    @livewireScripts
-
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".featuredGames", {
         slidesPerView: 2,

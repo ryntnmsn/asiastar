@@ -10,7 +10,7 @@ class ContactCreate extends Component
 
     public $title;
     public $type = '';
-    public $status;
+    public $status = false;
 
     public function store() {
         $this->validate([
