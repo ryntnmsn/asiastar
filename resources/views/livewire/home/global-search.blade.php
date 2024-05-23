@@ -1,5 +1,5 @@
 <!-- Contact modal -->
-<div wire:ignore.self wire:click="resetGlobalSearch" id="global-search-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 z-50 w-full md:inset-0 !items-start pt-20 pb-40 h-[calc(100%-1rem)] max-h-full">
+<div wire:ignore.self id="global-search-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 z-50 w-full md:inset-0 !items-start pt-20 pb-40 h-[calc(100%-1rem)] max-h-full">
     <div id="modalAnimation" class="relative p-4 w-full max-w-[1080px] max-h-full">
         <!-- Modal content -->
         <div class="relative bg-slate-50/[.80] dark:bg-slate-900/[.80] backdrop-blur-xl rounded-2xl shadow">
@@ -22,7 +22,6 @@
                     @if(strlen($globalSearchQuery) >= 2)
                         @if(count($globalSearchResultsGames) != null)
                             <div class="mt-5 cursor-pointer">
-                                
                                 <div class="text-slate-600 font-semibold">@lang('Games result')</div>
                                 <div class="flex flex-row gap-5 overflow-x-auto">
                                     @forelse ($globalSearchResultsGames as $result)
