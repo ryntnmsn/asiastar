@@ -10,7 +10,7 @@
                 <div class="mt-20">
                     <x-heading class="text-4xl">@lang('Join us')</x-heading>
                     <x-paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        @lang('We always strive to find individuals who share the passion and vision of our company. If you are passionate about your field and share our values, we encourage you to go through the career opportunities we have in our company').
                     </x-paragraph>
                 </div>
 
@@ -20,10 +20,10 @@
                         <div>
                         <x-heading>@lang('Available jobs')</x-heading>
                         </div>
-                        <div id="accordion-collapse" data-accordion="collapse" data-active-classes="shadow-2xl dark:text-slate-400 text-slate-600">
+                        <div id="accordion-collapse" data-accordion="collapse" data-active-classes="shadow-2xl dark:text-slate-400 text-slate-600 dark:bg-slate-800">
                             @foreach($recruitments as $recruitment)
                                 <div class="">
-                                    <h2 id="accordion-collapse-heading-{{$recruitment->id}}" class="bg-slate-50 dark:hover:bg-dark-blue-hover dark:bg-dark-blue hover:shadow-2xl hover:z-10 mb-5 duration-300 ease-in-out hover:-translate-y-2 border border-slate-100 dark:border-slate-900 group">
+                                    <h2 id="accordion-collapse-heading-{{$recruitment->id}}" class="bg-slate-50 dark:hover:bg-slate-800 dark:bg-slate-900 hover:shadow-2xl hover:z-10 mb-5 duration-300 ease-in-out hover:-translate-y-2 group rounded-2xl overflow-hidden">
                                         <button type="button" class="py-10 flex items-center justify-between w-full p-5 font-medium rtl:text-right gap-3 text-lg " data-accordion-target="#accordion-collapse-body-{{$recruitment->id}}" aria-expanded="false" aria-controls="accordion-collapse-body-{{$recruitment->id}}">
                                             <span class="flex items-center gap-4">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-slate-600 !dark:text-slate-400">
@@ -42,8 +42,9 @@
                                             </svg>
                                         </button>
                                     </h2>
-                                    <div id="accordion-collapse-body-{{$recruitment->id}}" class="slideAnimation hidden bg-white shadow-2xl mb-5 dark:bg-slate-800 dark:border-slate-800" aria-labelledby="accordion-collapse-heading-{{$recruitment->id}}">
+                                    <div id="accordion-collapse-body-{{$recruitment->id}}" class="slideAnimation hidden bg-slate-50 shadow-2xl mb-5 dark:bg-slate-800 rounded-2xl overflow-hidden" aria-labelledby="accordion-collapse-heading-{{$recruitment->id}}">
                                         <div class="p-5 text-slate-500 dark:text-slate-400 prose">
+                                            <x-paragraph class="text-lg font-semibold">@lang('Job Description')</x-paragraph>
                                             {!! $recruitment->description !!}
                                         </div>
                                     </div>

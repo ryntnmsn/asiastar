@@ -1,13 +1,12 @@
-<div class="h-full mt-40 px-5">
-    <div class="h-full w-full max-w-[1280px] mx-auto">
+<div class="h-full">
         @if(count($gameBanners) != null)
             <!-- Game Banners -->
-            <div class="mt-10">
-                <div wire:ignore class="swiper gameBanner rounded-3xl py-10">
+            <div>
+                <div wire:ignore class="swiper gameBanner">
                     <div class="swiper-wrapper">
                         @foreach ($gameBanners as $gameBanner)
                         <div class="swiper-slide">
-                            <div class="rounded-3xl h-[380px] md:h-[480px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
+                            <div class="h-[380px] md:h-[560px] lg:h-[768px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
                         </div>
                     @endforeach
                     </div>
@@ -22,6 +21,7 @@
             </div>
         @endif
 
+        <div class="h-full w-full max-w-[1280px] mx-auto px-3">
         <div class="mt-10">
             <div class="flex flex-col xl:flex-row">
                 <div class="w-full xl:w-[20%]">
@@ -48,7 +48,7 @@
                                     <x-heading class="!mb-0">@lang('All Games')</x-heading>
                                 </div>
                                 <div>
-                                    <div class="xl:flex text-slate-400 dark:text-slate-400">
+                                    <div class="xl:flex text-slate-600 dark:text-slate-400">
                                         <button wire:click="grid"><x-icon-grid-view></x-icon-grid-view></button>
                                         <button wire:click="list"><x-icon-list-view></x-icon-list-view></button>
                                     </div>
@@ -56,9 +56,9 @@
                             </div>
                             <div>
                                 @if($isGridView)
-                                    <div id="slideAnimationGames" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-5 pb-10 relative">
+                                    <div id="slideAnimationGames" class="rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-5 pb-10 relative">
                                         @foreach ($games as $game)
-                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-white dark:bg-slate-900 dark:hover:bg-slate-900-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                        <div class="group border border-slate-100 dark:border-slate-800 relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-white dark:bg-slate-900 hover:-translate-y-2 cursor-pointer hover:shadow-2xl dark:hover:bg-dark-blue-hover">
                                             <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                             <div class="p-5 flex flex-col gap-4">
                                                 <div class="overflow-hidden rounded-2xl">
@@ -118,7 +118,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="mt-2">
-                                                        <x-primary-button-new>@lang('More details')</x-primary-button-new>
+                                                        <x-primary-button-new class="!text-sm">@lang('More details')</x-primary-button-new>
                                                     </div>
                                                 </div>
                                             </div>
@@ -231,7 +231,7 @@
             </div>
         </div>
     </div>
-    {{-- @include('layouts.home.game-search') --}}
+    @livewire('home.game-search')
 
     <script>
             // SHOW HIDE FILTER

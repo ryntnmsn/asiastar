@@ -18,13 +18,12 @@
         </div>
     </div>
 
-
     <div class="px-5 w-full max-w-[1280px] mx-auto relative h-auto overflow-hidden flex items-center justify-center rounded-2xl pt-20">
         <div class="flex flex-col gap-10">
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Games')</x-heading>
                 <x-paragraph class="text-center w-3/4">
-                    @lang('AS Pachinko provides professional Pachinko, Live Casino, Live Cockfighting and other games, with exciting game plots, exquisite game graphics, and exciting game sound effects, allowing you to enjoy the fun of the game!')
+                    @lang('Discover a world where every game promises an adventure, every story tells a unique tale, and every moment is an opportunity to experience something extraordinary').
                 </x-paragraph>
             </div>
             <div class="main gap-5 h-[420px] md:h-[50vw] rounded-2xl">
@@ -146,7 +145,7 @@
             <div class="flex flex-col justify-center items-center">
                 <x-heading class="!font-bold !text-[52px]">@lang('Partners')</x-heading>
                 <x-paragraph class="text-center w-3/4">
-                    @lang('We work with a variety of partners who share the same goals as ours and help us strive for excellence. Through these strategic alliances, we grow stronger and make a bigger impact.')
+                    @lang('We work with a variety of partners who share the same goals as ours and help us strive for excellence. Through these strategic alliances, we grow stronger and make a bigger impact').
                 </x-paragraph>
             </div>
             <div>

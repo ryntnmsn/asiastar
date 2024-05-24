@@ -30,7 +30,7 @@
     @livewireStyles
 </head>
 <body class="min-h-full bg-no-repeat bg-cover bg-fixed" x-cloak x-data="{ open: false }">
-    <div class="bg-light-mode dark:bg-dark-mode flex flex-row wrapper">
+    <div class="bg-light-mode dark:bg-dark-mode flex flex-row wrapper bg-fixed">
         <div id="main" class="w-full h-full ">
             @include('layouts.home.header')
             @yield('contents')
@@ -58,7 +58,7 @@
 
 <script>
     var swiper = new Swiper(".hotGames", {
-        spaceBetween: 30,
+        // spaceBetween: 30,
         loop: true,
         navigation: {
         nextEl: ".hotGames-next",
@@ -83,7 +83,7 @@
 
 <script>
     var swiper = new Swiper(".comingSoonGames", {
-        spaceBetween: 30,
+        // spaceBetween: 30,
         loop: true,
         navigation: {
         nextEl: ".comingSoonGames-next",
@@ -108,7 +108,7 @@
 
 <script>
     var swiper = new Swiper(".newGames", {
-        spaceBetween: 30,
+        // spaceBetween: 30,
         loop: true,
         navigation: {
         nextEl: ".newGames-next",

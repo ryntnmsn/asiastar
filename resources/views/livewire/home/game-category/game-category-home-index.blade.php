@@ -1,31 +1,30 @@
-<div class="h-full mt-40 px-5">
-    <div class="h-full w-full max-w-[1280px] mx-auto">
-        @if(count($gameBanners) != null)
-            <!-- Game Banners -->
-            <div class="mt-10">
-                <div wire:ignore class="swiper gameBanner rounded-3xl py-10">
-                    <div class="swiper-wrapper">
-                        @foreach ($gameBanners as $gameBanner)
-                        <div class="swiper-slide">
-                            <div class="rounded-3xl h-[380px] md:h-[480px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
-                        </div>
-                    @endforeach
+<div class="h-full">
+    @if(count($gameBanners) != null)
+        <!-- Game Banners -->
+        <div>
+            <div wire:ignore class="swiper gameBanner">
+                <div class="swiper-wrapper">
+                    @foreach ($gameBanners as $gameBanner)
+                    <div class="swiper-slide">
+                        <div class="h-[380px] md:h-[560px] lg:h-[768px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="autoplay-progress">
-                        <svg viewBox="0 0 48 48">
-                            <circle cx="24" cy="24" r="20"></circle>
-                        </svg>
-                        <span></span>
-                    </div>
+                @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
                 </div>
             </div>
-        @endif
-
+        </div>
+    @endif
+    <div class="h-full w-full max-w-[1280px] mx-auto px-3">
         <div class="mt-10">
             <div class="flex flex-col xl:flex-row">
                 <div class="w-full xl:w-[20%]">
-                    <div class="bg-slate-100 dark:bg-dark-blue p-5 rounded-2xl mr-0 xl:mr-8 xl:mb-0 mb-8">
+                    <div class="dark:bg-slate-900 bg-white  p-5 rounded-2xl mr-0 xl:mr-8 xl:mb-0 mb-8">
                         @include('layouts.home.game-category-nav-desktop')
                     </div>
                 </div>
@@ -48,7 +47,7 @@
                             <div class="swiper hotGames">
                                 <div class="swiper-wrapper pt-5 pb-10 relative">
                                     @foreach ($hotGames as $game)
-                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-white dark:bg-slate-900 dark:hover:bg-dark-blue-hover border-slate-100 dark:border-slate-800 border hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
                                             <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                             <div class="p-5 flex flex-col gap-4">
                                                 <div class="overflow-hidden rounded-2xl">
@@ -108,7 +107,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="mt-2">
-                                                        <x-primary-button-new>@lang('More details')</x-primary-button-new>
+                                                        <x-primary-button-new class="!text-sm">@lang('More details')</x-primary-button-new>
                                                     </div>
                                                 </div>
                                             </div>
@@ -137,7 +136,7 @@
                             <div class="swiper newGames">
                                 <div class="swiper-wrapper pt-5 pb-10 relative">
                                     @foreach ($newGames as $game)
-                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                        <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-white dark:bg-slate-900 dark:hover:bg-dark-blue-hover border-slate-100 dark:border-slate-800 border hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
                                             <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                             <div class="p-5 flex flex-col gap-4">
                                                 <div class="overflow-hidden rounded-2xl">
@@ -197,7 +196,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="mt-2">
-                                                        <x-primary-button-new>@lang('More details')</x-primary-button-new>
+                                                        <x-primary-button-new class="!text-sm">@lang('More details')</x-primary-button-new>
                                                     </div>
                                                 </div>
                                             </div>
@@ -226,7 +225,7 @@
                             <div class="swiper comingSoonGames">
                                 <div class="swiper-wrapper pt-5 pb-10 relative">
                                     @foreach ($comingSoonGames as $game)
-                                    <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-slate-100 dark:bg-dark-blue dark:hover:bg-dark-blue-hover rounded-3xl hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
+                                    <div class="group relative swiper-slide flex flex-col gap-2 duration-300 ease-in-out bg-white dark:bg-slate-900 dark:hover:bg-dark-blue-hover border-slate-100 dark:border-slate-800 border hover:-translate-y-2 cursor-pointer hover:shadow-2xl">
                                         <a href="{{ route('single.game.index', $game->id) }}" class="absolute top-0 bottom-0 left-0 right-0 z-[100]"></a>
                                         <div class="p-5 flex flex-col gap-4">
                                             <div class="overflow-hidden rounded-2xl">
@@ -286,7 +285,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="mt-2">
-                                                    <x-primary-button-new>@lang('More details')</x-primary-button-new>
+                                                    <x-primary-button-new class="!text-sm">@lang('More details')</x-primary-button-new>
                                                 </div>
                                             </div>
                                         </div>
@@ -301,6 +300,6 @@
         </div>
     </div>
 
-    @include('layouts.home.game-search')
+    @livewire('home.game-search')
 
 </div>

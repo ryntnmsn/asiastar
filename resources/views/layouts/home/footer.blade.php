@@ -1,13 +1,10 @@
 <div class="bg-amber-400 mt-40 px-5">
     <div class="py-20 w-full">
         <div class="w-full max-w-[1280px] mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 text-sm">
                 <div class="flex-1">
                     <img src="{{url('storage/images/ASIASTAR_LOGO_HORIZONTAL_BLACK.png')}}" alt="" class="w-[180px] grayscale brightness-0 opacity-70">
-                    <x-paragraph class="!text-slate-800 !text-xs mt-5 !font-normal">
-                        Blk 10 Lot 29 Montalban Heights San Jose Rodriguez RIzal Metro Manila PH
-                    </x-paragraph>
-                    <div>
+                    <div class="mt-10">
                         <ul class="flex gap-2">
                             <li>
                                 <a href=""><img src="{{url('storage/images/facebook.png')}}" alt="" class="w-6"></a>
@@ -30,10 +27,10 @@
                 <div class="flex-1">
                     <div class="flex flex-col">
                         <x-heading class="!text-base !font-bold !text-slate-800">@lang('Games')</x-heading>
-                        <ul class="flex flex-col gap-2 text-slate-800">
+                        <ul class="flex flex-col gap-3 text-slate-800">
                             @foreach ($getGameCategories as $category)
                                 <li>
-                                    <a wire:navigate href="{{route('game.category.home.index', $category->slug)}}">{{__($category->name)}}</a>
+                                    <a wire:navigate href="{{route('game.category.home.index', $category->slug)}}" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">{{__($category->name)}}</a>
                                 </li>
                             @endforeach
                         </ul>
@@ -41,22 +38,47 @@
                 </div>
                 <div class="flex-1">
                     <div class="flex flex-col">
+                        <x-heading class="!text-base !font-bold !text-slate-800">@lang('Services')</x-heading>
+                        <ul class="flex flex-col gap-3 text-slate-800">
+                            <li>
+                                <a href="" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Studio Construction')</a>
+                            </li>
+                            <li>
+                                <a href="" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Live Pachinko Construction')</a>
+                            </li>
+                            <li>
+                                <a href="" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Property and Office Space Services')</a>
+                            </li>
+                            <li>
+                                <a href="" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Global Cash Flow Serve')</a>
+                            </li>
+                            <li>
+                                <a href="" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('API Distribution')</a>
+                            </li>
+                            <li>
+                                <a href="" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('CDN Service')</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="flex flex-col">
                         <x-heading class="!text-base !font-bold !text-slate-800">@lang('Useful Links')</x-heading>
-                        <ul class="flex flex-col gap-2 text-slate-800">
+                        <ul class="flex flex-col gap-3 text-slate-800">
                             <li>
-                                <a href="{{route('about.our.company.index')}}">@lang('Our Company')</a>
+                                <a href="{{route('about.our.company.index')}}" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Our Company')</a>
                             </li>
                             <li>
-                                <a href="{{route('news.index')}}">@lang('Company News')</a>
+                                <a href="{{route('news.index')}}" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Company News')</a>
                             </li>
                             <li>
-                                <a href="{{route('partner.home.index')}}">@lang('Partners')</a>
+                                <a href="{{route('partner.home.index')}}" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Partners')</a>
                             </li>
                             <li>
-                                <a href="{{route('join.us.index')}}">@lang('Join us')</a>
+                                <a href="{{route('join.us.index')}}" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Join us')</a>
                             </li>
                             <li>
-                                <a href="{{route('contact.home.index')}}">@lang('Contact us')</a>
+                                <a href="{{route('contact.home.index')}}" class="hover:underline duration-300 ease-in-out underline-offset-4 hover:text-black">@lang('Contact us')</a>
                             </li>
                         </ul>
                     </div>
@@ -64,18 +86,18 @@
                 <div class="flex-1">
                     <div class="flex flex-col">
                         <x-heading class="!text-base !font-bold !text-slate-800">@lang('Languages')</x-heading>
-                        <ul class="flex flex-col gap-2 text-slate-800">
+                        <ul class="flex flex-col gap-3 text-slate-800">
                             <li>
-                                <a href="{{ url('/locale/en') }}">@lang('English')</a>
+                                <a href="{{ url('/locale/en') }}" class="hover:underline duration-300 ease-in-out underline-offset-4">@lang('English')</a>
                             </li>
                             <li>
-                                <a href="{{ url('/locale/jp') }}">@lang('Japanese')</a>
+                                <a href="{{ url('/locale/jp') }}" class="hover:underline duration-300 ease-in-out underline-offset-4">@lang('Japanese')</a>
                             </li>
                             <li>
-                                <a href="{{ url('/locale/ch') }}">@lang('Chinese')</a>
+                                <a href="{{ url('/locale/ch') }}" class="hover:underline duration-300 ease-in-out underline-offset-4">@lang('Chinese')</a>
                             </li>
                             <li>
-                                <a href="{{ url('/locale/kr') }}">@lang('Korean')</a>
+                                <a href="{{ url('/locale/kr') }}" class="hover:underline duration-300 ease-in-out underline-offset-4">@lang('Korean')</a>
                             </li>
                         </ul>
                     </div>

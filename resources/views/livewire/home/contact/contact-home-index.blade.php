@@ -17,14 +17,14 @@
             </div>
             <!-- Modal body -->
             <div class="p-10 space-y-10">
-                <div class="grid grid-cols-3 gap-5">
-                    <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-xl">
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="bg-gradient-to-r from-amber-400/[.80] to-amber-600 p-5 rounded-xl">
                         <div class="flex gap-2 items-start">
-                            <div class="!text-slate-600">
+                            <div class="!text-white">
                                 <x-icon-email></x-icon-email>
                             </div>
                             <div class="flex flex-col items-start">
-                                <x-text class="!text-sm !mb-0">Email address</x-text>
+                                <x-text class="!text-sm !mb-0 !text-slate-200">Email address</x-text>
                                 @foreach ($contacts as $contact)
                                     @if(($contact->type == 'email') != null)
                                         <x-heading class="!mb-0 !text-base">{{$contact->title}}</x-heading>
@@ -34,13 +34,13 @@
                         </div>
                     </div>
         
-                    <div class="bg-slate-100  dark:bg-slate-800 p-5 rounded-xl">
+                    <div class="bg-gradient-to-r from-amber-400/[.80] to-amber-600 p-5 rounded-xl">
                         <div class="flex gap-2 items-start">
-                            <div class="!text-slate-600">
+                            <div class="!text-white">
                                 <x-icon-phone></x-icon-phone>
                             </div>
                             <div class="flex flex-col items-start">
-                                <x-text class="!text-sm !mb-0">Phone number</x-text>
+                                <x-text class="!text-sm !mb-0 !text-slate-200">Phone number/s</x-text>
                                 @foreach ($contacts as $contact)
                                     @if(($contact->type == 'phone') != null)
                                         <x-heading class="!mb-0 !text-base">{{$contact->title}}</x-heading>
