@@ -1,9 +1,8 @@
-<!-- Contact modal -->
 <div wire:ignore.self id="game-search-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 z-50 w-full md:inset-0 !items-start pt-20 pb-40 h-[calc(100%-1rem)] max-h-full">
     <div id="modalAnimation" class="relative p-4 w-full max-w-[1080px] max-h-full">
-        <!-- Modal content -->
+
         <div class="relative bg-slate-50/[.80] dark:bg-slate-900/[.80] backdrop-blur-xl rounded-2xl shadow">
-            <!-- Modal header -->
+
             <div class="flex items-center justify-between p-4 md:p-5 border-b dark:border-slate-800 rounded-t">
                 <x-heading class="text-2xl font-semibold text-slate-600 !mb-0">
                     @lang('Game search')
@@ -15,7 +14,7 @@
                     <span class="sr-only">Close modal</span>
                 </button>
             </div>
-            <!-- Modal body -->
+
             <div class="p-10">
                 <x-input-home type="text" wire:model.live="globalSearchQuery"></x-input-home>
                 <div>

@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             FeatureSeeder::class,
             GameCategorySeeder::class,
             GameTypeSeeder::class,
-            ThemeSeeder::class
+            ThemeSeeder::class,
+            CountrySeeder::class
         ]);
 
         // User::factory(10)->create();

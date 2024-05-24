@@ -28,7 +28,6 @@ class GameCategoryHomeAllIndex extends Component
     public $filterLanguage = '';
     public $searchQuery = '';
 
-
     public function grid() {
         $this->isGridView = true;
         $this->isListView = false;

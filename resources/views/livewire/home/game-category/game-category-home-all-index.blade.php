@@ -1,27 +1,27 @@
 <div class="h-full">
-        @if(count($gameBanners) != null)
-            <!-- Game Banners -->
-            <div>
-                <div wire:ignore class="swiper gameBanner">
-                    <div class="swiper-wrapper">
-                        @foreach ($gameBanners as $gameBanner)
-                        <div class="swiper-slide">
-                            <div class="h-[380px] md:h-[560px] lg:h-[768px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
-                        </div>
-                    @endforeach
+    @if(count($gameBanners) != null)
+        <!-- Game Banners -->
+        <div>
+            <div wire:ignore class="swiper gameBanner">
+                <div class="swiper-wrapper">
+                    @foreach ($gameBanners as $gameBanner)
+                    <div class="swiper-slide">
+                        <div class="h-[380px] md:h-[560px] lg:h-[768px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="autoplay-progress">
-                        <svg viewBox="0 0 48 48">
-                            <circle cx="24" cy="24" r="20"></circle>
-                        </svg>
-                        <span></span>
-                    </div>
+                @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
                 </div>
             </div>
-        @endif
+        </div>
+    @endif
 
-        <div class="h-full w-full max-w-[1280px] mx-auto px-3">
+    <div class="h-full w-full max-w-[1280px] mx-auto px-3">
         <div class="mt-10">
             <div class="flex flex-col xl:flex-row">
                 <div class="w-full xl:w-[20%]">
@@ -39,7 +39,6 @@
                     </div>
                 </div>
                 <div class="w-full xl:w-[80%] relative">
-
                     {{-- Games --}}
                     @if(count($games) != null)
                         <div class="mb-10">
@@ -226,27 +225,26 @@
                             <span class="text-slate-600 montserrat">@lang('No game found')</span>
                         </div>
                     @endif
-
                 </div>
             </div>
         </div>
     </div>
     @livewire('home.game-search')
-
-    <script>
-            // SHOW HIDE FILTER
-    let toggleButton = document.getElementById("toggleButton");
-    let filterBox = document.getElementById("filterBox");
-    let isVisible = false; // initial state: div is visible
-
-    toggleButton.addEventListener("click", function() {
-        if (isVisible) {
-            filterBox.style.display = "none";
-            isVisible = false;
-        } else {
-            filterBox.style.display = "block";
-            isVisible = true;
-        }
-    });
-    </script>
 </div>
+
+<script>
+    // SHOW HIDE FILTER
+let toggleButton = document.getElementById("toggleButton");
+let filterBox = document.getElementById("filterBox");
+let isVisible = false; // initial state: div is visible
+
+toggleButton.addEventListener("click", function() {
+if (isVisible) {
+    filterBox.style.display = "none";
+    isVisible = false;
+} else {
+    filterBox.style.display = "block";
+    isVisible = true;
+}
+});
+</script>

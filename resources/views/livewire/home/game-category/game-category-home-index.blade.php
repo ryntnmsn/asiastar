@@ -6,7 +6,7 @@
                 <div class="swiper-wrapper">
                     @foreach ($gameBanners as $gameBanner)
                     <div class="swiper-slide">
-                        <div class="h-[380px] md:h-[560px] lg:h-[768px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
+                        <div class="h-[380px] lg:h-[560px] xl:h-[768px] w-full bg-cover !bg-fixed bg-no-repeat bg-center" style="background-image:url('{{ url('storage/'. $gameBanner->image) }}')"></div>
                     </div>
                 @endforeach
                 </div>
@@ -20,6 +20,7 @@
             </div>
         </div>
     @endif
+
     <div class="h-full w-full max-w-[1280px] mx-auto px-3">
         <div class="mt-10">
             <div class="flex flex-col xl:flex-row">
